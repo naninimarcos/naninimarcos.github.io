@@ -1,37 +1,1845 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Marcos Nanini - Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
   <style>
-    body { font-family: 'Roboto', sans-serif; margin: 40px; line-height: 1.6; }
-    h1 { color: #333; }
-    a { color: #007acc; text-decoration: none; }
-    .section { margin-bottom: 30px; }
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --dark-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      --accent-color: #ffd700;
+      --text-light: #f8f9fa;
+      --text-dark: #333;
+      --card-bg-light: #ffffff;
+      --card-bg-dark: #2d3748;
+      --secondary-bg-light: #f8f9fa;
+      --secondary-bg-dark: #1a202c;
+      --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: var(--primary-gradient);
+      min-height: 100vh;
+      overflow-x: hidden;
+      transition: all 0.3s ease;
+    }
+
+    body.dark-theme {
+      background: var(--dark-gradient);
+      color: var(--text-light);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Enhanced Header */
+    header {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    body.dark-theme header {
+      background: rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .nav-links a.active {
+      background: var(--accent-color);
+      color: var(--text-dark);
+    }
+
+    .header-controls {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .theme-toggle,
+    .lang-toggle {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: var(--text-light);
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    .theme-toggle:hover,
+    .lang-toggle:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    /* Custom Cursor */
+    .cursor-dot {
+      width: 6px;
+      height: 6px;
+      background: #667eea;
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.15s ease;
+      mix-blend-mode: difference;
+    }
+
+    .cursor-outline {
+      width: 24px;
+      height: 24px;
+      border: 1px solid rgba(102, 126, 234, 0.5);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9998;
+      transition: all 0.15s ease;
+    }
+
+    /* Hide cursor on hover over interactive elements */
+    a:hover~.cursor-dot,
+    button:hover~.cursor-dot {
+      transform: scale(1.5);
+    }
+
+    a:hover~.cursor-outline,
+    button:hover~.cursor-outline {
+      transform: scale(1.3);
+      border-color: rgba(102, 126, 234, 0.8);
+    }
+
+    /* Enhanced Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--text-light);
+      padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out 0.5s forwards;
+      background: linear-gradient(135deg, var(--accent-color), #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-content .subtitle {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out 1s forwards;
+      font-weight: 300;
+    }
+
+    .hero-content .description {
+      font-size: 1.3rem;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out 1.5s forwards;
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out 2s forwards;
+    }
+
+    .cta-button {
+      background: var(--accent-color);
+      color: var(--text-dark);
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .cta-button.secondary {
+      background: transparent;
+      color: var(--text-light);
+      border: 2px solid var(--text-light);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(255, 215, 0, 0.4);
+    }
+
+    .cta-button.secondary:hover {
+      background: var(--text-light);
+      color: var(--text-dark);
+    }
+
+    /* Scroll Indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s infinite;
+      color: var(--text-light);
+      font-size: 1.5rem;
+    }
+
+    /* Enhanced Main Content */
+    .main-content {
+      background: var(--card-bg-light);
+      margin-top: -100px;
+      border-radius: 30px 30px 0 0;
+      padding: 100px 0 50px;
+      position: relative;
+      z-index: 10;
+      transition: all 0.3s ease;
+    }
+
+    body.dark-theme .main-content {
+      background: var(--card-bg-dark);
+    }
+
+    .section {
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+      position: relative;
+      display: inline-block;
+    }
+
+    body.dark-theme .section-header h2 {
+      color: var(--text-light);
+    }
+
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--accent-color);
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    body.dark-theme .section-subtitle {
+      color: #ccc;
+    }
+
+    /* About Section Enhanced */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-image {
+      text-align: center;
+      position: relative;
+    }
+
+    .profile-card {
+      background: var(--card-bg-light);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: var(--shadow-light);
+      transition: all 0.3s ease;
+    }
+
+    body.dark-theme .profile-card {
+      background: var(--card-bg-dark);
+      box-shadow: var(--shadow-dark);
+    }
+
+    .profile-placeholder {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: var(--primary-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      color: var(--text-light);
+      margin: 0 auto 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-placeholder::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      animation: shimmer 3s infinite;
+    }
+
+    .about-text {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: var(--text-dark);
+    }
+
+    body.dark-theme .about-text {
+      color: var(--text-light);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      40% {
+        transform: translateX(-50%) translateY(-10px);
+      }
+
+      60% {
+        transform: translateX(-50%) translateY(-5px);
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+      }
+
+      100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+      }
+    }
+
+    /* Timeline Styles */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background: var(--accent-color);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+      width: 50%;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      padding-right: 2rem;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      padding-left: 2rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      top: 0;
+    }
+
+    .timeline-item:nth-child(odd)::before {
+      right: -10px;
+    }
+
+    .timeline-item:nth-child(even)::before {
+      left: -10px;
+    }
+
+    .timeline-date {
+      color: var(--accent-color);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-content {
+      background: var(--card-bg-light);
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: var(--shadow-light);
+    }
+
+    body.dark-theme .timeline-content {
+      background: var(--card-bg-dark);
+      box-shadow: var(--shadow-dark);
+    }
+
+    /* Code Showcase Styles */
+    .code-showcase {
+      background: var(--card-bg-light);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-light);
+      margin-bottom: 3rem;
+    }
+
+    body.dark-theme .code-showcase {
+      background: var(--card-bg-dark);
+      box-shadow: var(--shadow-dark);
+    }
+
+    .code-tabs {
+      display: flex;
+      background: var(--secondary-bg-light);
+      border-bottom: 1px solid #ddd;
+    }
+
+    body.dark-theme .code-tabs {
+      background: var(--secondary-bg-dark);
+      border-bottom: 1px solid #444;
+    }
+
+    .code-tab {
+      background: none;
+      border: none;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      color: var(--text-dark);
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    body.dark-theme .code-tab {
+      color: var(--text-light);
+    }
+
+    .code-tab.active {
+      background: var(--accent-color);
+      color: var(--text-dark);
+    }
+
+    .code-content {
+      position: relative;
+    }
+
+    .code-block {
+      display: none;
+      max-height: 500px;
+      overflow-y: auto;
+    }
+
+    .code-block.active {
+      display: block;
+    }
+
+    .code-block pre {
+      margin: 0;
+      padding: 2rem;
+      background: #1e1e1e;
+      color: #d4d4d4;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Technical Stats */
+    .technical-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 2rem;
+      background: var(--card-bg-light);
+      border-radius: 15px;
+      box-shadow: var(--shadow-light);
+      transition: transform 0.3s ease;
+    }
+
+    body.dark-theme .stat-card {
+      background: var(--card-bg-dark);
+      box-shadow: var(--shadow-dark);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-card h3 {
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Contact Styles */
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 3rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-item i {
+      font-size: 1.5rem;
+      color: var(--accent-color);
+      width: 30px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: var(--card-bg-light);
+      border-radius: 15px;
+      color: var(--text-dark);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-light);
+    }
+
+    body.dark-theme .contact-link {
+      background: var(--card-bg-dark);
+      color: var(--text-light);
+      box-shadow: var(--shadow-dark);
+    }
+
+    .contact-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+    }
+
+    .contact-link i {
+      font-size: 1.5rem;
+      color: var(--accent-color);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--text-dark);
+      color: var(--text-light);
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    body.dark-theme .footer {
+      background: #000;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-tech {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer-tech span {
+      background: var(--accent-color);
+      color: var(--text-dark);
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* Page System Styles */
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    /* Education Page Styles */
+    .education-hero {
+      background: var(--primary-gradient);
+      color: var(--text-light);
+      padding: 8rem 0 5rem;
+      text-align: center;
+    }
+
+    body.dark-theme .education-hero {
+      background: var(--dark-gradient);
+    }
+
+    .education-content {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      margin: 4rem 0;
+    }
+
+    .thesis-card {
+      background: var(--card-bg-light);
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: var(--shadow-light);
+      border-left: 5px solid var(--accent-color);
+    }
+
+    body.dark-theme .thesis-card {
+      background: var(--card-bg-dark);
+      box-shadow: var(--shadow-dark);
+    }
+
+    .regulation-topics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .topic-detail {
+      background: var(--card-bg-light);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: var(--shadow-light);
+      transition: transform 0.3s ease;
+    }
+
+    body.dark-theme .topic-detail {
+      background: var(--card-bg-dark);
+      box-shadow: var(--shadow-dark);
+    }
+
+    .topic-detail:hover {
+      transform: translateY(-5px);
+    }
+
+    .education-card {
+      background: var(--card-bg-light);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: var(--shadow-light);
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease;
+    }
+
+    body.dark-theme .education-card {
+      background: var(--card-bg-dark);
+      box-shadow: var(--shadow-dark);
+    }
+
+    .education-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .education-card h3 {
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .education-card h4 {
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+    }
+
+    body.dark-theme .education-card h4 {
+      color: var(--text-light);
+    }
+
+    .education-period {
+      background: var(--accent-color);
+      color: var(--text-dark);
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    /* Code Gallery Styles */
+    .code-gallery-hero {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: var(--text-light);
+      padding: 8rem 0 5rem;
+      text-align: center;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 3rem;
+      margin: 4rem 0;
+    }
+
+    .project-gallery-card {
+      background: var(--card-bg-light);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-light);
+      transition: all 0.3s ease;
+    }
+
+    body.dark-theme .project-gallery-card {
+      background: var(--card-bg-dark);
+      box-shadow: var(--shadow-dark);
+    }
+
+    .project-gallery-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-preview {
+      height: 250px;
+      background: #1e1e1e;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-preview iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      transform: scale(0.8);
+      transform-origin: top left;
+    }
+
+    .code-preview {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 1rem;
+      height: 200px;
+      overflow-y: auto;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 0.8rem;
+      line-height: 1.4;
+    }
+
+    .project-info {
+      padding: 2rem;
+    }
+
+    .project-info h3 {
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    body.dark-theme .project-info h3 {
+      color: var(--text-light);
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+
+    .project-tech {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tech-badge {
+      background: #667eea;
+      color: white;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+    }
+
+    .view-live {
+      background: var(--accent-color);
+      color: var(--text-dark);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .view-live:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+    }
+
+    /* Navigation Pills */
+    .nav-pills {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      padding: 1rem;
+      border-radius: 50px;
+      display: flex;
+      gap: 1rem;
+      z-index: 1000;
+    }
+
+    .nav-pill {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: var(--text-light);
+      padding: 0.5rem 1.5rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    .nav-pill.active {
+      background: var(--accent-color);
+      color: var(--text-dark);
+    }
+
+    .nav-pill:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-content h1 {
+        font-size: 2.8rem;
+      }
+
+      .hero-content .subtitle {
+        font-size: 1.4rem;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        left: 0;
+        padding-left: 3rem;
+        padding-right: 0;
+      }
+
+      .timeline-item::before {
+        left: 10px;
+      }
+
+      .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .education-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .education-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .code-gallery-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .project-preview iframe {
+        transform: scale(0.7);
+      }
+
+      .nav-pills {
+        bottom: 20px;
+        padding: 0.5rem;
+        gap: 0.5rem;
+      }
+
+      .nav-pill {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+      }
+
+      .thesis-card {
+        padding: 2rem;
+      }
+
+      .regulation-topics {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <h1>Marcos Nanini</h1>
-  <p>Economics graduate specialized in energy tariffs, data analysis, and process automation. Also experienced in software development and international freelance projects.</p>
-  
-  <div class="section">
-    <h2>Projects</h2>
-    <ul>
-      <li>ERSeP dashboards and automations (Power BI, Power Apps)</li>
-      <li>Freelance code reviews and software automations (Python, TypeScript, React)</li>
-      <li>Prompt design and code analysis tasks for international clients</li>
-    </ul>
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
+  <!-- Enhanced Header -->
+  <header>
+    <nav class="container">
+      <a href="#home" class="logo" onclick="showPage('home')">MN</a>
+      <ul class="nav-links">
+        <li><a href="#home" class="active" data-en="Home" data-es="Inicio" onclick="showPage('home')">Home</a></li>
+        <li><a href="#about" data-en="About" data-es="Acerca"
+            onclick="showPage('home'); setTimeout(() => document.getElementById('about').scrollIntoView({behavior: 'smooth'}), 100)">About</a>
+        </li>
+        <li><a href="#experience" data-en="Experience" data-es="Experiencia"
+            onclick="showPage('home'); setTimeout(() => document.getElementById('experience').scrollIntoView({behavior: 'smooth'}), 100)">Experience</a>
+        </li>
+        <li><a href="#skills" data-en="Skills" data-es="Habilidades"
+            onclick="showPage('home'); setTimeout(() => document.getElementById('skills').scrollIntoView({behavior: 'smooth'}), 100)">Skills</a>
+        </li>
+        <li><a href="#projects" data-en="Projects" data-es="Proyectos"
+            onclick="showPage('home'); setTimeout(() => document.getElementById('projects').scrollIntoView({behavior: 'smooth'}), 100)">Projects</a>
+        </li>
+        <li><a href="#education" data-en="Education" data-es="Educación" onclick="showPage('education')">Education</a>
+        </li>
+        <li><a href="#code" data-en="Code" data-es="Código" onclick="showPage('code-gallery')">Code</a></li>
+        <li><a href="#contact" data-en="Contact" data-es="Contacto"
+            onclick="showPage('home'); setTimeout(() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'}), 100)">Contact</a>
+        </li>
+      </ul>
+      <div class="header-controls">
+        <button class="theme-toggle" onclick="toggleTheme()">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="lang-toggle" onclick="toggleLanguage()">
+          <span id="lang-text">ES</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Container -->
+  <div id="app">
+    <!-- Home Page -->
+    <div id="home-page" class="page active">
+      <!-- Enhanced Hero Section -->
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <h1>Marcos Nanini</h1>
+          <p class="subtitle" data-en="Economics Graduate & Data Analyst"
+            data-es="Graduado en Economía y Analista de Datos">Economics Graduate & Data Analyst</p>
+          <p class="description"
+            data-en="I build data-driven solutions that transform complex regulatory and economic challenges into actionable insights. Specialized in energy tariffs, automation, and cutting-edge analytics for international clients."
+            data-es="Construyo soluciones basadas en datos que transforman desafíos regulatorios y económicos complejos en insights accionables. Especializado en tarifas energéticas, automatización y análisis avanzado para clientes internacionales.">
+            I build data-driven solutions that transform complex regulatory and economic challenges into actionable
+            insights. Specialized in energy tariffs, automation, and cutting-edge analytics for international clients.
+          </p>
+          <div class="cta-buttons">
+            <a href="#about" class="cta-button" data-en="Explore My Work" data-es="Explorar Mi Trabajo">
+              <i class="fas fa-rocket"></i>
+              <span>Explore My Work</span>
+            </a>
+            <a href="#contact" class="cta-button secondary" data-en="Get In Touch" data-es="Contactar">
+              <i class="fas fa-envelope"></i>
+              <span>Get In Touch</span>
+            </a>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </section>
+
+      <!-- Enhanced Main Content -->
+      <div class="main-content">
+        <!-- About Section -->
+        <section id="about" class="section">
+          <div class="container">
+            <div class="section-header">
+              <h2 data-en="About Me" data-es="Acerca de Mí">About Me</h2>
+              <p class="section-subtitle"
+                data-en="Passionate about transforming data into meaningful insights and building solutions that make a difference."
+                data-es="Apasionado por transformar datos en insights significativos y construir soluciones que marquen la diferencia.">
+                Passionate about transforming data into meaningful insights and building solutions that make a
+                difference.
+              </p>
+            </div>
+            <div class="about-grid">
+              <div class="about-image">
+                <div class="profile-card">
+                  <div class="profile-placeholder">
+                    <i class="fas fa-user"></i>
+                  </div>
+                  <h3 data-en="Always Learning" data-es="Siempre Aprendiendo">Always Learning</h3>
+                  <p data-en="Constantly exploring new technologies and methodologies to stay at the forefront of data science and economics."
+                    data-es="Explorando constantemente nuevas tecnologías y metodologías para mantenerse a la vanguardia de la ciencia de datos y economía.">
+                    Constantly exploring new technologies and methodologies to stay at the forefront of data science and
+                    economics.
+                  </p>
+                </div>
+              </div>
+              <div class="about-text">
+                <p data-en="I'm an Economics graduate with a passion for data-driven decision making and process automation. My journey spans from traditional economic analysis to cutting-edge technology implementations, always focused on creating value through innovative solutions."
+                  data-es="Soy un graduado en Economía con pasión por la toma de decisiones basada en datos y la automatización de procesos. Mi trayectoria abarca desde análisis económico tradicional hasta implementaciones tecnológicas de vanguardia, siempre enfocado en crear valor a través de soluciones innovadoras.">
+                  I'm an Economics graduate with a passion for data-driven decision making and process automation. My
+                  journey spans from traditional economic analysis to cutting-edge technology implementations, always
+                  focused on creating value through innovative solutions.
+                </p>
+                <br>
+                <p data-en="Currently working as a Cost and Tariff Analyst at ERSeP while simultaneously managing international freelance projects that involve complex software development, data analysis, and regulatory compliance. This dual experience gives me a unique perspective on both theoretical economics and practical technology implementation."
+                  data-es="Actualmente trabajo como Analista de Costos y Tarifas en ERSeP mientras gestiono simultáneamente proyectos freelance internacionales que involucran desarrollo de software complejo, análisis de datos y cumplimiento regulatorio. Esta experiencia dual me da una perspectiva única tanto en economía teórica como en implementación tecnológica práctica.">
+                  Currently working as a Cost and Tariff Analyst at ERSeP while simultaneously managing international
+                  freelance projects that involve complex software development, data analysis, and regulatory
+                  compliance.
+                  This dual experience gives me a unique perspective on both theoretical economics and practical
+                  technology
+                  implementation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+          <div class="container">
+            <h2 data-en="Professional Experience" data-es="Experiencia Profesional">Professional Experience</h2>
+
+            <div class="experience-item">
+              <h3 data-en="Cost and Tariff Analyst" data-es="Analista de Costos y Tarifas">Cost and Tariff Analyst</h3>
+              <div class="company" data-en="Public Services Regulatory Agency (ERSeP), Córdoba, Argentina"
+                data-es="Ente Regulador de Servicios Públicos (ERSeP), Córdoba, Argentina">Public Services Regulatory
+                Agency
+                (ERSeP), Córdoba, Argentina</div>
+              <div class="period">2022 – Present</div>
+              <ul>
+                <li
+                  data-en="Coordinator of ERSeP's Data Observatory: Developed interactive dashboards using Power BI, generating statistical reports for HR management, process analysis, request statuses, and regulatory monthly and annual summaries."
+                  data-es="Coordinador del Observatorio de Datos de ERSeP: Desarrollé dashboards interactivos usando Power BI, generando reportes estadísticos para gestión de RRHH, análisis de procesos, estados de solicitudes y resúmenes regulatorios mensuales y anuales.">
+                  Coordinator of ERSeP's Data Observatory: Developed interactive dashboards using Power BI, generating
+                  statistical reports for HR management, process analysis, request statuses, and regulatory monthly and
+                  annual summaries.</li>
+                <li data-en="Designed and automated tariff calculation models with Excel (advanced macros)."
+                  data-es="Diseñé y automaticé modelos de cálculo tarifario con Excel (macros avanzadas).">Designed and
+                  automated tariff calculation models with Excel (advanced macros).</li>
+                <li
+                  data-en="Built and maintained apps for digitizing field reports using Power Apps and Power Automate."
+                  data-es="Construí y mantuve aplicaciones para digitalizar reportes de campo usando Power Apps y Power Automate.">
+                  Built and maintained apps for digitizing field reports using Power Apps and Power Automate.</li>
+                <li data-en="Conducted technical energy tariff calculations for cooperatives."
+                  data-es="Realicé cálculos técnicos de tarifas energéticas para cooperativas.">Conducted technical
+                  energy
+                  tariff calculations for cooperatives.</li>
+              </ul>
+            </div>
+
+            <div class="experience-item">
+              <h3 data-en="Freelance Software and Data Analyst" data-es="Analista de Software y Datos Freelance">
+                Freelance
+                Software and Data Analyst</h3>
+              <div class="company" data-en="Remote" data-es="Remoto">Remote</div>
+              <div class="period">2024 – Present</div>
+              <ul>
+                <li
+                  data-en="Worked on international projects involving code review, prompt design, software automation, and advanced data analysis."
+                  data-es="Trabajé en proyectos internacionales que involucran revisión de código, diseño de prompts, automatización de software y análisis avanzado de datos.">
+                  Worked on international projects involving code review, prompt design, software automation, and
+                  advanced
+                  data analysis.</li>
+                <li data-en="Provided custom dashboards, data models, and automated tools for private clients."
+                  data-es="Proporcioné dashboards personalizados, modelos de datos y herramientas automatizadas para clientes privados.">
+                  Provided custom dashboards, data models, and automated tools for private clients.</li>
+                <li
+                  data-en="Technologies used: Python, TypeScript, React, Next.js, Tailwind CSS, JSON, GitHub Actions, Power BI, Power Apps, Power Automate, SQL."
+                  data-es="Tecnologías utilizadas: Python, TypeScript, React, Next.js, Tailwind CSS, JSON, GitHub Actions, Power BI, Power Apps, Power Automate, SQL.">
+                  Technologies used: Python, TypeScript, React, Next.js, Tailwind CSS, JSON, GitHub Actions, Power BI,
+                  Power
+                  Apps, Power Automate, SQL.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+          <div class="container">
+            <h2 data-en="Technical Skills" data-es="Habilidades Técnicas">Technical Skills</h2>
+            <div class="skills-grid">
+              <div class="skill-category">
+                <i class="fas fa-code"></i>
+                <h3 data-en="Programming" data-es="Programación">Programming</h3>
+                <ul class="skills-list">
+                  <li>Python</li>
+                  <li>TypeScript</li>
+                  <li>SQL</li>
+                  <li>JavaScript</li>
+                </ul>
+              </div>
+              <div class="skill-category">
+                <i class="fas fa-globe"></i>
+                <h3 data-en="Web Development" data-es="Desarrollo Web">Web Development</h3>
+                <ul class="skills-list">
+                  <li>React</li>
+                  <li>Next.js</li>
+                  <li>Tailwind CSS</li>
+                  <li>HTML/CSS</li>
+                </ul>
+              </div>
+              <div class="skill-category">
+                <i class="fas fa-chart-bar"></i>
+                <h3 data-en="Data & Analytics" data-es="Datos y Análisis">Data & Analytics</h3>
+                <ul class="skills-list">
+                  <li>Power BI</li>
+                  <li>Power Apps</li>
+                  <li>Power Automate</li>
+                  <li>Excel Advanced</li>
+                </ul>
+              </div>
+              <div class="skill-category">
+                <i class="fas fa-language"></i>
+                <h3 data-en="Languages" data-es="Idiomas">Languages</h3>
+                <ul class="skills-list">
+                  <li data-en="Spanish (Native)" data-es="Español (Nativo)">Spanish (Native)</li>
+                  <li data-en="English (B1+)" data-es="Inglés (B1+)">English (B1+)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects Gallery -->
+        <section id="projects" class="section">
+          <div class="container">
+            <h2 data-en="Featured Projects" data-es="Proyectos Destacados">Featured Projects</h2>
+            <div class="projects-grid">
+              <div class="project-card">
+                <div class="project-image">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="project-content">
+                  <h3 data-en="ERSeP Data Observatory" data-es="Observatorio de Datos ERSeP">ERSeP Data Observatory</h3>
+                  <p data-en="Interactive dashboards and statistical reports for regulatory management using Power BI."
+                    data-es="Dashboards interactivos y reportes estadísticos para gestión regulatoria usando Power BI.">
+                    Interactive dashboards and statistical reports for regulatory management using Power BI.</p>
+                  <div class="project-tags">
+                    <span class="tag">Power BI</span>
+                    <span class="tag">Power Query</span>
+                    <span class="tag">Dashboard</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <div class="project-image">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="project-content">
+                  <h3 data-en="Field Report Digitization" data-es="Digitalización de Reportes de Campo">Field Report
+                    Digitization</h3>
+                  <p data-en="Mobile app for digitizing field inspection reports using Power Apps and Power Automate."
+                    data-es="Aplicación móvil para digitalizar reportes de inspección de campo usando Power Apps y Power Automate.">
+                    Mobile app for digitizing field inspection reports using Power Apps and Power Automate.</p>
+                  <div class="project-tags">
+                    <span class="tag">Power Apps</span>
+                    <span class="tag">Power Automate</span>
+                    <span class="tag">Mobile</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <div class="project-image">
+                  <i class="fas fa-calculator"></i>
+                </div>
+                <div class="project-content">
+                  <h3 data-en="Tariff Calculation Models" data-es="Modelos de Cálculo Tarifario">Tariff Calculation
+                    Models
+                  </h3>
+                  <p data-en="Automated energy tariff calculation models for electricity cooperatives using advanced Excel macros."
+                    data-es="Modelos automatizados de cálculo tarifario energético para cooperativas eléctricas usando macros avanzadas de Excel.">
+                    Automated energy tariff calculation models for electricity cooperatives using advanced Excel macros.
+                  </p>
+                  <div class="project-tags">
+                    <span class="tag">Excel</span>
+                    <span class="tag">VBA</span>
+                    <span class="tag">Automation</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <div class="project-image">
+                  <i class="fas fa-code-branch"></i>
+                </div>
+                <div class="project-content">
+                  <h3 data-en="Freelance Development Projects" data-es="Proyectos de Desarrollo Freelance">Freelance
+                    Development Projects</h3>
+                  <p data-en="International code review, prompt design, and software automation projects for various clients."
+                    data-es="Proyectos internacionales de revisión de código, diseño de prompts y automatización de software para varios clientes.">
+                    International code review, prompt design, and software automation projects for various clients.</p>
+                  <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">React</span>
+                    <span class="tag">Next.js</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+          <div class="container">
+            <h2 data-en="Get In Touch" data-es="Ponte en Contacto">Get In Touch</h2>
+            <p data-en="I'm always open to discussing new opportunities and interesting projects."
+              data-es="Siempre estoy abierto a discutir nuevas oportunidades y proyectos interesantes.">I'm always open
+              to
+              discussing new opportunities and interesting projects.</p>
+            <div class="contact-links">
+              <a href="https://github.com/naninimarcos" class="contact-link" target="_blank">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/marcosnanini/" class="contact-link" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="mailto:marcosnanini07@gmail.com" class="contact-link">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <div class="container">
+          <p data-en="© 2024 Marcos Nanini. All rights reserved."
+            data-es="© 2024 Marcos Nanini. Todos los derechos reservados.">© 2024 Marcos Nanini. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Education Page -->
+    <div id="education-page" class="page">
+      <div class="education-hero">
+        <div class="container">
+          <h1 data-en="Education & Regulatory Expertise" data-es="Educación y Experiencia Regulatoria">Education &
+            Regulatory Expertise</h1>
+          <p data-en="Academic foundation and specialized knowledge in regulatory economics, energy policy, and tariff analysis."
+            data-es="Fundación académica y conocimiento especializado en economía regulatoria, política energética y análisis tarifario.">
+            Academic foundation and specialized knowledge in regulatory economics, energy policy, and tariff analysis.
+          </p>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="container">
+          <div class="education-content">
+            <div class="thesis-card">
+              <h2 data-en="Master's Thesis" data-es="Tesis de Licenciatura">Master's Thesis</h2>
+              <h3 data-en="Calculation of Technical Tariffs for Electricity Cooperatives in Córdoba Province"
+                data-es="Cálculo de Tarifas Técnicas para Cooperativas Eléctricas en la Provincia de Córdoba">
+                Calculation of Technical Tariffs for Electricity Cooperatives in Córdoba Province
+              </h3>
+              <p data-en="This comprehensive research project addresses the complex challenge of developing fair and sustainable electricity tariff structures for cooperative distribution companies in Córdoba Province."
+                data-es="Este proyecto de investigación integral aborda el desafío complejo de desarrollar estructuras tarifarias eléctricas justas y sostenibles para empresas distribuidoras cooperativas en la Provincia de Córdoba.">
+                This comprehensive research project addresses the complex challenge of developing fair and sustainable
+                electricity tariff structures for cooperative distribution companies in Córdoba Province.
+              </p>
+            </div>
+
+            <div class="education-details">
+              <h2 data-en="Academic Background" data-es="Antecedentes Académicos">Academic Background</h2>
+
+              <div class="education-card">
+                <h3 data-en="Bachelor's in Economics" data-es="Licenciatura en Economía">Bachelor's in Economics</h3>
+                <h4 data-en="National University of Córdoba" data-es="Universidad Nacional de Córdoba">National
+                  University of Córdoba</h4>
+                <span class="education-period">2019 — 2025</span>
+                <p data-en="Comprehensive economics program with emphasis on regulatory economics and quantitative methods."
+                  data-es="Programa integral de economía con énfasis en economía regulatoria y métodos cuantitativos.">
+                  Comprehensive economics program with emphasis on regulatory economics and quantitative methods.
+                </p>
+              </div>
+
+              <div class="education-card">
+                <h3 data-en="Electricity Tariff Design Diploma" data-es="Diploma en Diseño de Tarifas Eléctricas">
+                  Electricity Tariff Design Diploma</h3>
+                <h4 data-en="National University of San Juan" data-es="Universidad Nacional de San Juan">National
+                  University of San Juan</h4>
+                <span class="education-period">2024</span>
+                <p data-en="Advanced specialization in electricity tariff calculation and regulatory compliance."
+                  data-es="Especialización avanzada en cálculo de tarifas eléctricas y cumplimiento regulatorio.">
+                  Advanced specialization in electricity tariff calculation and regulatory compliance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Code Gallery Page -->
+    <div id="code-gallery-page" class="page">
+      <div class="code-gallery-hero">
+        <div class="container">
+          <h1 data-en="Code Gallery & Live Projects" data-es="Galería de Código y Proyectos en Vivo">Code Gallery & Live
+            Projects</h1>
+          <p data-en="Interactive showcase of development projects spanning data analysis, web applications, and automation tools."
+            data-es="Escaparate interactivo de proyectos de desarrollo que abarcan análisis de datos, aplicaciones web y herramientas de automatización.">
+            Interactive showcase of development projects spanning data analysis, web applications, and automation tools.
+          </p>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="container">
+          <div class="gallery-grid">
+            <!-- Video Transcription Tool -->
+            <div class="project-gallery-card">
+              <div class="code-preview">
+                <pre><code># Turkish Video Transcription Tool
+import speech_recognition as sr
+from pydub import AudioSegment
+import moviepy.editor as mp
+
+def extract_audio_from_video(video_file):
+    """Extracts audio from video for transcription"""
+    video = mp.VideoFileClip(video_file)
+    audio_file = video_file.replace('.mp4', '.wav')
+    video.audio.write_audiofile(audio_file)
+    return audio_file
+
+def transcribe_audio(audio_file):
+    """Transcribes Turkish speech using offline recognition"""
+    r = sr.Recognizer()
+    audio = AudioSegment.from_wav(audio_file)
+    chunks = make_chunks(audio, 5000)  # 5-second chunks
+    
+    transcription = ""
+    for i, chunk in enumerate(chunks):
+        chunk_file = f"chunk{i}.wav"
+        chunk.export(chunk_file, format="wav")
+        
+        with sr.AudioFile(chunk_file) as source:
+            audio_data = r.record(source)
+            text = r.recognize_sphinx(audio_data, language="tr-TR")
+            transcription += text + " "
+    
+    return transcription</code></pre>
+              </div>
+              <div class="project-info">
+                <h3 data-en="Video Transcription Tool" data-es="Herramienta de Transcripción">Video Transcription Tool
+                </h3>
+                <p data-en="Offline Turkish speech recognition system for video transcription."
+                  data-es="Sistema de reconocimiento de voz turca offline para transcripción de video.">
+                  Offline Turkish speech recognition system for video transcription.
+                </p>
+                <div class="project-meta">
+                  <div class="project-tech">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">MoviePy</span>
+                    <span class="tech-badge">SpeechRecognition</span>
+                  </div>
+                  <a href="#" class="view-live" data-en="View Code" data-es="Ver Código">View Code</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ball Collision Physics -->
+            <div class="project-gallery-card">
+              <div class="project-preview">
+                <iframe srcdoc='<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+<style>body{margin:0;background:#1a1a1a;}</style>
+</head>
+<body>
+<script>
+let balls=[];
+function setup(){createCanvas(400,300);for(let i=0;i<6;i++){balls.push({x:random(20,width-20),y:random(20,height-20),vx:random(-3,3),vy:random(-3,3),r:random(10,25),color:[random(100,255),random(100,255),random(100,255)]});}}
+function draw(){background(26);balls.forEach(ball=>{ball.x+=ball.vx;ball.y+=ball.vy;if(ball.x<ball.r||ball.x>width-ball.r)ball.vx*=-1;if(ball.y<ball.r||ball.y>height-ball.r)ball.vy*=-1;fill(ball.color);circle(ball.x,ball.y,ball.r*2);});}
+</script>
+</body>
+</html>'></iframe>
+              </div>
+              <div class="project-info">
+                <h3 data-en="Physics Simulation" data-es="Simulación Física">Physics Simulation</h3>
+                <p data-en="Real-time ball collision simulation with realistic physics."
+                  data-es="Simulación de colisión de pelotas en tiempo real con física realista.">
+                  Real-time ball collision simulation with realistic physics.
+                </p>
+                <div class="project-meta">
+                  <div class="project-tech">
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">P5.js</span>
+                    <span class="tech-badge">Physics</span>
+                  </div>
+                  <a href="#" class="view-live" data-en="View Live" data-es="Ver en Vivo">View Live</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Type Racer -->
+            <div class="project-gallery-card">
+              <div class="project-preview">
+                <iframe srcdoc='<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{background:#2c3e50;color:white;font-family:Arial;padding:10px;font-size:12px;}
+.container{max-width:100%;text-align:center;}
+.text-display{background:#34495e;padding:10px;border-radius:5px;margin:10px 0;font-size:14px;}
+input{width:100%;padding:8px;font-size:12px;border:none;border-radius:3px;margin:5px 0;}
+.stats{display:flex;justify-content:space-around;margin:10px 0;font-size:10px;}
+</style>
+</head>
+<body>
+<div class="container">
+<h3>Type Racer</h3>
+<div class="text-display">The quick brown fox</div>
+<input type="text" placeholder="Start typing...">
+<div class="stats">
+<div><div>WPM</div><div>45</div></div>
+<div><div>Accuracy</div><div>98%</div></div>
+<div><div>Time</div><div>30s</div></div>
+</div>
+</div>
+</body>
+</html>'></iframe>
+              </div>
+              <div class="project-info">
+                <h3 data-en="Type Racer Game" data-es="Juego Type Racer">Type Racer Game</h3>
+                <p data-en="Interactive typing speed game with real-time WPM tracking."
+                  data-es="Juego interactivo de velocidad de escritura con seguimiento de WPM en tiempo real.">
+                  Interactive typing speed game with real-time WPM tracking.
+                </p>
+                <div class="project-meta">
+                  <div class="project-tech">
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">TypeScript</span>
+                    <span class="tech-badge">Game</span>
+                  </div>
+                  <a href="#" class="view-live" data-en="Play Game" data-es="Jugar">Play Game</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Pills -->
+    <div class="nav-pills">
+      <button class="nav-pill active" onclick="showPage('home')" data-en="Portfolio"
+        data-es="Portafolio">Portfolio</button>
+      <button class="nav-pill" onclick="showPage('education')" data-en="Education"
+        data-es="Educación">Education</button>
+      <button class="nav-pill" onclick="showPage('code-gallery')" data-en="Code Gallery" data-es="Galería">Code
+        Gallery</button>
+    </div>
   </div>
 
-  <div class="section">
-    <h2>Links</h2>
-    <p>
-      <a href="https://github.com/naninimarcos">GitHub</a> |
-      <a href="https://www.linkedin.com/in/marcosnanini/">LinkedIn</a> |
-      <a href="mailto:marcosnanini07@gmail.com">Email me</a>
-    </p>
-  </div>
+  <script>
+    // Theme and Language Management
+    let isSpanish = false;
+    let isDarkTheme = false;
+
+    function toggleTheme() {
+      isDarkTheme = !isDarkTheme;
+      document.body.classList.toggle('dark-theme');
+      const themeIcon = document.querySelector('.theme-toggle i');
+      themeIcon.className = isDarkTheme ? 'fas fa-sun' : 'fas fa-moon';
+      localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+    }
+
+    function toggleLanguage() {
+      isSpanish = !isSpanish;
+      const elements = document.querySelectorAll('[data-en][data-es]');
+      const langText = document.getElementById('lang-text');
+
+      elements.forEach(element => {
+        if (isSpanish) {
+          element.textContent = element.getAttribute('data-es');
+        } else {
+          element.textContent = element.getAttribute('data-en');
+        }
+      });
+
+      langText.textContent = isSpanish ? 'EN' : 'ES';
+      document.documentElement.lang = isSpanish ? 'es' : 'en';
+      localStorage.setItem('language', isSpanish ? 'es' : 'en');
+    }
+
+    // Custom Cursor
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
+
+    window.addEventListener('mousemove', (e) => {
+      const posX = e.clientX;
+      const posY = e.clientY;
+
+      cursorDot.style.left = `${posX}px`;
+      cursorDot.style.top = `${posY}px`;
+
+      cursorOutline.style.left = `${posX}px`;
+      cursorOutline.style.top = `${posY}px`;
+    });
+
+    // Enhanced Navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+
+          // Update active navigation
+          document.querySelectorAll('.nav-links a').forEach(link => {
+            link.classList.remove('active');
+          });
+          this.classList.add('active');
+        }
+      });
+    });
+
+    // Scroll Effects
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('header');
+      const scrolled = window.scrollY > 100;
+
+      if (scrolled) {
+        header.style.background = isDarkTheme ? 'rgba(0, 0, 0, 0.9)' : 'rgba(255, 255, 255, 0.9)';
+        header.style.backdropFilter = 'blur(20px)';
+      } else {
+        header.style.background = 'rgba(255, 255, 255, 0.1)';
+        header.style.backdropFilter = 'blur(20px)';
+      }
+
+      updateActiveNavigation();
+    });
+
+    // Code Tab Functionality
+    function initCodeTabs() {
+      const codeTabs = document.querySelectorAll('.code-tab');
+      const codeBlocks = document.querySelectorAll('.code-block');
+
+      codeTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const lang = tab.getAttribute('data-lang');
+
+          // Remove active class from all tabs and blocks
+          codeTabs.forEach(t => t.classList.remove('active'));
+          codeBlocks.forEach(block => block.classList.remove('active'));
+
+          // Add active class to clicked tab and corresponding block
+          tab.classList.add('active');
+          document.getElementById(lang + '-code').classList.add('active');
+        });
+      });
+    }
+
+    // Intersection Observer for animations
+    function initScrollAnimations() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Observe all sections
+      document.querySelectorAll('.section').forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(30px)';
+        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(section);
+      });
+    }
+
+    // Enhanced navigation highlighting
+    function updateActiveNavigation() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+      let current = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop <= 100) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    // Page Navigation System
+    function showPage(pageId) {
+      // Hide all pages
+      document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+      });
+
+      // Show selected page
+      const targetPage = document.getElementById(pageId + '-page') || document.getElementById('home-page');
+      targetPage.classList.add('active');
+
+      // Update navigation pills
+      document.querySelectorAll('.nav-pill').forEach(pill => {
+        pill.classList.remove('active');
+      });
+
+      // Find and activate corresponding pill
+      const pillMap = {
+        'home': 0,
+        'education': 1,
+        'code-gallery': 2
+      };
+
+      const pillIndex = pillMap[pageId] !== undefined ? pillMap[pageId] : 0;
+      const pills = document.querySelectorAll('.nav-pill');
+      if (pills[pillIndex]) {
+        pills[pillIndex].classList.add('active');
+      }
+
+      // Scroll to top when changing pages
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Update navigation links active state
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.classList.remove('active');
+      });
+
+      // Set appropriate nav link as active based on page
+      if (pageId === 'home') {
+        document.querySelector('.nav-links a[onclick*="showPage(\'home\')"]')?.classList.add('active');
+      } else if (pageId === 'education') {
+        document.querySelector('.nav-links a[onclick*="showPage(\'education\')"]')?.classList.add('active');
+      } else if (pageId === 'code-gallery') {
+        document.querySelector('.nav-links a[onclick*="showPage(\'code-gallery\')"]')?.classList.add('active');
+      }
+    }
+
+    // Initialize theme and language from localStorage
+    window.addEventListener('load', function () {
+      const savedTheme = localStorage.getItem('theme');
+      const savedLanguage = localStorage.getItem('language');
+
+      if (savedTheme === 'dark') {
+        toggleTheme();
+      }
+
+      if (savedLanguage === 'es') {
+        toggleLanguage();
+      }
+
+      initCodeTabs();
+      initScrollAnimations();
+      updateActiveNavigation();
+
+      // Initialize with home page
+      showPage('home');
+    });
+  </script>
 </body>
+
 </html>
