@@ -816,6 +816,224 @@
       margin-bottom: 1rem;
     }
 
+    /* Enhanced Thesis Section */
+    .thesis-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .thesis-header i {
+      font-size: 2rem;
+      color: var(--accent-color);
+    }
+
+    .thesis-highlights {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 215, 0, 0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+    }
+
+    body.dark-theme .highlight-item {
+      background: rgba(255, 215, 0, 0.2);
+      color: var(--text-light);
+    }
+
+    .highlight-item i {
+      color: var(--accent-color);
+    }
+
+    /* Presentation Section */
+    .presentation-card {
+      background: var(--card-bg-light);
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: var(--shadow-light);
+      border-left: 5px solid #667eea;
+      margin: 2rem 0;
+    }
+
+    body.dark-theme .presentation-card {
+      background: var(--card-bg-dark);
+      box-shadow: var(--shadow-dark);
+    }
+
+    .presentation-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .presentation-header i {
+      font-size: 2rem;
+      color: #667eea;
+    }
+
+    .presentation-placeholder {
+      background: rgba(102, 126, 234, 0.1);
+      border: 2px dashed #667eea;
+      border-radius: 15px;
+      padding: 3rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .presentation-placeholder i {
+      font-size: 3rem;
+      color: #667eea;
+      margin-bottom: 1rem;
+    }
+
+    /* Energy Tariff Knowledge Section */
+    .tariff-knowledge {
+      background: var(--card-bg-light);
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: var(--shadow-light);
+      border-left: 5px solid #28a745;
+      margin: 2rem 0;
+    }
+
+    body.dark-theme .tariff-knowledge {
+      background: var(--card-bg-dark);
+      box-shadow: var(--shadow-dark);
+    }
+
+    .tariff-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .tariff-header i {
+      font-size: 2rem;
+      color: #28a745;
+    }
+
+    .tariff-concepts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .concept-card {
+      background: rgba(255, 255, 255, 0.5);
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    body.dark-theme .concept-card {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .concept-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .concept-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(40, 167, 69, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+
+    .concept-icon i {
+      font-size: 1.5rem;
+      color: #28a745;
+    }
+
+    .concept-card h4 {
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
+    /* Tariff Chart Visualization */
+    .tariff-visual {
+      margin-top: 3rem;
+    }
+
+    .tariff-chart {
+      background: rgba(255, 255, 255, 0.5);
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    body.dark-theme .tariff-chart {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .chart-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .chart-segment {
+      padding: 1.5rem;
+      border-radius: 10px;
+      color: white;
+      text-align: center;
+      min-width: 120px;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .chart-segment:hover {
+      transform: scale(1.05);
+    }
+
+    .chart-segment.generation {
+      background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    }
+
+    .chart-segment.transmission {
+      background: linear-gradient(135deg, #4834d4, #686de0);
+    }
+
+    .chart-segment.distribution {
+      background: linear-gradient(135deg, #00d2d3, #01a3a4);
+    }
+
+    .chart-segment.taxes {
+      background: linear-gradient(135deg, #ffa726, #ff9800);
+    }
+
+    .segment-label {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .chart-segment span {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
     /* Code Gallery Styles */
     .code-gallery-hero {
       background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
@@ -909,7 +1127,8 @@
       font-size: 0.8rem;
     }
 
-    .view-live {
+    .view-live,
+    .view-code {
       background: var(--accent-color);
       color: var(--text-dark);
       padding: 0.5rem 1rem;
@@ -917,11 +1136,30 @@
       text-decoration: none;
       font-weight: 500;
       transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
     }
 
-    .view-live:hover {
+    .view-code {
+      background: var(--primary-accent);
+      color: var(--text-light);
+    }
+
+    .view-live:hover,
+    .view-code:hover {
       transform: translateY(-2px);
       box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+    }
+
+    .view-code:hover {
+      box-shadow: 0 5px 15px rgba(31, 66, 135, 0.4);
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
     }
 
     /* Navigation Pills */
@@ -1049,6 +1287,135 @@
         grid-template-columns: 1fr;
         gap: 1rem;
       }
+
+      .thesis-highlights {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .presentation-card,
+      .tariff-knowledge {
+        padding: 2rem;
+        margin: 1rem 0;
+      }
+
+      .tariff-concepts {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .chart-container {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .chart-segment {
+        min-width: 100px;
+      }
+    }
+
+    /* Code Modal Styles */
+    .code-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+    }
+
+    .code-modal-content {
+      background: var(--bg-color);
+      border-radius: 12px;
+      width: 90%;
+      max-width: 900px;
+      max-height: 80vh;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .code-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .code-modal-header h3 {
+      margin: 0;
+      color: var(--text-color);
+    }
+
+    .close-modal-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--text-color);
+      padding: 5px;
+      border-radius: 50%;
+      transition: background 0.3s ease;
+    }
+
+    .close-modal-btn:hover {
+      background: var(--accent-color);
+    }
+
+    .code-modal-body {
+      padding: 20px;
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+
+    .code-modal-body pre {
+      background: var(--bg-dark);
+      border-radius: 8px;
+      padding: 20px;
+      overflow-x: auto;
+      font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-color);
+    }
+
+    .code-modal-footer {
+      display: flex;
+      gap: 10px;
+      padding: 20px;
+      border-top: 1px solid var(--border-color);
+      justify-content: flex-end;
+    }
+
+    .copy-code-btn,
+    .close-code-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .copy-code-btn {
+      background: var(--accent-color);
+      color: var(--text-dark);
+    }
+
+    .close-code-btn {
+      background: transparent;
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+    }
+
+    .copy-code-btn:hover,
+    .close-code-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
@@ -1401,15 +1768,15 @@
       </footer>
     </div>
 
-    <!-- Education Page -->
-    <div id="education-page" class="page">
+    <!-- Courses Page -->
+    <div id="courses-page" class="page">
       <div class="education-hero">
         <div class="container">
-          <h1 data-en="Education & Regulatory Expertise" data-es="Educación y Experiencia Regulatoria">Education &
-            Regulatory Expertise</h1>
-          <p data-en="Academic foundation and specialized knowledge in regulatory economics, energy policy, and tariff analysis."
-            data-es="Fundación académica y conocimiento especializado en economía regulatoria, política energética y análisis tarifario.">
-            Academic foundation and specialized knowledge in regulatory economics, energy policy, and tariff analysis.
+          <h1 data-en="Courses & Academic Excellence" data-es="Cursos y Excelencia Académica">Courses & Academic
+            Excellence</h1>
+          <p data-en="Advanced coursework, research thesis, and specialized training in regulatory economics and energy policy."
+            data-es="Cursos avanzados, tesis de investigación y capacitación especializada en economía regulatoria y política energética.">
+            Advanced coursework, research thesis, and specialized training in regulatory economics and energy policy.
           </p>
         </div>
       </div>
@@ -1417,8 +1784,12 @@
       <div class="main-content">
         <div class="container">
           <div class="education-content">
+            <!-- Thesis Section -->
             <div class="thesis-card">
-              <h2 data-en="Master's Thesis" data-es="Tesis de Licenciatura">Master's Thesis</h2>
+              <div class="thesis-header">
+                <i class="fas fa-graduation-cap"></i>
+                <h2 data-en="Master's Thesis" data-es="Tesis de Licenciatura">Master's Thesis</h2>
+              </div>
               <h3 data-en="Calculation of Technical Tariffs for Electricity Cooperatives in Córdoba Province"
                 data-es="Cálculo de Tarifas Técnicas para Cooperativas Eléctricas en la Provincia de Córdoba">
                 Calculation of Technical Tariffs for Electricity Cooperatives in Córdoba Province
@@ -1428,8 +1799,43 @@
                 This comprehensive research project addresses the complex challenge of developing fair and sustainable
                 electricity tariff structures for cooperative distribution companies in Córdoba Province.
               </p>
+              <div class="thesis-highlights">
+                <div class="highlight-item">
+                  <i class="fas fa-chart-line"></i>
+                  <span data-en="Economic Analysis" data-es="Análisis Económico">Economic Analysis</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-bolt"></i>
+                  <span data-en="Energy Policy" data-es="Política Energética">Energy Policy</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-calculator"></i>
+                  <span data-en="Tariff Calculation" data-es="Cálculo Tarifario">Tariff Calculation</span>
+                </div>
+              </div>
             </div>
 
+            <!-- Presentation Section -->
+            <div class="presentation-card">
+              <div class="presentation-header">
+                <i class="fas fa-presentation"></i>
+                <h2 data-en="Thesis Presentation" data-es="Presentación de Tesis">Thesis Presentation</h2>
+              </div>
+              <p data-en="Comprehensive presentation showcasing the research methodology, findings, and recommendations for implementing technical tariffs in cooperative electricity distribution."
+                data-es="Presentación integral que muestra la metodología de investigación, hallazgos y recomendaciones para implementar tarifas técnicas en distribución eléctrica cooperativa.">
+                Comprehensive presentation showcasing the research methodology, findings, and recommendations for
+                implementing technical tariffs in cooperative electricity distribution.
+              </p>
+              <div class="presentation-placeholder">
+                <i class="fas fa-file-powerpoint"></i>
+                <p data-en="Presentation slides will be uploaded here"
+                  data-es="Las diapositivas de la presentación se subirán aquí">
+                  Presentation slides will be uploaded here
+                </p>
+              </div>
+            </div>
+
+            <!-- Academic Background -->
             <div class="education-details">
               <h2 data-en="Academic Background" data-es="Antecedentes Académicos">Academic Background</h2>
 
@@ -1456,6 +1862,83 @@
                 </p>
               </div>
             </div>
+
+            <!-- Energy Tariff Knowledge Section -->
+            <div class="tariff-knowledge">
+              <div class="tariff-header">
+                <i class="fas fa-lightbulb"></i>
+                <h2 data-en="Energy Tariff Expertise" data-es="Expertise en Tarifas Energéticas">Energy Tariff Expertise
+                </h2>
+              </div>
+              <p data-en="Deep understanding of electricity tariff structures, regulatory frameworks, and economic principles governing energy pricing."
+                data-es="Profundo entendimiento de estructuras tarifarias eléctricas, marcos regulatorios y principios económicos que rigen los precios de energía.">
+                Deep understanding of electricity tariff structures, regulatory frameworks, and economic principles
+                governing energy pricing.
+              </p>
+
+              <div class="tariff-concepts">
+                <div class="concept-card">
+                  <div class="concept-icon">
+                    <i class="fas fa-cogs"></i>
+                  </div>
+                  <h4 data-en="Technical Tariffs" data-es="Tarifas Técnicas">Technical Tariffs</h4>
+                  <p data-en="Cost-based pricing reflecting actual distribution expenses, operational costs, and infrastructure investments."
+                    data-es="Precios basados en costos que reflejan gastos reales de distribución, costos operativos e inversiones en infraestructura.">
+                    Cost-based pricing reflecting actual distribution expenses, operational costs, and infrastructure
+                    investments.
+                  </p>
+                </div>
+
+                <div class="concept-card">
+                  <div class="concept-icon">
+                    <i class="fas fa-balance-scale"></i>
+                  </div>
+                  <h4 data-en="Regulatory Compliance" data-es="Cumplimiento Regulatorio">Regulatory Compliance</h4>
+                  <p data-en="Adherence to national and provincial energy regulations, ensuring fair pricing and service quality standards."
+                    data-es="Cumplimiento de regulaciones energéticas nacionales y provinciales, asegurando precios justos y estándares de calidad de servicio.">
+                    Adherence to national and provincial energy regulations, ensuring fair pricing and service quality
+                    standards.
+                  </p>
+                </div>
+
+                <div class="concept-card">
+                  <div class="concept-icon">
+                    <i class="fas fa-chart-pie"></i>
+                  </div>
+                  <h4 data-en="Economic Analysis" data-es="Análisis Económico">Economic Analysis</h4>
+                  <p data-en="Comprehensive financial modeling to optimize tariff structures while maintaining economic sustainability."
+                    data-es="Modelado financiero integral para optimizar estructuras tarifarias manteniendo sostenibilidad económica.">
+                    Comprehensive financial modeling to optimize tariff structures while maintaining economic
+                    sustainability.
+                  </p>
+                </div>
+              </div>
+
+              <div class="tariff-visual">
+                <div class="tariff-chart">
+                  <h4 data-en="Tariff Structure Components" data-es="Componentes de Estructura Tarifaria">Tariff
+                    Structure Components</h4>
+                  <div class="chart-container">
+                    <div class="chart-segment generation" data-tooltip="Generation Costs">
+                      <div class="segment-label">40%</div>
+                      <span data-en="Generation" data-es="Generación">Generation</span>
+                    </div>
+                    <div class="chart-segment transmission" data-tooltip="Transmission Costs">
+                      <div class="segment-label">15%</div>
+                      <span data-en="Transmission" data-es="Transmisión">Transmission</span>
+                    </div>
+                    <div class="chart-segment distribution" data-tooltip="Distribution Costs">
+                      <div class="segment-label">30%</div>
+                      <span data-en="Distribution" data-es="Distribución">Distribution</span>
+                    </div>
+                    <div class="chart-segment taxes" data-tooltip="Taxes & Fees">
+                      <div class="segment-label">15%</div>
+                      <span data-en="Taxes & Fees" data-es="Impuestos y Tasas">Taxes & Fees</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1477,6 +1960,347 @@
       <div class="main-content">
         <div class="container">
           <div class="gallery-grid">
+            <!-- Interactive Resume with Vue.js -->
+            <div class="project-gallery-card">
+              <div class="code-preview">
+                <pre><code>// Interactive Resume - Vue.js
+const { createApp, ref, computed } = Vue;
+
+const app = createApp({
+  setup() {
+    const theme = ref('light');
+    const selectedSkills = ref([]);
+    const activeSection = ref('about');
+    
+    const toggleTheme = () => {
+      theme.value = theme.value === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme.value);
+    };
+    
+    const filteredExperiences = computed(() => {
+      return resume.workExperiences.filter(job =>
+        selectedSkills.value.length === 0 || 
+        job.skills.some(skill => selectedSkills.value.includes(skill))
+      );
+    });
+    
+    return { theme, toggleTheme, filteredExperiences };
+  }
+});</code></pre>
+              </div>
+              <div class="project-info">
+                <h3 data-en="Interactive Resume" data-es="CV Interactivo">Interactive Resume</h3>
+                <p data-en="Professional resume with dark mode, skill filtering, and expandable sections."
+                  data-es="CV profesional con modo oscuro, filtrado de habilidades y secciones expandibles.">
+                  Professional resume with dark mode, skill filtering, and expandable sections.
+                </p>
+                <div class="project-meta">
+                  <div class="project-tech">
+                    <span class="tech-badge">Vue.js</span>
+                    <span class="tech-badge">CSS3</span>
+                    <span class="tech-badge">Responsive</span>
+                  </div>
+                  <div class="project-actions">
+                    <button onclick="showCodeModal('resume')" class="view-code" data-en="View Code"
+                      data-es="Ver Código">View Code</button>
+                    <button onclick="openProjectDemo('resume')" class="view-live" data-en="View Live"
+                      data-es="Ver Demo">View Live</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Search Mobile App -->
+            <div class="project-gallery-card">
+              <div class="project-preview">
+                <iframe srcdoc='<!DOCTYPE html>
+<html><head><style>
+body{font-family:system-ui;margin:0;background:#f0f0f0;display:flex;justify-content:center;align-items:center;min-height:100vh;}
+.phone{width:200px;height:320px;background:#333;border-radius:25px;padding:15px;box-shadow:0 8px 30px rgba(0,0,0,0.3);}
+.screen{width:100%;height:100%;background:#fff;border-radius:15px;position:relative;overflow:hidden;}
+.search-bar{position:absolute;bottom:20px;left:10px;right:10px;background:#2563eb;border-radius:20px;height:40px;display:flex;align-items:center;justify-content:center;color:white;font-size:12px;}
+.contact{padding:10px;border-bottom:1px solid #eee;display:flex;align-items:center;gap:10px;}
+.avatar{width:30px;height:30px;border-radius:50%;background:#6366f1;color:white;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold;}
+</style></head><body>
+<div class="phone"><div class="screen">
+<div class="contact"><div class="avatar">A</div><div><div style="font-weight:bold;font-size:14px;">Alice Johnson</div><div style="color:#666;font-size:12px;">+1 555-1234</div></div></div>
+<div class="contact"><div class="avatar">B</div><div><div style="font-weight:bold;font-size:14px;">Bob Smith</div><div style="color:#666;font-size:12px;">+1 555-5678</div></div></div>
+<div class="contact"><div class="avatar">C</div><div><div style="font-weight:bold;font-size:14px;">Charlie Rose</div><div style="color:#666;font-size:12px;">+1 555-8765</div></div></div>
+<div class="search-bar">🔍 Search contacts</div>
+</div></div>
+</body></html>'></iframe>
+              </div>
+              <div class="project-info">
+                <h3 data-en="Mobile Contact Search" data-es="Búsqueda de Contactos Móvil">Mobile Contact Search</h3>
+                <p data-en="Responsive contact search with touch interactions and error handling."
+                  data-es="Búsqueda de contactos responsive con interacciones táctiles y manejo de errores.">
+                  Responsive contact search with touch interactions and error handling.
+                </p>
+                <div class="project-meta">
+                  <div class="project-tech">
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Mobile-First</span>
+                    <span class="tech-badge">Touch UI</span>
+                  </div>
+                  <div class="project-actions">
+                    <button onclick="showCodeModal('contact')" class="view-code" data-en="View Code"
+                      data-es="Ver Código">View Code</button>
+                    <button onclick="openProjectDemo('contact')" class="view-live" data-en="View Live"
+                      data-es="Ver Demo">View Live</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3D Interactive Cube -->
+            <div class="project-gallery-card">
+              <div class="project-preview">
+                <iframe srcdoc='<!DOCTYPE html>
+<html><head><style>
+body{margin:0;background:linear-gradient(135deg,#667eea,#764ba2);font-family:Arial;overflow:hidden;}
+#container{width:100%;height:300px;position:relative;}
+.cube{width:80px;height:80px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotateX(45deg) rotateY(45deg);transform-style:preserve-3d;animation:rotate 4s infinite linear;}
+.face{position:absolute;width:80px;height:80px;opacity:0.8;}
+.front{background:#ff6b6b;transform:translateZ(40px);}
+.back{background:#4ecdc4;transform:rotateY(180deg) translateZ(40px);}
+.right{background:#45b7d1;transform:rotateY(90deg) translateZ(40px);}
+.left{background:#96ceb4;transform:rotateY(-90deg) translateZ(40px);}
+.top{background:#feca57;transform:rotateX(90deg) translateZ(40px);}
+.bottom{background:#ff9ff3;transform:rotateX(-90deg) translateZ(40px);}
+@keyframes rotate{0%{transform:translate(-50%,-50%) rotateX(45deg) rotateY(0deg);}100%{transform:translate(-50%,-50%) rotateX(45deg) rotateY(360deg);}}
+.info{position:absolute;top:20px;left:20px;color:white;font-size:14px;background:rgba(0,0,0,0.7);padding:10px;border-radius:5px;}
+</style></head><body>
+<div id="container">
+<div class="info">🎲 3D Interactive Cube<br>Three.js Demo</div>
+<div class="cube">
+<div class="face front"></div><div class="face back"></div><div class="face right"></div>
+<div class="face left"></div><div class="face top"></div><div class="face bottom"></div>
+</div></div>
+</body></html>'></iframe>
+              </div>
+              <div class="project-info">
+                <h3 data-en="3D Interactive Cube" data-es="Cubo 3D Interactivo">3D Interactive Cube</h3>
+                <p data-en="Three.js 3D cube with orbit controls, lighting, and particle effects."
+                  data-es="Cubo 3D de Three.js con controles orbitales, iluminación y efectos de partículas.">
+                  Three.js 3D cube with orbit controls, lighting, and particle effects.
+                </p>
+                <div class="project-meta">
+                  <div class="project-tech">
+                    <span class="tech-badge">Three.js</span>
+                    <span class="tech-badge">WebGL</span>
+                    <span class="tech-badge">3D Graphics</span>
+                  </div>
+                  <div class="project-actions">
+                    <button onclick="showCodeModal('cube3d')" class="view-code" data-en="View Code"
+                      data-es="Ver Código">View Code</button>
+                    <button onclick="openProjectDemo('cube3d')" class="view-live" data-en="View Live"
+                      data-es="Ver Demo">View Live</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Deadline Tracker -->
+            <div class="project-gallery-card">
+              <div class="project-preview">
+                <iframe srcdoc='<!DOCTYPE html>
+<html><head><style>
+body{margin:0;background:#0f172a;color:#f1f5f9;font-family:system-ui;padding:20px;}
+.header{background:#1e293b;padding:20px;border-radius:12px;margin-bottom:20px;text-align:center;}
+.timeline{background:#1e293b;border-radius:12px;padding:20px;position:relative;}
+.milestone{background:#2563eb;color:white;padding:8px 12px;border-radius:8px;margin:10px 0;font-size:12px;position:relative;}
+.milestone.critical{background:#dc2626;}
+.milestone.high{background:#ea580c;}
+.milestone.medium{background:#ca8a04;}
+.milestone.low{background:#16a34a;}
+.project-card{background:#334155;padding:15px;border-radius:8px;margin:10px 0;}
+h1{color:#3b82f6;margin:0;font-size:20px;}
+h3{color:#60a5fa;margin:5px 0;font-size:14px;}
+.stats{display:flex;gap:15px;font-size:12px;color:#94a3b8;}
+</style></head><body>
+<div class="header"><h1>📅 CS Deadline Tracker</h1></div>
+<div class="timeline">
+<div class="project-card"><h3>Machine Learning Project</h3><div class="stats"><span>⏱️ 180min</span><span>👤 6 servings</span><span class="badge">Hard</span></div>
+<div class="milestone critical">Data Collection - 2d left</div>
+<div class="milestone medium">Model Training - 14d left</div>
+<div class="milestone low">Final Report - 28d left</div>
+</div></div>
+</body></html>'></iframe>
+              </div>
+              <div class="project-info">
+                <h3 data-en="Deadline Tracker" data-es="Rastreador de Fechas Límite">Deadline Tracker</h3>
+                <p data-en="Advanced project management with drag-drop, timeline visualization, and dependency tracking."
+                  data-es="Gestión avanzada de proyectos con arrastrar-soltar, visualización de cronograma y seguimiento de dependencias.">
+                  Advanced project management with drag-drop, timeline visualization, and dependency tracking.
+                </p>
+                <div class="project-meta">
+                  <div class="project-tech">
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">Drag & Drop</span>
+                    <span class="tech-badge">Tailwind CSS</span>
+                  </div>
+                  <div class="project-actions">
+                    <button onclick="showCodeModal('deadline')" class="view-code" data-en="View Code"
+                      data-es="Ver Código">View Code</button>
+                    <button onclick="openProjectDemo('deadline')" class="view-live" data-en="View Live"
+                      data-es="Ver Demo">View Live</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Collaborative Flashcards -->
+            <div class="project-gallery-card">
+              <div class="code-preview">
+                <pre><code>// Collaborative Flashcard Tool
+class FlashcardApp {
+  constructor() {
+    this.cards = [];
+    this.theme = 'dark';
+    this.activeFilters = { tags: new Set(), searchTerm: '' };
+    this.cardTemplates = {
+      basic: { name: 'Basic', style: 'linear-gradient(45deg, #6d28d9, #4f46e5)' },
+      minimal: { name: 'Minimal', style: '#fff; border: 1px solid #e2e8f0' },
+      colorful: { name: 'Colorful', style: 'linear-gradient(45deg, #ec4899, #f87171)' }
+    };
+  }
+  
+  createCardHTML(card) {
+    return `
+      <div class="card" data-template="${card.template}">
+        <div class="card-flipper">
+          <div class="card-front">${card.frontContent}</div>
+          <div class="card-back">${card.backContent}</div>
+        </div>
+      </div>`;
+  }
+}</code></pre>
+              </div>
+              <div class="project-info">
+                <h3 data-en="Collaborative Flashcards" data-es="Tarjetas de Estudio Colaborativas">Collaborative
+                  Flashcards</h3>
+                <p data-en="Advanced flashcard app with WYSIWYG editor, templates, and export/import functionality."
+                  data-es="Aplicación avanzada de tarjetas de estudio con editor WYSIWYG, plantillas y funcionalidad de exportar/importar.">
+                  Advanced flashcard app with WYSIWYG editor, templates, and export/import functionality.
+                </p>
+                <div class="project-meta">
+                  <div class="project-tech">
+                    <span class="tech-badge">Vanilla JS</span>
+                    <span class="tech-badge">WYSIWYG</span>
+                    <span class="tech-badge">Templates</span>
+                  </div>
+                  <div class="project-actions">
+                    <button onclick="showCodeModal('flashcards')" class="view-code" data-en="View Code"
+                      data-es="Ver Código">View Code</button>
+                    <button onclick="openProjectDemo('flashcards')" class="view-live" data-en="View Live"
+                      data-es="Ver Demo">View Live</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recipe Assistant -->
+            <div class="project-gallery-card">
+              <div class="code-preview">
+                <pre><code>// Recipe Meal Prep Assistant - React TypeScript
+interface Ingredient {
+  id: string;
+  name: string;
+  amount: number;
+  unit: string;
+  checked: boolean;
+  category: 'protein' | 'vegetable' | 'spice' | 'liquid' | 'other';
+}
+
+const RecipeMealPrepAssistant: React.FC = () => {
+  const [currentStep, setCurrentStep] = useState<number>(0);
+  const [timer, setTimer] = useState<number>(0);
+  const [isListening, setIsListening] = useState<boolean>(false);
+  
+  const handleVoiceCommand = useCallback((command: string) => {
+    const lowerCaseCommand = command.toLowerCase();
+    if (lowerCaseCommand.includes('next')) {
+      setCurrentStep(prev => Math.min(recipe.steps.length - 1, prev + 1));
+    } else if (lowerCaseCommand.includes('start timer')) {
+      setTimer(currentStepData.duration * 60);
+      setIsTimerRunning(true);
+    }
+  }, [recipe.steps, currentStep]);
+  
+  return (
+    <div className="recipe-assistant">
+      {/* Interactive cooking interface */}
+    </div>
+  );
+};</code></pre>
+              </div>
+              <div class="project-info">
+                <h3 data-en="Recipe Assistant" data-es="Asistente de Recetas">Recipe Assistant</h3>
+                <p data-en="Smart cooking assistant with voice commands, timers, and step-by-step guidance."
+                  data-es="Asistente inteligente de cocina con comandos de voz, temporizadores y guía paso a paso.">
+                  Smart cooking assistant with voice commands, timers, and step-by-step guidance.
+                </p>
+                <div class="project-meta">
+                  <div class="project-tech">
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">TypeScript</span>
+                    <span class="tech-badge">Voice API</span>
+                  </div>
+                  <div class="project-actions">
+                    <button onclick="showCodeModal('recipe')" class="view-code" data-en="View Code"
+                      data-es="Ver Código">View Code</button>
+                    <button onclick="openProjectDemo('recipe')" class="view-live" data-en="View Live"
+                      data-es="Ver Demo">View Live</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Strategic Card Game -->
+            <div class="project-gallery-card">
+              <div class="project-preview">
+                <iframe srcdoc='<!DOCTYPE html>
+<html><head><style>
+body{margin:0;background:linear-gradient(120deg,#181c24,#23283a);color:#fafbfc;font-family:system-ui;padding:20px;}
+.game-board{display:flex;gap:20px;justify-content:center;align-items:center;min-height:200px;}
+.player-area{background:rgba(35,40,58,0.95);padding:20px;border-radius:12px;text-align:center;min-width:120px;}
+.card{background:linear-gradient(120deg,#2fdde2cc,#9b6fffcc);border:2px solid #2fdde2;border-radius:12px;padding:15px;margin:10px;position:relative;color:white;min-height:80px;display:flex;flex-direction:column;justify-content:center;}
+.card-power{position:absolute;top:5px;right:10px;font-size:24px;font-weight:900;color:#2fdde2;}
+.vs{font-size:24px;font-weight:900;color:#b0bad6;}
+h1{text-align:center;color:#2fdde2;margin-bottom:20px;font-size:24px;}
+h3{color:#9b6fff;margin:10px 0;}
+</style></head><body>
+<h1>🎯 Strategic Card Duel</h1>
+<div class="game-board">
+<div class="player-area"><h3>Player 1</h3><div class="card">Attack Card<div class="card-power">5</div></div></div>
+<div class="vs">VS</div>
+<div class="player-area"><h3>Player 2</h3><div class="card">Defense Card<div class="card-power">3</div></div></div>
+</div>
+<div style="text-align:center;margin-top:20px;color:#9b6fff;">First to 21 points wins!</div>
+</body></html>'></iframe>
+              </div>
+              <div class="project-info">
+                <h3 data-en="Strategic Card Game" data-es="Juego de Cartas Estratégico">Strategic Card Game</h3>
+                <p data-en="Turn-based card game with animations, sound effects, and AI opponents."
+                  data-es="Juego de cartas por turnos con animaciones, efectos de sonido y oponentes IA.">
+                  Turn-based card game with animations, sound effects, and AI opponents.
+                </p>
+                <div class="project-meta">
+                  <div class="project-tech">
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Framer Motion</span>
+                    <span class="tech-badge">Material-UI</span>
+                  </div>
+                  <div class="project-actions">
+                    <button onclick="showCodeModal('cardgame')" class="view-code" data-en="View Code"
+                      data-es="Ver Código">View Code</button>
+                    <button onclick="openProjectDemo('cardgame')" class="view-live" data-en="View Live"
+                      data-es="Ver Demo">View Live</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <!-- Video Transcription Tool -->
             <div class="project-gallery-card">
               <div class="code-preview">
@@ -1513,9 +2337,9 @@ def transcribe_audio(audio_file):
               <div class="project-info">
                 <h3 data-en="Video Transcription Tool" data-es="Herramienta de Transcripción">Video Transcription Tool
                 </h3>
-                <p data-en="Offline Turkish speech recognition system for video transcription."
-                  data-es="Sistema de reconocimiento de voz turca offline para transcripción de video.">
-                  Offline Turkish speech recognition system for video transcription.
+                <p data-en="Offline Turkish speech recognition system for video transcription with chunk processing."
+                  data-es="Sistema de reconocimiento de voz turca offline para transcripción de video con procesamiento por chunks.">
+                  Offline Turkish speech recognition system for video transcription with chunk processing.
                 </p>
                 <div class="project-meta">
                   <div class="project-tech">
@@ -1523,87 +2347,12 @@ def transcribe_audio(audio_file):
                     <span class="tech-badge">MoviePy</span>
                     <span class="tech-badge">SpeechRecognition</span>
                   </div>
-                  <a href="#" class="view-live" data-en="View Code" data-es="Ver Código">View Code</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Ball Collision Physics -->
-            <div class="project-gallery-card">
-              <div class="project-preview">
-                <iframe srcdoc='<!DOCTYPE html>
-<html>
-<head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
-<style>body{margin:0;background:#1a1a1a;}</style>
-</head>
-<body>
-<script>
-let balls=[];
-function setup(){createCanvas(400,300);for(let i=0;i<6;i++){balls.push({x:random(20,width-20),y:random(20,height-20),vx:random(-3,3),vy:random(-3,3),r:random(10,25),color:[random(100,255),random(100,255),random(100,255)]});}}
-function draw(){background(26);balls.forEach(ball=>{ball.x+=ball.vx;ball.y+=ball.vy;if(ball.x<ball.r||ball.x>width-ball.r)ball.vx*=-1;if(ball.y<ball.r||ball.y>height-ball.r)ball.vy*=-1;fill(ball.color);circle(ball.x,ball.y,ball.r*2);});}
-</script>
-</body>
-</html>'></iframe>
-              </div>
-              <div class="project-info">
-                <h3 data-en="Physics Simulation" data-es="Simulación Física">Physics Simulation</h3>
-                <p data-en="Real-time ball collision simulation with realistic physics."
-                  data-es="Simulación de colisión de pelotas en tiempo real con física realista.">
-                  Real-time ball collision simulation with realistic physics.
-                </p>
-                <div class="project-meta">
-                  <div class="project-tech">
-                    <span class="tech-badge">JavaScript</span>
-                    <span class="tech-badge">P5.js</span>
-                    <span class="tech-badge">Physics</span>
+                  <div class="project-actions">
+                    <button onclick="showCodeModal('transcription')" class="view-code" data-en="View Code"
+                      data-es="Ver Código">View Code</button>
+                    <button onclick="openProjectDemo('transcription')" class="view-live" data-en="View Live"
+                      data-es="Ver Demo">View Live</button>
                   </div>
-                  <a href="#" class="view-live" data-en="View Live" data-es="Ver en Vivo">View Live</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Interactive Type Racer -->
-            <div class="project-gallery-card">
-              <div class="project-preview">
-                <iframe srcdoc='<!DOCTYPE html>
-<html>
-<head>
-<style>
-body{background:#2c3e50;color:white;font-family:Arial;padding:10px;font-size:12px;}
-.container{max-width:100%;text-align:center;}
-.text-display{background:#34495e;padding:10px;border-radius:5px;margin:10px 0;font-size:14px;}
-input{width:100%;padding:8px;font-size:12px;border:none;border-radius:3px;margin:5px 0;}
-.stats{display:flex;justify-content:space-around;margin:10px 0;font-size:10px;}
-</style>
-</head>
-<body>
-<div class="container">
-<h3>Type Racer</h3>
-<div class="text-display">The quick brown fox</div>
-<input type="text" placeholder="Start typing...">
-<div class="stats">
-<div><div>WPM</div><div>45</div></div>
-<div><div>Accuracy</div><div>98%</div></div>
-<div><div>Time</div><div>30s</div></div>
-</div>
-</div>
-</body>
-</html>'></iframe>
-              </div>
-              <div class="project-info">
-                <h3 data-en="Type Racer Game" data-es="Juego Type Racer">Type Racer Game</h3>
-                <p data-en="Interactive typing speed game with real-time WPM tracking."
-                  data-es="Juego interactivo de velocidad de escritura con seguimiento de WPM en tiempo real.">
-                  Interactive typing speed game with real-time WPM tracking.
-                </p>
-                <div class="project-meta">
-                  <div class="project-tech">
-                    <span class="tech-badge">React</span>
-                    <span class="tech-badge">TypeScript</span>
-                    <span class="tech-badge">Game</span>
-                  </div>
-                  <a href="#" class="view-live" data-en="Play Game" data-es="Jugar">Play Game</a>
                 </div>
               </div>
             </div>
@@ -1616,8 +2365,7 @@ input{width:100%;padding:8px;font-size:12px;border:none;border-radius:3px;margin
     <div class="nav-pills">
       <button class="nav-pill active" onclick="showPage('home')" data-en="Portfolio"
         data-es="Portafolio">Portfolio</button>
-      <button class="nav-pill" onclick="showPage('education')" data-en="Education"
-        data-es="Educación">Education</button>
+      <button class="nav-pill" onclick="showPage('courses')" data-en="Courses" data-es="Cursos">Courses</button>
       <button class="nav-pill" onclick="showPage('code-gallery')" data-en="Code Gallery" data-es="Galería">Code
         Gallery</button>
     </div>
@@ -1791,7 +2539,7 @@ input{width:100%;padding:8px;font-size:12px;border:none;border-radius:3px;margin
       // Find and activate corresponding pill
       const pillMap = {
         'home': 0,
-        'education': 1,
+        'courses': 1,
         'code-gallery': 2
       };
 
@@ -1812,8 +2560,8 @@ input{width:100%;padding:8px;font-size:12px;border:none;border-radius:3px;margin
       // Set appropriate nav link as active based on page
       if (pageId === 'home') {
         document.querySelector('.nav-links a[onclick*="showPage(\'home\')"]')?.classList.add('active');
-      } else if (pageId === 'education') {
-        document.querySelector('.nav-links a[onclick*="showPage(\'education\')"]')?.classList.add('active');
+      } else if (pageId === 'courses') {
+        document.querySelector('.nav-links a[onclick*="showPage(\'courses\')"]')?.classList.add('active');
       } else if (pageId === 'code-gallery') {
         document.querySelector('.nav-links a[onclick*="showPage(\'code-gallery\')"]')?.classList.add('active');
       }
@@ -1824,8 +2572,14 @@ input{width:100%;padding:8px;font-size:12px;border:none;border-radius:3px;margin
       const savedTheme = localStorage.getItem('theme');
       const savedLanguage = localStorage.getItem('language');
 
-      if (savedTheme === 'dark') {
-        toggleTheme();
+      // Start in dark mode by default
+      if (savedTheme === 'light') {
+        // Only switch to light if explicitly saved as light
+      } else {
+        // Default to dark mode
+        if (!isDarkTheme) {
+          toggleTheme();
+        }
       }
 
       if (savedLanguage === 'es') {
@@ -1839,7 +2593,861 @@ input{width:100%;padding:8px;font-size:12px;border:none;border-radius:3px;margin
       // Initialize with home page
       showPage('home');
     });
+
+    // Code Gallery Functions
+    function showCodeModal(projectId) {
+      const codeData = {
+        'resume': {
+          title: 'Interactive Resume - Vue.js',
+          language: 'javascript',
+          code: `// Interactive Resume with Vue.js
+const { createApp, ref, computed, onMounted, watchEffect } = Vue;
+
+const app = createApp({
+  setup() {
+    const theme = ref('light');
+    const selectedSkills = ref([]);
+    const activeSection = ref('about');
+    const resume = ref(resumeData);
+    
+    const toggleTheme = () => {
+      theme.value = theme.value === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme.value);
+      setThemeVars(theme.value);
+    };
+    
+    const filteredExperiences = computed(() => {
+      let jobs = resume.value.workExperiences;
+      if (selectedSkills.value.length > 0) {
+        jobs = jobs.filter(job =>
+          job.skills.some(skill => selectedSkills.value.includes(skill))
+        );
+      }
+      return jobs;
+    });
+    
+    const scrollToSection = (id) => {
+      document.getElementById(id)?.scrollIntoView({
+        behavior: 'smooth'
+      });
+    };
+    
+    return {
+      theme,
+      toggleTheme,
+      filteredExperiences,
+      scrollToSection,
+      selectedSkills,
+      resume
+    };
+  }
+});`
+        },
+        'contact': {
+          title: 'Mobile Contact Search - React',
+          language: 'javascript',
+          code: `// Mobile Contact Search Component
+const ContactSearch = () => {
+  const [query, setQuery] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [contacts, setContacts] = useState([]);
+  const [error, setError] = useState(null);
+  const [pressedCard, setPressedCard] = useState(null);
+  
+  const simulateSearch = (query) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (Math.random() < 0.15) {
+          reject(new Error('Network error. Please try again.'));
+          return;
+        }
+        const q = query.trim().toLowerCase();
+        resolve(
+          q.length === 0 ? [] : CONTACTS.filter(
+            c => c.name.toLowerCase().includes(q) || 
+                 c.phone.replace(/\\D/g, '').includes(q.replace(/\\D/g, ''))
+          )
+        );
+      }, 1200);
+    });
+  };
+  
+  const handleSearch = async (e) => {
+    if (e) e.preventDefault();
+    if (query.trim() === '') {
+      setContacts([]);
+      return;
+    }
+    setLoading(true);
+    try {
+      const results = await simulateSearch(query);
+      setContacts(results);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+  
+  return (
+    <div className="contact-search-container">
+      <form onSubmit={handleSearch}>
+        <input 
+          value={query}
+          onChange={e => setQuery(e.target.value)}
+          placeholder="Search contacts..."
+        />
+        <button type="submit">🔍</button>
+      </form>
+      <div className="results-list">
+        {loading ? <SkeletonLoader /> : 
+         contacts.map(contact => (
+           <ContactCard key={contact.id} contact={contact} />
+         ))}
+      </div>
+    </div>
+  );
+};`
+        },
+        'cube3d': {
+          title: '3D Interactive Cube - Three.js',
+          language: 'javascript',
+          code: `// 3D Interactive Cube with Three.js
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setClearColor(0x000000, 0.1);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+// Lighting setup
+const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+scene.add(ambientLight);
+
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+directionalLight.position.set(10, 10, 5);
+directionalLight.castShadow = true;
+scene.add(directionalLight);
+
+// Create cube geometry with colored faces
+const geometry = new THREE.BoxGeometry(2, 2, 2);
+const materials = [
+  new THREE.MeshPhongMaterial({ color: 0xff6b6b }),
+  new THREE.MeshPhongMaterial({ color: 0x4ecdc4 }),
+  new THREE.MeshPhongMaterial({ color: 0x45b7d1 }),
+  new THREE.MeshPhongMaterial({ color: 0x96ceb4 }),
+  new THREE.MeshPhongMaterial({ color: 0xfeca57 }),
+  new THREE.MeshPhongMaterial({ color: 0xff9ff3 })
+];
+
+const cube = new THREE.Mesh(geometry, materials);
+cube.castShadow = true;
+scene.add(cube);
+
+// Orbit controls
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
+
+camera.position.z = 5;
+
+// Animation loop
+function animate() {
+  requestAnimationFrame(animate);
+  cube.rotation.x += 0.005;
+  cube.rotation.y += 0.005;
+  controls.update();
+  renderer.render(scene, camera);
+}
+animate();`
+        },
+        'deadline': {
+          title: 'CS Deadline Tracker',
+          language: 'javascript',
+          code: `// CS Deadline Tracker - Advanced Project Management
+class DeadlineTracker {
+  constructor() {
+    this.projects = [];
+    this.draggedElement = null;
+    this.currentDetailPanelMilestone = null;
+  }
+  
+  handleDragStart(e) {
+    this.draggedElement = e.target;
+    const milestoneId = e.target.dataset.milestoneId;
+    const projectId = e.target.dataset.projectId;
+    
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', milestoneId);
+    
+    setTimeout(() => e.target.classList.add('dragging'), 0);
+    document.body.classList.add('is-dragging');
+  }
+  
+  handleDrop(e) {
+    e.preventDefault();
+    if (!this.draggedElement) return;
+    
+    const timelineArea = e.currentTarget;
+    const rect = timelineArea.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    
+    const newDate = this.calculateDateFromPosition(x, rect.width);
+    const milestoneId = parseInt(this.draggedElement.dataset.milestoneId);
+    const projectId = parseInt(this.draggedElement.dataset.projectId);
+    
+    this.updateMilestoneDate(projectId, milestoneId, newDate);
+    this.saveData();
+    this.renderAll();
+  }
+  
+  calculateMilestonePosition(date) {
+    const startOfTimeline = new Date(2025, 5, 13);
+    const endOfTimeline = new Date(2025, 8, 30);
+    const totalDays = Math.floor((endOfTimeline - startOfTimeline) / (1000 * 60 * 60 * 24));
+    const daysFromStart = Math.floor((date - startOfTimeline) / (1000 * 60 * 60 * 24));
+    return Math.max(0, Math.min(100, (daysFromStart / totalDays) * 100));
+  }
+  
+  getUrgencyClass(milestone) {
+    if (milestone.completed) return 'urgency-completed';
+    const daysUntil = Math.floor((milestone.date - new Date()) / (1000 * 60 * 60 * 24));
+    
+    if (daysUntil < 0) return 'urgency-critical';
+    if (daysUntil <= 2) return 'urgency-critical';
+    if (daysUntil <= 7) return 'urgency-high';
+    if (daysUntil <= 14) return 'urgency-medium';
+    return 'urgency-low';
+  }
+}`
+        },
+        'flashcards': {
+          title: 'Collaborative Flashcard Tool',
+          language: 'javascript',
+          code: `// Collaborative Flashcard App with WYSIWYG Editor
+class FlashcardApp {
+  constructor() {
+    this.cards = [];
+    this.currentEditId = null;
+    this.activeFilters = { tags: new Set(), searchTerm: '' };
+    this.theme = 'dark';
+    this.cardTemplates = {
+      basic: { name: 'Basic', style: 'background: linear-gradient(45deg, #6d28d9, #4f46e5)' },
+      minimal: { name: 'Minimal', style: 'background: #fff; border: 1px solid #e2e8f0' },
+      colorful: { name: 'Colorful', style: 'background: linear-gradient(45deg, #ec4899, #f87171)' },
+      dark: { name: 'Dark', style: 'background: #1e293b' }
+    };
+  }
+  
+  createCardHTML(card, isPreview = false) {
+    const editIcon = \\`< svg class= "icon" >...</svg>\\`;
+    const deleteIcon = \\`< svg class="icon" >...</svg >\\`;
+    
+    return \\`
+        < div class="card" data - template="\\${card.template}" draggable = "\\${!isPreview}" >
+        <div class="card-flipper-container">
+          <div class="card-flipper">
+            <div class="card-front">\\${card.frontContent}</div>
+            <div class="card-back">\\${card.backContent}</div>
+          </div>
+        </div>
+        <div class="card-details">
+          <div class="card-tags">
+            \\${card.tags.map(tag => \\`<span>#\\${tag}</span>\\`).join('')}
+          </div>
+          \\${isPreview ? '' : \\`
+            <div class="card-actions">
+              <button onclick="app.openEditor('\\${card.id}')">\\${editIcon}</button>
+              <button onclick="app.deleteCard('\\${card.id}')">\\${deleteIcon}</button>
+            </div>
+          \\`}
+        </div>
+      </div >
+      \\`;
+  }
+  
+  setupWYSIWYG() {
+    document.querySelectorAll('.wysiwyg-toolbar').forEach(toolbar => {
+      toolbar.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const command = e.currentTarget.dataset.command;
+          this.formatText(command);
+        });
+      });
+    });
+  }
+  
+  formatText(command) {
+    switch (command) {
+      case 'bold':
+      case 'italic':
+      case 'underline':
+        document.execCommand(command, false, null);
+        break;
+      case 'h1':
+        document.execCommand('formatBlock', false, 'H1');
+        break;
+    }
+  }
+  
+  exportCards() {
+    const dataStr = "data:text/json;charset=utf-8," + 
+      encodeURIComponent(JSON.stringify(this.cards, null, 2));
+    const downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", \\`flashcards -\\${ new Date().toISOString() }.json\\`);
+    document.body.appendChild(downloadAnchorNode);
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+  }
+}`
+    },
+    'recipe': {
+      title: 'Recipe Meal Prep Assistant - TypeScript',
+        language: 'typescript',
+          code: `// Recipe Meal Prep Assistant with Voice Commands
+interface Ingredient {
+  id: string;
+  name: string;
+  amount: number;
+  unit: string;
+  checked: boolean;
+  category: 'protein' | 'vegetable' | 'spice' | 'liquid' | 'other';
+}
+
+interface Step {
+  id: string;
+  instruction: string;
+  duration?: number;
+  temperature?: string;
+  technique: string;
+  completed: boolean;
+}
+
+const RecipeMealPrepAssistant: React.FC = () => {
+  const [recipe, setRecipe] = useState<Recipe>(sampleRecipe);
+  const [currentStep, setCurrentStep] = useState<number>(0);
+  const [timer, setTimer] = useState<number>(0);
+  const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false);
+  const [isListening, setIsListening] = useState<boolean>(false);
+  
+  const formatTime = (seconds: number): string => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return \\`\\${ mins.toString().padStart(2, '0') }: \\${ secs.toString().padStart(2, '0') } \\`;
+  };
+  
+  const handleVoiceCommand = useCallback((command: string) => {
+    const lowerCaseCommand = command.toLowerCase();
+    if (lowerCaseCommand.includes('next')) {
+      setCurrentStep(prev => Math.min(recipe.steps.length - 1, prev + 1));
+    } else if (lowerCaseCommand.includes('previous')) {
+      setCurrentStep(prev => Math.max(0, prev - 1));
+    } else if (lowerCaseCommand.includes('start timer')) {
+      const currentStepData = recipe.steps[currentStep];
+      if (currentStepData?.duration) {
+        setTimer(currentStepData.duration * 60);
+        setIsTimerRunning(true);
+      }
+    } else if (lowerCaseCommand.includes('complete step')) {
+      const updatedSteps = [...recipe.steps];
+      updatedSteps[currentStep].completed = true;
+      setRecipe(prev => ({ ...prev, steps: updatedSteps }));
+    }
+  }, [recipe.steps, currentStep]);
+  
+  const adjustServings = useCallback((increment: boolean) => {
+    const originalServings = sampleRecipe.servings;
+    const newServings = increment ? servings + 1 : Math.max(1, servings - 1);
+    setServings(newServings);
+    
+    const ratio = newServings / originalServings;
+    const updatedIngredients = sampleRecipe.ingredients.map(ingredient => ({
+      ...ingredient,
+      amount: parseFloat((ingredient.amount * ratio).toFixed(2))
+    }));
+    
+    setRecipe(prev => ({ ...prev, ingredients: updatedIngredients }));
+  }, [servings]);
+  
+  return (
+    <div className="recipe-assistant">
+      {/* Voice-controlled cooking interface */}
+    </div>
+  );
+};`
+    },
+    'cardgame': {
+      title: 'Strategic Card Game - React TypeScript',
+        language: 'typescript',
+          code: `// Strategic Card Duel Game
+interface Card {
+  id: string;
+  name: string;
+  description: string;
+  power: number;
+  effect?: 'none' | 'draw' | 'double' | 'opponent_discard';
+}
+
+interface PlayerState {
+  id: PlayerId;
+  name: string;
+  hand: Card[];
+  table: Card[];
+  discard: Card[];
+  score: number;
+}
+
+const CardGameModern: React.FC = () => {
+  const [game, setGame] = useState<GameState>(initialGameState());
+  const [playedCard, setPlayedCard] = useState<{ [key: number]: Card | null }>({ 1: null, 2: null });
+  const [roundResult, setRoundResult] = useState<string | null>(null);
+  const [roundHistory, setRoundHistory] = useState<RoundHistoryEntry[]>([]);
+  
+  const handleCardClick = (card: Card) => {
+    if (game.victory || playedCard[game.currentPlayer]) return;
+    setPlayedCard(prev => ({ ...prev, [game.currentPlayer]: card }));
+  };
+  
+  const handleEndTurn = () => {
+    if (!playedCard[game.currentPlayer]) return;
+    const newPlayers = deepCopyPlayers(game.players);
+    const cardToRemove = playedCard[game.currentPlayer];
+    
+    newPlayers[game.currentPlayer - 1].hand = 
+      newPlayers[game.currentPlayer - 1].hand.filter(c => c.id !== cardToRemove.id);
+    
+    setGame({
+      ...game,
+      players: newPlayers,
+      actionLog: [...game.actionLog, 
+        { player: game.currentPlayer, action: 'selected card', card: cardToRemove }
+      ]
+    });
+  };
+  
+  // Resolve round when both players have played
+  React.useEffect(() => {
+    if (playedCard[1] && playedCard[2]) {
+      const card1 = playedCard[1];
+      const card2 = playedCard[2];
+      let newPlayers = deepCopyPlayers(game.players);
+      let winner: PlayerId | null = null;
+      let diff = Math.abs(card1.power - card2.power);
+      
+      if (card1.power > card2.power) {
+        newPlayers[0].score += diff;
+        winner = 1;
+      } else if (card2.power > card1.power) {
+        newPlayers[1].score += diff;
+        winner = 2;
+      }
+      
+      // Check for victory
+      let victory: PlayerId | null = null;
+      if (newPlayers[0].score >= WINNING_SCORE) victory = 1;
+      if (newPlayers[1].score >= WINNING_SCORE) victory = 2;
+      
+      setTimeout(() => {
+        setGame({ ...game, players: newPlayers, victory });
+        setPlayedCard({ 1: null, 2: null });
+        setRoundHistory(prev => [...prev, {
+          card1, card2, winner,
+          points: diff,
+          resultMsg: winner ? \\`Player \\${ winner } wins!\\` : "It's a tie!"
+        }]);
+      }, 1200);
+    }
+  }, [playedCard]);
+  
+  return (
+    <Box className="game-container">
+      <Typography variant="h2">🎯 Strategic Card Duel</Typography>
+      <div className="game-board">
+        <PlayerPanel player={game.players[0]} />
+        <TableArea playedCard={playedCard} roundResult={roundResult} />
+        <PlayerPanel player={game.players[1]} />
+      </div>
+    </Box>
+  );
+};`
+    },
+    'transcription': {
+      title: 'Turkish Video Transcription Tool - Python',
+        language: 'python',
+          code: `# Turkish Video Transcription Tool
+import speech_recognition as sr
+from pydub import AudioSegment
+from pydub.utils import make_chunks
+import moviepy.editor as mp
+import os
+import tempfile
+import logging
+
+class TurkishVideoTranscriber:
+    def __init__(self, chunk_length_ms=5000):
+        self.chunk_length_ms = chunk_length_ms
+        self.recognizer = sr.Recognizer()
+        self.setup_logging()
+    
+    def setup_logging(self):
+        logging.basicConfig(level=logging.INFO)
+        self.logger = logging.getLogger(__name__)
+    
+    def extract_audio_from_video(self, video_file):
+        """Extract audio track from video file"""
+        try:
+            self.logger.info(f"Extracting audio from {video_file}")
+            video = mp.VideoFileClip(video_file)
+            
+            with tempfile.NamedTemporaryFile(suffix='.wav', delete=False) as temp_audio:
+                audio_file = temp_audio.name
+                video.audio.write_audiofile(audio_file, verbose=False, logger=None)
+                
+            video.close()
+            return audio_file
+        except Exception as e:
+            self.logger.error(f"Error extracting audio: {e}")
+            raise
+    
+    def transcribe_audio_chunk(self, audio_chunk, chunk_index):
+        """Transcribe a single audio chunk"""
+        try:
+            with tempfile.NamedTemporaryFile(suffix='.wav', delete=False) as temp_chunk:
+                chunk_file = temp_chunk.name
+                audio_chunk.export(chunk_file, format="wav")
+            
+            with sr.AudioFile(chunk_file) as source:
+                # Adjust for ambient noise
+                self.recognizer.adjust_for_ambient_noise(source, duration=0.5)
+                audio_data = self.recognizer.record(source)
+                
+                try:
+                    # Use offline Turkish recognition
+                    text = self.recognizer.recognize_sphinx(
+                        audio_data, 
+                        language="tr-TR"
+                    )
+                    self.logger.info(f"Chunk {chunk_index}: {text}")
+                    return text
+                except sr.UnknownValueError:
+                    self.logger.warning(f"Could not understand chunk {chunk_index}")
+                    return ""
+                except sr.RequestError as e:
+                    self.logger.error(f"Sphinx error for chunk {chunk_index}: {e}")
+                    return ""
+        except Exception as e:
+            self.logger.error(f"Error processing chunk {chunk_index}: {e}")
+            return ""
+        finally:
+            # Clean up temporary files
+            if 'chunk_file' in locals() and os.path.exists(chunk_file):
+                os.unlink(chunk_file)
+    
+    def transcribe_video(self, video_file, output_file=None):
+        """Main transcription pipeline"""
+        try:
+            # Extract audio
+            audio_file = self.extract_audio_from_video(video_file)
+            
+            # Load and process audio
+            self.logger.info("Loading audio file...")
+            audio = AudioSegment.from_wav(audio_file)
+            
+            # Split into chunks
+            chunks = make_chunks(audio, self.chunk_length_ms)
+            self.logger.info(f"Processing {len(chunks)} audio chunks...")
+            
+            # Transcribe each chunk
+            transcription_parts = []
+            for i, chunk in enumerate(chunks):
+                if len(chunk) > 500:  # Skip chunks shorter than 0.5 seconds
+                    text = self.transcribe_audio_chunk(chunk, i)
+                    if text.strip():
+                        transcription_parts.append(text.strip())
+            
+            # Combine transcription
+            full_transcription = " ".join(transcription_parts)
+            
+            # Save to file if specified
+            if output_file:
+                with open(output_file, 'w', encoding='utf-8') as f:
+                    f.write(full_transcription)
+                self.logger.info(f"Transcription saved to {output_file}")
+            
+            return full_transcription
+            
+        except Exception as e:
+            self.logger.error(f"Transcription failed: {e}")
+            raise
+        finally:
+            # Clean up temporary audio file
+            if 'audio_file' in locals() and os.path.exists(audio_file):
+                os.unlink(audio_file)
+
+# Usage example
+if __name__ == "__main__":
+    transcriber = TurkishVideoTranscriber(chunk_length_ms=3000)
+    
+    video_file = "sample_turkish_video.mp4"
+    output_file = "transcription_output.txt"
+    
+    try:
+        result = transcriber.transcribe_video(video_file, output_file)
+        print(f"Transcription completed: {len(result)} characters")
+        print(f"Preview: {result[:200]}...")
+    except Exception as e:
+        print(f"Error: {e}")`
+    }
+      };
+
+    const project = codeData[projectId];
+    if (!project) {
+      alert('Code not available for this project.');
+      return;
+    }
+
+    // Create modal
+    const modal = document.createElement('div');
+    modal.className = 'code-modal';
+    modal.innerHTML = `
+        <div class="code-modal-content">
+          <div class="code-modal-header">
+            <h3>${project.title}</h3>
+            <button onclick="closeCodeModal()" class="close-modal-btn">&times;</button>
+          </div>
+          <div class="code-modal-body">
+            <pre><code class="language-${project.language}">${project.code.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>
+          </div>
+          <div class="code-modal-footer">
+            <button onclick="copyCodeToClipboard('${projectId}')" class="copy-code-btn">📋 Copy Code</button>
+            <button onclick="closeCodeModal()" class="close-code-btn">Close</button>
+          </div>
+        </div>
+      `;
+
+    document.body.appendChild(modal);
+
+    // Store the code for copying
+    window.currentProjectCode = project.code;
+    }
+
+    function closeCodeModal() {
+      const modal = document.querySelector('.code-modal');
+      if (modal) {
+        modal.remove();
+      }
+    }
+
+    function copyCodeToClipboard(projectId) {
+      if (window.currentProjectCode) {
+        navigator.clipboard.writeText(window.currentProjectCode).then(() => {
+          alert('Code copied to clipboard!');
+        }).catch(() => {
+          // Fallback for older browsers
+          const textArea = document.createElement('textarea');
+          textArea.value = window.currentProjectCode;
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textArea);
+          alert('Code copied to clipboard!');
+        });
+      }
+    }
+
+    function openProjectDemo(projectId) {
+      const demoUrls = {
+        'resume': '#courses', // Link to courses page
+        'contact': 'data:text/html;charset=utf-8,' + encodeURIComponent(`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Search Demo</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      // Contact Search Demo Implementation
+      const { useState, useRef } = React;
+      
+      const CONTACTS = [
+        { id: 1, name: 'Alice Johnson', phone: '+1 555-1234' },
+        { id: 2, name: 'Bob Smith', phone: '+1 555-5678' },
+        { id: 3, name: 'Charlie Rose', phone: '+1 555-8765' },
+        { id: 4, name: 'David Kim', phone: '+1 555-4321' },
+        { id: 5, name: 'Evelyn Lee', phone: '+1 555-1010' }
+      ];
+      
+      const ContactSearch = () => {
+        const [query, setQuery] = useState('');
+        const [contacts, setContacts] = useState([]);
+        const [loading, setLoading] = useState(false);
+        
+        const handleSearch = async (e) => {
+          e.preventDefault();
+          setLoading(true);
+          
+          setTimeout(() => {
+            const filtered = CONTACTS.filter(c => 
+              c.name.toLowerCase().includes(query.toLowerCase()) ||
+              c.phone.includes(query)
+            );
+            setContacts(filtered);
+            setLoading(false);
+          }, 800);
+        };
+        
+        return (
+          <div style={{padding: '20px', fontFamily: 'system-ui', maxWidth: '400px', margin: '0 auto'}}>
+            <h2>🔍 Contact Search Demo</h2>
+            <form onSubmit={handleSearch}>
+              <input 
+                type="text"
+                value={query}
+                onChange={e => setQuery(e.target.value)}
+                placeholder="Search contacts..."
+                style={{width: '100%', padding: '10px', marginBottom: '20px', borderRadius: '8px', border: '2px solid #ddd'}}
+              />
+              <button type="submit" style={{background: '#2563eb', color: 'white', padding: '10px 20px', border: 'none', borderRadius: '8px', cursor: 'pointer'}}>
+                Search
+              </button>
+            </form>
+            
+            {loading && <div>Loading...</div>}
+            
+            <div style={{marginTop: '20px'}}>
+              {contacts.map(contact => (
+                <div key={contact.id} style={{padding: '15px', margin: '10px 0', background: '#f8f9fa', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '15px'}}>
+                  <div style={{width: '40px', height: '40px', borderRadius: '50%', background: '#6366f1', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold'}}>
+                    {contact.name[0]}
+                  </div>
+                  <div>
+                    <div style={{fontWeight: 'bold'}}>{contact.name}</div>
+                    <div style={{color: '#666', fontSize: '14px'}}>{contact.phone}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      };
+      
+      ReactDOM.render(<ContactSearch />, document.getElementById('root'));
+    </script>
+  </body>
+
+</html>`),
+'cube3d': 'data:text/html;charset=utf-8,' + encodeURIComponent(`
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>3D Cube Demo</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: Arial;
+      overflow: hidden;
+    }
+
+    #info {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: white;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="info">
+    <h2>🎲 3D Interactive Cube</h2>
+    <p>🖱️ Left Click + Drag: Rotate</p>
+    <p>🖱️ Right Click + Drag: Pan</p>
+    <p>🖱️ Scroll: Zoom</p>
+    <p>🔄 Double Click: Reset</p>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script>
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+        
+        const geometry = new THREE.BoxGeometry(2, 2, 2);
+        const materials = [
+            new THREE.MeshPhongMaterial({ color: 0xff6b6b }),
+            new THREE.MeshPhongMaterial({ color: 0x4ecdc4 }),
+            new THREE.MeshPhongMaterial({ color: 0x45b7d1 }),
+            new THREE.MeshPhongMaterial({ color: 0x96ceb4 }),
+            new THREE.MeshPhongMaterial({ color: 0xfeca57 }),
+            new THREE.MeshPhongMaterial({ color: 0xff9ff3 })
+        ];
+        
+        const cube = new THREE.Mesh(geometry, materials);
+        scene.add(cube);
+        
+        const light = new THREE.DirectionalLight(0xffffff, 1);
+        light.position.set(10, 10, 5);
+        scene.add(light);
+        
+        camera.position.z = 5;
+        
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        
+        function animate() {
+            requestAnimationFrame(animate);
+            cube.rotation.x += 0.005;
+            cube.rotation.y += 0.005;
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        animate();
   </script>
+</body>
+
+</html>`),
+'deadline': 'https://github.com/example/deadline-tracker', // Placeholder
+'flashcards': 'https://github.com/example/flashcards', // Placeholder
+'recipe': 'https://github.com/example/recipe-assistant', // Placeholder
+'cardgame': 'https://github.com/example/card-game', // Placeholder
+'transcription': 'https://github.com/example/transcription-tool' // Placeholder
+};
+
+const url = demoUrls[projectId];
+if (url) {
+if (url.startsWith('#')) {
+// Internal navigation
+showPage('courses');
+} else if (url.startsWith('data:')) {
+// Open inline demo
+window.open(url, '_blank');
+} else {
+// External link
+window.open(url, '_blank');
+}
+} else {
+alert('Demo not available for this project.');
+}
+}
+</script>
 </body>
 
 </html>
