@@ -21857,7 +21857,7 @@ plt.title("Composición Tarifaria Eléctrica")
             <div class="container">
                 <!-- Navegación Interactiva Mejorada -->
                 <div class="energy-nav-enhanced"
-                    style="position: sticky; top: 100px; z-index: 100; background: var(--card-bg-light); backdrop-filter: blur(20px); border-radius: 20px; padding: 2rem; margin: 3rem 0; box-shadow: var(--shadow-light); border: 1px solid rgba(255,255,255,0.2);">
+                    style="position: relative; background: var(--card-bg-light); backdrop-filter: blur(20px); border-radius: 20px; padding: 2rem; margin: 3rem 0; box-shadow: var(--shadow-light); border: 1px solid rgba(255,255,255,0.2);">
                     <div class="nav-grid"
                         style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                         <button onclick="scrollToEnergySection('intro')" class="energy-nav-card active"
@@ -28983,85 +28983,8 @@ class AdvancedTranscriber:
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
     `;
-    document.head.appendChild(style);  </script>// Funciones para el visor de filminas
-function toggleSlidesFullscreen() {
-    const iframe = document.getElementById('slides-iframe');
-    const container = document.querySelector('.slides-viewer');
+    document.head.appendChild(style);
+</script>
+</body>
 
-    if (iframe && container) {
-        if (document.fullscreenElement) {
-            document.exitFullscreen();
-        } else {
-            container.requestFullscreen().catch(err => {
-                console.log('Error attempting to enable fullscreen:', err);
-                // Fallback: abrir en nueva pestaña
-                openSlidesInNewTab();
-            });
-        }
-    }
-}
-
-function openSlidesInNewTab() {
-    const slideUrl = 'https://drive.google.com/file/d/1jMT5OJKfIjuOG0JVEsOWloJEO2R2jpCr/view?usp=sharing';
-    window.open(slideUrl, '_blank');
-}
-
-// Función para ocultar el overlay de carga cuando el iframe carga
-function hideSlidesLoading() {
-    const loadingOverlay = document.getElementById('slides-loading');
-    if (loadingOverlay) {
-        loadingOverlay.style.display = 'none';
-    }
-}
-
-// Añadir evento para ocultar loading cuando se carga el iframe
-document.addEventListener('DOMContentLoaded', function () {
-    const iframe = document.getElementById('slides-iframe');
-    if (iframe) {
-        iframe.addEventListener('load', hideSlidesLoading);
-        // También ocultar después de 3 segundos como fallback
-        setTimeout(hideSlidesLoading, 3000);
-    }
-});
-
-// Mejorar la responsividad del visor
-function adjustSlidesViewer() {
-    const container = document.querySelector('.slides-viewer');
-    if (container) {
-        const viewportHeight = window.innerHeight;
-        const containerTop = container.getBoundingClientRect().top;
-        const availableHeight = viewportHeight - containerTop - 100; // 100px de margen
-
-        if (availableHeight > 400) {
-            container.style.height = Math.min(availableHeight, viewportHeight * 0.7) + 'px';
-        }
-    }
-}
-
-// Ajustar tamaño del visor al redimensionar ventana
-window.addEventListener('resize', adjustSlidesViewer);
-window.addEventListener('load', adjustSlidesViewer);
-
-// Animación de carga y estilos dinámicos
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-    
-    .slides-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    
-    .slides-viewer-container {
-        transition: all 0.3s ease;
-    }
-    
-    .slides-viewer-container:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    }
-`;
-document.head.appendChild(style); 
+</html>
