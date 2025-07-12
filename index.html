@@ -814,6 +814,12 @@
             text-align: center;
         }
 
+        /* Fix for light theme - ensure proper contrast */
+        body:not(.dark-theme) .education-hero {
+            background: var(--primary-gradient);
+            color: var(--text-light);
+        }
+
         body.dark-theme .education-hero {
             background: var(--dark-gradient);
         }
@@ -1131,6 +1137,11 @@
             line-height: 1.6;
             margin: 0;
             font-style: italic;
+            color: var(--text-dark);
+        }
+
+        body.dark-theme .hypothesis-box p {
+            color: var(--text-light);
         }
 
         .key-points {
@@ -1150,6 +1161,12 @@
 
         .key-points li {
             padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-dark);
+        }
+
+        body.dark-theme .key-points li {
+            color: var(--text-light);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -1273,6 +1290,12 @@
             background: rgba(255, 215, 0, 0.1);
             border-radius: 10px;
             border-left: 4px solid var(--accent-color);
+            color: var(--text-dark);
+        }
+
+        body.dark-theme .key-facts li {
+            color: var(--text-light);
+            background: rgba(255, 215, 0, 0.2);
         }
 
         .regulation-reasons {
@@ -1369,6 +1392,12 @@
             font-size: 1.2rem;
             line-height: 1.6;
             border-radius: 10px;
+            color: var(--text-dark);
+        }
+
+        body.dark-theme .quote-section blockquote {
+            color: var(--text-light);
+            background: rgba(102, 126, 234, 0.2);
         }
 
         .quote-section cite {
@@ -1444,6 +1473,11 @@
         .wacc-importance li {
             padding: 0.5rem 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-dark);
+        }
+
+        body.dark-theme .wacc-importance li {
+            color: var(--text-light);
         }
 
         .wacc-importance li::before {
@@ -1470,6 +1504,12 @@
             padding: 1rem;
             border-radius: 10px;
             font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        body.dark-theme .wacc-variables div {
+            color: var(--text-light);
+            background: rgba(255, 215, 0, 0.2);
         }
 
         .results-container {
@@ -1525,6 +1565,12 @@
             border: 2px solid var(--accent-color);
             border-radius: 15px;
             padding: 2rem;
+            color: var(--text-dark);
+        }
+
+        body.dark-theme .finding-highlight {
+            color: var(--text-light);
+            background: rgba(255, 215, 0, 0.2);
         }
 
         .percentage {
@@ -1538,6 +1584,11 @@
         .description {
             font-size: 1.1rem;
             line-height: 1.4;
+            color: var(--text-dark);
+        }
+
+        body.dark-theme .description {
+            color: var(--text-light);
         }
 
         .conclusions-grid {
@@ -1567,6 +1618,12 @@
             background: rgba(255, 215, 0, 0.1);
             border-radius: 10px;
             border-left: 4px solid var(--accent-color);
+            color: var(--text-dark);
+        }
+
+        body.dark-theme .conclusion-section li {
+            color: var(--text-light);
+            background: rgba(255, 215, 0, 0.2);
         }
 
         .data-quality-warning {
@@ -1576,6 +1633,12 @@
             padding: 2rem;
             margin-top: 3rem;
             text-align: center;
+            color: var(--text-dark);
+        }
+
+        body.dark-theme .data-quality-warning {
+            color: var(--text-light);
+            background: rgba(220, 53, 69, 0.2);
         }
 
         .data-quality-warning h3 {
@@ -17068,109 +17131,89 @@
                             <div id="cube-canvas">
                                 <!-- Fallback CSS Cube -->
                                 <div class="css-cube-fallback" id="css-cube">
-                                    <div class="face front"
-                                        onclick="event.stopPropagation(); navigateToSection('education');">
+                                    <div class="face front" onclick="event.stopPropagation(); showPage('tesis');">
                                         <div>🎓</div>
-                                        <div style="font-size: 1rem; margin-top: 10px;">Courses</div>
+                                        <div style="font-size: 1rem; margin-top: 10px;">Thesis</div>
                                     </div>
-                                    <div class="face back"
-                                        onclick="event.stopPropagation(); navigateToSection('code-gallery');">
+                                    <div class="face back" onclick="event.stopPropagation(); showPage('code-gallery');">
                                         <div>💻</div>
                                         <div style="font-size: 1rem; margin-top: 10px;">Code</div>
                                     </div>
-                                    <div class="face right"
-                                        onclick="event.stopPropagation(); navigateToSection('home');">
+                                    <div class="face right" onclick="event.stopPropagation(); showPage('cv');">
                                         <div>📋</div>
                                         <div style="font-size: 1rem; margin-top: 10px;">CV</div>
                                     </div>
-                                    <div class="face left"
-                                        onclick="event.stopPropagation(); navigateToSection('electrical-energy');">
+                                    <div class="face left" onclick="event.stopPropagation(); showPage('energy');">
                                         <div>⚡</div>
                                         <div style="font-size: 1rem; margin-top: 10px;">Energy</div>
                                     </div>
-                                    <div class="face top"
-                                        onclick="event.stopPropagation(); navigateToSection('regulation-energy');">
+                                    <div class="face top" onclick="event.stopPropagation(); showPage('regulation');">
                                         <div>⚖️</div>
                                         <div style="font-size: 1rem; margin-top: 10px;">Regulation</div>
                                     </div>
                                     <div class="face bottom"
-                                        onclick="event.stopPropagation(); navigateToSection('data-observatory');">
+                                        onclick="event.stopPropagation(); showPage('observatory');">
                                         <div>📊</div>
                                         <div style="font-size: 1rem; margin-top: 10px;">Data</div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="cube-instructions">
-                                <p data-en="🖱️ Click faces to explore • 🎮 Drag to rotate • 📱 Touch-friendly • 🔄 Double-click to pause"
-                                    data-es="🖱️ Haz clic en las caras para explorar • 🎮 Arrastra para rotar • 📱 Navegación táctil • 🔄 Doble clic para pausar">
-                                    🖱️ Click faces to explore • 🎮 Drag to rotate • 📱 Touch-friendly • 🔄 Double-click
-                                    to pause
-                                </p>
                             </div>
                         </div>
 
                         <div class="cube-menu">
                             <h3 data-en="Navigation Menu" data-es="Menú de Navegación">Navigation Menu</h3>
                             <div class="cube-topics">
-                                <div class="topic-item active"
-                                    onclick="event.stopPropagation(); navigateToSection('education');">
+                                <div class="topic-item active" onclick="event.stopPropagation(); showPage('tesis');">
                                     <div class="topic-icon">🎓</div>
                                     <div class="topic-content">
-                                        <h4 data-en="Courses & Education" data-es="Cursos y Educación">Courses &
-                                            Education</h4>
+                                        <h4 data-en="Thesis & Diplo" data-es="Tesis y Diplo">Thesis & Diplo</h4>
                                         <p data-en="Academic background and specializations"
                                             data-es="Antecedentes académicos y especializaciones">Academic background
                                             and specializations</p>
                                     </div>
                                 </div>
 
-                                <div class="topic-item"
-                                    onclick="event.stopPropagation(); navigateToSection('code-gallery');">
+                                <div class="topic-item" onclick="event.stopPropagation(); showPage('code-gallery');">
                                     <div class="topic-icon">💻</div>
                                     <div class="topic-content">
-                                        <h4 data-en="Code & Projects" data-es="Código y Proyectos">Code & Projects</h4>
+                                        <h4 data-en="Code" data-es="Código">Code</h4>
                                         <p data-en="Interactive demos and source code"
                                             data-es="Demos interactivos y código fuente">
                                             Interactive demos and source code</p>
                                     </div>
                                 </div>
 
-                                <div class="topic-item" onclick="event.stopPropagation(); navigateToSection('home');">
+                                <div class="topic-item" onclick="event.stopPropagation(); showPage('cv');">
                                     <div class="topic-icon">📋</div>
                                     <div class="topic-content">
-                                        <h4 data-en="Professional CV" data-es="CV Profesional">Professional CV</h4>
+                                        <h4 data-en="CV" data-es="CV">CV</h4>
                                         <p data-en="Complete resume and experience"
                                             data-es="Currículum completo y experiencia">Complete
                                             resume and experience</p>
                                     </div>
                                 </div>
 
-                                <div class="topic-item"
-                                    onclick="event.stopPropagation(); navigateToSection('electrical-energy');">
+                                <div class="topic-item" onclick="event.stopPropagation(); showPage('energy');">
                                     <div class="topic-icon">⚡</div>
                                     <div class="topic-content">
-                                        <h4 data-en="Electrical Energy" data-es="Energía Eléctrica">Electrical Energy
-                                        </h4>
+                                        <h4 data-en="Energy" data-es="Energía">Energy</h4>
                                         <p data-en="Tariff calculations and energy analysis"
                                             data-es="Cálculos tarifarios y análisis energético">Tariff calculations and
                                             energy analysis</p>
                                     </div>
                                 </div>
 
-                                <div class="topic-item"
-                                    onclick="event.stopPropagation(); navigateToSection('regulation-energy');">
+                                <div class="topic-item" onclick="event.stopPropagation(); showPage('regulation');">
                                     <div class="topic-icon">⚖️</div>
                                     <div class="topic-content">
-                                        <h4 data-en="Regulation & Policy" data-es="Regulación y Política">Regulation &
-                                            Policy</h4>
+                                        <h4 data-en="Regulation" data-es="Regulación">Regulation</h4>
                                         <p data-en="Regulatory frameworks and compliance"
                                             data-es="Marcos regulatorios y cumplimiento">
                                             Regulatory frameworks and compliance</p>
                                     </div>
                                 </div>
 
-                                <div class="topic-item"
-                                    onclick="event.stopPropagation(); navigateToSection('data-observatory');">
+                                <div class="topic-item" onclick="event.stopPropagation(); showPage('observatory');">
                                     <div class="topic-icon">📊</div>
                                     <div class="topic-content">
                                         <h4 data-en="Data Observatory" data-es="Observatorio de Datos">Data Observatory
@@ -17453,7 +17496,7 @@
                             <div class="about-image">
                                 <div class="profile-card">
                                     <div class="profile-photo">
-                                        <img src="data:image/jpeg;base64,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"
+                                        <img src="https://raw.githubusercontent.com/naninimarcos/naninimarcos.github.io/main/data/WhatsApp%20Image%202025-05-21%20at%208.26.39%20AM.jpeg"
                                             alt="Marcos Nanini - Professional Photo" class="profile-image">
                                     </div>
                                     <h3 data-en="Always Learning" data-es="Siempre Aprendiendo">Always Learning</h3>
@@ -17495,63 +17538,146 @@
                 <!-- Experience Section -->
                 <section id="experience" class="section">
                     <div class="container">
-                        <h2 data-en="Professional Experience" data-es="Experiencia Profesional">Professional Experience
-                        </h2>
-
-                        <div class="experience-item">
-                            <h3 data-en="Cost and Tariff Analyst" data-es="Analista de Costos y Tarifas">Cost and Tariff
-                                Analyst</h3>
-                            <div class="company" data-en="Public Services Regulatory Agency (ERSeP), Córdoba, Argentina"
-                                data-es="Ente Regulador de Servicios Públicos (ERSeP), Córdoba, Argentina">Public
-                                Services Regulatory
-                                Agency
-                                (ERSeP), Córdoba, Argentina</div>
-                            <div class="period">2022 – Present</div>
-                            <ul>
-                                <li data-en="Coordinator of ERSeP's Data Observatory: Developed interactive dashboards in Power BI and produced statistical reports on HR management, process analysis, request statuses, and monthly/annual reports."
-                                    data-es="Coordinador del Observatorio de Datos de ERSeP: Desarrollé dashboards interactivos en Power BI y produje reportes estadísticos sobre gestión de RRHH, análisis de procesos, estados de solicitudes y reportes mensuales/anuales.">
-                                    Coordinator of ERSeP's Data Observatory: Developed interactive dashboards in Power
-                                    BI and produced
-                                    statistical reports on HR management, process analysis, request statuses, and
-                                    monthly/annual reports.
-                                </li>
-                                <li data-en="Designed and automated tariff calculation models using Excel with macros."
-                                    data-es="Diseñé y automaticé modelos de cálculo tarifario usando Excel con macros.">
-                                    Designed and
-                                    automated tariff calculation models using Excel with macros.</li>
-                                <li data-en="Developed and maintained an app for digitizing field reports using Power Apps and Power Automate."
-                                    data-es="Desarrollé y mantuve una aplicación para digitalizar reportes de campo usando Power Apps y Power Automate.">
-                                    Developed and maintained an app for digitizing field reports using Power Apps and
-                                    Power Automate.</li>
-                                <li data-en="Conducted calculation and analysis of technical energy tariffs for cooperatives."
-                                    data-es="Realicé cálculo y análisis de tarifas técnicas energéticas para cooperativas.">
-                                    Conducted
-                                    calculation and analysis of technical energy tariffs for cooperatives.</li>
-                            </ul>
+                        <div class="experience-header">
+                            <h2 data-en="Professional Experience" data-es="Experiencia Profesional">Professional
+                                Experience</h2>
+                            <p class="experience-subtitle" data-en="Building the future through code and innovation"
+                                data-es="Construyendo el futuro a través del código e innovación">
+                                Building the future through code and innovation
+                            </p>
                         </div>
 
-                        <div class="experience-item">
-                            <h3 data-en="Freelance Software and Data Analyst"
-                                data-es="Analista de Software y Datos Freelance">
-                                Freelance
-                                Software and Data Analyst</h3>
-                            <div class="company" data-en="Remote" data-es="Remoto">Remote</div>
-                            <div class="period">2024 – Present</div>
-                            <ul>
-                                <li data-en="Collaborated on international projects focused on data analysis and software automation, including code review, prompt design, and process documentation."
-                                    data-es="Colaboré en proyectos internacionales enfocados en análisis de datos y automatización de software, incluyendo revisión de código, diseño de prompts y documentación de procesos.">
-                                    Collaborated on international projects focused on data analysis and software
-                                    automation, including
-                                    code review, prompt design, and process documentation.</li>
-                                <li data-en="Technologies used: Python, TypeScript, React, Next.js, Tailwind CSS, JSON, GitHub Actions, Power BI, Power Apps, Power Automate, SQL."
-                                    data-es="Tecnologías utilizadas: Python, TypeScript, React, Next.js, Tailwind CSS, JSON, GitHub Actions, Power BI, Power Apps, Power Automate, SQL.">
-                                    Technologies used: Python, TypeScript, React, Next.js, Tailwind CSS, JSON, GitHub
-                                    Actions, Power BI,
-                                    Power Apps, Power Automate, SQL.</li>
-                                <li data-en="Delivered custom data dashboards and automation tools for private clients."
-                                    data-es="Entregué dashboards de datos personalizados y herramientas de automatización para clientes privados.">
-                                    Delivered custom data dashboards and automation tools for private clients.</li>
-                            </ul>
+                        <div class="modern-timeline">
+                            <!-- Current Position -->
+                            <div class="experience-card current">
+                                <div class="experience-meta">
+                                    <div class="duration-badge current-badge">
+                                        <span data-en="2025 — Present" data-es="2025 — Presente">2025 — Present</span>
+                                    </div>
+                                    <div class="status-indicator active"></div>
+                                </div>
+                                <div class="experience-content">
+                                    <div class="role-info">
+                                        <h3 class="role-title" data-en="Senior AI Code Trainer"
+                                            data-es="Entrenador Senior de Código IA">Senior AI Code Trainer</h3>
+                                        <div class="company-location">
+                                            <span class="company" data-en="Remote — Global projects"
+                                                data-es="Remoto — Proyectos globales">Remote — Global projects</span>
+                                            <span class="location">🌍</span>
+                                        </div>
+                                    </div>
+                                    <p class="role-description"
+                                        data-en="Training and optimizing LLM models for code generation. Leading global automation initiatives and achieving top regional qualifications."
+                                        data-es="Entrenamiento y optimización de modelos LLM para generación de código. Liderando iniciativas globales de automatización y alcanzando calificaciones regionales top.">
+                                        Training and optimizing LLM models for code generation. Leading global
+                                        automation initiatives and achieving top regional qualifications.
+                                    </p>
+                                    <div class="skills-stack">
+                                        <span class="skill-tag">AI/ML</span>
+                                        <span class="skill-tag">Python</span>
+                                        <span class="skill-tag">TypeScript</span>
+                                        <span class="skill-tag">Code Training</span>
+                                        <span class="skill-tag">Automation</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Freelance Position -->
+                            <div class="experience-card freelance">
+                                <div class="experience-meta">
+                                    <div class="duration-badge freelance-badge">
+                                        <span data-en="2024 — Present" data-es="2024 — Presente">2024 — Present</span>
+                                    </div>
+                                    <div class="status-indicator active"></div>
+                                </div>
+                                <div class="experience-content">
+                                    <div class="role-info">
+                                        <h3 class="role-title" data-en="Power Platform Developer"
+                                            data-es="Desarrollador Power Platform">Power Platform Developer</h3>
+                                        <div class="company-location">
+                                            <span class="company" data-en="Freelance"
+                                                data-es="Freelance">Freelance</span>
+                                            <span class="location">💼</span>
+                                        </div>
+                                    </div>
+                                    <p class="role-description"
+                                        data-en="Building custom business applications and automation workflows. Creating interactive dashboards and process optimization solutions."
+                                        data-es="Construyendo aplicaciones empresariales personalizadas y flujos de automatización. Creando dashboards interactivos y soluciones de optimización de procesos.">
+                                        Building custom business applications and automation workflows. Creating
+                                        interactive dashboards and process optimization solutions.
+                                    </p>
+                                    <div class="skills-stack">
+                                        <span class="skill-tag">Power BI</span>
+                                        <span class="skill-tag">Power Apps</span>
+                                        <span class="skill-tag">Power Automate</span>
+                                        <span class="skill-tag">Analytics</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ERSeP Position -->
+                            <div class="experience-card corporate">
+                                <div class="experience-meta">
+                                    <div class="duration-badge corporate-badge">
+                                        <span data-en="2022 — Present" data-es="2022 — Presente">2022 — Present</span>
+                                    </div>
+                                    <div class="status-indicator active"></div>
+                                </div>
+                                <div class="experience-content">
+                                    <div class="role-info">
+                                        <h3 class="role-title" data-en="Data Observatory Coordinator"
+                                            data-es="Coordinador del Observatorio de Datos">Data Observatory Coordinator
+                                        </h3>
+                                        <div class="company-location">
+                                            <span class="company" data-en="ERSeP" data-es="ERSeP">ERSeP</span>
+                                            <span class="location">📍 Córdoba</span>
+                                        </div>
+                                    </div>
+                                    <p class="role-description"
+                                        data-en="Leading data analytics and regulatory compliance initiatives. Promoted from intern to coordinator through demonstrated expertise in energy sector analysis."
+                                        data-es="Liderando iniciativas de análisis de datos y cumplimiento regulatorio. Promovido de pasante a coordinador mediante experticia demostrada en análisis del sector energético.">
+                                        Leading data analytics and regulatory compliance initiatives. Promoted from
+                                        intern to coordinator through demonstrated expertise in energy sector analysis.
+                                    </p>
+                                    <div class="skills-stack">
+                                        <span class="skill-tag">Data Analytics</span>
+                                        <span class="skill-tag">Energy Regulation</span>
+                                        <span class="skill-tag">Excel VBA</span>
+                                        <span class="skill-tag">Statistical Analysis</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Career Start -->
+                            <div class="experience-card start">
+                                <div class="experience-meta">
+                                    <div class="duration-badge start-badge">
+                                        <span data-en="2022" data-es="2022">2022</span>
+                                    </div>
+                                    <div class="status-indicator completed"></div>
+                                </div>
+                                <div class="experience-content">
+                                    <div class="role-info">
+                                        <h3 class="role-title" data-en="Regulatory Intern"
+                                            data-es="Pasante Regulatorio">Regulatory Intern</h3>
+                                        <div class="company-location">
+                                            <span class="company" data-en="ERSeP" data-es="ERSeP">ERSeP</span>
+                                            <span class="location">📍 Córdoba</span>
+                                        </div>
+                                    </div>
+                                    <p class="role-description"
+                                        data-en="Foundation in energy sector analysis and regulatory frameworks. First professional experience in economic and technical studies."
+                                        data-es="Base en análisis del sector energético y marcos regulatorios. Primera experiencia profesional en estudios económicos y técnicos.">
+                                        Foundation in energy sector analysis and regulatory frameworks. First
+                                        professional experience in economic and technical studies.
+                                    </p>
+                                    <div class="skills-stack">
+                                        <span class="skill-tag">Research</span>
+                                        <span class="skill-tag">Economic Analysis</span>
+                                        <span class="skill-tag">Regulatory Studies</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -28169,9 +28295,237 @@ class AdvancedTranscriber:
         </head>
         <body>
           ${currentCV.innerHTML}
-        </body>
-        </html>
-      `);
+                        <style>
+                /* Modern Experience Timeline Styles */
+                .experience-header {
+                    text-align: center;
+                    margin-bottom: 4rem;
+                    padding-bottom: 2rem;
+                    border-bottom: 2px solid var(--accent-color);
+                }
+
+                .experience-subtitle {
+                    color: var(--text-dark);
+                    font-size: 1.1rem;
+                    margin-top: 1rem;
+                    opacity: 0.8;
+                }
+
+                body.dark-theme .experience-subtitle {
+                    color: var(--text-light);
+                }
+
+                .modern-timeline {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+                    max-width: 900px;
+                    margin: 0 auto;
+                }
+
+                .experience-card {
+                    background: var(--card-bg-light);
+                    border-radius: 20px;
+                    padding: 2rem;
+                    box-shadow: var(--shadow-light);
+                    transition: all 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                body.dark-theme .experience-card {
+                    background: var(--card-bg-dark);
+                    box-shadow: var(--shadow-dark);
+                }
+
+                .experience-card:hover {
+                    transform: translateY(-8px);
+                    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.1);
+                }
+
+                .experience-card::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    width: 5px;
+                    background: var(--accent-color);
+                }
+
+                .experience-card.current::before {
+                    background: linear-gradient(to bottom, #00d4aa, #00b894);
+                }
+
+                .experience-card.freelance::before {
+                    background: linear-gradient(to bottom, #fd79a8, #e17055);
+                }
+
+                .experience-card.corporate::before {
+                    background: linear-gradient(to bottom, #74b9ff, #0984e3);
+                }
+
+                .experience-card.start::before {
+                    background: linear-gradient(to bottom, #636e72, #2d3436);
+                }
+
+                .experience-meta {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 1.5rem;
+                }
+
+                .duration-badge {
+                    padding: 0.5rem 1rem;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    color: white;
+                }
+
+                .current-badge {
+                    background: linear-gradient(45deg, #00d4aa, #00b894);
+                }
+
+                .freelance-badge {
+                    background: linear-gradient(45deg, #fd79a8, #e17055);
+                }
+
+                .corporate-badge {
+                    background: linear-gradient(45deg, #74b9ff, #0984e3);
+                }
+
+                .start-badge {
+                    background: linear-gradient(45deg, #636e72, #2d3436);
+                }
+
+                .status-indicator {
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    position: relative;
+                }
+
+                .status-indicator.active {
+                    background: #00d4aa;
+                    animation: pulse 2s infinite;
+                }
+
+                .status-indicator.completed {
+                    background: #636e72;
+                }
+
+                @keyframes pulse {
+                    0% { box-shadow: 0 0 0 0 rgba(0, 212, 170, 0.7); }
+                    70% { box-shadow: 0 0 0 10px rgba(0, 212, 170, 0); }
+                    100% { box-shadow: 0 0 0 0 rgba(0, 212, 170, 0); }
+                }
+
+                .experience-content {
+                    display: grid;
+                    gap: 1.5rem;
+                }
+
+                .role-info {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                }
+
+                .role-title {
+                    font-size: 1.5rem;
+                    color: var(--accent-color);
+                    margin: 0;
+                    font-weight: 700;
+                }
+
+                .company-location {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    font-size: 1rem;
+                    color: var(--text-dark);
+                    font-weight: 500;
+                }
+
+                body.dark-theme .company-location {
+                    color: var(--text-light);
+                }
+
+                .company {
+                    font-weight: 600;
+                }
+
+                .location {
+                    font-size: 0.9rem;
+                    opacity: 0.8;
+                }
+
+                .role-description {
+                    color: var(--text-dark);
+                    line-height: 1.6;
+                    margin: 0;
+                    font-size: 1rem;
+                }
+
+                body.dark-theme .role-description {
+                    color: var(--text-light);
+                }
+
+                .skills-stack {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.5rem;
+                    margin-top: 1rem;
+                }
+
+                .skill-tag {
+                    background: rgba(255, 215, 0, 0.1);
+                    color: var(--text-dark);
+                    padding: 0.4rem 0.8rem;
+                    border-radius: 20px;
+                    font-size: 0.85rem;
+                    font-weight: 500;
+                    border: 1px solid rgba(255, 215, 0, 0.3);
+                    transition: all 0.3s ease;
+                }
+
+                body.dark-theme .skill-tag {
+                    background: rgba(255, 215, 0, 0.2);
+                    color: var(--text-light);
+                }
+
+                .skill-tag:hover {
+                    background: var(--accent-color);
+                    color: var(--text-dark);
+                    transform: translateY(-2px);
+                }
+
+                @media (max-width: 768px) {
+                    .modern-timeline {
+                        max-width: 100%;
+                    }
+                    
+                    .experience-card {
+                        padding: 1.5rem;
+                    }
+                    
+                    .role-title {
+                        font-size: 1.3rem;
+                    }
+                    
+                    .company-location {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 0.3rem;
+                    }
+                }
+            </style>
+</body>
+
+</html>
+`);
 
             printWindow.document.close();
 
@@ -28278,7 +28632,7 @@ class AdvancedTranscriber:
                 },
                 'flashcards': () => {
                     // Simulate opening flashcard demo
-                    alert('🃏 Flashcards Demo\n\nThis would open an interactive flashcard tool with:\n• WYSIWYG editor\n• Custom templates\n• Export/Import functionality\n• Collaborative features\n\nDemo coming soon!');
+                    alert('🃏 Flashcards Demo\n\nThis would open an interactive flashcard tool with:\n• WYSIWYG editor\n• Custom templates\n• Export / Import functionality\n• Collaborative features\n\nDemo coming soon!');
                 },
                 'recipe': () => {
                     // Simulate opening recipe demo
@@ -28435,7 +28789,9 @@ class AdvancedTranscriber:
                 },
                 options: [
                     { en: "Maximize company profits", es: "Maximizar ganancias de la empresa" },
-                    { en: "Balance consumer welfare and service quality", es: "Equilibrar bienestar del consumidor y calidad del servicio" },
+                    {
+                        en: "Balance consumer welfare and service quality", es: "Equilibrar bienestar del consumidor y calidad del servicio"
+                    },
                     { en: "Minimize government intervention", es: "Minimizar intervención gubernamental" },
                     { en: "Eliminate all competition", es: "Eliminar toda competencia" }
                 ],
@@ -28539,7 +28895,7 @@ class AdvancedTranscriber:
             const questionDiv = document.getElementById('quiz-question');
             const optionsDiv = document.getElementById('quiz-options');
 
-            questionDiv.innerHTML = `<p>${question.question[isSpanish ? 'es' : 'en']}</p>`;
+            questionDiv.innerHTML = `< p > ${question.question[isSpanish ? 'es' : 'en']}</p >`;
 
             optionsDiv.innerHTML = '';
             question.options.forEach((option, index) => {
@@ -28624,7 +28980,6 @@ class AdvancedTranscriber:
         function updateNavigationButtons() {
             const prevBtn = document.querySelector('.prev-btn');
             const nextBtn = document.querySelector('.next-btn');
-
             if (prevBtn) prevBtn.disabled = (currentSlide === 0);
             if (nextBtn) nextBtn.disabled = (currentSlide === totalSlides - 1);
         }
@@ -28634,9 +28989,7 @@ class AdvancedTranscriber:
             if (presentationContainer) {
                 presentationContainer.scrollIntoView({ behavior: 'smooth' });
             }
-        }
-
-        // Keyboard navigation for slides
+        } // Keyboard navigation for slides
         document.addEventListener('keydown', (e) => {
             const activeElement = document.activeElement;
             const isInputFocused = activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA';
@@ -28885,12 +29238,12 @@ class AdvancedTranscriber:
         const balanceElement = document.getElementById('balance-result');
 
         if (balance > 0) {
-            balanceElement.textContent = `+${balance} kWh (Excedente)`;
+            balanceElement.textContent = `+ ${balance} kWh(Excedente)`;
             balanceElement.style.color = '#27ae60';
             document.getElementById('balance-status').textContent = 'Inyectando a la red';
             document.getElementById('balance-status').style.color = '#27ae60';
         } else if (balance < 0) {
-            balanceElement.textContent = `${balance} kWh (Déficit)`;
+            balanceElement.textContent = `${balance} kWh(Déficit)`;
             balanceElement.style.color = '#e74c3c';
             document.getElementById('balance-status').textContent = 'Consumiendo de la red';
             document.getElementById('balance-status').style.color = '#e74c3c';
@@ -28964,26 +29317,318 @@ class AdvancedTranscriber:
     // Animación de carga y estilos dinámicos
     const style = document.createElement('style');
     style.textContent = `
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+            @keyframes spin {
+                0 % { transform: rotate(0deg); }
+                100 % { transform: rotate(360deg); }
+            }
         
-        .slides-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
+        .slides - btn:hover {
+                transform: translateY(-2px);
+                box - shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            }
         
-        .slides-viewer-container {
-            transition: all 0.3s ease;
-        }
+        .slides - viewer - container {
+                transition: all 0.3s ease;
+            }
         
-        .slides-viewer-container:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
+        .slides - viewer - container:hover {
+                transform: translateY(-2px);
+                box - shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            }
     `;
     document.head.appendChild(style);
+</script>
+
+<!-- JavaScript fixes for errors and theme restoration -->
+<script>
+    // Fix JavaScript errors and restore functionality
+
+    // Complete theme and functionality fix
+    function initializeThemeAndFixes() {
+        // Apply dark theme by default
+        document.body.style.background = 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)';
+        document.body.style.color = '#f8f9fa';
+
+        // Update CSS variables for darker theme
+        const root = document.documentElement;
+        root.style.setProperty('--primary-gradient', 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)');
+
+        // Fix header styles for dark theme
+        const header = document.querySelector('header');
+        if (header) {
+            header.style.background = 'rgba(0, 0, 0, 0.9)';
+            header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+        }
+
+        // Fix navigation links for dark theme
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            link.style.color = '#f8f9fa';
+        });
+
+        // Fix logo color for dark theme
+        const logo = document.querySelector('.logo');
+        if (logo) {
+            logo.style.color = '#f8f9fa';
+        }
+
+        // Fix buttons for dark theme
+        const buttons = document.querySelectorAll('.theme-toggle, .lang-toggle');
+        buttons.forEach(button => {
+            button.style.color = '#f8f9fa';
+            button.style.background = 'rgba(255, 255, 255, 0.2)';
+        });
+
+        // Fix main content for dark theme
+        const mainContent = document.querySelector('.main-content');
+        if (mainContent) {
+            mainContent.style.background = '#2d3748';
+            mainContent.style.color = '#f8f9fa';
+        }
+
+        // Fix section headers for dark theme
+        const sectionHeaders = document.querySelectorAll('.section-header h2');
+        sectionHeaders.forEach(header => {
+            header.style.color = '#f8f9fa';
+        });
+
+        // Fix section subtitles for dark theme
+        const sectionSubtitles = document.querySelectorAll('.section-subtitle');
+        sectionSubtitles.forEach(subtitle => {
+            subtitle.style.color = '#ccc';
+        });
+
+        // Fix about text for dark theme
+        const aboutTexts = document.querySelectorAll('.about-text');
+        aboutTexts.forEach(text => {
+            text.style.color = '#f8f9fa';
+        });
+
+        // Fix cards for dark theme
+        const cards = document.querySelectorAll('.profile-card');
+        cards.forEach(card => {
+            card.style.background = '#2d3748';
+            card.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
+        });
+    }
+
+    // Fix broken quiz result display
+    function fixQuizResult() {
+        window.selectAnswer = function (optionIndex, isCorrect) {
+            const options = document.querySelectorAll('.quiz-option');
+            const resultDiv = document.getElementById('quiz-result');
+
+            if (!options.length || !resultDiv) return;
+
+            // Disable all options
+            options.forEach(option => option.disabled = true);
+
+            // Mark correct and incorrect answers
+            options.forEach((option, index) => {
+                if (index === quizQuestions[currentQuestionIndex].correct) {
+                    option.classList.add('correct');
+                } else if (index === optionIndex && !isCorrect) {
+                    option.classList.add('incorrect');
+                }
+            });
+
+            totalQuestions++;
+
+            if (isCorrect) {
+                correctAnswers++;
+                currentStreak++;
+                resultDiv.innerHTML = `<div class="quiz-result correct">✅ ${isSpanish ? '¡Correcto!' : 'Correct!'}</div>`;
+                if (typeof checkAchievements === 'function') checkAchievements();
+            } else {
+                currentStreak = 0;
+                const correctOption = quizQuestions[currentQuestionIndex].options[quizQuestions[currentQuestionIndex].correct];
+                const correctText = correctOption[isSpanish ? 'es' : 'en'];
+                resultDiv.innerHTML = `<div class="quiz-result incorrect">❌ ${isSpanish ? 'Incorrecto. La respuesta correcta era: ' : 'Incorrect. The correct answer was: '}<strong>${correctText}</strong></div>`;
+            }
+
+            if (typeof updateQuizStats === 'function') updateQuizStats();
+            const nextBtn = document.getElementById('next-question-btn');
+            if (nextBtn) nextBtn.style.display = 'block';
+        };
+    }
+
+    // Fix broken loadQuestion function
+    function fixLoadQuestion() {
+        window.loadQuestion = function () {
+            const question = quizQuestions[currentQuestionIndex];
+            const questionDiv = document.getElementById('quiz-question');
+            const optionsDiv = document.getElementById('quiz-options');
+
+            if (!questionDiv || !optionsDiv) return;
+
+            questionDiv.innerHTML = `<p>${question.question[isSpanish ? 'es' : 'en']}</p>`;
+
+            optionsDiv.innerHTML = '';
+            question.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.className = 'quiz-option';
+                button.textContent = option[isSpanish ? 'es' : 'en'];
+                button.onclick = () => selectAnswer(index, index === question.correct);
+                optionsDiv.appendChild(button);
+            });
+        };
+    }
+
+    // Fix broken demo functions
+    function fixDemoFunctions() {
+        window.openProjectDemo = function (projectId) {
+            console.log('Opening demo for:', projectId);
+
+            const demoActions = {
+                'resume': () => {
+                    if (typeof showPage === 'function') showPage('home');
+                    setTimeout(() => {
+                        const aboutSection = document.getElementById('about');
+                        if (aboutSection) aboutSection.scrollIntoView({ behavior: 'smooth' });
+                    }, 300);
+                },
+                'contact': () => {
+                    if (typeof showPage === 'function') showPage('home');
+                    setTimeout(() => {
+                        const contactSection = document.getElementById('contact');
+                        if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }, 300);
+                },
+                'cube3d': () => {
+                    if (typeof showPage === 'function') showPage('home');
+                    setTimeout(() => {
+                        const cubeSection = document.getElementById('cube-navigator');
+                        if (cubeSection) cubeSection.scrollIntoView({ behavior: 'smooth' });
+                    }, 300);
+                },
+                'deadline': () => {
+                    alert('📅 Deadline Tracker Demo\n\nThis would open an interactive project management tool with:\n• Drag & drop functionality\n• Timeline visualization\n• Priority management\n• Deadline notifications\n\nDemo coming soon!');
+                },
+                'flashcards': () => {
+                    alert('🃏 Flashcards Demo\n\nThis would open an interactive flashcard tool with:\n• WYSIWYG editor\n• Custom templates\n• Export / Import functionality\n• Collaborative features\n\nDemo coming soon!');
+                },
+                'recipe': () => {
+                    alert('👨‍🍳 Recipe Assistant Demo\n\nThis would open a smart cooking assistant with:\n• Voice commands\n• Step-by-step guidance\n• Timer integration\n• Ingredient tracking\n\nDemo coming soon!');
+                },
+                'cardgame': () => {
+                    alert('🎮 Card Game Demo\n\nThis would open a strategic card game with:\n• Turn-based gameplay\n• Animations & effects\n• AI opponents\n• Real-time multiplayer\n\nDemo coming soon!');
+                },
+                'transcription': () => {
+                    if (typeof showPage === 'function') showPage('regulation');
+                    setTimeout(() => {
+                        const waccSection = document.querySelector('.wacc-simulator');
+                        if (waccSection) waccSection.scrollIntoView({ behavior: 'smooth' });
+                    }, 300);
+                }
+            };
+
+            const demoAction = demoActions[projectId];
+            if (demoAction) {
+                demoAction();
+            } else {
+                alert(`Demo for ${projectId} will be available soon!`);
+            }
+        };
+    }
+
+    // Apply fixes when DOM is ready
+    document.addEventListener('DOMContentLoaded', function () {
+        // Apply fixes with a small delay to ensure other scripts have loaded
+        setTimeout(() => {
+            initializeThemeAndFixes();
+            fixQuizResult();
+            fixLoadQuestion();
+            fixDemoFunctions();
+            console.log('JavaScript fixes applied successfully');
+        }, 500);
+    });
+
+    // Also apply fixes immediately if DOM is already loaded
+    if (document.readyState !== 'loading') {
+        setTimeout(() => {
+            initializeThemeAndFixes();
+            fixQuizResult();
+            fixLoadQuestion();
+            fixDemoFunctions();
+            console.log('JavaScript fixes applied immediately');
+        }, 100);
+    }
+
+    // Apply theme fixes immediately for faster visual feedback
+    initializeThemeAndFixes();
+
+    // Fix theme toggle functionality
+    function setupThemeToggle() {
+        const themeToggle = document.querySelector('.theme-toggle');
+        if (themeToggle) {
+            themeToggle.onclick = function () {
+                document.body.classList.toggle('light-theme');
+
+                if (document.body.classList.contains('light-theme')) {
+                    // Apply light theme
+                    document.body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                    document.body.style.color = '#333';
+
+                    // Update header for light theme
+                    const header = document.querySelector('header');
+                    if (header) {
+                        header.style.background = 'rgba(0, 0, 0, 0.8)';
+                    }
+
+                    // Update main content for light theme
+                    const mainContent = document.querySelector('.main-content');
+                    if (mainContent) {
+                        mainContent.style.background = '#ffffff';
+                        mainContent.style.color = '#333';
+                    }
+
+                    // Update section headers for light theme
+                    const sectionHeaders = document.querySelectorAll('.section-header h2');
+                    sectionHeaders.forEach(header => {
+                        header.style.color = '#333';
+                    });
+
+                    // Update section subtitles for light theme
+                    const sectionSubtitles = document.querySelectorAll('.section-subtitle');
+                    sectionSubtitles.forEach(subtitle => {
+                        subtitle.style.color = '#666';
+                    });
+
+                    // Update about text for light theme
+                    const aboutTexts = document.querySelectorAll('.about-text');
+                    aboutTexts.forEach(text => {
+                        text.style.color = '#333';
+                    });
+
+                    // Update cards for light theme
+                    const cards = document.querySelectorAll('.profile-card');
+                    cards.forEach(card => {
+                        card.style.background = '#ffffff';
+                        card.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+                    });
+
+                    themeToggle.textContent = '🌙 Dark';
+                } else {
+                    // Apply dark theme
+                    initializeThemeAndFixes();
+                    themeToggle.textContent = '☀️ Light';
+                }
+            };
+
+            // Set initial button text
+            themeToggle.textContent = '☀️ Light';
+        }
+    }
+
+    // Setup theme toggle after DOM is ready
+    document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(setupThemeToggle, 600);
+    });
+
+    // Also setup immediately if DOM is already loaded
+    if (document.readyState !== 'loading') {
+        setTimeout(setupThemeToggle, 200);
+    }
 </script>
 </body>
 
