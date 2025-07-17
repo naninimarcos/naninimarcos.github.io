@@ -306,7 +306,7 @@
         /* Enhanced Main Content */
         .main-content {
             background: var(--card-bg-light);
-            margin-top: -100px;
+            margin-top: -50px;
             border-radius: 30px 30px 0 0;
             padding: 80px 0 50px;
             position: relative;
@@ -810,16 +810,68 @@
         .education-hero {
             background: var(--primary-gradient);
             color: var(--text-light);
-            padding: 8rem 0 5rem;
+            padding: 8rem 0 8rem;
             text-align: center;
             min-height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+            z-index: 20;
         }
 
         .education-hero .container {
             width: 100%;
+        }
+
+        /* Fix for education page main content overlap */
+        .education-page .main-content {
+            margin-top: 60px;
+            padding-top: 60px;
+        }
+
+        /* Additional spacing for education content */
+        .education-page .education-content {
+            padding-top: 2rem;
+        }
+
+        /* Fix for code gallery page main content overlap */
+        .code-gallery-page .main-content {
+            margin-top: 60px;
+            padding-top: 60px;
+        }
+
+        /* Additional spacing for code gallery content */
+        .code-gallery-page .gallery-grid {
+            padding-top: 2rem;
+        }
+
+        /* Global fix for all hero sections - ensure proper spacing */
+        .education-hero,
+        .code-gallery-hero,
+        .hero {
+            padding-bottom: 80px !important;
+            position: relative !important;
+            z-index: 20;
+        }
+
+        /* Global fix for all main-content sections - remove negative margins */
+        .main-content {
+            margin-top: 60px !important;
+        }
+
+        /* Fix for services page main content overlap */
+        .services-page .main-content {
+            margin-top: 60px;
+            padding-top: 60px;
+        }
+
+
+
+        /* Additional spacing for services content */
+        .services-page .services-grid,
+        .services-page .pricing-grid {
+            padding-top: 2rem;
         }
 
         .education-hero h1 {
@@ -4631,7 +4683,7 @@
         /* Enhanced Main Content */
         .main-content {
             background: var(--card-bg-light);
-            margin-top: -100px;
+            margin-top: -50px;
             border-radius: 30px 30px 0 0;
             padding: 80px 0 50px;
             position: relative;
@@ -26103,6 +26155,16 @@ plt.title("Composición Tarifaria Eléctrica")
             }
         }
 
+        // Enhanced Mobile Menu JavaScript
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggle = document.querySelector(".mobile-menu-toggle");
+            const nav = document.querySelector(".mobile-nav");
+            const closeBtn = document.querySelector(".mobile-nav-close");
+
+            toggle?.addEventListener("click", () => nav?.classList.add("active"));
+            closeBtn?.addEventListener("click", () => nav?.classList.remove("active"));
+        });
+
         // Close mobile menu when clicking outside
         document.addEventListener('click', function (e) {
             const mobileNav = document.getElementById('mobile-nav');
@@ -34211,9 +34273,55 @@ class AdvancedTranscriber:
         @media (max-width: 768px) {
             /* Main content adjustments */
             .main-content {
-                margin-top: -50px;
+                margin-top: 40px;
                 padding: 60px 0 30px;
                 border-radius: 20px 20px 0 0;
+            }
+
+            /* Mobile hero section adjustments */
+            .education-hero,
+            .code-gallery-hero,
+            .hero {
+                padding-bottom: 60px !important;
+            }
+
+            /* Education page specific mobile fixes */
+            .education-page .main-content {
+                margin-top: 40px;
+                padding-top: 40px;
+            }
+
+            .education-page .education-content {
+                padding-top: 1rem;
+                margin: 2rem 0;
+            }
+
+            .education-page .education-hero p {
+                font-size: 1.1rem;
+                padding: 0 1rem;
+            }
+
+            /* Code gallery page specific mobile fixes */
+            .code-gallery-page .main-content {
+                margin-top: 40px;
+                padding-top: 40px;
+            }
+
+            .code-gallery-page .gallery-grid {
+                padding-top: 1rem;
+                margin: 2rem 0;
+            }
+
+            /* Services page specific mobile fixes */
+            .services-page .main-content {
+                margin-top: 40px;
+                padding-top: 40px;
+            }
+
+            .services-page .services-grid,
+            .services-page .pricing-grid {
+                padding-top: 1rem;
+                margin: 2rem 0;
             }
 
             /* Mobile navigation improvements */
@@ -34864,6 +34972,185 @@ class AdvancedTranscriber:
             .container {
                 max-width: 100%;
                 padding: 0 1rem;
+            }
+        }
+
+        /* Fix for anchor navigation - prevent header overlap */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Universal scroll margin for all elements with IDs */
+        [id] {
+            scroll-margin-top: 120px;
+        }
+
+        /* Add scroll-margin-top to all anchor sections to account for fixed header */
+        #home,
+        #about,
+        #experience,
+        #teaching,
+        #skills,
+        #projects,
+        #contact,
+        #intro,
+        #flujo-energia,
+        #epec,
+        #cooperativas,
+        #mem,
+        #gen-distribuida,
+        #inversiones,
+        #alumbrado,
+        #sabias-que,
+        #thesis-presentation,
+        #cv-viewer,
+        #resume,
+        #skillsContainer,
+        #experienceContainer,
+        #deptList,
+        #timeline,
+        #cardsContainer,
+        #steps,
+        #result,
+        #slides-iframe,
+        #slides-loading,
+        #wacc-result,
+        #calculation-breakdown,
+        #quiz-question,
+        #quiz-options,
+        #quiz-result,
+        #correct-answers,
+        #total-questions,
+        #quiz-score,
+        #badge-first,
+        #badge-streak,
+        #badge-expert,
+        #intro,
+        #capabilities,
+        #kpi,
+        #benchmarking {
+            scroll-margin-top: 120px;
+        }
+
+        /* Page sections need more margin due to their structure */
+        #home-page,
+        #services-page,
+        #tesis-page,
+        #cv-page,
+        #code-gallery-page,
+        #energy-page,
+        #regulation-page,
+        #observatory-page,
+        #data-observatory-page {
+            scroll-margin-top: 100px;
+        }
+
+        /* Energy sections need extra margin */
+        .energy-section {
+            scroll-margin-top: 140px;
+        }
+
+        /* Thesis presentation sections */
+        .slide {
+            scroll-margin-top: 130px;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            #home,
+            #about,
+            #experience,
+            #teaching,
+            #skills,
+            #projects,
+            #contact,
+            #intro,
+            #flujo-energia,
+            #epec,
+            #cooperativas,
+            #mem,
+            #gen-distribuida,
+            #inversiones,
+            #alumbrado,
+            #sabias-que,
+            #thesis-presentation,
+            #cv-viewer,
+            #resume,
+            #skillsContainer,
+            #experienceContainer,
+            #deptList,
+            #timeline,
+            #cardsContainer,
+            #steps,
+            #result,
+            #slides-iframe,
+            #slides-loading,
+            #wacc-result,
+            #calculation-breakdown,
+            #quiz-question,
+            #quiz-options,
+            #quiz-result,
+            #correct-answers,
+            #total-questions,
+            #quiz-score,
+            #badge-first,
+            #badge-streak,
+            #badge-expert,
+            #intro,
+            #capabilities,
+            #kpi,
+            #benchmarking {
+                scroll-margin-top: 100px;
+            }
+
+            #home-page,
+            #services-page,
+            #tesis-page,
+            #cv-page,
+            #code-gallery-page,
+            #energy-page,
+            #regulation-page,
+            #observatory-page,
+            #data-observatory-page {
+                scroll-margin-top: 80px;
+            }
+
+            .energy-section {
+                scroll-margin-top: 120px;
+            }
+
+            .slide {
+                scroll-margin-top: 110px;
+            }
+
+            /* Mobile Hero Improvements */
+            .hero {
+                padding-top: 80px !important; /* Reduced from 120px */
+                min-height: auto !important; /* Changed from 100vh */
+            }
+
+            /* Limit image and card widths for mobile */
+            img, .profile-photo, .project-preview iframe {
+                max-width: 100%;
+                height: auto;
+            }
+
+            /* Reduce margins/paddings in long sections for mobile */
+            .section, .hero-content, .slide {
+                padding: 1.5rem 0;
+            }
+
+            .main-content {
+                padding: 1.5rem 0;
+            }
+
+            .education-content, .gallery-grid, .services-grid {
+                padding: 1rem 0;
+            }
+
+            /* Ensure overflow-x: hidden is applied */
+            body, .container, .main-content {
+                overflow-x: hidden;
             }
         }
     `;
