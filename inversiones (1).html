@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Plataforma de inversión y oportunidades en la Provincia de Córdoba: inteligencia territorial, sectores estratégicos, incentivos vigentes, parques industriales y herramientas para evaluar proyectos de radicación y expansión.">
+<meta name="keywords" content="invertir en Córdoba, inversiones en Córdoba, parques industriales Córdoba, promoción industrial Córdoba, economía del conocimiento Córdoba, radicación de empresas Córdoba, incentivos para invertir en Córdoba, inteligencia territorial Córdoba">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://naninimarcos.github.io/inversiones.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Invertir en Córdoba | Oportunidades, incentivos e inteligencia territorial">
+<meta property="og:description" content="Oportunidades territoriales, sectores productivos, incentivos vigentes y herramientas para evaluar proyectos de inversión en la Provincia de Córdoba.">
+<meta property="og:url" content="https://naninimarcos.github.io/inversiones.html">
+<meta property="og:locale" content="es_AR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Invertir en Córdoba | Oportunidades e inteligencia territorial">
+<meta name="twitter:description" content="Sectores, incentivos y datos territoriales para evaluar inversiones en Córdoba.">
+<meta name="theme-color" content="#0e2a28">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230e2a28'/%3E%3Cpath d='M7 22 L14 11 L19 18 L25 9' fill='none' stroke='%23e07a2f' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","name":"Observatorio del ERSeP — Córdoba","url":"https://naninimarcos.github.io/"},
+{"@type":"WebPage","name":"Invertir en Córdoba","description":"Inversión y oportunidades en la Provincia de Córdoba.","url":"https://naninimarcos.github.io/inversiones.html","inLanguage":"es-AR"},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://naninimarcos.github.io/"},{"@type":"ListItem","position":2,"name":"Invertir en Córdoba","item":"https://naninimarcos.github.io/inversiones.html"}]},
+{"@type":"Dataset","name":"Índice territorial de oportunidad — Córdoba","description":"Índice comparativo por zona de servicio de cooperativas eléctricas de Córdoba (población, actividad, logística e infraestructura).","creator":{"@type":"Organization","name":"Observatorio del ERSeP"},"spatialCoverage":"Provincia de Córdoba, Argentina","temporalCoverage":"2023","license":"https://www.openstreetmap.org/copyright"}
+]}
+</script>
+<title>Invertir en Córdoba | Oportunidades, incentivos e inteligencia territorial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<style>
+:root{
+ --ink:#0e2a28;--ink2:#16403a;--soft:#496761;--canvas:#e7edeb;--paper:#ffffff;
+ --line:#cad8d3;--accent:#0b6e62;--accent2:#0a5249;--signal:#e07a2f;--signalink:#b85716;
+ --gold:#c79a3a;--shadow:0 1px 2px rgba(14,42,40,.06),0 8px 24px rgba(14,42,40,.07);
+ --disp:"Space Grotesk",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif;--mono:"Space Mono","Courier New",monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--body);color:var(--ink);background:var(--canvas);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.top{position:sticky;top:0;z-index:50;background:rgba(231,237,235,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:18px;height:62px}
+.brand{display:flex;flex-direction:column;line-height:1.05;margin-right:auto}
+.brand .b1{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.3px}
+.brand .b2{font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--soft)}
+.tabs{display:flex;gap:4px;background:#dde6e3;border:1px solid var(--line);border-radius:999px;padding:3px}
+.tabs button{border:0;background:transparent;font-family:var(--disp);font-weight:600;font-size:12.5px;color:var(--soft);padding:8px 16px;border-radius:999px;cursor:pointer}
+.tabs button.on{background:var(--ink);color:#fff}
+.backlink{font-size:12.5px;font-weight:600;text-decoration:none;color:var(--soft);white-space:nowrap}
+.backlink:hover{color:var(--ink)}
+.hero{padding:54px 0 30px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-120px;top:-80px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(224,122,47,.16),transparent 62%)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--signalink);margin:0 0 14px}
+.hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(30px,5vw,52px);line-height:1.02;letter-spacing:-.5px;margin:0 0 14px;max-width:16ch}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:16px;color:var(--ink2);max-width:64ch;margin:0}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:26px 0 6px}
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
+.kpi .v{font-family:var(--mono);font-size:26px;line-height:1}
+.kpi .l{font-size:11.5px;color:var(--soft);margin-top:7px}
+.kpi .u{font-size:11px;color:var(--signalink);font-weight:600}
+.kpi .d{font-size:10.5px;color:var(--soft);margin-top:5px;line-height:1.35}
+section{padding:40px 0}
+.sec-h{display:flex;align-items:baseline;gap:14px;margin:0 0 20px}
+.sec-h .n{font-family:var(--mono);font-size:12px;color:var(--signalink)}
+.sec-h h2{font-family:var(--disp);font-weight:600;font-size:24px;letter-spacing:-.2px;margin:0}
+.sec-h p{margin:0;color:var(--soft);font-size:13px}
+.muted{color:var(--soft)}
+.info{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;border:1px solid var(--line);font-size:9px;color:var(--soft);cursor:help;margin-left:5px;font-family:var(--body);font-weight:700;vertical-align:1px;background:#fff}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:-6px 0 18px}
+.controls label{font-size:12px;color:var(--soft);font-weight:600}
+.controls select,.coopsel input{font-family:var(--body);font-size:13px;padding:8px 11px;border:1px solid var(--line);border-radius:9px;background:var(--paper);color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px;position:relative;text-decoration:none;color:inherit;transition:transform .1s ease,box-shadow .15s ease}
+a.card:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(14,42,40,.13)}
+.rank{position:absolute;top:14px;right:16px;font-family:var(--mono);font-size:12px;color:var(--soft)}
+.card h3{font-family:var(--disp);font-weight:600;font-size:17px;margin:0;padding-right:28px}
+.card .dep{font-size:11.5px;color:var(--soft);text-transform:uppercase;letter-spacing:.6px;margin-top:-6px}
+.scorerow{display:flex;align-items:flex-end;gap:10px}
+.scorebig{font-family:var(--mono);font-size:34px;line-height:.8}
+.scoreunit{font-size:11px;color:var(--soft);margin-bottom:3px}
+.meter{--p:0;height:12px;border-radius:999px;background:#e3eae8;position:relative;overflow:hidden;border:1px solid var(--line)}
+.meter:before{content:"";position:absolute;left:0;top:0;bottom:0;width:calc(var(--p)*1%);background:linear-gradient(90deg,var(--accent),var(--signal));border-radius:999px}
+.meter.avg:after{content:"";position:absolute;top:-3px;bottom:-3px;left:calc(var(--avg)*1%);width:2px;background:var(--ink);opacity:.55}
+.drivers{display:flex;flex-direction:column;gap:7px}
+.drv{display:grid;grid-template-columns:90px 1fr 30px;align-items:center;gap:9px;font-size:11px;color:var(--soft)}
+.drv .bar{height:6px;border-radius:999px;background:#e3eae8;overflow:hidden}
+.drv .bar i{display:block;height:100%;border-radius:999px;background:var(--accent)}
+.drv .bar.amber i{background:var(--signal)}
+.drv .vv{font-family:var(--mono);font-size:11px;color:var(--ink);text-align:right}
+.cardfoot{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--soft);border-top:1px dashed var(--line);padding-top:10px}
+.cardfoot b{color:var(--ink);font-weight:600}
+.seemore{display:inline-block;margin-top:16px;font-family:var(--disp);font-weight:600;font-size:13px;color:var(--accent);cursor:pointer;background:none;border:0}
+#gmap{height:480px;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow);background:#dfe6e3}
+#cmap{height:300px;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow);background:#dfe6e3}
+.maplegend{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:12px;color:var(--soft);align-items:center}
+.maplegend .sw{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:5px;vertical-align:-2px}
+.maplegend .ln{display:inline-block;width:20px;height:0;border-top:3px dashed #2f6f93;margin-right:5px;vertical-align:3px}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.qcard{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+.qcard .tag{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--signalink)}
+.qcard h4{font-family:var(--disp);font-weight:600;font-size:17px;margin:8px 0 8px}
+.qcard h4 span{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:1px}
+.qcard p{margin:0;font-size:13.5px;color:var(--ink2)}
+.qcard ul{margin:10px 0 0;padding-left:18px;font-size:13px;color:var(--ink2)}
+.qcard li{margin:4px 0}
+.coopsel{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:6px 0 26px}
+.coopsel input{min-width:340px}
+.coophead{display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px;border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:8px}
+.coophead h1{font-family:var(--disp);font-weight:700;font-size:clamp(26px,4vw,40px);margin:0;letter-spacing:-.5px}
+.coophead .sub{color:var(--soft);font-size:13.5px;max-width:64ch}
+.chip{font-family:var(--mono);font-size:11px;padding:4px 10px;border-radius:999px;background:#dde6e3;color:var(--ink2);border:1px solid var(--line)}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+.panel>.ph{font-family:var(--disp);font-weight:600;font-size:16px;margin-bottom:12px;display:flex;align-items:center}
+.two{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;margin-top:22px}
+.scorepanel .topr{display:flex;align-items:flex-end;gap:14px;margin-bottom:8px}
+.scorepanel .num{font-family:var(--mono);font-size:54px;line-height:.8}
+.scorepanel .cap{font-size:12px;color:var(--soft)}
+.scorepanel .ctx{font-size:12px;color:var(--soft);margin-top:10px}
+.mgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.mgrid .m{background:var(--paper);padding:13px 14px}
+.mgrid .m .l{font-size:11px;color:var(--soft);display:flex;align-items:center}
+.mgrid .m .v{font-family:var(--mono);font-size:20px;margin-top:3px}
+.mgrid .m .v small{font-size:11px;color:var(--soft);font-family:var(--body)}
+.mgrid .m .cap{font-size:10px;color:var(--soft);margin-top:3px;line-height:1.3}
+.sd{color:var(--soft);font-style:italic;font-family:var(--body);font-size:14px}
+.potlist .row{display:flex;justify-content:space-between;align-items:flex-start;padding:13px 2px;border-bottom:1px solid var(--line)}
+.potlist .row:last-child{border-bottom:0}
+.potlist .row .nm{display:flex;align-items:flex-start;gap:9px;font-weight:600;color:var(--ink2);font-size:14px}
+.potlist .row .nm i{width:11px;height:11px;border-radius:50%;margin-top:4px;flex:0 0 auto}
+.potlist .row .nm .du{font-weight:400;font-size:11px;color:var(--soft);margin-top:2px}
+.potlist .row .rt{text-align:right;white-space:nowrap}
+.potlist .row .val{font-family:var(--mono);font-size:18px}
+.potlist .row .band{font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:999px;display:inline-block;margin-top:3px}
+.band.b1{background:#e7f3ee;color:#0b6e62}.band.b2{background:#fbf0e2;color:#b85716}.band.b3{background:#f0f2f1;color:#496761}
+.recs{display:flex;flex-direction:column;gap:12px}
+.rec{display:flex;gap:13px;padding:15px 16px;border:1px solid var(--line);border-radius:14px;background:var(--paper)}
+.rec .ic{font-size:20px}
+.rec h5{font-family:var(--disp);font-weight:600;font-size:14.5px;margin:0 0 3px}
+.rec p{margin:0;font-size:13px;color:var(--ink2)}
+.rec.energy{border-left:4px solid var(--signal)}
+.rec.biz{border-left:4px solid var(--accent)}
+.prof p{font-size:13.5px;color:var(--ink2);margin:0 0 12px}
+.clrow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.clbadge{font-size:11.5px;font-weight:600;padding:5px 11px;border-radius:999px;background:#e7f3ee;color:var(--accent2);border:1px solid #bfe0d6}
+.adv{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+.adv li{display:flex;gap:10px;font-size:13px;color:var(--ink2)}
+.adv li b{color:var(--ink)}
+.adv .k{color:var(--signal);font-weight:700}
+.firm{border:1px solid var(--line);border-radius:13px;padding:13px 15px;background:#f7faf9;margin-top:6px}
+.firm .fn{font-family:var(--disp);font-weight:600;font-size:14.5px}
+.firm .fs{font-size:11.5px;color:var(--signalink);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.firm p{font-size:12.5px;color:var(--ink2);margin:5px 0 0}
+.note{font-size:12px;color:var(--soft);background:#eef3f1;border:1px solid var(--line);border-radius:12px;padding:13px 15px;line-height:1.55;margin-top:16px}
+.note b{color:var(--ink2)}
+details.gloss{margin-top:18px;border:1px solid var(--line);border-radius:12px;background:var(--paper);overflow:hidden}
+details.gloss summary{cursor:pointer;padding:13px 16px;font-family:var(--disp);font-weight:600;font-size:13.5px;list-style:none}
+details.gloss summary::-webkit-details-marker{display:none}
+details.gloss summary:before{content:"▸ ";color:var(--signal)}
+details.gloss[open] summary:before{content:"▾ "}
+details.gloss .gc{padding:0 16px 16px;font-size:12.5px;color:var(--ink2)}
+details.gloss dt{font-weight:700;color:var(--ink);margin-top:10px}
+details.gloss dd{margin:2px 0 0;color:var(--ink2)}
+.linkrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.linkrow a{font-family:var(--disp);font-weight:600;font-size:13px;text-decoration:none;padding:10px 15px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)}
+.linkrow a.solid{background:var(--ink);color:#fff;border-color:var(--ink)}
+.linkrow a:hover{border-color:var(--accent);color:var(--accent)}.linkrow a.solid:hover{color:#fff;background:var(--accent2)}
+.srcgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.srccard{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+.srccard h4{font-family:var(--disp);font-weight:600;font-size:14px;margin:0 0 6px}
+.srccard p{margin:0 0 4px;font-size:12.5px;color:var(--ink2)}
+.srccard .lab{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--signalink)}
+.srccard a{font-size:12.5px;word-break:break-word}
+.dtbl{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:12.5px;box-shadow:var(--shadow)}
+.dtbl th{font-family:var(--disp);font-weight:600;text-align:left;color:var(--soft);font-size:11px;text-transform:uppercase;letter-spacing:.4px;padding:11px 12px;border-bottom:1px solid var(--line);background:#eef3f1}
+.dtbl td{padding:9px 12px;border-bottom:1px solid var(--line)}
+.dtbl tr:last-child td{border-bottom:0}
+.dtbl td.num,.dtbl th.num{text-align:right;font-family:var(--mono)}
+.dtbl tbody tr:hover{background:#f3f7f5}
+.reltwo{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.pcts{display:flex;flex-direction:column;gap:9px}
+.prow{display:grid;grid-template-columns:118px 1fr 40px;align-items:center;gap:10px;font-size:12px;color:var(--soft)}
+.prow .pl{display:flex;align-items:center}
+.pb{height:7px;border-radius:999px;background:#e3eae8;overflow:hidden}
+.pb i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--signal))}
+.pp{font-family:var(--mono);font-size:12px;color:var(--ink);text-align:right}
+.ratios{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.rt2{border:1px solid var(--line);border-radius:12px;padding:12px 13px;background:#f7faf9}
+.rt2 .rl{font-size:11px;color:var(--soft);display:flex;align-items:center}
+.rt2 .rv{font-family:var(--mono);font-size:19px;margin-top:4px}
+.rt2 .rv small{font-size:10.5px;color:var(--soft);font-family:var(--body)}
+@media(max-width:760px){.reltwo,.ratios{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--soft);font-size:12.5px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
+.hide{display:none!important}
+@media(max-width:880px){.kpis,.grid,.cols,.srcgrid{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}.top .wrap{height:auto;flex-wrap:wrap;padding:10px 22px;gap:10px}}
+@media(max-width:560px){.grid,.cols,.srcgrid,.mgrid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.coopsel input{min-width:auto;width:100%}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<style id="platform-css">
+:root{--ok:#0b6e62;--warn:#b85716;--hist:#6b6f5a}
+html{scroll-behavior:smooth}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 16px;border-radius:0 0 10px 0;z-index:200}
+.skip:focus{left:0}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #1f6f8b;outline-offset:2px;border-radius:6px}
+section[id]{scroll-margin-top:78px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+/* sticky platform nav */
+.pnav{position:sticky;top:0;z-index:120;background:rgba(231,237,235,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.pnav .wrap{display:flex;align-items:center;gap:14px;min-height:60px;flex-wrap:wrap}
+.pnav .brand{display:flex;flex-direction:column;line-height:1.05;margin-right:auto}
+.pnav .b1{font-family:var(--disp);font-weight:700;font-size:15px}
+.pnav .b2{font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--soft)}
+.pnav nav{display:flex;flex-wrap:wrap;gap:2px}
+.pnav nav a{font-size:12.5px;font-weight:600;color:var(--soft);text-decoration:none;padding:7px 10px;border-radius:8px}
+.pnav nav a:hover,.pnav nav a:focus-visible{color:var(--ink);background:#dde6e3}
+.pnav nav a.active{color:#fff;background:var(--ink)}
+.pnav .navcta{font-family:var(--disp);font-weight:700;font-size:12.5px;color:#fff;background:var(--ink);padding:8px 14px;border-radius:999px;text-decoration:none}
+.pnav .navcta:hover{background:var(--accent2)}
+.pnav .navgd{font-family:var(--disp);font-weight:700;font-size:12px;color:var(--accent2);background:#e7f3ee;border:1px solid #bfe0d6;padding:8px 12px;border-radius:999px;text-decoration:none}
+.pnav .navback{font-family:var(--disp);font-weight:700;font-size:12px;color:#fff;background:var(--ink);border:1px solid var(--ink);padding:8px 12px;border-radius:999px;text-decoration:none;margin-right:4px}
+.pnav .navback:hover{background:var(--accent2);border-color:var(--accent2)}
+.pnav .navgd:hover{background:#d7ece5;border-color:var(--accent)}
+/* institutional hero */
+.ihero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#eef3f1,#e7edeb)}
+.ihero:before{content:"";position:absolute;right:-140px;top:-90px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(224,122,47,.16),transparent 62%)}
+.ihero .wrap{padding:58px 22px 40px}
+.ihero h1{font-family:var(--disp);font-weight:700;font-size:clamp(30px,5vw,52px);line-height:1.03;letter-spacing:-.6px;margin:0 0 16px;max-width:20ch}
+.ihero .sub{font-size:17px;color:var(--ink2);max-width:64ch;margin:0 0 12px;font-weight:500}
+.ihero .txt{font-size:14.5px;color:var(--soft);max-width:66ch;margin:0 0 22px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px}
+.btn{font-family:var(--disp);font-weight:700;font-size:14px;text-decoration:none;padding:13px 22px;border-radius:11px;border:1px solid var(--line);background:#fff;color:var(--ink2)}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:linear-gradient(135deg,#0b7a6b,#0a5249);color:#fff;border-color:#0a5249;box-shadow:0 4px 14px rgba(11,110,98,.3)}
+.btn.signal{background:linear-gradient(135deg,#f0843a,#e0530f);color:#fff;border-color:#d6480c}
+.pilars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pil{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+.pil h3{font-family:var(--disp);font-weight:600;font-size:15px;margin:0 0 5px}
+.pil p{margin:0;font-size:13px;color:var(--ink2)}
+/* generic section header */
+.shead{margin:0 0 22px;max-width:80ch}
+.shead .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--signalink);margin:0 0 8px}
+.shead h2{font-family:var(--disp);font-weight:700;font-size:clamp(22px,3vw,30px);letter-spacing:-.3px;margin:0 0 8px}
+.shead p{margin:0;color:var(--soft);font-size:14px}
+.lede2{font-size:15px;color:var(--ink2);max-width:70ch;margin:0 0 18px}
+.note2{font-size:12.5px;color:var(--soft);margin:16px 0 0}
+/* estado badges */
+.est{display:inline-block;font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:999px;letter-spacing:.3px;margin-bottom:8px}
+.est-ok{background:#e7f3ee;color:var(--ok)}
+.est-warn{background:#fbf0e2;color:var(--warn)}
+.est-hist{background:#eef0ea;color:var(--hist)}
+/* cifras */
+.cifgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cif{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+.cif-v{font-family:var(--mono);font-size:30px;line-height:1;color:var(--ink);word-break:break-word}
+.cif-v .cif-u{font-size:13px;color:var(--soft)}
+.cif-t{font-weight:600;font-size:13.5px;margin-top:8px}
+.cif-n{font-size:12px;color:var(--soft);margin-top:5px;line-height:1.4}
+.cif-src{font-size:11px;color:var(--soft);margin-top:9px;border-top:1px dashed var(--line);padding-top:8px}
+.cif-src a{font-weight:600}
+/* perfiles */
+.perfgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.perfil{display:flex;flex-direction:column;gap:7px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform .1s,box-shadow .15s}
+.perfil:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(14,42,40,.12)}
+.perfil-ic{width:34px;height:34px;color:var(--accent)}
+.perfil-ic svg{width:34px;height:34px}
+.perfil h3{font-family:var(--disp);font-weight:600;font-size:15px;margin:2px 0 0}
+.perfil p{margin:0;font-size:12.5px;color:var(--ink2);flex:1}
+.perfil-go{font-family:var(--disp);font-weight:600;font-size:12.5px;color:var(--accent)}
+/* sectores */
+.sector dl.sx{margin:10px 0 12px;font-size:12.5px}
+.sector .sx dt{font-weight:700;color:var(--soft);font-size:11px;text-transform:uppercase;letter-spacing:.4px;margin-top:8px}
+.sector .sx dd{margin:2px 0 0;color:var(--ink2)}
+.sx-links{border-top:1px dashed var(--line);padding-top:10px;font-size:12.5px}
+.sx-links a{font-weight:600}
+.sx-prog{margin-top:6px;font-size:11.5px;color:var(--soft)}
+.sx-prog a{color:var(--accent)}
+/* advisory */
+.advisory{font-size:12.5px;color:var(--ink2);background:#fbf3e8;border:1px solid #f0d9bd;border-left:4px solid var(--signal);border-radius:10px;padding:12px 15px;margin:16px 0 0;line-height:1.5}
+/* tables wrapper */
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ctbl th .thbtn{all:unset;cursor:pointer;font:inherit;display:inline-flex;align-items:center;gap:3px}
+.ctbl th .thbtn:hover{color:var(--accent)}
+.cttools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:-4px 0 14px}
+.cttools select,.cttools input{font-family:var(--body);font-size:13px;padding:8px 11px;border:1px solid var(--line);border-radius:9px;background:var(--paper);color:var(--ink)}
+.cttools .ctn{font-size:12px;color:var(--soft);margin-left:auto;font-family:var(--mono)}
+/* timeline */
+.timeline{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;counter-reset:tl}
+.timeline li{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.timeline li:last-child{border-bottom:0}
+.tl-n{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;font-family:var(--mono);font-size:15px;display:flex;align-items:center;justify-content:center}
+.timeline h3{font-family:var(--disp);font-weight:600;font-size:15.5px;margin:3px 0 4px}
+.timeline p{margin:0 0 6px;font-size:13.5px;color:var(--ink2)}
+.timeline a{font-weight:600;font-size:12.5px}
+/* casos */
+.casogrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.caso{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+.caso-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.caso-h h3{font-family:var(--disp);font-weight:600;font-size:17px;margin:0}
+.caso-s{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--signalink)}
+.caso-loc{font-size:12px;color:var(--soft);margin:4px 0 8px}
+.caso p{margin:0 0 6px;font-size:13px;color:var(--ink2)}
+.caso-hito{font-weight:600;color:var(--ink2)}
+.caso-src{font-size:11px;color:var(--soft);border-top:1px dashed var(--line);padding-top:8px;margin-top:6px}
+/* faq */
+.faqd{border:1px solid var(--line);border-radius:12px;background:var(--paper);margin-bottom:10px;overflow:hidden}
+.faqd summary{cursor:pointer;padding:15px 18px;font-family:var(--disp);font-weight:600;font-size:14.5px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faqd summary::-webkit-details-marker{display:none}
+.faqd summary:after{content:"+";color:var(--signal);font-size:20px;line-height:1}
+.faqd[open] summary:after{content:"\2013"}
+.faqa{padding:0 18px 16px;font-size:13.5px;color:var(--ink2);max-width:80ch}
+/* metodologia */
+.metcols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.metcols h3{font-family:var(--disp);font-weight:600;font-size:14.5px;margin:14px 0 6px}
+.metcols h3:first-child{margin-top:0}
+.metcols p,.metcols li{font-size:13px;color:var(--ink2)}
+.metcols ul{margin:6px 0;padding-left:18px}
+/* fuentes */
+.srcgroup{margin-bottom:18px}
+.srcgroup h3{font-family:var(--disp);font-weight:600;font-size:14px;margin:0 0 8px}
+.srclist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.srclist a{font-size:12.5px;font-weight:600;display:block;padding:9px 12px;border:1px solid var(--line);border-radius:9px;background:var(--paper);text-decoration:none;color:var(--ink2)}
+.srclist a:hover{border-color:var(--accent);color:var(--accent)}
+/* donde intro */
+.dondeintro{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:18px}
+.dondeintro p{margin:0 0 10px;font-size:14px;color:var(--ink2);max-width:80ch}
+.metnote{font-size:12.5px;color:var(--warn);background:#fbf3e8;border:1px solid #f0d9bd;border-radius:10px;padding:11px 14px;margin:6px 0 0}
+.coophead h2.coophead-h{font-family:var(--disp);font-weight:700;font-size:clamp(26px,4vw,40px);margin:0;letter-spacing:-.5px}
+@media(max-width:880px){.pilars,.cifgrid,.casogrid,.metcols,.srclist{grid-template-columns:repeat(2,1fr)}.perfgrid{grid-template-columns:repeat(2,1fr)}.pnav .wrap{min-height:0;padding-top:8px;padding-bottom:6px}.pnav nav{order:3;width:100%;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:3px;gap:4px}.pnav nav a{white-space:nowrap;flex:0 0 auto}}
+@media(max-width:560px){.pilars,.cifgrid,.casogrid,.metcols,.srclist,.perfgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="pnav"><div class="wrap">
+ <div class="brand"><span class="b1">Invertir en Córdoba</span><span class="b2">Oportunidades e inteligencia territorial</span></div>
+ <nav aria-label="Secciones">
+  <a class="navback" href="https://naninimarcos.github.io/mapa-cba.html" data-ev="volver-mapa">← Volver al mapa</a><a href="#inicio" data-view="inicio">Inicio</a><a href="#perfiles" data-view="perfiles">Tu perfil</a><a href="#sectores" data-view="sectores">Sectores</a><a href="#incentivos" data-view="incentivos">Incentivos</a><a href="#donde" data-view="donde">Dónde invertir</a><a href="#parques" data-view="parques">Parques</a><a href="#avanzar" data-view="avanzar">Cómo avanzar</a><a href="#transparencia" data-view="transparencia">Transparencia</a><a href="#contacto" data-view="contacto">Contacto</a>
+ </nav>
+ <a class="navcta" href="#donde" data-view="donde" data-ev="nav-cta">Explorar</a>
+ <a class="navgd" href="GD.html" data-ev="gd">⚡ Generación Distribuida</a>
+</div></header>
+<main id="contenido">
+<section class="ihero" id="inicio"><div class="wrap">
+ <h1>Córdoba, una ubicación competitiva para invertir y crecer.</h1>
+ <p class="sub">Explorá oportunidades territoriales, sectores productivos, incentivos vigentes y herramientas para evaluar proyectos de inversión, expansión o radicación en la Provincia de Córdoba.</p>
+ <p class="txt">Esta plataforma reúne información territorial, infraestructura, actividad productiva, parques industriales, corredores logísticos y programas de apoyo para acompañar decisiones de inversión con mayor evidencia. No constituye asesoramiento financiero ni recomendación de inversión.</p>
+ <div class="ctas">
+  <a class="btn primary" href="#donde" data-ev="cta-explorar">Explorar oportunidades</a>
+  <a class="btn signal" href="#incentivos" data-ev="cta-incentivos">Ver incentivos y herramientas</a>
+  <a class="btn" href="#fuentes" data-ev="cta-fuentes">Consultar fuentes oficiales</a>
+ </div>
+ <div class="pilars" id="hero-pilares"></div>
+</div></section>
+<section id="cifras"><div class="wrap"><div class="shead"><p class="eyebrow">01 · Córdoba en cifras</p><h2>Córdoba en cifras</h2><p>Indicadores con su fuente, fecha y estado de verificación. Algunos datos corresponden a años anteriores y se muestran con su período.</p></div><div class="cifgrid" id="cifras-grid"></div></div></section>
+<section id="perfiles"><div class="wrap"><div class="shead"><p class="eyebrow">02 · Elegí tu perfil</p><h2>Elegí tu perfil</h2><p>Accedé directo a la información más relevante según tu tipo de proyecto.</p></div><div class="perfgrid" id="perfiles-grid"></div></div></section>
+<section id="sectores"><div class="wrap"><div class="shead"><p class="eyebrow">03 · Sectores estratégicos</p><h2>Sectores estratégicos</h2><p>Sectores con fortalezas en la provincia. El lenguaje es prudente: se señalan zonas con potencial relativo, no recomendaciones de rentabilidad.</p></div><div class="grid" id="sectores-grid"></div></div></section>
+<section id="incentivos"><div class="wrap"><div class="shead"><p class="eyebrow">04 · Incentivos y herramientas</p><h2>Incentivos, programas y herramientas para invertir</h2><p>Programas con su organismo y enlace oficial. Los beneficios, requisitos y vigencias deben verificarse en la fuente.</p></div><div id="incentivos-host"></div></div></section>
+<section id="donde"><div class="wrap"><div class="shead"><p class="eyebrow">05 · Dónde invertir</p><h2>Dónde invertir en Córdoba: inteligencia territorial para evaluar proyectos</h2><p>Explorá indicadores territoriales, actividad económica, infraestructura, logística, energía y localización productiva. Esta herramienta permite comparar zonas y detectar áreas con mejor encaje relativo según cada proyecto.</p></div><div class="dondeintro"><p>Usá el <strong>ranking</strong>, el <strong>mapa</strong> o la <strong>tabla comparativa</strong> para explorar oportunidades. Seleccioná una zona para ver su detalle (perfil, ratios, potencial energético y recomendaciones).</p><p class="metnote"><strong>Aclaración metodológica:</strong> el índice es una herramienta comparativa de análisis territorial. No constituye asesoramiento financiero, recomendación de inversión ni garantía de resultados.</p></div><div class="tabs" role="tablist" aria-label="Vista de análisis"><button id="tabG" class="on" role="tab" aria-selected="true">Panorama provincial</button><button id="tabC" role="tab" aria-selected="false">Análisis por localidad</button></div><div id="viewGlobal"><div class="wrap" style="padding:0"><div class="kpis" id="kpis" style="margin:18px 0 6px"></div><section>
+   <div class="sec-h"><span class="n">01</span><div><h2>Ranking de oportunidad por zona</h2><p>Índice compuesto 0–100 (población, actividad, logística, infraestructura). Seleccioná una zona en el ranking o el mapa para ver el detalle.</p></div></div>
+   <div class="controls">
+    <label for="sortBy">Ordenar por</label>
+    <select id="sortBy"><option value="score">Índice de oportunidad</option><option value="usu">Población / mercado (usuarios)</option><option value="gu">Grandes usuarios</option><option value="dem">Demanda eléctrica (kW)</option><option value="log">Mejor logística (cercanía a hubs)</option></select>
+    <label for="depFilter">Departamento</label><select id="depFilter"></select>
+   </div>
+   <div class="grid" id="ranking"></div>
+   <button class="seemore" id="seemore">Ver todas las zonas ▾</button>
+  </section>
+  <section>
+   <div class="sec-h"><span class="n">02</span><div><h2>Análisis por departamento</h2><p>Agregado de las jurisdicciones: mercado, actividad, energía e índice promedio. Ordenado por usuarios.</p></div></div>
+   <div id="deptTable"></div>
+  </section>
+  <section>
+   <div class="sec-h"><span class="n">03</span><div><h2>Arquetipos de zona</h2><p>Clasificación por mercado y actividad (corte por la mediana provincial) para orientar el tipo de inversión.</p></div></div>
+   <div class="cols" id="archGrid"></div>
+  </section>
+  <section>
+   <div class="sec-h"><span class="n">04</span><div><h2>Mapa analítico</h2><p>Capas activables: índice, población, actividad, grandes usuarios, corredores viales y potencial energético de IDECOR.</p></div></div>
+   <div id="gmap"></div>
+   <div class="maplegend" id="gmaplegend"></div>
+   <p class="note"><b>Capas pendientes de fuente oficial:</b> ubicación de empresas y carga fiscal por localidad no están incluidas como capa porque requieren datos oficiales. Se pueden integrar desde el padrón industrial provincial, Rentas de Córdoba (ATM) y AFIP-ARCA (ver Fuentes). Los corredores viales se dibujan de forma esquemática sobre las rutas nacionales.</p>
+  </section>
+  <section>
+   <div class="sec-h"><span class="n">05</span><div><h2>Logística y rutas</h2><p>Corredores que estructuran la actividad provincial (orientación cualitativa).</p></div></div>
+   <div class="cols">
+    <div class="qcard"><div class="tag">Corredor central</div><h4>RN9 · RN19 — Rosario–Córdoba–San Francisco</h4><p>Columna logística que conecta el Gran Córdoba con el litoral y los puertos del Paraná. Concentra parques industriales, agroindustria y centros de distribución.</p><ul><li>Acceso a puertos y mercados del litoral</li><li>Alta densidad de proveedores y servicios</li></ul></div>
+    <div class="qcard"><div class="tag">Eje sur</div><h4>RN36 · RN8 — Córdoba–Río Cuarto y salida a Buenos Aires</h4><p>Vincula la capital con el segundo polo provincial (Río Cuarto) y la región pampeana, de fuerte base agrícola-ganadera.</p><ul><li>Cercanía a la mayor cuenca productiva</li><li>Conexión con el AMBA</li></ul></div>
+    <div class="qcard"><div class="tag">Corredor bioceánico</div><h4>RN158 — Río Cuarto–Villa María–San Francisco</h4><p>Une los principales polos del interior provincial (eje industrial y agroindustrial), con salida bioceánica.</p><ul><li>Encadenamientos productivos existentes</li><li>Maní, lácteos y metalmecánica</li></ul></div>
+   </div>
+  </section>
+  <section>
+   <div class="sec-h"><span class="n">06</span><div><h2>Energía renovable</h2><p>Potencial de generación eléctrica anual según los rásters de IDECOR. El valor exacto por punto se ve en el detalle de cada cooperativa.</p></div></div>
+   <div class="cols">
+    <div class="qcard"><h4><span style="background:#e0a32f"></span>Solar fotovoltaico</h4><p>Rendimiento anual neto por kWp instalado (<b>kWh/kWp·año</b>, módulos cSi a inclinación óptima). Mejores valores hacia el oeste serrano y el noroeste. Apto para parques solares, autoconsumo y generación distribuida.</p></div>
+    <div class="qcard"><h4><span style="background:#2f8f7f"></span>Eólico</h4><p>Energía anual por MW instalado (<b>MWh/MW·año</b>) de un aerogenerador de 3,45 MW a 100 m (Clase IEC II). Gradiente provincial de &lt;800 a &gt;4800; mejor recurso en sectores del norte (cuenca eólica de promoción).</p></div>
+    <div class="qcard"><h4><span style="background:#7a8f3a"></span>Biomasa (pecuario + FORSU)</h4><p>Generación anual posible vía biogás (<b>MWh/año</b>) a partir de biomasa húmeda pecuaria y residuos orgánicos urbanos, por digestión anaeróbica. Oportunidad en el este lechero-ganadero.</p></div>
+   </div>
+  </section>
+  <section><div class="sec-h"><span class="n">07</span><div><h2>Tabla comparativa de zonas</h2><p>Alternativa accesible al mapa. Ordená por cualquier columna y filtrá por departamento, arquetipo o sector.</p></div></div><div class="cttools"><label for="ctSearch" class="sr-only">Buscar zona</label><input id="ctSearch" type="search" placeholder="Buscar zona o departamento…"><label for="ctDep" class="sr-only">Departamento</label><select id="ctDep"></select><label for="ctArch" class="sr-only">Arquetipo</label><select id="ctArch"></select><label for="ctSector" class="sr-only">Sector</label><select id="ctSector"></select><span class="ctn" id="ctCount" aria-live="polite"></span></div><div class="tbl-scroll" id="ctable-wrap" role="region" aria-label="Tabla comparativa de zonas" tabindex="0"></div><p class="note2">«Parques cercanos» figura como <strong>n/d</strong> (dato no disponible): la proximidad por localidad requiere la georreferencia oficial. Consultá el <a href="https://ppii-industria-cba.opendata.arcgis.com/" target="_blank" rel="noopener" data-ev="parques-portal">portal de Parques Industriales</a>.</p></section></div></div><div id="viewCoop" class="hide">
+ <div class="wrap" style="padding-top:30px">
+  <div class="coopsel">
+   <label for="coopInput" style="font-weight:700;color:var(--soft);font-size:13px">Cooperativa</label>
+   <input id="coopInput" list="coopList" placeholder="Buscá y elegí una cooperativa o localidad…" autocomplete="off">
+   <datalist id="coopList"></datalist>
+  </div>
+  <div id="coopBody"></div>
+ </div>
+</div></div></section>
+<section id="parques"><div class="wrap"><div class="shead"><p class="eyebrow">06 · Parques industriales</p><h2>Parques industriales y ecosistemas productivos</h2><p>Dónde existen parques industriales y cómo evaluar la radicación. La disponibilidad de lotes y servicios se consulta caso por caso.</p></div><div id="parques-host"></div></div></section>
+<section id="proceso"><div class="wrap"><div class="shead"><p class="eyebrow">07 · Cómo avanzar</p><h2>Cómo avanzar con un proyecto de inversión</h2><p>Una guía paso a paso. No se prometen plazos de aprobación: dependen de cada organismo.</p></div><div id="proceso-host"></div></div></section>
+<section id="casos"><div class="wrap"><div class="shead"><p class="eyebrow">08 · Casos</p><h2>Empresas y proyectos que crecen desde Córdoba</h2><p>Solo casos públicos verificables, con su fuente. No se incluyen métricas no publicadas.</p></div><div id="casos-host"></div></div></section>
+<section id="faq"><div class="wrap"><div class="shead"><p class="eyebrow">09 · Preguntas frecuentes</p><h2>Preguntas frecuentes</h2></div><div id="faq-host"></div></div></section>
+<section id="metodologia"><div class="wrap"><div class="shead"><p class="eyebrow">10 · Metodología y transparencia</p><h2>Metodología, fuentes y actualización de datos</h2><p>Qué mide y qué no mide el índice, con qué variables, ponderaciones, fuentes y limitaciones.</p></div><div id="metodologia-host"></div></div></section>
+<section id="fuentes"><div class="wrap"><div class="shead"><p class="eyebrow">11 · Fuentes</p><h2>Fuentes oficiales y de los datos</h2><p>Todo dato es verificable en su origen. Abajo, las fuentes institucionales y, luego, las fuentes específicas del índice territorial.</p></div><h3 style="font-family:var(--disp);font-weight:600;font-size:15px;margin:0 0 12px">Fuentes institucionales y normativas</h3><div id="fuentes-inst-host"></div><h3 style="font-family:var(--disp);font-weight:600;font-size:15px;margin:24px 0 12px">Fuentes de los datos del índice territorial</h3><div class="srcgrid" id="srcgrid"></div></div></section>
+<section id="contacto"><div class="wrap"><div class="shead"><p class="eyebrow">12 · Próximo paso</p><h2>¿Tenés un proyecto de inversión para Córdoba?</h2></div><div id="contacto-host"></div></div></section>
+</main>
+<footer><div class="wrap">
+ <span>Observatorio del ERSeP · Inversión y oportunidades en Córdoba</span>
+ <span>Datos: ERSeP (jul-2023) · IDECOR · INDEC (Censo 2022) · Gobierno de Córdoba · ©NaniniMarcos</span>
+</div></footer>
+<script>window.__INVICONS={
+factory:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21V10l6 4V10l6 4V6l6 4v11z"/><path d="M3 21h18"/></svg>',
+building:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h0M13 7h0M9 11h0M13 11h0M9 15h0M13 15h0"/></svg>',
+globe:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>',
+chip:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="7" y="7" width="10" height="10" rx="1"/><path d="M10 2v3M14 2v3M10 19v3M14 19v3M2 10h3M2 14h3M19 10h3M19 14h3"/></svg>',
+wheat:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21V8M12 8c0-2 1.5-4 3-4 0 2-1.5 4-3 4zM12 8c0-2-1.5-4-3-4 0 2 1.5 4 3 4zM12 13c0-2 1.5-3 3-3 0 2-1.5 3-3 3zM12 13c0-2-1.5-3-3-3 0 2 1.5 3 3 3z"/></svg>',
+truck:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>',
+rocket:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 15c-1 1-1 4-1 4s3 0 4-1M14.5 4.5C17 4 20 7 19.5 9.5L12 17l-5-5z"/><circle cx="14.5" cy="9.5" r="1.4"/></svg>',
+industry:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="8" cy="8" r="2.6"/><circle cx="16" cy="16" r="2.6"/><path d="M8 3v2M8 11v2M3 8h2M11 8h2M16 11v2M16 19v2M11 16h2M19 16h2"/></svg>'
+};</script>
+<script id="inv-data">
+/* ====================================================================
+   CONTENIDO EDITABLE — está incrustado acá para que la página funcione
+   sin archivos externos. Editá los textos/datos en este bloque.
+   ==================================================================== */
+/* ============================================================================
+   contenido.js — Datos editables de "Inversión y oportunidades en Córdoba"
+   ----------------------------------------------------------------------------
+   TODO el contenido institucional, normativo y de cifras se edita ACÁ.
+   La página (inversiones.html) lee window.INV y arma las secciones sola.
+
+   REGLAS:
+   - No inventar cifras, beneficios, plazos, montos ni casos.
+   - Cada dato con "estado":
+       "vigente"   -> dato verificado con fuente oficial.
+       "consultar" -> existe el programa/fuente, pero los detalles (montos,
+                      requisitos, vigencia) deben verificarse en la fuente.
+       "historico" -> dato de un período anterior; se muestra el año.
+   - Donde no hay dato oficial, usar "Consultar fuente oficial" / "Dato no disponible".
+   - Revisar y actualizar 'meta.actualizacion' y las fechas de cada bloque.
+   ========================================================================== */
+window.INV = {
+
+  meta: {
+    actualizacion: "2026-06",
+    canonical: "https://naninimarcos.github.io/inversiones.html", // <-- AJUSTAR al dominio real
+    org: "Observatorio del ERSeP — Córdoba",
+    aviso_incentivos: "La información sobre programas e incentivos es orientativa. La vigencia, los requisitos, los montos y las condiciones deben verificarse en la fuente oficial antes de iniciar cualquier trámite."
+  },
+
+  hero: {
+    titulo: "Córdoba, una ubicación competitiva para invertir y crecer.",
+    subtitulo: "Explorá oportunidades territoriales, sectores productivos, incentivos vigentes y herramientas para evaluar proyectos de inversión, expansión o radicación en la Provincia de Córdoba.",
+    texto: "Esta plataforma reúne información territorial, infraestructura, actividad productiva, parques industriales, corredores logísticos y programas de apoyo para acompañar decisiones de inversión con mayor evidencia.",
+    pilares: [
+      { t: "Escala productiva", d: "Segundo distrito del país por población y un entramado agroindustrial, automotriz y de servicios consolidado." },
+      { t: "Talento y conocimiento", d: "Universidades, polos tecnológicos y un ecosistema de economía del conocimiento en crecimiento." },
+      { t: "Infraestructura y conectividad", d: "Corredores nacionales, parques industriales y una red de distribución eléctrica de amplia cobertura." }
+    ]
+  },
+
+  /* ---------------------------------------------------------------- CIFRAS */
+  cifras: [
+    {
+      titulo: "Población provincial",
+      valor: "3.978.984", unidad: "habitantes",
+      nota: "2.º distrito del país (8,6% de la población nacional).",
+      fuente: "INDEC — Censo 2022 (resultados definitivos) / Gobierno de Córdoba",
+      enlace: "https://www.cba.gov.ar/censo-2022-cordoba-tiene-3-978-984-de-habitantes/",
+      fecha: "Censo 2022 (act. 15/01/2024)", estado: "vigente"
+    },
+    {
+      titulo: "Superficie",
+      valor: "165.321", unidad: "km²",
+      nota: "Quinta provincia por superficie.",
+      fuente: "Instituto Geográfico Nacional (IGN)",
+      enlace: "https://www.ign.gob.ar/", fecha: "Dato geográfico", estado: "vigente"
+    },
+    {
+      titulo: "Departamentos",
+      valor: "26", unidad: "departamentos",
+      nota: "24 con cooperativas eléctricas incluidas en el índice territorial.",
+      fuente: "Gobierno de la Provincia de Córdoba",
+      enlace: "https://www.cba.gov.ar/", fecha: "—", estado: "vigente"
+    },
+    {
+      titulo: "Parques industriales certificados",
+      valor: "60", unidad: "parques",
+      nota: "Certificados a jun-2024; ~40 adicionales en proceso hacia 2027. Verificar en el portal oficial.",
+      fuente: "Legislatura de Córdoba / Secretaría de Parques Industriales",
+      enlace: "https://ppii-industria-cba.opendata.arcgis.com/", fecha: "jun-2024", estado: "consultar"
+    },
+    {
+      titulo: "Cooperativas eléctricas analizadas",
+      valor: "204", unidad: "cooperativas",
+      nota: "Base del índice territorial de esta plataforma.",
+      fuente: "ERSeP — Ente Regulador de los Servicios Públicos",
+      enlace: "https://ersep.cba.gov.ar/", fecha: "jul-2023", estado: "historico"
+    },
+    {
+      titulo: "Exportaciones provinciales",
+      valor: "Consultar fuente oficial", unidad: "",
+      nota: "Dato no relevado en esta versión. Consultar el informe oficial vigente.",
+      fuente: "INDEC — Origen Provincial de las Exportaciones / Complejos Exportadores",
+      enlace: "https://www.indec.gob.ar/", fecha: "Pendiente de actualización", estado: "consultar"
+    }
+  ],
+
+  /* -------------------------------------------------------------- PERFILES */
+  perfiles: [
+    { icon: "factory",   nombre: "PyME industrial",        desc: "Beneficios, promoción industrial y posibilidades de radicación.", target: "#incentivos" },
+    { icon: "building",  nombre: "Empresa nacional",        desc: "Sectores estratégicos, infraestructura y dónde expandirse.",       target: "#sectores" },
+    { icon: "globe",     nombre: "Empresa extranjera",      desc: "Información territorial, sectores y canales institucionales.",     target: "#contacto" },
+    { icon: "chip",      nombre: "Empresa tecnológica",     desc: "Economía del conocimiento, talento y programas aplicables.",       target: "#sectores" },
+    { icon: "wheat",     nombre: "Empresa agroindustrial",  desc: "Cuencas productivas, energía y agregado de valor.",                target: "#donde" },
+    { icon: "truck",     nombre: "Empresa logística",       desc: "Corredores, conectividad y localización estratégica.",            target: "#donde" },
+    { icon: "rocket",    nombre: "Emprendedor",             desc: "Programas de apoyo y herramientas de financiamiento.",            target: "#incentivos" },
+    { icon: "industry",  nombre: "Parques industriales",    desc: "Dónde hay parques y cómo evaluar la radicación.",                 target: "#parques" }
+  ],
+
+  /* -------------------------------------------------------------- SECTORES */
+  sectores: [
+    { nombre: "Agroindustria y alimentos", desc: "Núcleo histórico de la economía provincial: oleaginosas, maní, lácteos y alimentos.",
+      fortalezas: "Cuencas manisera y lechera, molienda y exportación.", zonas: "Sur, sudeste y centro-este (corredores RN9 y RN158).",
+      programas: [{ nombre: "Córdoba Produce", enlace: "https://cordobaproduce.cba.gov.ar/" }], estado: "vigente" },
+    { nombre: "Industria automotriz y metalmecánica", desc: "Autopartismo, maquinaria agrícola y metalmecánica de larga tradición.",
+      fortalezas: "Proveedores, mano de obra calificada y parques industriales.", zonas: "Gran Córdoba y eje Villa María–Río Tercero.",
+      programas: [{ nombre: "Promoción Industrial (Córdoba)", enlace: "https://www.cba.gov.ar/7312-2/" }], estado: "vigente" },
+    { nombre: "Economía del conocimiento y software", desc: "Servicios basados en conocimiento, software y servicios profesionales.",
+      fortalezas: "Universidades, polos tecnológicos y talento.", zonas: "Gran Córdoba y ciudades intermedias.",
+      programas: [{ nombre: "Ley de Economía del Conocimiento (27.506)", enlace: "https://www.argentina.gob.ar/normativa/nacional/ley-27506-324101/actualizacion" }], estado: "vigente" },
+    { nombre: "Biotecnología y agtech", desc: "Tecnología aplicada al agro, genética, semillas y bioinsumos.",
+      fortalezas: "Vínculo agro + I+D y centros de investigación.", zonas: "Centro y sudeste agrícola.",
+      programas: [{ nombre: "Córdoba Produce — Ciencia y Tecnología", enlace: "https://cordobaproduce.cba.gov.ar/" }], estado: "consultar" },
+    { nombre: "Energías renovables y transición energética", desc: "Generación solar, eólica y biomasa; autoconsumo y generación distribuida.",
+      fortalezas: "Recurso solar y biomasa pecuaria relevados por IDECOR.", zonas: "Oeste y noroeste (solar); norte (eólico); este (biomasa).",
+      programas: [{ nombre: "Mapas de energía IDECOR", enlace: "https://www.idecor.gob.ar/mapas-de-energias-renovables-de-la-provincia-de-cordoba/" }, { nombre: "RIGI — energía (Ley 27.742)", enlace: "https://www.afip.gob.ar/rigi/" }], estado: "vigente" },
+    { nombre: "Logística y distribución", desc: "Centros de distribución, depósitos y servicios sobre corredores nacionales.",
+      fortalezas: "Posición mediterránea y corredores RN9 / RN19 / RN36 / RN158.", zonas: "Gran Córdoba y nodos sobre corredores.",
+      programas: [{ nombre: "Parques industriales (portal oficial)", enlace: "https://ppii-industria-cba.opendata.arcgis.com/" }], estado: "vigente" },
+    { nombre: "Economía circular", desc: "Aprovechamiento de residuos, biogás y valorización de subproductos.",
+      fortalezas: "Biomasa pecuaria y FORSU (potencial relevado por IDECOR).", zonas: "Este lechero-ganadero.",
+      programas: [{ nombre: "Mapas de energía IDECOR", enlace: "https://www.idecor.gob.ar/mapas-de-energias-renovables-de-la-provincia-de-cordoba/" }], estado: "consultar" },
+    { nombre: "Turismo productivo", desc: "Economía del visitante, agroturismo y servicios asociados.",
+      fortalezas: "Sierras y circuitos productivos.", zonas: "Valles serranos (Punilla, Calamuchita, Traslasierra).",
+      programas: [{ nombre: "Gobierno de Córdoba", enlace: "https://www.cba.gov.ar/" }], estado: "consultar" }
+  ],
+
+  /* ------------------------------------------------------------ INCENTIVOS */
+  /* Se cargan NOMBRES de programas y enlaces oficiales. Los detalles
+     (beneficio/requisitos/vigencia) quedan como "Consultar fuente oficial"
+     hasta verificarlos en el organismo. */
+  incentivos: [
+    { nombre: "Promoción Industrial de Córdoba", categoria: "Promoción industrial",
+      destinatarios: "Industrias que se radican o amplían en la provincia",
+      beneficio: "Consultar fuente oficial", requisitos: "Consultar fuente oficial",
+      vigencia: "Consultar fuente oficial", organismo: "Ministerio de Producción (Córdoba)",
+      fuente: "Gobierno de Córdoba", enlace: "https://www.cba.gov.ar/7312-2/",
+      fecha_verificacion: "2026-06", estado: "consultar" },
+    { nombre: "Régimen de Parques Industriales", categoria: "Parques industriales",
+      destinatarios: "Empresas que se radican en parques industriales",
+      beneficio: "Consultar fuente oficial", requisitos: "Consultar fuente oficial",
+      vigencia: "Consultar fuente oficial", organismo: "Secretaría de Parques Industriales (Córdoba)",
+      fuente: "Portal oficial de Parques Industriales", enlace: "https://ppii-industria-cba.opendata.arcgis.com/",
+      fecha_verificacion: "2026-06", estado: "consultar" },
+    { nombre: "RIGI — Régimen de Incentivo para Grandes Inversiones (Ley 27.742)", categoria: "Grandes inversiones",
+      destinatarios: "Grandes inversiones en sectores habilitados (energía, minería, infraestructura, tecnología, etc.)",
+      beneficio: "Consultar fuente oficial", requisitos: "Consultar fuente oficial",
+      vigencia: "Adhesión hasta 08/07/2027 (verificar)", organismo: "ARCA / Gobierno Nacional",
+      fuente: "ARCA — RIGI", enlace: "https://www.afip.gob.ar/rigi/",
+      fecha_verificacion: "2026-06", estado: "consultar" },
+    { nombre: "Régimen de Economía del Conocimiento (Ley 27.506, mod. 27.570)", categoria: "Economía del conocimiento",
+      destinatarios: "Empresas de software, servicios profesionales y conocimiento",
+      beneficio: "Consultar fuente oficial", requisitos: "Consultar fuente oficial",
+      vigencia: "Consultar fuente oficial", organismo: "Gobierno Nacional",
+      fuente: "Argentina.gob.ar — Ley 27.506", enlace: "https://www.argentina.gob.ar/normativa/nacional/ley-27506-324101/actualizacion",
+      fecha_verificacion: "2026-06", estado: "consultar" },
+    { nombre: "Agencia ProCórdoba — Promoción de exportaciones", categoria: "Exportaciones e internacionalización",
+      destinatarios: "Empresas exportadoras o con potencial exportador",
+      beneficio: "Consultar fuente oficial", requisitos: "Consultar fuente oficial",
+      vigencia: "Consultar fuente oficial", organismo: "Agencia ProCórdoba",
+      fuente: "Córdoba Produce — ProCórdoba", enlace: "https://cordobaproduce.cba.gov.ar/tag/agencia-procordoba/",
+      fecha_verificacion: "2026-06", estado: "consultar" },
+    { nombre: "Programas para PyMEs — Córdoba Produce", categoria: "PyMEs",
+      destinatarios: "Pequeñas y medianas empresas de la provincia",
+      beneficio: "Consultar fuente oficial", requisitos: "Consultar fuente oficial",
+      vigencia: "Consultar fuente oficial", organismo: "Ministerio de Producción (Córdoba)",
+      fuente: "Córdoba Produce", enlace: "https://cordobaproduce.cba.gov.ar/",
+      fecha_verificacion: "2026-06", estado: "consultar" },
+    { nombre: "Apoyo a emprendedores", categoria: "Emprendimientos",
+      destinatarios: "Emprendedores y nuevos proyectos",
+      beneficio: "Consultar fuente oficial", requisitos: "Consultar fuente oficial",
+      vigencia: "Consultar fuente oficial", organismo: "Ministerio de Producción (Córdoba)",
+      fuente: "Córdoba Produce", enlace: "https://cordobaproduce.cba.gov.ar/",
+      fecha_verificacion: "2026-06", estado: "consultar" }
+  ],
+
+  /* -------------------------------------------------------------- PARQUES */
+  parques: {
+    intro: "Córdoba cuenta con una red de parques industriales certificados distribuidos en la provincia. La localización en parques puede ofrecer ventajas de infraestructura y de gestión, pero la disponibilidad de lotes, energía, gas y servicios debe consultarse caso por caso.",
+    dato: { valor: "60 parques certificados", nota: "a jun-2024; ~40 en proceso hacia 2027 (verificar en el portal oficial)",
+            fuente: "Legislatura de Córdoba / Secretaría de Parques Industriales", enlace: "https://legislaturacba.gob.ar/" },
+    portal: { label: "Portal oficial georreferenciado de Parques Industriales", enlace: "https://ppii-industria-cba.opendata.arcgis.com/" },
+    aviso: "Consultá disponibilidad, lotes, energía, gas, agua y condiciones directamente con cada parque industrial o con la autoridad competente. Esta versión no publica datos de lotes ni de capacidad por parque.",
+    items: [] // Sin datos por parque cargados. Completar desde el portal oficial si se dispone de la georreferencia.
+  },
+
+  /* ---------------------------------------------------------------- PASOS */
+  pasos: [
+    { t: "Definí el perfil y alcance de tu proyecto", d: "Tipo de actividad, escala, empleo previsto y necesidades de infraestructura.", target: "#perfiles" },
+    { t: "Explorá sectores y zonas de interés", d: "Identificá sectores estratégicos y zonas con mejor encaje relativo.", target: "#sectores" },
+    { t: "Compará infraestructura, parques y conectividad", d: "Usá el mapa, la tabla comparativa y los corredores logísticos.", target: "#donde" },
+    { t: "Revisá incentivos y programas aplicables", d: "Verificá qué regímenes podrían aplicar a tu proyecto.", target: "#incentivos" },
+    { t: "Consultá requisitos y documentación", d: "Cada programa tiene requisitos propios: revisalos en la fuente oficial.", target: "#incentivos" },
+    { t: "Iniciá o derivá el trámite por canales oficiales", d: "Gestioná a través de los organismos competentes y CiDi.", target: "#contacto" },
+    { t: "Solicitá acompañamiento institucional", d: "ProCórdoba y Córdoba Produce pueden orientar el proceso.", target: "#contacto" }
+  ],
+
+  /* ---------------------------------------------------------------- CASOS */
+  /* Solo casos verificables con fuente oficial/empresa. Sin métricas inventadas. */
+  casos: [
+    { empresa: "Aceitera General Deheza (AGD)", sector: "Agroindustria", localidad: "General Deheza",
+      desc: "Complejo agroindustrial de aceites, maní y biodiésel de origen cordobés con presencia internacional.",
+      hito: "Grupo agroexportador de magnitud nacional, según información pública de la empresa.",
+      fuente: "Sitio oficial AGD", enlace: "https://www.agd.com.ar/", anio: "—" },
+    { empresa: "Arcor", sector: "Alimentos y golosinas", localidad: "Arroyito",
+      desc: "Localidad de origen y principal complejo productivo del grupo Arcor.",
+      hito: "Grupo alimenticio de alcance internacional, según información pública de la empresa.",
+      fuente: "Sitio oficial Arcor", enlace: "https://www.arcor.com/", anio: "—" }
+  ],
+  casos_nota: "Listado acotado a casos públicos verificables. Pueden incorporarse más casos desde ProCórdoba, Córdoba Produce o fuentes empresariales oficiales.",
+
+  /* ------------------------------------------------------------------ FAQ */
+  faq: [
+    { q: "¿La página recomienda inversiones financieras?",
+      a: "No. La herramienta ofrece información territorial y productiva para orientar análisis preliminares. No constituye asesoramiento financiero, legal, tributario ni recomendación de inversión." },
+    { q: "¿Cómo se calcula el índice territorial?",
+      a: "Combina cuatro señales por cooperativa (población/mercado 30%, actividad económica 30%, logística 25% e infraestructura 15%), normalizadas de 0 a 100 respecto de la provincia. Es comparativo, no una valuación. El detalle está en la sección Metodología." },
+    { q: "¿Qué información debo tener antes de evaluar una radicación?",
+      a: "Perfil y escala del proyecto, necesidades de energía/gas/agua, logística, mercado objetivo y los requisitos del o los programas que podrían aplicar." },
+    { q: "¿Dónde consulto incentivos vigentes?",
+      a: "En la sección Incentivos figuran los programas con su organismo y enlace oficial. La vigencia y los requisitos deben verificarse siempre en la fuente oficial." },
+    { q: "¿Cómo puedo buscar parques industriales?",
+      a: "En la sección Parques industriales y en el portal oficial georreferenciado de la Secretaría de Parques Industriales de Córdoba." },
+    { q: "¿Los beneficios aplican a todas las empresas?",
+      a: "No. Cada régimen (promoción industrial, economía del conocimiento, RIGI, etc.) tiene destinatarios y condiciones específicas. No deben asumirse como aplicables a todos los proyectos." },
+    { q: "¿La información está actualizada?",
+      a: "Cada conjunto de datos indica su fuente y fecha. Algunas bases (por ejemplo, la de cooperativas, jul-2023) son de períodos anteriores y se muestran con su año." },
+    { q: "¿Dónde verifico requisitos y vigencia de un programa?",
+      a: "En el enlace oficial de cada programa dentro de la tabla de Incentivos y en los portales del Gobierno de Córdoba y de la Nación." },
+    { q: "¿Puedo descargar los datos o consultar las fuentes?",
+      a: "Sí. La sección Fuentes lista los orígenes oficiales con enlace. Los datos territoriales provienen del ERSeP e IDECOR, entre otros." },
+    { q: "¿Qué debo hacer si mi proyecto es extranjero o de gran escala?",
+      a: "Revisá el RIGI para grandes inversiones y los canales de ProCórdoba para acompañamiento; verificá siempre requisitos y vigencia en la fuente oficial." }
+  ],
+
+  /* ------------------------------------------------------- METODOLOGÍA */
+  metodologia: {
+    mide: "El índice territorial mide el encaje relativo de cada zona para radicar actividad, combinando mercado/población, actividad económica conectada, logística e infraestructura eléctrica.",
+    noMide: "No mide rentabilidad, riesgo financiero, precio del suelo, disponibilidad de lotes, ni condiciones tributarias. No es una recomendación de inversión.",
+    variables: [
+      "Población/mercado: usuarios eléctricos (proxy de hogares y comercios).",
+      "Actividad económica: demanda máxima (kW) y grandes usuarios.",
+      "Logística: cercanía geodésica al hub más próximo (Córdoba, Río Cuarto, Villa María, San Francisco, Marcos Juárez, Río Tercero, Bell Ville).",
+      "Infraestructura: kilómetros de red de distribución."
+    ],
+    ponderaciones: "Población 30% · Actividad 30% · Logística 25% · Infraestructura 15% (normalización mín–máx provincial).",
+    limitaciones: [
+      "La base de cooperativas es de jul-2023 (ERSeP).",
+      "Los corredores viales se representan de forma esquemática sobre rutas nacionales.",
+      "La ubicación de empresas y la carga fiscal por localidad no están incluidas (requieren datos oficiales).",
+      "El potencial energético se consulta en vivo a IDECOR; puede no estar disponible por restricciones del servidor."
+    ],
+    grupos_datos: [
+      { t: "Datos territoriales y de cooperativas", f: "ERSeP", fecha: "jul-2023" },
+      { t: "Datos energéticos (solar/eólico/biomasa)", f: "IDECOR — Sec. de Planificación Energética", fecha: "2025" },
+      { t: "Redes eléctricas nacionales", f: "Secretaría de Energía de la Nación", fecha: "—" },
+      { t: "Parques industriales", f: "Secretaría de Parques Industriales (Córdoba)", fecha: "2024" },
+      { t: "Promoción industrial e incentivos", f: "Gobierno de Córdoba / Nación", fecha: "verificar" },
+      { t: "Cifras estadísticas (población, exportaciones)", f: "INDEC", fecha: "Censo 2022 / verificar" }
+    ]
+  },
+
+  /* ---------------------------------------------------------------- FUENTES */
+  fuentes: [
+    { grupo: "Provincia de Córdoba", items: [
+      { nombre: "Gobierno de la Provincia de Córdoba", enlace: "https://www.cba.gov.ar/" },
+      { nombre: "Córdoba Produce — Ministerio de Producción", enlace: "https://cordobaproduce.cba.gov.ar/" },
+      { nombre: "Agencia ProCórdoba", enlace: "https://cordobaproduce.cba.gov.ar/tag/agencia-procordoba/" },
+      { nombre: "Promoción Industrial", enlace: "https://www.cba.gov.ar/7312-2/" },
+      { nombre: "Parques Industriales (portal georreferenciado)", enlace: "https://ppii-industria-cba.opendata.arcgis.com/" },
+      { nombre: "Datos Gestión Abierta", enlace: "https://datosgestionabierta.cba.gov.ar/" },
+      { nombre: "Estadística y Censos de Córdoba", enlace: "https://datosestadistica.cba.gov.ar/" },
+      { nombre: "CiDi — Ciudadano Digital", enlace: "https://cidi.cba.gov.ar/" },
+      { nombre: "Legislatura de Córdoba", enlace: "https://legislaturacba.gob.ar/" },
+      { nombre: "ERSeP", enlace: "https://ersep.cba.gov.ar/" },
+      { nombre: "IDECOR — Mapas de energías renovables", enlace: "https://www.idecor.gob.ar/mapas-de-energias-renovables-de-la-provincia-de-cordoba/" }
+    ]},
+    { grupo: "Nación", items: [
+      { nombre: "INDEC", enlace: "https://www.indec.gob.ar/" },
+      { nombre: "Censo 2022", enlace: "https://censo.gob.ar/" },
+      { nombre: "RIGI (ARCA)", enlace: "https://www.afip.gob.ar/rigi/" },
+      { nombre: "Economía del Conocimiento (Ley 27.506)", enlace: "https://www.argentina.gob.ar/normativa/nacional/ley-27506-324101/actualizacion" },
+      { nombre: "Secretaría de Energía — SIG", enlace: "https://sig.energia.gob.ar/" },
+      { nombre: "Instituto Geográfico Nacional", enlace: "https://www.ign.gob.ar/" }
+    ]},
+    { grupo: "Cartografía", items: [
+      { nombre: "Mapas Córdoba (IDECOR)", enlace: "https://www.mapascordoba.gob.ar/" },
+      { nombre: "OpenStreetMap", enlace: "https://www.openstreetmap.org/copyright" }
+    ]}
+  ],
+
+  /* ---------------------------------------------------------------- CONTACTO */
+  contacto: {
+    titulo: "¿Tenés un proyecto de inversión para Córdoba?",
+    texto: "Usá esta plataforma como punto de partida para analizar oportunidades territoriales, identificar programas aplicables y consultar fuentes oficiales.",
+    enlaces: [
+      { label: "Consultar ProCórdoba", enlace: "https://cordobaproduce.cba.gov.ar/tag/agencia-procordoba/", solid: true },
+      { label: "Córdoba Produce", enlace: "https://cordobaproduce.cba.gov.ar/" },
+      { label: "Trámites y servicios digitales (CiDi)", enlace: "https://cidi.cba.gov.ar/" },
+      { label: "Datos abiertos y metodología", enlace: "https://datosgestionabierta.cba.gov.ar/" },
+      { label: "Volver al mapa de oportunidades", enlace: "#donde" }
+    ],
+    aviso: "Esta plataforma no gestiona trámites ni reemplaza a los organismos oficiales. No se publican formularios, correos ni teléfonos institucionales para evitar canales no verificados."
+  }
+};
+
+</script>
+<script>
+
+const COOPS = [{"loc": "ACHIRAS", "nom": "COOPERATIVA DE ELECTRICIDAD, OBRAS Y SERVICIOS PÚBLICOS DE ACHIRAS LTDA.", "dep": "RIO CUARTO", "lat": -33.10396, "lon": -64.59407, "g": 2, "usu": 2062, "usuU": 1760, "usuR": 302, "gu": 0, "en": 6444.7, "dem": 1398.0, "km": 483.6, "per": 18, "pot": 0.0, "gh": "D"}, {"loc": "ADELIA MARÍA", "nom": "COOPERATIVA DE ELECTRICIDAD, OBRAS Y SERVICIOS PÚBLICOS LTDA. DE ADELIA MARÍA", "dep": "RIO CUARTO", "lat": -33.63228, "lon": -64.01787, "g": 0, "usu": 4655, "usuU": 4363, "usuR": 282, "gu": 10, "en": 19994.1, "dem": 5205.0, "km": 590.6, "per": 20, "pot": 15920.0, "gh": "A"}, {"loc": "AGUA DE ORO", "nom": "COOPERATIVA DE OBRAS, SERVICIOS PÚBLICOS, SOCIALES Y DESARROLLO REGIONAL DE AGUA DE ORO Y SIERRAS CHICAS LIMITADA.", "dep": "COLON", "lat": -31.06977, "lon": -64.30027, "g": 2, "usu": 2979, "usuU": 2949, "usuR": 30, "gu": 0, "en": 6251.9, "dem": 1367.0, "km": 21.6, "per": 17, "pot": 0.0, "gh": "C"}, {"loc": "ALCIRA", "nom": "COOPERATIVA ELECTRICA DE OBRAS PUBLICAS, PROVISION DE SERVICIOS SOCIALES Y VIVIENDA DE ALCIRA LTDA.", "dep": "RIO CUARTO", "lat": -32.75504, "lon": -64.33248, "g": 0, "usu": 3441, "usuU": 3287, "usuR": 143, "gu": 11, "en": 18203.7, "dem": 3999.0, "km": 285.9, "per": 24, "pot": 0.0, "gh": "A"}, {"loc": "ALEJANDRO ROCA", "nom": "COOPERATIVA DE OBRAS Y SERVICIOS PÚBLICOS DE ALEJANDRO LTDA.", "dep": "JUAREZ CELMAN", "lat": -33.35409, "lon": -63.71793, "g": 5, "usu": 61, "usuU": 41, "usuR": 20, "gu": 0, "en": 789.5, "dem": 179.0, "km": 66.6, "per": 0, "pot": 0.0, "gh": "F"}, {"loc": "ALICIA", "nom": "COOPERATIVA ELECTRICA Y DE SERVICIOS PUBLICOS ANEXOS ALICIA LTDA.", "dep": "SAN JUSTO", "lat": -31.94095, "lon": -62.47064, "g": 0, "usu": 1838, "usuU": 1705, "usuR": 133, "gu": 0, "en": 48.2, "dem": 2107.0, "km": 371.9, "per": 12, "pot": 0.0, "gh": "B"}, {"loc": "ALMAFUERTE", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS ALMAFUERTE LIMITADA", "dep": "TERCERO ARRIBA", "lat": -32.19504, "lon": -64.25494, "g": 0, "usu": 6282, "usuU": 6112, "usuR": 155, "gu": 15, "en": 30169.7, "dem": 0.0, "km": 252.8, "per": 31, "pot": 0.0, "gh": "A"}, {"loc": "ALPA CORRAL", "nom": "COOPERATIVA ALPACORRALENSE DE ELECTRICIDAD Y SERVICIOS PUBLICOS LTDA.", "dep": "RIO CUARTO", "lat": -32.69203, "lon": -64.7224, "g": 2, "usu": 1521, "usuU": 1513, "usuR": 8, "gu": 0, "en": 2497.9, "dem": 940.0, "km": 126.3, "per": 7, "pot": 0.0, "gh": "D"}, {"loc": "ALTO ALEGRE", "nom": "COOPERATIVA ELECTRICIDAD Y SERVICIOS PÚBLICOS DE ALTO ALEGRE LTDA.", "dep": "UNION", "lat": -32.34513, "lon": -62.8847, "g": 4, "usu": 108, "usuU": 0, "usuR": 108, "gu": 0, "en": 0.0, "dem": 630.0, "km": 0, "per": 2, "pot": 2350.0, "gh": "E"}, {"loc": "ALTOS DE CHIPIÓN", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS ALTOS DE CHIPION LTDA.", "dep": "SAN JUSTO", "lat": -30.95714, "lon": -62.33694, "g": 0, "usu": 1091, "usuU": 1005, "usuR": 86, "gu": 0, "en": 6228.2, "dem": 1630.0, "km": 179.3, "per": 7, "pot": 0.0, "gh": "A"}, {"loc": "AMBOY", "nom": "COOPERATIVA DE PROVISION DE OBRAS, SERVICIOS PUBLICOS, SERVICIOS SOCIALES DE AMBOY Y VILLA AMANCAY LTDA.", "dep": "CALAMUCHITA", "lat": -32.17558, "lon": -64.57404, "g": 2, "usu": 1601, "usuU": 1588, "usuR": 13, "gu": 0, "en": 3140.6, "dem": 801.0, "km": 59.0, "per": 12, "pot": 0.0, "gh": "C"}, {"loc": "ANISACATE", "nom": "COOPERATIVA DE ELECTRICIDAD, OBRAS Y SERVICIOS PUBLICOS DE ANISACATE LTDA.", "dep": "SANTA MARIA", "lat": -31.71348, "lon": -64.40425, "g": 2, "usu": 7451, "usuU": 7422, "usuR": 21, "gu": 8, "en": 17365.6, "dem": 4089.0, "km": 293.8, "per": 29, "pot": 0.0, "gh": "C"}, {"loc": "ARIAS", "nom": "COOPERATIVA DE OBRAS Y SERVICIOS PÚBLICOS  RURAL DE ARIAS LTDA.", "dep": "MARCOS JUAREZ", "lat": -33.64265, "lon": -62.40472, "g": 4, "usu": 247, "usuU": 0, "usuR": 247, "gu": 0, "en": 2209.4, "dem": 0.0, "km": 448.7, "per": 5, "pot": 0.0, "gh": "E"}, {"loc": "ARROYITO", "nom": "COOPERATIVA DE ELECTRICIDAD Y SERVICIOS PÚBLICOS DE ARROYITO LIMITADA", "dep": "SAN JUSTO", "lat": -31.42289, "lon": -63.0471, "g": 0, "usu": 13124, "usuU": 12886, "usuR": 196, "gu": 42, "en": 60989.3, "dem": 18576.0, "km": 739.6, "per": 54, "pot": 0.0, "gh": "A"}, {"loc": "ARROYO ALGODÓN", "nom": "COOPERATIVA DE ELECTRICIDAD, OBRAS Y SERVICIOS PUBLICOS ARROYO ALGODÓN LIMITADA.", "dep": "GENERAL SAN MARTIN", "lat": -32.20257, "lon": -63.16263, "g": 0, "usu": 742, "usuU": 572, "usuR": 148, "gu": 22, "en": 8191.1, "dem": 2106.0, "km": 270.5, "per": 7, "pot": 0.0, "gh": "A"}, {"loc": "ARROYO CABRAL", "nom": "COOPERATIVA DE OBRAS Y SERVICIOS PUBLICOS Y SOCIALES DE ARROYO CABRAL LTDA.", "dep": "GENERAL SAN MARTIN", "lat": -32.48914, "lon": -63.40173, "g": 0, "usu": 1682, "usuU": 1582, "usuR": 100, "gu": 0, "en": 14113.1, "dem": 3177.0, "km": 210.4, "per": 11, "pot": 0.0, "gh": "A"}, {"loc": "ASCOCHINGA-LA PAMPA", "nom": "COOPERATIVA ELECTRICA SERVICIOS PUBLICOS Y ANEXOS LTDA. ASCOCHINGA - LA PAMPA", "dep": "COLON", "lat": -30.95868, "lon": -64.27422, "g": 3, "usu": 963, "usuU": 688, "usuR": 275, "gu": 0, "en": 3256.2, "dem": 683.0, "km": 70.3, "per": 10, "pot": 0.0, "gh": "D"}, {"loc": "AUSONIA", "nom": "COOPERATIVA  DE ELECTRICIDAD, SERVICIOS PUBLICOS, VIVIENDA Y CREDITO DE AUSONIA LTDA.", "dep": "GENERAL SAN MARTIN", "lat": -32.66127, "lon": -63.24459, "g": 0, "usu": 584, "usuU": 543, "usuR": 39, "gu": 2, "en": 4624.8, "dem": 1215.0, "km": 0, "per": 5, "pot": 0.0, "gh": "A"}, {"loc": "BALLESTEROS", "nom": "COOPERATIVA DE OBRAS Y SERVICIOS PUBLICOS BALLESTEROS LTDA.", "dep": "UNION", "lat": -32.54049, "lon": -62.98125, "g": 4, "usu": 103, "usuU": 0, "usuR": 103, "gu": 0, "en": 2332.7, "dem": 543.0, "km": 151.4, "per": 4, "pot": 0.0, "gh": "F"}, {"loc": "BALNEARIA", "nom": "COOPERATIVA DE PROVISIÓN DE OBRAS Y SERVICIOS PÚBLICOS DE BALNEARIA LIMITADA.", "dep": "SAN JUSTO", "lat": -31.00401, "lon": -62.67013, "g": 4, "usu": 245, "usuU": 0, "usuR": 242, "gu": 3, "en": 9460.4, "dem": 2380.0, "km": 260.8, "per": 7, "pot": 0.0, "gh": "E"}, {"loc": "BENGOLEA", "nom": "COOPERATIVA DE PROVISION DE ELECTRICIDAD, OBRAS Y SERVICIOS SOCIALES DE CREDITO Y VIVIENDA DE BENGOLEA LTDA.", "dep": "JUAREZ CELMAN", "lat": -33.0254, "lon": -63.67136, "g": 0, "usu": 636, "usuU": 530, "usuR": 99, "gu": 7, "en": 4557.8, "dem": 1164.0, "km": 266.0, "per": 7, "pot": 0.0, "gh": "A"}, {"loc": "BENJAMIN GOULD", "nom": "COOPERATIVA ELECTRICA Y DE SERVICIOS PUBLICOS DE BENJAMIN GOULD LTDA.", "dep": "UNION", "lat": -33.58826, "lon": -62.72911, "g": 0, "usu": 368, "usuU": 322, "usuR": 41, "gu": 5, "en": 4209.0, "dem": 1205.0, "km": 131.3, "per": 7, "pot": 0.0, "gh": "A"}, {"loc": "BERROTARÁN", "nom": "COOPERATIVA DE PROVISIÓN DE ELECTRICIDAD Y OBRAS, SERVICIOS PUBLICOS LTDA. DE BERROTARAN", "dep": "RIO CUARTO", "lat": -32.45468, "lon": -64.38522, "g": 0, "usu": 4244, "usuU": 4219, "usuR": 0, "gu": 25, "en": 15883.2, "dem": 5472.0, "km": 222.0, "per": 26, "pot": 0.0, "gh": "A"}, {"loc": "BOUWER", "nom": "COOPERATIVA DE OBRAS Y SERVICIOS PUBLICOS DE BOUWER LTDA.", "dep": "SANTA MARIA", "lat": -31.55828, "lon": -64.18783, "g": 0, "usu": 453, "usuU": 355, "usuR": 95, "gu": 3, "en": 2588.0, "dem": 554.0, "km": 93.1, "per": 7, "pot": 0.0, "gh": "A"}, {"loc": "BRINKMANN", "nom": "COOPERATIVA DE OBRAS Y SERVICIOS PÚBLICOS DE BRINKMANN LTDA.", "dep": "SAN JUSTO", "lat": -30.86694, "lon": -62.03361, "g": 0, "usu": 6323, "usuU": 6063, "usuR": 256, "gu": 4, "en": 44808.8, "dem": 11059.0, "km": 500.0, "per": 38, "pot": 0.0, "gh": "A"}, {"loc": "BULNES", "nom": "COOPERATIVA DE ELECTRICIDAD, OBRAS Y SERVICIOS PÚBLICOS E.BULNES LTDA.", "dep": "RIO CUARTO", "lat": -33.50351, "lon": -64.67549, "g": 0, "usu": 594, "usuU": 548, "usuR": 46, "gu": 0, "en": 1994.1, "dem": 509.0, "km": 0, "per": 6, "pot": 0.0, "gh": "A"}, {"loc": "CALCHÍN", "nom": "COOPERATIVA DE ELECTRICIDAD, OBRAS Y SERVICIOS PUBLICOS CALCHIN LTDA.", "dep": "RIO SEGUNDO", "lat": -31.66814, "lon": -63.19943, "g": 0, "usu": 1587, "usuU": 1431, "usuR": 153, "gu": 3, "en": 12376.8, "dem": 3006.0, "km": 298.5, "per": 9, "pot": 0.0, "gh": "A"}, {"loc": "CALCHÍN OESTE", "nom": "COOPERATIVA DE PROVISIÓN ELECTRICIDAD,SERVICIOS PÚBLICOS, SOCIALES Y DE VIVIENDA CALCHÍN OESTE LTDA.", "dep": "RIO SEGUNDO", "lat": -31.86252, "lon": -63.27988, "g": 0, "usu": 391, "usuU": 345, "usuR": 46, "gu": 0, "en": 2624.4, "dem": 612.0, "km": 110.0, "per": 4, "pot": 0.0, "gh": "A"}, {"loc": "CAMILO ALDAO", "nom": "COOPERATIVA DE PROVISIÓN DE ELECTRICIDAD, OTROS SERVICIOS PÚBLICOS Y VIVIENDA LTDA. DE CAMILO ALDAO", "dep": "MARCOS JUAREZ", "lat": -33.13281, "lon": -62.09636, "g": 0, "usu": 2437, "usuU": 2320, "usuR": 110, "gu": 7, "en": 11182.3, "dem": 2865.0, "km": 324.9, "per": 12, "pot": 0.0, "gh": "A"}, {"loc": "CANALS", "nom": "COOPERATIVA DE OBRAS Y SERVICIOS PUBLICOS DE CANALS LIMITADA", "dep": "UNION", "lat": -33.56492, "lon": -62.88071, "g": 0, "usu": 4836, "usuU": 4645, "usuR": 170, "gu": 21, "en": 27962.8, "dem": 6057.0, "km": 326.3, "per": 23, "pot": 0.0, "gh": "A"}, {"loc": "CAÑADA DE LUQUE", "nom": "COOPERATIVA DE ELECTRICIDAD Y SERVICIOS PUBLICOS DE CAÑADA DE LUQUE LTDA.", "dep": "TOTORAL", "lat": -30.73554, "lon": -63.72468, "g": 0, "usu": 594, "usuU": 567, "usuR": 0, "gu": 27, "en": 15993.2, "dem": 2544.0, "km": 0, "per": 7, "pot": 0.0, "gh": "A"}, {"loc": "CARNERILLO", "nom": "COOPERATIVA  LTDA. DE ELECTRICIDAD, OBRAS  Y  SERVICIOS PUBLICOS, CREDITO Y VIVIENDA DE CARNERILLO", "dep": "RIO CUARTO", "lat": -32.91503, "lon": -64.02694, "g": 0, "usu": 1487, "usuU": 1295, "usuR": 174, "gu": 18, "en": 22292.2, "dem": 1962.0, "km": 382.3, "per": 13, "pot": 0.0, "gh": "A"}, {"loc": "CARRILOBO", "nom": "COOPERATIVA DE DISTRIBUCION DE ELECTRICIDAD Y AGUAS CORRIENTES CARRILOBO LIMITADA", "dep": "RIO SEGUNDO", "lat": -31.86916, "lon": -63.11747, "g": 0, "usu": 1025, "usuU": 965, "usuR": 55, "gu": 5, "en": 7072.0, "dem": 1819.0, "km": 118.1, "per": 8, "pot": 0.0, "gh": "A"}, {"loc": "CAVANAGH", "nom": "COOPERATIVA DE ELECTRICIDADY SERVICIOS PUBLICOS DE CAVANAGH LIMITADA", "dep": "MARCOS JUAREZ", "lat": -33.47961, "lon": -62.33965, "g": 0, "usu": 641, "usuU": 621, "usuR": 17, "gu": 3, "en": 7085.5, "dem": 1408.0, "km": 0, "per": 4, "pot": 0.0, "gh": "A"}, {"loc": "CHANCANI", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS Y   ASISTENCIA DE CHANCANI LTDA.", "dep": "POCHO", "lat": -31.41653, "lon": -65.45009, "g": 3, "usu": 0, "usuU": 0, "usuR": 0, "gu": 0, "en": 0.0, "dem": 0.0, "km": 0, "per": 0, "pot": 0.0, "gh": "D"}, {"loc": "CHARRAS", "nom": "COOPERATIVA DE ELECTRICIDAD Y SERVICIOS PUBLICOS DE CHARRAS LTDA.", "dep": "JUAREZ CELMAN", "lat": -33.02631, "lon": -64.04885, "g": 0, "usu": 742, "usuU": 617, "usuR": 119, "gu": 6, "en": 8135.6, "dem": 2586.0, "km": 177.0, "per": 7, "pot": 0.0, "gh": "A"}, {"loc": "CHAZÓN", "nom": "COOPERATIVA DE ELECTRICIDAD, SERVICIOS PÚBLICOS, VIVIENDA Y CREDITO DE CHAZON LTDA.", "dep": "GENERAL SAN MARTIN", "lat": -33.07936, "lon": -63.27514, "g": 1, "usu": 606, "usuU": 566, "usuR": 40, "gu": 0, "en": 4394.5, "dem": 1030.0, "km": 108.7, "per": 6, "pot": 0.0, "gh": "B"}, {"loc": "CHILIBROSTE", "nom": "COOPERATIVA ELÉCTRICA DE SERVICIOS PÚBLICOS Y CULTURAL DE CHILIBROSTE LTDA.", "dep": "UNION", "lat": -32.33327, "lon": -62.51014, "g": 0, "usu": 408, "usuU": 381, "usuR": 24, "gu": 3, "en": 4662.9, "dem": 1135.0, "km": 56.1, "per": 4, "pot": 0.0, "gh": "A"}, {"loc": "CHUCUL", "nom": "COOPERATIVA DE ELECTRICIDAD Y SERVICIOS PUBLICOS DE CHUCUL LTDA.", "dep": "RIO CUARTO", "lat": -33.01143, "lon": -64.17159, "g": 0, "usu": 346, "usuU": 290, "usuR": 56, "gu": 0, "en": 1256.6, "dem": 219.0, "km": 68.0, "per": 5, "pot": 0.0, "gh": "A"}, {"loc": "CINTRA", "nom": "COOPERATIVA DE AGUA, ENERGIA Y OTROS SERVICIOS PUBLICOS LA UNION DEL PUEBLO LTDA.", "dep": "UNION", "lat": -32.30699, "lon": -62.65123, "g": 1, "usu": 854, "usuU": 766, "usuR": 88, "gu": 0, "en": 14799.1, "dem": 4226.0, "km": 154.8, "per": 7, "pot": 0.0, "gh": "B"}, {"loc": "COLAZO", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS DE COLAZO LTDA.", "dep": "RIO SEGUNDO", "lat": -31.96638, "lon": -63.38206, "g": 0, "usu": 763, "usuU": 711, "usuR": 40, "gu": 12, "en": 10976.8, "dem": 3104.0, "km": 132.4, "per": 4, "pot": 0.0, "gh": "A"}, {"loc": "COLONIA ALMADA", "nom": "COOPERATIVA DE PROVISION DE OBRAS Y SERVICIOS PÚBLICOS Y SOCIALES DE COLONIA ALMADA LTDA.", "dep": "TERCERO ARRIBA", "lat": -32.03352, "lon": -63.86418, "g": 1, "usu": 260, "usuU": 174, "usuR": 86, "gu": 0, "en": 1084.3, "dem": 274.0, "km": 198.0, "per": 4, "pot": 1028.0, "gh": "B"}, {"loc": "COLONIA BISMARK", "nom": "COOPERATIVA DE ELECTRICIDAD Y SERVICIOS PUBLICOS DE COLONIA BISMARCK Y COLONIA BARGE LTDA.", "dep": "UNION", "lat": -33.30049, "lon": -62.71314, "g": 0, "usu": 712, "usuU": 530, "usuR": 165, "gu": 17, "en": 9303.8, "dem": 2099.0, "km": 392.1, "per": 7, "pot": 0.0, "gh": "A"}, {"loc": "COLONIA CAROYA Y JESÚS MARÍA", "nom": "COOPERATIVA DE SERVICIO PÚBLICOS DE COLONIA CAROYA  Y JESÚS MARÍA LTDA-", "dep": "COLON", "lat": -30.99217, "lon": -64.09752, "g": 6, "usu": 27034, "usuU": 26764, "usuR": 173, "gu": 97, "en": 166337.4, "dem": 39072.0, "km": 1188.9, "per": 127, "pot": 0.0, "gh": "A"}, {"loc": "COLONIA MARINA", "nom": "COOPERATIVA DE ELECTRICIDAD Y SERVICIOS PUBLICOS DE COLONIA MARINA LTDA.", "dep": "SAN JUSTO", "lat": -31.24885, "lon": -62.36362, "g": 0, "usu": 730, "usuU": 628, "usuR": 100, "gu": 2, "en": 4099.4, "dem": 979.0, "km": 189.5, "per": 12, "pot": 0.0, "gh": "A"}, {"loc": "COLONIA PROSPERIDAD", "nom": "COOPERATIVA ELECTRICA COLONIA PROSPERIDAD LTDA.", "dep": "SAN JUSTO", "lat": -31.62918, "lon": -62.3647, "g": 0, "usu": 606, "usuU": 432, "usuR": 170, "gu": 4, "en": 8249.9, "dem": 1390.0, "km": 244.3, "per": 0, "pot": 0.0, "gh": "A"}, {"loc": "COLONIA S. BARTOLOMÉ", "nom": "COOPERATIVA DE ENERGIA ELECTRICA COLONIA SAN BARTOLOME LTDA.", "dep": "SAN JUSTO", "lat": -31.53098, "lon": -62.72384, "g": 0, "usu": 759, "usuU": 659, "usuR": 96, "gu": 4, "en": 6953.1, "dem": 1350.0, "km": 198.2, "per": 5, "pot": 0.0, "gh": "A"}, {"loc": "COLONIA TIROLESA", "nom": "COOPERATIVA DE PROVISIÓN DE SERVICIOS ELÉCTRICOS Y PÚBLICOS DE COLONIA TIROLESA LTDA.", "dep": "COLON", "lat": -31.25967, "lon": -64.07312, "g": 0, "usu": 4389, "usuU": 3711, "usuR": 649, "gu": 29, "en": 37410.2, "dem": 7738.0, "km": 835.5, "per": 21, "pot": 0.0, "gh": "A"}, {"loc": "CORONEL BAIGORRIA", "nom": "COOPERATIVA ELECTRICA CORONEL BAIGORRIA LTDA.", "dep": "RIO CUARTO", "lat": -32.85094, "lon": -64.36169, "g": 0, "usu": 751, "usuU": 598, "usuR": 138, "gu": 15, "en": 12176.9, "dem": 2882.0, "km": 0, "per": 9, "pot": 0.0, "gh": "A"}, {"loc": "CORONEL MOLDES", "nom": "COOPERATIVA DE ELECTRICIDAD, OBRAS Y SERVICIOS PÚBLICOS LTDA. De CORONEL MOLDES – ( MOLDESCOOP )", "dep": "RIO CUARTO", "lat": -33.62582, "lon": -64.59552, "g": 0, "usu": 5096, "usuU": 4597, "usuR": 490, "gu": 9, "en": 28935.5, "dem": 6645.0, "km": 788.8, "per": 24, "pot": 0.0, "gh": "A"}, {"loc": "CORRALITO", "nom": "COOPERATIVA DE OBRAS, SERVICIOS  PUBLICOS Y CREDITO DE CORRALITO LTDA.", "dep": "TERCERO ARRIBA", "lat": -32.02395, "lon": -64.19265, "g": 0, "usu": 940, "usuU": 935, "usuR": 0, "gu": 5, "en": 5226.8, "dem": 1210.0, "km": 0, "per": 6, "pot": 0.0, "gh": "A"}, {"loc": "COSTASACATE", "nom": "COOPERATIVA DE ELECTRICIDAD Y SERVICIOS PUBLICOS DE COSTA SACATE LTDA.", "dep": "RIO SEGUNDO", "lat": -31.64745, "lon": -63.75887, "g": 0, "usu": 851, "usuU": 739, "usuR": 96, "gu": 16, "en": 7711.5, "dem": 1848.0, "km": 0, "per": 0, "pot": 0.0, "gh": "A"}, {"loc": "DALMACIO VELEZ", "nom": "COOPERATIVA DE ELECTRICIDAD DE DALMACIO VELEZ LTDA.", "dep": "TERCERO ARRIBA", "lat": -32.61129, "lon": -63.58194, "g": 0, "usu": 836, "usuU": 808, "usuR": 23, "gu": 5, "en": 11963.8, "dem": 2544.0, "km": 58.5, "per": 10, "pot": 0.0, "gh": "A"}, {"loc": "DEÁN FUNES", "nom": "COOPERATIVA DE CONSUMO, SERVICIOS PÚBLICOS Y SOCIALES DE DEAN FUNES LTDA.", "dep": "ISCHILIN", "lat": -30.42542, "lon": -64.35077, "g": 2, "usu": 10857, "usuU": 10179, "usuR": 656, "gu": 22, "en": 36037.0, "dem": 8045.0, "km": 305.0, "per": 87, "pot": 0.0, "gh": "C"}, {"loc": "DEL CAMPILLO", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS DEL CAMPILLO LTDA.-", "dep": "GENERAL ROCA", "lat": -34.37933, "lon": -64.49505, "g": 0, "usu": 1781, "usuU": 1717, "usuR": 64, "gu": 0, "en": 7446.1, "dem": 1818.0, "km": 256.6, "per": 10, "pot": 0.0, "gh": "B"}, {"loc": "DESPEÑADEROS", "nom": "COOPERATIVA DE OBRAS Y SERVICIOS PUBLICOS DE DESPEÑADEROS LTDA.", "dep": "SANTA MARIA", "lat": -31.81336, "lon": -64.29015, "g": 6, "usu": 3499, "usuU": 3324, "usuR": 152, "gu": 23, "en": 24845.4, "dem": 4752.0, "km": 275.6, "per": 18, "pot": 0.0, "gh": "A"}, {"loc": "DEVOTO", "nom": "COOPERATIVA DE ELECTRICIDAD, SERVICIOS PUBLICOS Y SOCIALES DE DEVOTO LTDA.", "dep": "SAN JUSTO", "lat": -31.40507, "lon": -62.30194, "g": 4, "usu": 325, "usuU": 0, "usuR": 317, "gu": 8, "en": 9435.8, "dem": 1883.0, "km": 319.3, "per": 7, "pot": 0.0, "gh": "E"}, {"loc": "EL ARAÑADO", "nom": "COOPERATIVA DE OBRAS Y SERVICIOS PUBLICOS EL ARAÑADO LTDA.", "dep": "SAN JUSTO", "lat": -31.74405, "lon": -62.88921, "g": 0, "usu": 992, "usuU": 816, "usuR": 172, "gu": 4, "en": 6130.0, "dem": 1445.0, "km": 328.8, "per": 9, "pot": 0.0, "gh": "A"}, {"loc": "EL BRETE", "nom": "COOPERATIVA ELECTRICA Y DE SERVICIOS PÚBLICOS MEDIA NARANJA LTDA.", "dep": "CRUZ DEL EJE", "lat": -30.67732, "lon": -64.86916, "g": 4, "usu": 2141, "usuU": 0, "usuR": 2129, "gu": 12, "en": 8700.2, "dem": 17104.0, "km": 296.3, "per": 12, "pot": 0.0, "gh": "E"}, {"loc": "EL FORTÍN", "nom": "COOPERATIVA ELECTRICA EL FORTIN LIMITADA", "dep": "SAN JUSTO", "lat": -31.96803, "lon": -62.3004, "g": 0, "usu": 723, "usuU": 631, "usuR": 91, "gu": 1, "en": 4341.7, "dem": 937.0, "km": 233.3, "per": 6, "pot": 0.0, "gh": "A"}, {"loc": "EL PARADOR DE LA MONTAÑA", "nom": "COOPERATIVA DE LUZ Y FUERZA MOTRIZ Y AGUA CORRIENTE EL PARADOR DE LA MONTAÑA LTDA.", "dep": "CALAMUCHITA", "lat": -32.10104, "lon": -64.46936, "g": 3, "usu": 91, "usuU": 91, "usuR": 0, "gu": 0, "en": 348.0, "dem": 75.0, "km": 12.3, "per": 0, "pot": 0.0, "gh": "D"}, {"loc": "EL TÍO V. CONCEPCIÓN", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS EL TIO-VILLA CONCEPCION LTDA.", "dep": "SAN JUSTO", "lat": -31.38384, "lon": -62.82993, "g": 0, "usu": 2613, "usuU": 2418, "usuR": 165, "gu": 30, "en": 21057.1, "dem": 4650.0, "km": 379.8, "per": 11, "pot": 0.0, "gh": "A"}, {"loc": "ELENA", "nom": "COOPERATIVA DE LUZ Y FUERZA DE ELENA LIMITADA", "dep": "RIO CUARTO", "lat": -32.57278, "lon": -64.39463, "g": 0, "usu": 2803, "usuU": 2578, "usuR": 212, "gu": 13, "en": 11385.3, "dem": 2196.0, "km": 0, "per": 15, "pot": 9400.0, "gh": "A"}, {"loc": "EMBALSE", "nom": "COOPERATIVA DE PROVISION DE SERVICIOS PÚBLICOS DE EMBALSE LTDA.", "dep": "CALAMUCHITA", "lat": -32.20411, "lon": -64.40097, "g": 2, "usu": 4427, "usuU": 4350, "usuR": 69, "gu": 8, "en": 18527.6, "dem": 4314.0, "km": 117.9, "per": 22, "pot": 0.0, "gh": "C"}, {"loc": "ETRURIA", "nom": "COOPERATIVA ELECTRICA LTDA. DE ETRURIA", "dep": "GENERAL SAN MARTIN", "lat": -32.93735, "lon": -63.24697, "g": 0, "usu": 2349, "usuU": 2294, "usuR": 47, "gu": 8, "en": 9542.7, "dem": 2218.0, "km": 0, "per": 10, "pot": 0.0, "gh": "A"}, {"loc": "FREYRE", "nom": "COOPERATIVA DE PROVISION DE SERVICIOS PUBLICOS DE FREYRE LTDA.", "dep": "SAN JUSTO", "lat": -31.16049, "lon": -62.10001, "g": 0, "usu": 3850, "usuU": 3663, "usuR": 176, "gu": 11, "en": 36299.7, "dem": 8266.0, "km": 323.4, "per": 17, "pot": 0.0, "gh": "A"}, {"loc": "GENERAL BALDISSERA", "nom": "COOPERATIVA DE PROVISION DE  OBRAS Y SERVICIOS PUBLICOS DE GENERAL BALDISSERA LIMITADA", "dep": "MARCOS JUAREZ", "lat": -33.12151, "lon": -62.30254, "g": 1, "usu": 1126, "usuU": 1125, "usuR": 0, "gu": 1, "en": 4742.9, "dem": 1383.0, "km": 0, "per": 6, "pot": 0.0, "gh": "B"}, {"loc": "GENERAL CABRERA", "nom": "COOPERATIVA DE PROVISION  DE  ELECTRICIDAD, OBRAS Y SERVICIOS PUBLICOS DE GRAL CABRERA  LTDA.", "dep": "JUAREZ CELMAN", "lat": -32.81546, "lon": -63.88166, "g": 4, "usu": 311, "usuU": 158, "usuR": 120, "gu": 33, "en": 34307.8, "dem": 9352.0, "km": 145.6, "per": 16, "pot": 0.0, "gh": "E"}, {"loc": "GENERAL DEHEZA", "nom": "COOPERATIVA ELECTRICA DE GENERAL DEHEZA LTDA.", "dep": "JUAREZ CELMAN", "lat": -32.7578, "lon": -63.78709, "g": 6, "usu": 5304, "usuU": 5122, "usuR": 137, "gu": 45, "en": 152591.4, "dem": 32544.0, "km": 332.6, "per": 29, "pot": 0.0, "gh": "A"}, {"loc": "GENERAL FOTHERINGHAM", "nom": "COOPERATIVA DE OBRAS, SERVICIOS PUBLICOS Y CONSUMO DE GRAL. FOTHERINGHAM LTDA.", "dep": "TERCERO ARRIBA", "lat": -32.32328, "lon": -63.86936, "g": 0, "usu": 590, "usuU": 304, "usuR": 279, "gu": 7, "en": 2218.4, "dem": 655.0, "km": 678.2, "per": 9, "pot": 0.0, "gh": "A"}, {"loc": "GENERAL LEVALLE", "nom": "COOPERATIVA DE ELECTRICIDAD Y AGUAS CORRIENTES DE GRAL.LAVALLE LTDA.", "dep": "PRESIDENTE ROQUE SAENZ PEÑA", "lat": -34.01005, "lon": -63.91989, "g": 0, "usu": 3334, "usuU": 3098, "usuR": 225, "gu": 11, "en": 14096.5, "dem": 3878.0, "km": 780.3, "per": 23, "pot": 0.0, "gh": "A"}, {"loc": "GENERAL PAZ", "nom": "COOPERATIVA DE ELECTRICIDAD DE GENERAL PAZ LTDA.", "dep": "COLON", "lat": -31.13492, "lon": -64.14181, "g": 0, "usu": 936, "usuU": 841, "usuR": 85, "gu": 10, "en": 6333.1, "dem": 1526.0, "km": 75.3, "per": 10, "pot": 4238.0, "gh": "A"}, {"loc": "GENERAL ROCA", "nom": "COOPERATIVA DE ELECTRICIDAD Y OTROS SERVICIOS PUBLICOS DE GENERAL ROCA LIMITADA", "dep": "MARCOS JUAREZ", "lat": -32.72893, "lon": -61.91447, "g": 0, "usu": 2809, "usuU": 2137, "usuR": 652, "gu": 20, "en": 16526.0, "dem": 195.0, "km": 415.9, "per": 31, "pot": 0.0, "gh": "A"}, {"loc": "GUATIMOZÍN", "nom": "COOPERATIVA LIMITADA DE ELECTRICIDAD DE GUATIMOZIN", "dep": "MARCOS JUAREZ", "lat": -33.46393, "lon": -62.43637, "g": 0, "usu": 1369, "usuU": 1339, "usuR": 21, "gu": 9, "en": 13001.3, "dem": 2427.0, "km": 188.6, "per": 5, "pot": 0.0, "gh": "A"}, {"loc": "HERNANDO", "nom": "COOPERATIVA DE OBRAS, SERVICIOS PÚBLICOS DE HERNANDO LTDA.", "dep": "TERCERO ARRIBA", "lat": -32.42292, "lon": -63.73728, "g": 0, "usu": 8261, "usuU": 8031, "usuR": 196, "gu": 34, "en": 38646.1, "dem": 7315.0, "km": 549.3, "per": 27, "pot": 0.0, "gh": "A"}, {"loc": "HUANCHILLA", "nom": "COOPERATIVA DE ELECTRICIDAD Y SERVICIOS ANEXOS DE HUANCHILLA LTDA.", "dep": "JUAREZ CELMAN", "lat": -33.66675, "lon": -63.6385, "g": 0, "usu": 990, "usuU": 789, "usuR": 201, "gu": 0, "en": 8938.2, "dem": 1754.0, "km": 459.4, "per": 7, "pot": 0.0, "gh": "A"}, {"loc": "HUINCA RENANCÓ", "nom": "COOPERATIVA LTDA. DE ELECTRICIDAD Y SERVICIOS ANEXOS DE HUINCA RENANCO", "dep": "GENERAL ROCA", "lat": -34.84074, "lon": -64.37503, "g": 0, "usu": 4784, "usuU": 4672, "usuR": 99, "gu": 13, "en": 27389.9, "dem": 6741.0, "km": 463.0, "per": 38, "pot": 0.0, "gh": "A"}, {"loc": "IDIAZABAL", "nom": "COOPERATIVA DE SERVICIOS DE ELECTRICIDAD, OBRAS Y SERVICIOS PUBLICOS DE IDIAZABAL LTDA", "dep": "UNION", "lat": -32.81324, "lon": -63.03132, "g": 0, "usu": 886, "usuU": 826, "usuR": 54, "gu": 6, "en": 4317.6, "dem": 1067.0, "km": 174.5, "per": 7, "pot": 0.0, "gh": "A"}, {"loc": "INRIVILLE", "nom": "COOPERATIVA DE ELECTRICIDAD Y SERVICIOS PUBLICOS DE INRIVILLE LTDA.", "dep": "MARCOS JUAREZ", "lat": -32.94693, "lon": -62.22738, "g": 0, "usu": 2304, "usuU": 2153, "usuR": 145, "gu": 6, "en": 10410.7, "dem": 2808.0, "km": 69.7, "per": 4, "pot": 0.0, "gh": "A"}, {"loc": "ITALO", "nom": "COOPERATIVA DE PROVISION DE ELECTRICIDAD, OBRAS Y SERVICIOS PUBLICOS ITALO LTDA.", "dep": "GENERAL ROCA", "lat": -34.79203, "lon": -63.77969, "g": 0, "usu": 722, "usuU": 669, "usuR": 53, "gu": 0, "en": 2533.2, "dem": 641.0, "km": 0, "per": 5, "pot": 0.0, "gh": "A"}, {"loc": "JAMES CRAICK", "nom": "COOPERATIVA DE SERVICIOS PÚBLICOS DE JAMES CRAIK LTDA.", "dep": "TERCERO ARRIBA", "lat": -32.16048, "lon": -63.47108, "g": 4, "usu": 116, "usuU": 36, "usuR": 74, "gu": 6, "en": 2967.2, "dem": 1557.0, "km": 121.6, "per": 4, "pot": 0.0, "gh": "E"}, {"loc": "JOSÉ DE LA QUINTANA", "nom": "HIDROELÉCTRICA SAN JOSÉ COOP.LTDA.", "dep": "SANTA MARIA", "lat": -31.80184, "lon": -64.41805, "g": 3, "usu": 627, "usuU": 627, "usuR": 0, "gu": 0, "en": 18315.6, "dem": 0.0, "km": 34.9, "per": 6, "pot": 0.0, "gh": "D"}, {"loc": "JOVITA", "nom": "COOPERATIVA ELÉCTRICA JOVITA LTDA.", "dep": "GENERAL ROCA", "lat": -34.5211, "lon": -63.94272, "g": 0, "usu": 0, "usuU": 0, "usuR": 0, "gu": 0, "en": 16708.2, "dem": 3891.0, "km": 0, "per": 19, "pot": 0.0, "gh": "A"}, {"loc": "JUSTINIANO POSSE", "nom": "COOPERATIVA ELÉCTRICA, DE OBRAS Y SERVICIOS PÚBLICOS LIMITADA DE JUSTINIANO POSSE.", "dep": "UNION", "lat": -32.88331, "lon": -62.67723, "g": 0, "usu": 4948, "usuU": 4612, "usuR": 272, "gu": 64, "en": 26281.6, "dem": 6543.0, "km": 568.2, "per": 20, "pot": 0.0, "gh": "A"}, {"loc": "LA CAUTIVA", "nom": "COOPERATIVA LTDA DE LUZ Y FUERZA LA CAUTIVA", "dep": "RIO CUARTO", "lat": -33.97879, "lon": -64.08381, "g": 0, "usu": 420, "usuU": 410, "usuR": 10, "gu": 0, "en": 2274.2, "dem": 0.0, "km": 0, "per": 4, "pot": 0.0, "gh": "A"}, {"loc": "LA CESIRA", "nom": "COOPERATIVA DE ELECTRICIDAD VIVIENDA Y ANEXOS DE LA CESIRA LIMITADA", "dep": "PRESIDENTE ROQUE SAENZ PEÑA", "lat": -33.9496, "lon": -62.97381, "g": 0, "usu": 882, "usuU": 758, "usuR": 111, "gu": 13, "en": 5710.9, "dem": 1627.0, "km": 330.0, "per": 7, "pot": 0.0, "gh": "A"}, {"loc": "LA CRUZ", "nom": "COOPERATIVA DE ELECTRICIDAD Y SERVICIOS PUBLICOS ANEXOS LA CRUZ LTDA.", "dep": "CALAMUCHITA", "lat": -32.3034, "lon": -64.48318, "g": 2, "usu": 1895, "usuU": 1037, "usuR": 857, "gu": 1, "en": 3771.4, "dem": 882.0, "km": 520.3, "per": 10, "pot": 0.0, "gh": "C"}, {"loc": "LA CUMBRECITA", "nom": "COOPERATIVA DE LUZ Y FUERZA Y AGUAS CORRIENTE LA CUMBRECITA LIMITADA", "dep": "CALAMUCHITA", "lat": -31.89851, "lon": -64.77333, "g": 3, "usu": 890, "usuU": 890, "usuR": 0, "gu": 0, "en": 3067.3, "dem": 565.0, "km": 103.2, "per": 10, "pot": 0.0, "gh": "C"}, {"loc": "LA FRANCIA", "nom": "COOPERATIVA DE SERVICIOS PÚBLICOS LA FRANCIA LIMITADA", "dep": "SAN JUSTO", "lat": -31.40455, "lon": -62.63503, "g": 1, "usu": 2260, "usuU": 2111, "usuR": 149, "gu": 0, "en": 9777.7, "dem": 2654.0, "km": 359.0, "per": 16, "pot": 0.0, "gh": "B"}, {"loc": "LA GRANJA", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS DE LA GRANJA LTDA.", "dep": "COLON", "lat": -31.00858, "lon": -64.267, "g": 2, "usu": 2607, "usuU": 2565, "usuR": 39, "gu": 3, "en": 8462.2, "dem": 2176.0, "km": 58.6, "per": 10, "pot": 0.0, "gh": "C"}, {"loc": "LA HIGUERA", "nom": "COOPERATIVA DE PROVISION DE OBRAS Y SERVICIOS PUBLICOS LA HIGUERA LTDA.", "dep": "CRUZ DEL EJE", "lat": -31.0151, "lon": -65.10245, "g": 2, "usu": 571, "usuU": 132, "usuR": 439, "gu": 0, "en": 769.5, "dem": 254.0, "km": 0, "per": 3, "pot": 1204.0, "gh": "C"}, {"loc": "LA LAGUNA", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS, VIVIENDA Y CREDITO LA LAGUNA LTDA.", "dep": "GENERAL SAN MARTIN", "lat": -32.80294, "lon": -63.24488, "g": 0, "usu": 887, "usuU": 839, "usuR": 44, "gu": 4, "en": 10399.2, "dem": 2161.0, "km": 113.4, "per": 9, "pot": 0.0, "gh": "A"}, {"loc": "LA PALESTINA", "nom": "COOPERATIVA DE ELECTRICIDAD Y SERVICIOS PUBLICOS LA PALESTINA LTDA.", "dep": "GENERAL SAN MARTIN", "lat": -32.61533, "lon": -63.40625, "g": 1, "usu": 4767, "usuU": 4656, "usuR": 100, "gu": 11, "en": 27098.4, "dem": 6634.0, "km": 463.0, "per": 32, "pot": 0.0, "gh": "B"}, {"loc": "LA PAQUITA", "nom": "COOPERATIVA DE SERVICIOS PÚBLICOS DE LA PAQUITA LTDA.", "dep": "SAN JUSTO", "lat": -30.90753, "lon": -62.21539, "g": 0, "usu": 733, "usuU": 637, "usuR": 91, "gu": 5, "en": 6156.8, "dem": 1606.0, "km": 0, "per": 7, "pot": 0.0, "gh": "B"}, {"loc": "LA PARA", "nom": "LA PARA COOPERATIVA DE ELECTRICIDAD VIVIENDA Y SERVICIOS PUBLICOS LTDA.", "dep": "RIO PRIMERO", "lat": -30.89431, "lon": -62.99702, "g": 0, "usu": 2250, "usuU": 2158, "usuR": 91, "gu": 1, "en": 13566.4, "dem": 3096.0, "km": 234.2, "per": 14, "pot": 0.0, "gh": "A"}, {"loc": "LA PLAYOSA", "nom": "COOPERATIVA DE ELECTRICIDAD, OBRAS Y SERVICIOS PÚBLICOS DE LA PLAYOSA LTDA.", "dep": "GENERAL SAN MARTIN", "lat": -32.10086, "lon": -63.03272, "g": 0, "usu": 1650, "usuU": 1517, "usuR": 122, "gu": 11, "en": 10221.8, "dem": 2338.0, "km": 218.2, "per": 8, "pot": 0.0, "gh": "A"}, {"loc": "LA PUERTA", "nom": "COOPERATIVA DE ELECTRICIDAD, PROVISIÓN DE SERVICIOS PÚBLICOS Y EDIFICACIÓN DE LA PUERTA LTDA.", "dep": "RIO PRIMERO", "lat": -30.89144, "lon": -63.25298, "g": 0, "usu": 1397, "usuU": 1136, "usuR": 261, "gu": 0, "en": 8582.3, "dem": 2443.0, "km": 0, "per": 10, "pot": 0.0, "gh": "A"}, {"loc": "LA RANCHERITA", "nom": "COOPERATIVA DE PREVISION DE OBRAS Y SERVICIOS PUBLICOS LA RANCHERITA LTDA.", "dep": "SANTA MARIA", "lat": -31.74131, "lon": -64.45792, "g": 2, "usu": 171, "usuU": 171, "usuR": 0, "gu": 0, "en": 358.1, "dem": 105.0, "km": 0, "per": 0, "pot": 0.0, "gh": "A"}, {"loc": "LA SERRANITA", "nom": "COOPERATIVA DE DE CONSUMO, OBRAS Y SERVICIOS PUBLICOS Y SERVICIOS SOCIALES DE LA SERRANITA LTDA", "dep": "SANTA MARIA", "lat": -31.73682, "lon": -64.45652, "g": 3, "usu": 593, "usuU": 593, "usuR": 0, "gu": 0, "en": 1104.2, "dem": 300.0, "km": 0, "per": 0, "pot": 0.0, "gh": "D"}, {"loc": "LA TORDILLA", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS Y SOCIALES LA TORDILLA LTDA.", "dep": "SAN JUSTO", "lat": -31.24044, "lon": -63.06078, "g": 0, "usu": 986, "usuU": 821, "usuR": 156, "gu": 9, "en": 10522.4, "dem": 2261.0, "km": 0, "per": 9, "pot": 0.0, "gh": "A"}, {"loc": "LABORDE", "nom": "COOPERA DE PROVISION DE OBRAS  Y SERVICIOS PUBLICOS LABORDE LTDA.-", "dep": "UNION", "lat": -33.15324, "lon": -62.86045, "g": 4, "usu": 90, "usuU": 0, "usuR": 90, "gu": 0, "en": 589.3, "dem": 149.0, "km": 169.0, "per": 3, "pot": 0.0, "gh": "E"}, {"loc": "LABOULAYE", "nom": "COOPERATIVA F.E.L. LTDA.", "dep": "PRESIDENTE ROQUE SAENZ PEÑA", "lat": -34.1259, "lon": -63.39562, "g": 6, "usu": 11725, "usuU": 11385, "usuR": 297, "gu": 43, "en": 54456.3, "dem": 13109.0, "km": 1035.1, "per": 50, "pot": 0.0, "gh": "A"}, {"loc": "LAGUNA LARGA", "nom": "COOPERATIVA ELECTRICA DE LAGUNA LARGA LTDA.", "dep": "RIO SEGUNDO", "lat": -31.78049, "lon": -63.80125, "g": 6, "usu": 868, "usuU": 820, "usuR": 44, "gu": 4, "en": 9613.4, "dem": 2153.0, "km": 113.4, "per": 9, "pot": 0.0, "gh": "A"}, {"loc": "LAS ACEQUIAS", "nom": "COOPERATIVA ELÉCTRICA DE OBRAS Y SERVICIOS PÚBLICOS LAS ACEQUIAS LTDA.", "dep": "RIO CUARTO", "lat": -33.28, "lon": -63.975, "g": 0, "usu": 1247, "usuU": 1072, "usuR": 165, "gu": 10, "en": 9322.2, "dem": 2659.0, "km": 387.2, "per": 13, "pot": 0.0, "gh": "A"}, {"loc": "LAS ARRIAS", "nom": "COOPERATIVA DE ELECTRICIDAD Y SERVICIOS PÚBLICOS DE LAS ARRIAS LTDA.", "dep": "TULUMBA", "lat": -30.38348, "lon": -63.59561, "g": 2, "usu": 884, "usuU": 744, "usuR": 135, "gu": 5, "en": 4807.2, "dem": 1194.0, "km": 346.2, "per": 7, "pot": 0.0, "gh": "C"}, {"loc": "LAS HIGUERAS", "nom": "COOPERATIVA DE ELECTRICIDAD. OBRAS Y SERVICIOS PUBLICOS LTDA. LAS HIGUERAS", "dep": "RIO CUARTO", "lat": -33.08981, "lon": -64.2862, "g": 0, "usu": 4574, "usuU": 4342, "usuR": 202, "gu": 30, "en": 21748.9, "dem": 5184.0, "km": 170.5, "per": 15, "pot": 0.0, "gh": "A"}, {"loc": "LAS JUNTURAS", "nom": "COOPERATIVA DE ELECTRICIDAD Y SERVICIOS PUBLICOS LAS JUNTURAS LTDA.", "dep": "RIO SEGUNDO", "lat": -31.83389, "lon": -63.44996, "g": 0, "usu": 1002, "usuU": 954, "usuR": 33, "gu": 15, "en": 9403.9, "dem": 2027.0, "km": 99.8, "per": 7, "pot": 0.0, "gh": "A"}, {"loc": "LAS PEÑAS", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS Y SOCIALES DE LAS PEÑAS LTDA.", "dep": "TOTORAL", "lat": -30.56418, "lon": -64.00038, "g": 0, "usu": 1205, "usuU": 1136, "usuR": 54, "gu": 15, "en": 14182.5, "dem": 2818.0, "km": 327.0, "per": 15, "pot": 0.0, "gh": "A"}, {"loc": "LAS PERDICES", "nom": "COOPERATIVA ELECTRICA LAS PERDICES LTDA.", "dep": "TERCERO ARRIBA", "lat": -32.69837, "lon": -63.70802, "g": 0, "usu": 2478, "usuU": 2423, "usuR": 55, "gu": 0, "en": 8261.1, "dem": 2270.0, "km": 132.0, "per": 14, "pot": 0.0, "gh": "A"}, {"loc": "LAS VARAS", "nom": "COOPERATIVA DE PROVISIÓN DE ELECTRICIDAD, OBRAS Y SERVICIOS PÚBLICOS LIMITADA DE LAS VARAS", "dep": "SAN JUSTO", "lat": -31.80159, "lon": -62.61979, "g": 0, "usu": 820, "usuU": 739, "usuR": 77, "gu": 4, "en": 8042.2, "dem": 1899.0, "km": 152.5, "per": 8, "pot": 0.0, "gh": "A"}, {"loc": "LAS VARILLAS", "nom": "COOPERATIVA DE ENERGÍA ELÉCTRICA Y OTROS Y SERVICIOS PÚBLICOS LAS VARILLAS LTDA.", "dep": "SAN JUSTO", "lat": -31.87413, "lon": -62.7189, "g": 0, "usu": 10394, "usuU": 10233, "usuR": 113, "gu": 48, "en": 54236.2, "dem": 15156.0, "km": 443.9, "per": 44, "pot": 0.0, "gh": "A"}, {"loc": "LAS VERTIENTES", "nom": "COOPERATIVA DE ELECTRICIDAD DE LAS VERTIENTES LTDA.", "dep": "RIO CUARTO", "lat": -33.28253, "lon": -64.5795, "g": 1, "usu": 2551, "usuU": 613, "usuR": 1938, "gu": 0, "en": 2894.1, "dem": 638.0, "km": 0, "per": 5, "pot": 0.0, "gh": "B"}, {"loc": "LEONES", "nom": "COOPERATIVA DE OBRAS Y SERVICIOS PUBLICOS DE LEONES LTDA.", "dep": "MARCOS JUAREZ", "lat": -32.66281, "lon": -62.29894, "g": 0, "usu": 413, "usuU": 0, "usuR": 413, "gu": 0, "en": 17683.1, "dem": 3288.0, "km": 0, "per": 10, "pot": 0.0, "gh": "A"}, {"loc": "LOS CHAÑARITOS", "nom": "COOPERATIVA DE ELECTRICIDAD Y SERVICIOS PUBLICOS LOS CHAÑARITOS LTDA.", "dep": "RIO SEGUNDO", "lat": -31.40185, "lon": -63.33154, "g": 0, "usu": 203, "usuU": 117, "usuR": 80, "gu": 6, "en": 3114.2, "dem": 836.0, "km": 142.3, "per": 4, "pot": 0.0, "gh": "A"}, {"loc": "LOS CISNES", "nom": "COOPERATIVA LTDA. DE ELECTRICIDAD, VIVIENDA Y SERVICIOS PUBLICOS DE LOS CISNES", "dep": "JUAREZ CELMAN", "lat": -33.40305, "lon": -63.46959, "g": 0, "usu": 833, "usuU": 505, "usuR": 312, "gu": 16, "en": 11893.2, "dem": 3212.0, "km": 605.3, "per": 11, "pot": 851.0, "gh": "A"}, {"loc": "LOS CONDORES", "nom": "COOPERATIVA DE PROVISION DE SERVICIO ELECTRICO, OBRAS Y OTROS SERVICIOS PUBLICOS Y ASISTENCIALES LOS CONDORES LTDA.", "dep": "TERCERO ARRIBA", "lat": -32.32133, "lon": -64.28119, "g": 0, "usu": 1630, "usuU": 1595, "usuR": 27, "gu": 8, "en": 10502.4, "dem": 2625.0, "km": 108.8, "per": 0, "pot": 0.0, "gh": "A"}, {"loc": "LOS ESPINILLOS (PARAJE)", "nom": "COOPERATIVA DE OBRAS, SERVICIOS PUBLICOS Y CONSUMO LOS ESPINILLOS LTDA.", "dep": "SANTA MARIA", "lat": -31.82216, "lon": -64.57683, "g": 3, "usu": 1349, "usuU": 1349, "usuR": 0, "gu": 0, "en": 2223.4, "dem": 509.0, "km": 0, "per": 6, "pot": 0.0, "gh": "D"}, {"loc": "LOS HORNILLOS", "nom": "COOPERATIVA LTDA. DE CONSUMO POPULAR DE ELECTRICIDAD Y SERVICIOS ANEXOS DE LOS HORNILLOS", "dep": "SAN JAVIER", "lat": -31.90008, "lon": -64.98767, "g": 3, "usu": 1074, "usuU": 1074, "usuR": 0, "gu": 0, "en": 2157.3, "dem": 539.1, "km": 0, "per": 7, "pot": 0.0, "gh": "D"}, {"loc": "LOS REARTES", "nom": "COOPERATIVA DE LUZ, FUERZA Y ANEXOS LTDA. DE LOS REARTES", "dep": "CALAMUCHITA", "lat": -31.92194, "lon": -64.57746, "g": 2, "usu": 2831, "usuU": 2831, "usuR": 0, "gu": 0, "en": 7396.0, "dem": 1884.0, "km": 57.4, "per": 15, "pot": 0.0, "gh": "C"}, {"loc": "LOS ZORROS", "nom": "COOPERATIVA DE ELECTRICIDAD y SERVICIOS PÚBLICOS LOS ZORROS LTDA", "dep": "TERCERO ARRIBA", "lat": -32.04621, "lon": -63.2022, "g": 1, "usu": 422, "usuU": 277, "usuR": 145, "gu": 0, "en": 3409.1, "dem": 683.0, "km": 216.5, "per": 5, "pot": 0.0, "gh": "B"}, {"loc": "LOZADA", "nom": "COOPERATIVA DE ELECTRICIDAD, OBRAS, SERVICIOS PUBLICOS Y CONSUMO DE LOZADA LTDA.", "dep": "SANTA MARIA", "lat": -31.64814, "lon": -64.09025, "g": 0, "usu": 627, "usuU": 627, "usuR": 0, "gu": 0, "en": 2203.1, "dem": 531.0, "km": 100.4, "per": 0, "pot": 0.0, "gh": "A"}, {"loc": "LUCA", "nom": "COOPERATIVA DE  SERVICIOS  PUBLICOS  DE  LUCA  LTDA.", "dep": "GENERAL SAN MARTIN", "lat": -32.54123, "lon": -63.47877, "g": 0, "usu": 427, "usuU": 341, "usuR": 86, "gu": 0, "en": 4422.0, "dem": 994.0, "km": 0, "per": 4, "pot": 0.0, "gh": "A"}, {"loc": "LUQUE", "nom": "COOPERATIVA DE SERVICIOS  PÚBLICOS Y SOCIALES LUQUE LTDA.", "dep": "RIO SEGUNDO", "lat": -31.64785, "lon": -63.34441, "g": 6, "usu": 3311, "usuU": 3228, "usuR": 71, "gu": 12, "en": 39428.1, "dem": 10032.0, "km": 218.2, "per": 16, "pot": 0.0, "gh": "A"}, {"loc": "LUYABA", "nom": "COOP. ELÉCTRICA DE LUYABA", "dep": "SAN JAVIER", "lat": -32.14669, "lon": -65.06001, "g": 4, "usu": 751, "usuU": 0, "usuR": 751, "gu": 0, "en": 1293.5, "dem": 74.0, "km": 0, "per": 6, "pot": 3105.0, "gh": "E"}, {"loc": "MANFREDI", "nom": "COOPERATIVA ELECTRICA Y DE SERVICIOS PUBLICOS DE MANFREDI LTDA.", "dep": "RIO SEGUNDO", "lat": -31.84526, "lon": -63.74553, "g": 0, "usu": 374, "usuU": 346, "usuR": 25, "gu": 3, "en": 2847.7, "dem": 646.0, "km": 0, "per": 4, "pot": 2263.0, "gh": "A"}, {"loc": "MARULL", "nom": "ELECTRICIDAD, SERVICIOS PÚBLICOS, VIVIENDA, OBRAS Y CRÉDITO MARULL COOP. LTDA.", "dep": "SAN JUSTO", "lat": -30.9969, "lon": -62.82627, "g": 0, "usu": 1116, "usuU": 1012, "usuR": 102, "gu": 2, "en": 9202.0, "dem": 2112.0, "km": 325.3, "per": 12, "pot": 0.0, "gh": "A"}, {"loc": "MATORRALES", "nom": "COOPERATIVA DE ELECTRICA TELEFONICA Y DE SERVICIOS PÚBLICOS DE MATORRALES LTDA.", "dep": "RIO SEGUNDO", "lat": -31.71438, "lon": -63.51163, "g": 0, "usu": 643, "usuU": 568, "usuR": 69, "gu": 6, "en": 4064.8, "dem": 1156.0, "km": 139.0, "per": 4, "pot": 0.0, "gh": "A"}, {"loc": "MATTALDI", "nom": "COOPERATIVA DE ELECTRICIDAD Y SERVICIOS PUBLICOS DE MATTALDI LTDA.", "dep": "GENERAL ROCA", "lat": -34.48208, "lon": -64.17455, "g": 0, "usu": 894, "usuU": 886, "usuR": 8, "gu": 0, "en": 3672.9, "dem": 955.2, "km": 0, "per": 2, "pot": 1640.0, "gh": "A"}, {"loc": "MELO", "nom": "COOPERATIVA DE ELECTRICIDAD, CREDITO, OBRAS Y SERVICIOS PUBLICOS Y VIVIENDAS DE MELO LTDA.", "dep": "PRESIDENTE ROQUE SAENZ PEÑA", "lat": -34.34682, "lon": -63.44775, "g": 0, "usu": 700, "usuU": 636, "usuR": 60, "gu": 4, "en": 3309.4, "dem": 739.0, "km": 159.5, "per": 5, "pot": 0.0, "gh": "A"}, {"loc": "MINA CLAVERO", "nom": "COOPERATIVA LTDA. DE ELECTRICIDAD DE MINA CLAVERO", "dep": "SAN ALBERTO", "lat": -31.71568, "lon": -65.006, "g": 2, "usu": 12271, "usuU": 9879, "usuR": 2390, "gu": 2, "en": 52912.0, "dem": 14890.0, "km": 498.6, "per": 73, "pot": 0.0, "gh": "D"}, {"loc": "MIRAMAR", "nom": "COOPERATIVA ELECTRICA Y DE SERVICIOS PÚBLICOS MIRAMAR LTDA.", "dep": "SAN JUSTO", "lat": -30.91469, "lon": -62.67629, "g": 0, "usu": 2143, "usuU": 2064, "usuR": 71, "gu": 8, "en": 11186.3, "dem": 4099.0, "km": 0, "per": 10, "pot": 0.0, "gh": "B"}, {"loc": "MONTE BUEY", "nom": "COOPERATIVA ELECTRICA Y DE OBRAS Y SERVICIOS PUBLICOS DE MONTE BUEY LIMITADA", "dep": "MARCOS JUAREZ", "lat": -32.91642, "lon": -62.45308, "g": 0, "usu": 4071, "usuU": 3889, "usuR": 150, "gu": 32, "en": 31458.3, "dem": 13716.0, "km": 372.8, "per": 18, "pot": 0.0, "gh": "A"}, {"loc": "MONTE CRISTO", "nom": "COOPERATIVA  DE OBRAS Y SERVICIOS PUBLICOS DE MONTE CRISTO LTDA.", "dep": "COLON", "lat": -31.34515, "lon": -63.94898, "g": 0, "usu": 7097, "usuU": 5443, "usuR": 1543, "gu": 111, "en": 50148.5, "dem": 11856.0, "km": 505.4, "per": 32, "pot": 0.0, "gh": "A"}, {"loc": "MONTE LEÑA", "nom": "COOP. DE ELECTRICIDAD, AGUA POTABLE Y OTROS SERVICIOS PÚBLICOS DE MONTE LEÑA LTDA.", "dep": "UNION", "lat": -32.61179, "lon": -62.58906, "g": 0, "usu": 516, "usuU": 291, "usuR": 216, "gu": 9, "en": 3836.8, "dem": 887.0, "km": 0, "per": 0, "pot": 0.0, "gh": "A"}, {"loc": "MONTE RALO", "nom": "COOPERATIVA DE AGUA Y ENERGIA ELECTRICA LTDA. DE MONTE RALO", "dep": "SANTA MARIA", "lat": -31.9085, "lon": -64.24115, "g": 1, "usu": 310, "usuU": 307, "usuR": 0, "gu": 3, "en": 2268.1, "dem": 636.0, "km": 3.9, "per": 5, "pot": 0.0, "gh": "B"}, {"loc": "MORRISON", "nom": "COOPERATIVA DE OBRAS Y SERVICIOS PUBLICOS DE MORRISON LTDA.", "dep": "UNION", "lat": -32.59339, "lon": -62.83692, "g": 4, "usu": 266, "usuU": 71, "usuR": 195, "gu": 0, "en": 2516.8, "dem": 482.0, "km": 376.6, "per": 6, "pot": 0.0, "gh": "E"}, {"loc": "MORTEROS", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS DE MORTEROS LTDA.", "dep": "SAN JUSTO", "lat": -30.71631, "lon": -62.0052, "g": 0, "usu": 10562, "usuU": 10100, "usuR": 426, "gu": 36, "en": 85443.6, "dem": 19440.0, "km": 895.5, "per": 99, "pot": 0.0, "gh": "A"}, {"loc": "NONO", "nom": "COOPERATIVA DE OBRAS Y SERVICIOS PUBLICOS DE NONO LTDA.-", "dep": "SAN ALBERTO", "lat": -31.79523, "lon": -65.00153, "g": 2, "usu": 2628, "usuU": 2430, "usuR": 198, "gu": 0, "en": 9377.1, "dem": 2054.0, "km": 209.7, "per": 20, "pot": 0.0, "gh": "D"}, {"loc": "OBISPO TREJO", "nom": "COOPERATIVA DE SERVICIOS PÚBLICOS Y VIVIENDAS DE OBISPO TREJO LTDA.", "dep": "RIO PRIMERO", "lat": -30.78331, "lon": -63.41803, "g": 0, "usu": 1428, "usuU": 1398, "usuR": 25, "gu": 5, "en": 6096.7, "dem": 1819.0, "km": 133.6, "per": 7, "pot": 0.0, "gh": "A"}, {"loc": "OLAETA", "nom": "COOPERATIVA DE PROVISION DE OBRAS Y SERVICIOS PUBLICOS DE OLAETA LTDA.", "dep": "JUAREZ CELMAN", "lat": -33.04535, "lon": -63.90656, "g": 0, "usu": 400, "usuU": 346, "usuR": 49, "gu": 5, "en": 2011.4, "dem": 633.0, "km": 0, "per": 2, "pot": 0.0, "gh": "A"}, {"loc": "OLIVA", "nom": "COOPERATIVA DE PROVISION DE OBRAS Y SERVICIOS PUBLICOS Y SOCIALES Y DE VIVIENDA DE OLIVA LTDA.", "dep": "TERCERO ARRIBA", "lat": -32.03656, "lon": -63.5711, "g": 6, "usu": 6444, "usuU": 6234, "usuR": 195, "gu": 15, "en": 26792.4, "dem": 6866.0, "km": 532.4, "per": 23, "pot": 0.0, "gh": "A"}, {"loc": "ONCATIVO", "nom": "COOPERATIVA ELECTRICA DE SERVICIOS Y OBRAS PUBLICAS DE ONCATIVO LTDA.", "dep": "RIO SEGUNDO", "lat": -31.91808, "lon": -63.68248, "g": 0, "usu": 7797, "usuU": 7641, "usuR": 150, "gu": 6, "en": 32083.8, "dem": 8432.0, "km": 372.7, "per": 23, "pot": 0.0, "gh": "A"}, {"loc": "ORDOÑEZ", "nom": "COOPERATIVA DE PROVISION DE ELECTRICIDAD Y DE OBRAS Y SERVICIOS PÚBLICOS LTDA. DE ORDOÑEZ", "dep": "UNION", "lat": -32.83856, "lon": -62.86165, "g": 0, "usu": 1476, "usuU": 1442, "usuR": 27, "gu": 7, "en": 13527.2, "dem": 2817.0, "km": 214.8, "per": 10, "pot": 0.0, "gh": "A"}, {"loc": "PAMPAYASTA NORTE", "nom": "COOPERATIVA DE TAMBEROS  DE  PAMPAYASTA  NORTE  LTDA.", "dep": "TERCERO ARRIBA", "lat": -32.24097, "lon": -63.64301, "g": 4, "usu": 103, "usuU": 39, "usuR": 64, "gu": 0, "en": 422.0, "dem": 102.13, "km": 0, "per": 3, "pot": 585.0, "gh": "E"}, {"loc": "PASCANAS", "nom": "COOP. DE PROV. DE ELECT. Y SERV. PUBLICOS PASCANAS LTDA.", "dep": "UNION", "lat": -33.1242, "lon": -63.03949, "g": 4, "usu": 146, "usuU": 0, "usuR": 146, "gu": 0, "en": 1853.1, "dem": 0.0, "km": 0, "per": 7, "pot": 0.0, "gh": "E"}, {"loc": "PASCO", "nom": "COOPERATIVA DE SERVICIOS PÚBLICOS DE PASCO LTDA", "dep": "GENERAL SAN MARTIN", "lat": -32.74779, "lon": -63.34037, "g": 0, "usu": 817, "usuU": 783, "usuR": 34, "gu": 0, "en": 8920.0, "dem": 2511.0, "km": 140.7, "per": 6, "pot": 0.0, "gh": "A"}, {"loc": "PLAZA SAN FRANCISCO", "nom": "COOPERATIVA DE ENERGIA ELECTRICA Y SERVICIOS PUBLICOS DE PLAZA SAN FRANCISCO LTDA.", "dep": "SAN JUSTO", "lat": -31.36957, "lon": -62.09791, "g": 0, "usu": 708, "usuU": 635, "usuR": 69, "gu": 4, "en": 4151.2, "dem": 1028.0, "km": 100.2, "per": 6, "pot": 4962.0, "gh": "A"}, {"loc": "PORTEÑA", "nom": "COOPERATIVA DE SERVICIOS PÚBLICOS DE PORTEÑA LIMITADA", "dep": "SAN JUSTO", "lat": -31.01611, "lon": -62.06639, "g": 0, "usu": 3253, "usuU": 3115, "usuR": 131, "gu": 7, "en": 18984.1, "dem": 4723.0, "km": 357.9, "per": 14, "pot": 0.0, "gh": "A"}, {"loc": "POZO DE MOLLE", "nom": "COOPERATIVA DE LUZ Y FUERZA, OBRAS Y SERVICIOS PUBLICOS Y ASISTENCIALES POZO DEL MOLLE LTDA.", "dep": "RIO SEGUNDO", "lat": -32.02131, "lon": -62.91825, "g": 0, "usu": 3542, "usuU": 3218, "usuR": 319, "gu": 5, "en": 21714.6, "dem": 5085.0, "km": 507.8, "per": 15, "pot": 0.0, "gh": "A"}, {"loc": "PUEBLO ITALIANO", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS DE PUEBLO ITALIANO LTDA", "dep": "UNION", "lat": -33.87892, "lon": -62.83723, "g": 0, "usu": 1026, "usuU": 892, "usuR": 124, "gu": 10, "en": 5716.0, "dem": 1500.0, "km": 0, "per": 9, "pot": 0.0, "gh": "A"}, {"loc": "QUILINO", "nom": "COOPERATIVA DE ELECTRICIDAD, CONSUMO, OBRAS Y SERVICIOS PÚBLICOS Y SOCIALES DE QUILINO LTDA", "dep": "ISCHILIN", "lat": -30.21355, "lon": -64.49625, "g": 2, "usu": 3461, "usuU": 3193, "usuR": 260, "gu": 8, "en": 14547.1, "dem": 3168.0, "km": 328.0, "per": 14, "pot": 0.0, "gh": "C"}, {"loc": "RAFAEL GARCÍA", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS DE RAFAEL GARCIA LTDA.", "dep": "SANTA MARIA", "lat": -31.64727, "lon": -64.26107, "g": 1, "usu": 326, "usuU": 326, "usuR": 0, "gu": 0, "en": 650.5, "dem": 148.0, "km": 54.0, "per": 7, "pot": 0.0, "gh": "B"}, {"loc": "REDUCCIÓN", "nom": "COOPERATIVA DE LUZ Y FUERZA DE REDUCCION LTDA.", "dep": "JUAREZ CELMAN", "lat": -33.19946, "lon": -63.86195, "g": 0, "usu": 871, "usuU": 832, "usuR": 39, "gu": 0, "en": 13755.3, "dem": 4059.0, "km": 119.1, "per": 14, "pot": 0.0, "gh": "A"}, {"loc": "REGIONAL ISLA VERDE", "nom": "COOPERATIVA DE ELECTRICIDAD Y PROMOCION REGIONAL ISLA VERDE LTDA.", "dep": "MARCOS JUAREZ", "lat": -33.23625, "lon": -62.40634, "g": 0, "usu": 790, "usuU": 554, "usuR": 231, "gu": 5, "en": 4244.8, "dem": 1841.0, "km": 613.7, "per": 7, "pot": 0.0, "gh": "A"}, {"loc": "RIO DE LOS SAUCES", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS LTDA. DE RIO DE LOS SAUCES", "dep": "CALAMUCHITA", "lat": -32.52747, "lon": -64.58753, "g": 3, "usu": 523, "usuU": 521, "usuR": 2, "gu": 0, "en": 785.9, "dem": 287.0, "km": 0, "per": 6, "pot": 275.0, "gh": "C"}, {"loc": "RÍO PRIMERO", "nom": "COOPERATIVA DE ELECTRICIDAD DE RIO PRIMERO LTDA.", "dep": "RIO PRIMERO", "lat": -31.3307, "lon": -63.61938, "g": 0, "usu": 4628, "usuU": 4311, "usuR": 270, "gu": 47, "en": 34027.2, "dem": 7984.0, "km": 376.6, "per": 24, "pot": 0.0, "gh": "A"}, {"loc": "RÍO TERCERO", "nom": "COOPERATIVA DE OBRAS Y SERVICIOS PUBLICOS LTDA. DE RIO TERCERO", "dep": "TERCERO ARRIBA", "lat": -32.1754, "lon": -64.11197, "g": 0, "usu": 25878, "usuU": 25643, "usuR": 177, "gu": 58, "en": 101529.6, "dem": 27197.0, "km": 922.5, "per": 110, "pot": 0.0, "gh": "A"}, {"loc": "SACANTA", "nom": "COOPERATIVA DE SERVICIOS PÚBLICOS, SERVICIOS SOCIALES Y VIVIENDA DE SACANTA LTDA.-", "dep": "SAN JUSTO", "lat": -31.66389, "lon": -63.04561, "g": 0, "usu": 2004, "usuU": 1894, "usuR": 110, "gu": 0, "en": 12635.4, "dem": 3682.0, "km": 286.5, "per": 15, "pot": 0.0, "gh": "A"}, {"loc": "SALSACATE", "nom": "COOPERATIVA DE PROVISION DE ENERGIA ELECTRICIDAD Y OTROS SERVICIOS PÚBLICOS DE SALSACATE LTDA.", "dep": "POCHO", "lat": -31.31872, "lon": -65.09015, "g": 3, "usu": 2409, "usuU": 1010, "usuR": 1399, "gu": 0, "en": 6563.6, "dem": 1155.0, "km": 663.1, "per": 19, "pot": 0.0, "gh": "D"}, {"loc": "SAMPACHO", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS DE SAMPACHO LTDA.", "dep": "RIO CUARTO", "lat": -33.38406, "lon": -64.72205, "g": 0, "usu": 5386, "usuU": 5044, "usuR": 319, "gu": 23, "en": 21816.5, "dem": 5094.0, "km": 663.1, "per": 26, "pot": 0.0, "gh": "A"}, {"loc": "SAN AGUSTÍN", "nom": "COOPERATIVA DE SERVICIOS PÚBLICOS SAN AGUSTIN LTDA.", "dep": "CALAMUCHITA", "lat": -31.97654, "lon": -64.37384, "g": 2, "usu": 2094, "usuU": 1786, "usuR": 288, "gu": 20, "en": 14560.0, "dem": 3086.0, "km": 111.8, "per": 13, "pot": 0.0, "gh": "C"}, {"loc": "SAN ANTONIO DE LITTIN", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS, CREDITO, CONSUMO Y VIVIENDA LTDA. DE SAN ANTONIO DE LITIN", "dep": "UNION", "lat": -32.21431, "lon": -62.63054, "g": 0, "usu": 828, "usuU": 751, "usuR": 75, "gu": 2, "en": 6304.5, "dem": 1611.5814805256334, "km": 175.5, "per": 9, "pot": 0.0, "gh": "A"}, {"loc": "SAN BASILIO", "nom": "COOPERATIVA DE OBRAS Y SERVICIOS PUBLICOS DE SAN BASILIO LTDA", "dep": "RIO CUARTO", "lat": -33.49705, "lon": -64.31546, "g": 6, "usu": 2169, "usuU": 2046, "usuR": 111, "gu": 12, "en": 14671.8, "dem": 3522.0, "km": 225.8, "per": 11, "pot": 0.0, "gh": "A"}, {"loc": "SAN CARLOS MINAS", "nom": "COOPERTIVA DE PROVISION DE ELECTRICIDAD Y SERVICIOS PUBLICOS DE SAN CARLOS MINAS LTDA.", "dep": "MINAS", "lat": -31.17641, "lon": -65.10315, "g": 2, "usu": 2419, "usuU": 1721, "usuR": 698, "gu": 0, "en": 3312.2, "dem": 713.0, "km": 201.8, "per": 10, "pot": 0.0, "gh": "C"}, {"loc": "SAN JOSÉ DE LA DORMIDA", "nom": "COOPERATIVA ELECTRICA LIMITADA DE SAN JOSE DE LA DORMIDA", "dep": "TULUMBA", "lat": -30.3517, "lon": -63.93981, "g": 2, "usu": 3030, "usuU": 2747, "usuR": 283, "gu": 0, "en": 7270.9, "dem": 2498.0, "km": 182.3, "per": 269727234, "pot": 0.0, "gh": "C"}, {"loc": "SAN MARCOS SIERRAS", "nom": "COOPERATIVA LTDA. DE ELECTRICIDAD DE SAN MARCOS SIERRAS", "dep": "CRUZ DEL EJE", "lat": -30.78072, "lon": -64.63495, "g": 2, "usu": 1766, "usuU": 1766, "usuR": 0, "gu": 0, "en": 5095.4, "dem": 1245.0, "km": 40.5, "per": 12, "pot": 0.0, "gh": "C"}, {"loc": "SAN MARCOS SUD", "nom": "COOPERATIVA ELECTRICA LTDA. DE SAN MARCOS SUD", "dep": "UNION", "lat": -32.63051, "lon": -62.4786, "g": 0, "usu": 1754, "usuU": 1704, "usuR": 50, "gu": 0, "en": 22186.5, "dem": 4310.0, "km": 144.7, "per": 10, "pot": 0.0, "gh": "A"}, {"loc": "SANTA CATALINA (HOLMBERG)", "nom": "COOP. DE ELECTRICIDAD, VIVIENDAS, OBRAS Y SERVICIOS PÚBLICOS DE STA. CATALINA LTDA.", "dep": "RIO CUARTO", "lat": -33.20485, "lon": -64.43607, "g": 0, "usu": 2399, "usuU": 2191, "usuR": 200, "gu": 8, "en": 12241.4, "dem": 2999.0, "km": 2608.5, "per": 12, "pot": 0.0, "gh": "A"}, {"loc": "SANTA EUFEMIA", "nom": "COOP. LIMITADA DE ELECTRICIDAD DE SANTA EUFEMIA.", "dep": "JUAREZ CELMAN", "lat": -33.17962, "lon": -63.28407, "g": 0, "usu": 1358, "usuU": 1246, "usuR": 111, "gu": 1, "en": 10786.6, "dem": 3542.0, "km": 407.4, "per": 6, "pot": 0.0, "gh": "A"}, {"loc": "SANTA MÓNICA", "nom": "COOPERATIVA DE ELECTRICIDAD Y SERVICIOS PUBLICOS DE SANTA MONICA LIMITADA", "dep": "CALAMUCHITA", "lat": -32.06542, "lon": -64.53941, "g": 2, "usu": 1610, "usuU": 1608, "usuR": 0, "gu": 2, "en": 5176.6, "dem": 1450.0, "km": 24.0, "per": 10, "pot": 0.0, "gh": "C"}, {"loc": "SANTA ROSA DE CALAMUCHITA", "nom": "COOP. DE PROVISIÓN DE ENERGÍA ELÉCTRICA Y OTROS SERVICIOS PÚBLICOS, VIVIENDAS, CRÉDITOS Y SERVICIOS SOCIALES DE STA. ROSA DE CALAMUCHITA LTDA.", "dep": "CALAMUCHITA", "lat": -32.06979, "lon": -64.57825, "g": 2, "usu": 10311, "usuU": 10302, "usuR": 0, "gu": 9, "en": 37209.4, "dem": 9107.0, "km": 125.7, "per": 44, "pot": 0.0, "gh": "C"}, {"loc": "SARMIENTO", "nom": "COOPERATIVA DE ELECTRICIDAD Y SERVICIOS PÚBLICOS DE SARMIENTO LTDA", "dep": "ISCHILIN", "lat": -30.77278, "lon": -64.10968, "g": 0, "usu": 1366, "usuU": 1282, "usuR": 80, "gu": 4, "en": 8363.3, "dem": 1898.0, "km": 0, "per": 4, "pot": 3772.0, "gh": "A"}, {"loc": "SATURNINO M. LASPIUR", "nom": "COOPERATIVA DE OBRAS Y SERVICIOS PÚBLICOS Y SOCIALES, CRÉDITO Y VIVIENDA EDISON LIMTADA.", "dep": "SAN JUSTO", "lat": -31.70255, "lon": -62.48316, "g": 0, "usu": 1332, "usuU": 1248, "usuR": 80, "gu": 4, "en": 7980.2, "dem": 1778.0, "km": 0, "per": 3, "pot": 3772.0, "gh": "A"}, {"loc": "SEBASTIÁN ELCANO", "nom": "COOPERATIVA LTDA. DE ELECTRICIDAD DE SEBASTIAN ELCANO", "dep": "RIO SECO", "lat": -30.16248, "lon": -63.59326, "g": 2, "usu": 3323, "usuU": 3157, "usuR": 160, "gu": 6, "en": 9250.4, "dem": 2077.0, "km": 323.2, "per": 18, "pot": 0.0, "gh": "C"}, {"loc": "SERRANO", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS Y SOCIALES DE SERRANO LTDA.", "dep": "PRESIDENTE ROQUE SAENZ PEÑA", "lat": -34.46901, "lon": -63.54106, "g": 0, "usu": 1781, "usuU": 1599, "usuR": 182, "gu": 0, "en": 12749.7, "dem": 2722.0, "km": 0, "per": 11, "pot": 0.0, "gh": "A"}, {"loc": "SILVIO PELLICO", "nom": "COOPERATIVA DE ELECTRICIDAD Y SERVICIOS PUBLICOS SIL-PE LTDA.", "dep": "GENERAL SAN MARTIN", "lat": -32.25194, "lon": -62.93099, "g": 1, "usu": 338, "usuU": 236, "usuR": 101, "gu": 1, "en": 3187.4, "dem": 785.0, "km": 0, "per": 4, "pot": 0.0, "gh": "B"}, {"loc": "SIMBOLAR", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS DE SIMBOLAR LTDA", "dep": "TOTORAL", "lat": -30.47444, "lon": -63.98463, "g": 3, "usu": 137, "usuU": 137, "usuR": 0, "gu": 0, "en": 220.3, "dem": 0.0, "km": 0, "per": 0, "pot": 0.0, "gh": "D"}, {"loc": "SOBREMONTE(San Francisco del Chañar)", "nom": "COOPERATIVA DE ELECTRICIDAD, OBRAS Y SERVICIOS PUBLICOS SOBREMONTE LTDA.", "dep": "SOBREMONTE", "lat": -29.78825, "lon": -63.94386, "g": 4, "usu": 380, "usuU": 0, "usuR": 379, "gu": 1, "en": 1216.1, "dem": 285.0, "km": 345.0, "per": 4, "pot": 0.0, "gh": "E"}, {"loc": "TANCACHA", "nom": "COOPERATIVA DE OBRAS Y SERVICIOS PUBLICOS LTDA. DE TANCACHA", "dep": "TERCERO ARRIBA", "lat": -32.24314, "lon": -63.97809, "g": 4, "usu": 66, "usuU": 0, "usuR": 57, "gu": 9, "en": 1978.5, "dem": 821.0, "km": 48.2, "per": 2, "pot": 0.0, "gh": "E"}, {"loc": "TICINO", "nom": "COOPERATIVA DE SERV. PUBLICOS, VIVIENDA Y CREDITO TICINENSE LTDA.", "dep": "GENERAL SAN MARTIN", "lat": -32.69375, "lon": -63.43744, "g": 0, "usu": 1323, "usuU": 1260, "usuR": 63, "gu": 0, "en": 21135.6, "dem": 3809.0, "km": 162.5, "per": 13, "pot": 0.0, "gh": "A"}, {"loc": "TIO PUJIO", "nom": "COOPERATIVA DE ENERGIA ELECTRICA Y AGUA DE TIO PUJIO LIMITADA", "dep": "GENERAL SAN MARTIN", "lat": -32.28516, "lon": -63.35555, "g": 0, "usu": 1618, "usuU": 1406, "usuR": 198, "gu": 14, "en": 73756.6, "dem": 11482.0, "km": 327.4, "per": 36, "pot": 0.0, "gh": "A"}, {"loc": "TOLEDO", "nom": "COOPERATIVA DE OBRAS, SERVICIOS PUBLICOS, PROVISIÓN, CONSUMO, CREDITO Y VIVIENDA DE TOLEDO LTDA.", "dep": "SANTA MARIA", "lat": -31.55531, "lon": -64.01167, "g": 0, "usu": 1952, "usuU": 1865, "usuR": 80, "gu": 7, "en": 15454.7, "dem": 3662.0, "km": 164.5, "per": 23, "pot": 0.0, "gh": "A"}, {"loc": "TRÁNSITO", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS TRANSITO LIMITADA", "dep": "SAN JUSTO", "lat": -31.42262, "lon": -63.19673, "g": 0, "usu": 1670, "usuU": 1513, "usuR": 130, "gu": 27, "en": 15530.8, "dem": 3542.0, "km": 269.6, "per": 15, "pot": 0.0, "gh": "A"}, {"loc": "UCACHA", "nom": "COOPERATIVA ELECTRICA Y DE SERVICIOS PUBLICOS DE UCACHA LTDA.", "dep": "JUAREZ CELMAN", "lat": -33.03252, "lon": -63.50261, "g": 4, "usu": 263, "usuU": 93, "usuR": 160, "gu": 10, "en": 8737.2, "dem": 1968.0, "km": 309.8, "per": 8, "pot": 0.0, "gh": "E"}, {"loc": "VIAMONTE", "nom": "COOPERATIVA LTDA. DE CONSUMO POPULAR DE ELECTRICIDAD Y SERVICIOS ANEXOS DE VIAMONTE", "dep": "UNION", "lat": -33.74922, "lon": -63.09655, "g": 0, "usu": 947, "usuU": 866, "usuR": 81, "gu": 0, "en": 5004.0, "dem": 1241.0, "km": 203.4, "per": 7, "pot": 0.0, "gh": "A"}, {"loc": "VICUÑA MACKENNA", "nom": "COOPERATIVA DE ELECTRICIDAD Y ANEXOS LIMITADA DE VICUÑA MACKENNA- C.E.Y.A.L.", "dep": "RIO CUARTO", "lat": -33.9121, "lon": -64.38745, "g": 0, "usu": 6254, "usuU": 5952, "usuR": 274, "gu": 28, "en": 33630.1, "dem": 8237.0, "km": 664.0, "per": 25, "pot": 0.0, "gh": "A"}, {"loc": "VILLA ASCASUBI", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS VILLA ASCASUBI LIMITADA", "dep": "TERCERO ARRIBA", "lat": -32.16259, "lon": -63.89567, "g": 0, "usu": 1796, "usuU": 1796, "usuR": 0, "gu": 0, "en": 6184.8, "dem": 1481.0, "km": 132.7, "per": 9, "pot": 0.0, "gh": "A"}, {"loc": "VILLA DE LAS ROSAS", "nom": "COOPERATIVA ELECTRICA Y DE SERVICIOS PUBLICOS VILLA LAS ROSAS LTDA.", "dep": "SAN JAVIER", "lat": -31.94691, "lon": -65.05111, "g": 3, "usu": 2709, "usuU": 2709, "usuR": 0, "gu": 0, "en": 7944.7, "dem": 764.0, "km": 123.8, "per": 23, "pot": 0.0, "gh": "D"}, {"loc": "VILLA DE SOTO", "nom": "COOPERATIVA LIMITADA DE LUZ Y FUERZA DE SOTO", "dep": "CRUZ DEL EJE", "lat": -30.85682, "lon": -64.98774, "g": 2, "usu": 4722, "usuU": 4714, "usuR": 0, "gu": 8, "en": 22087.3, "dem": 4845.0, "km": 440.7, "per": 36, "pot": 0.0, "gh": "C"}, {"loc": "VILLA DEL DIQUE", "nom": "COOPERATIVA DE OBRAS Y SERVICIOS PUBLICOS LTDA. VILLA DEL DIQUE", "dep": "CALAMUCHITA", "lat": -32.17665, "lon": -64.45546, "g": 3, "usu": 3844, "usuU": 3834, "usuR": 0, "gu": 10, "en": 11376.2, "dem": 3346.0, "km": 131.2, "per": 19, "pot": 0.0, "gh": "D"}, {"loc": "VILLA DEL ROSARIO", "nom": "COOPERATIVA DE PROVISION DE ELECTRICIDAD, OBRAS Y SERVICIOS PUBLICOS, VIVIENDA Y URBANIZACION DE VILLA DEL ROSARIO LTDA.", "dep": "RIO SEGUNDO", "lat": -31.55664, "lon": -63.53357, "g": 0, "usu": 10381, "usuU": 10381, "usuR": 0, "gu": 0, "en": 44203.4, "dem": 11021.0, "km": 250.7, "per": 0, "pot": 0.0, "gh": "A"}, {"loc": "VILLA DOLORES", "nom": "COOPERATIVA ELECTRICA MIXTA DEL OESTE Y OTROS SERVICIOS PUBLICOS LTDA.", "dep": "SAN JAVIER", "lat": -31.94659, "lon": -65.18519, "g": 2, "usu": 31250, "usuU": 20688, "usuR": 10451, "gu": 111, "en": 138301.1, "dem": 13865.0, "km": 1366.3, "per": 261, "pot": 0.0, "gh": "C"}, {"loc": "VILLA FONTANA", "nom": "COOPERATIVA DE OBRAS Y SERVICIOS PUBLICOS SOCIALES Y ASISTENCIALES DE VILLA FONTANA LTDA.", "dep": "RIO PRIMERO", "lat": -30.89465, "lon": -63.11636, "g": 0, "usu": 608, "usuU": 549, "usuR": 59, "gu": 0, "en": 0.0, "dem": 0.0, "km": 0, "per": 9, "pot": 0.0, "gh": "A"}, {"loc": "VILLA GRAL. BELGRANO", "nom": "COOPERATIVA DE LUZ Y FUERZA Y OBRAS, SERVICIOS PÚBLICOS DE VILLA GRAL. BELGRANO LTDA.", "dep": "CALAMUCHITA", "lat": -31.97341, "lon": -64.55772, "g": 2, "usu": 9361, "usuU": 9361, "usuR": 0, "gu": 0, "en": 40451.5, "dem": 10130.0, "km": 137.7, "per": 59, "pot": 0.0, "gh": "C"}, {"loc": "VILLA HUIDOBRO", "nom": "COOPERATIVA DE ELECTRICIDAD Y SERVICIOS PÚBLICOS Y CRÉDITO VILLA HUIDOBRO LTDA.", "dep": "GENERAL ROCA", "lat": -34.83719, "lon": -64.58585, "g": 1, "usu": 0, "usuU": 0, "usuR": 0, "gu": 0, "en": 0.0, "dem": 0.0, "km": 466.2, "per": 0, "pot": 0.0, "gh": "B"}, {"loc": "VILLA MARÍA DE RÍO SECO", "nom": "COOPERATIVA DE PROVISION DE OBRAS Y SERVICIOS DE VILLA DE MARIA DE RIO SECO", "dep": "RIO SECO", "lat": -29.90333, "lon": -63.72189, "g": 4, "usu": 883, "usuU": 810, "usuR": 69, "gu": 4, "en": 12068.0, "dem": 3088.0, "km": 462.0, "per": 7, "pot": 0.0, "gh": "E"}, {"loc": "VILLA NUEVA", "nom": "COOPERATIVA DE ELECTRIFICACIÓN PRODUCTORES RURALES ASOCIADOS LTDA.", "dep": "GENERAL SAN MARTIN", "lat": -32.42566, "lon": -63.24638, "g": 0, "usu": 1166, "usuU": 682, "usuR": 484, "gu": 0, "en": 19935.4, "dem": 2189.0, "km": 680.2, "per": 15, "pot": 0.0, "gh": "A"}, {"loc": "VILLA RUMIPAL", "nom": "COOPERATIVA DE ELECTRICIDAD, OBRAS Y SERVICIOS PULICOS LTDA. DE VILLA RUMIPAL", "dep": "CALAMUCHITA", "lat": -32.19003, "lon": -64.4785, "g": 3, "usu": 2276, "usuU": 2276, "usuR": 0, "gu": 0, "en": 7767.1, "dem": 2365.0, "km": 17.6, "per": 24, "pot": 0.0, "gh": "D"}, {"loc": "VILLA SAN ISIDRO", "nom": "COOPERATIVA DE ELECTRICIDAD,OBRAS Y SERV. PUBLICOS DE SAN ISIDRO LTDA.", "dep": "SANTA MARIA", "lat": -31.8263, "lon": -64.38472, "g": 3, "usu": 541, "usuU": 541, "usuR": 0, "gu": 0, "en": 19.3, "dem": 0.0, "km": 18.8, "per": 6, "pot": 0.0, "gh": "D"}, {"loc": "VILLA SANTA ROSA DE RÍO 1º", "nom": "COOPERATIVA DE SERVICIOS PUBLICOS VILLA SANTA ROSA LTDA.", "dep": "RIO PRIMERO", "lat": -31.15492, "lon": -63.39878, "g": 0, "usu": 5405, "usuU": 5011, "usuR": 354, "gu": 40, "en": 29409.5, "dem": 7450.0, "km": 675.3, "per": 24, "pot": 0.0, "gh": "A"}, {"loc": "VILLA TULUMBA", "nom": "COOPERATIVA LTDA. DE PROVISION DE OBRAS Y SERVICIOS PUBLICOS Y SOCIALES DE TULUMBA", "dep": "TULUMBA", "lat": -30.39588, "lon": -64.1218, "g": 3, "usu": 1263, "usuU": 1263, "usuR": 0, "gu": 0, "en": 2744.0, "dem": 635.0, "km": 73.1, "per": 11, "pot": 0.0, "gh": "D"}, {"loc": "VILLA VALERIA", "nom": "COOPERATIVA DE ELECTRICIDAD LIMITADA DE VILLA VALERIA", "dep": "GENERAL ROCA", "lat": -34.33826, "lon": -64.91935, "g": 0, "usu": 1829, "usuU": 1753, "usuR": 76, "gu": 0, "en": 6394.1, "dem": 1987.0, "km": 379.2, "per": 8, "pot": 0.0, "gh": "B"}, {"loc": "VILLA YACANTO", "nom": "COOPERATIVA DE AGUAS CORRIENTES, ELECTRICIDAD, TELEFONO Y SERVICIOS PUBLICOS DE VILLA YACANTO LTDA.", "dep": "CALAMUCHITA", "lat": -32.10099, "lon": -64.75128, "g": 2, "usu": 3274, "usuU": 3263, "usuR": 11, "gu": 0, "en": 6834.5, "dem": 1544.0, "km": 93.1, "per": 16, "pot": 0.0, "gh": "C"}, {"loc": "WASHINGTON", "nom": "COOPERATIVA DE PROVISIÓN DE SERVICIOS PÚBLICOS Y SOCIALES WASHINGTON LIMITADA", "dep": "RIO CUARTO", "lat": -33.87583, "lon": -64.68888, "g": 0, "usu": 272, "usuU": 272, "usuR": 0, "gu": 0, "en": 1634.7, "dem": 0.0, "km": 180.0, "per": 3, "pot": 1216.0, "gh": "B"}];
+const HUBS=[{n:'Córdoba',lat:-31.4201,lon:-64.1888},{n:'Río Cuarto',lat:-33.1307,lon:-64.3499},{n:'Villa María',lat:-32.4075,lon:-63.2401},{n:'San Francisco',lat:-31.4257,lon:-62.0840},{n:'Marcos Juárez',lat:-32.6953,lon:-62.1062},{n:'Río Tercero',lat:-32.1754,lon:-64.1120},{n:'Bell Ville',lat:-32.6258,lon:-62.6889}];
+const HUBC={'Córdoba':[-31.4201,-64.1888],'Río Cuarto':[-33.1307,-64.3499],'Villa María':[-32.4075,-63.2401],'San Francisco':[-31.4257,-62.0840],'Marcos Juárez':[-32.6953,-62.1062],'Río Tercero':[-32.1754,-64.1120],'Bell Ville':[-32.6258,-62.6889]};
+const HUBCORR={'Córdoba':'núcleo metropolitano','Río Cuarto':'eje sur RN36/RN8','Villa María':'corredor RN158 / RN9','San Francisco':'corredor RN19','Marcos Juárez':'corredor RN9 (a Rosario)','Río Tercero':'eje industrial RN36','Bell Ville':'corredor RN9'};
+const EN={url:'https://idecor-ws.mapascordoba.gob.ar/geoserver/idecor/wms',layers:{solar:'energia_solar_fotovoltaica_2025',eolico:'energia_eolica_3-45_100m_2025',biomasa:'bioenergia_origen_pecuario_2025'}};
+// verified named anchors only (locality has its own coop + public, well-established firm)
+const FIRMS={
+ 'GENERAL DEHEZA':{n:'Aceitera General Deheza (AGD)',s:'Agroindustria · aceites, maní y biodiésel',d:'Sede central y principal complejo industrial del grupo AGD (fundado en 1948). Procesa soja, girasol y maní; refinería, envasado y biodiésel.'},
+ 'DALMACIO VELEZ':{n:'AGD — Planta Dalmacio Vélez',s:'Agroindustria · molienda de oleaginosas',d:'Planta de AGD: aceites crudos de maní y soja y harinas proteicas para exportación.'},
+ 'ALEJANDRO ROCA':{n:'AGD — Planta de maní',s:'Agroindustria · maní para consumo humano',d:'Recibe maní a granel y produce maní seleccionado (con y sin piel) para consumo humano.'},
+ 'ARROYITO':{n:'Arcor',s:'Alimentos y golosinas',d:'Localidad de origen y principal complejo productivo de Arcor, uno de los mayores grupos alimenticios de la región.'},
+ 'RÍO TERCERO':{n:'Polo petroquímico de Río Tercero',s:'Química / petroquímica e industria',d:'Conglomerado industrial-químico (incluye Atanor y la histórica Fábrica Militar Río Tercero); uno de los nodos industriales más relevantes del interior provincial.'}
+};
+const MANI=new Set(['HERNANDO','GENERAL CABRERA','GENERAL DEHEZA','DALMACIO VELEZ','ALEJANDRO ROCA','LAS PERDICES','CHARRAS','TICINO','PASCO']);
+const DAIRY=new Set(['MORTEROS','BRINKMANN','FREYRE','PORTEÑA','PORTENA','DEVOTO','ALTOS DE CHIPION','LAS VARILLAS','SACANTA','EL TIO','LA FRANCIA','SAN FRANCISCO','ARROYITO']);
+const SIERRA=new Set(['CALAMUCHITA','SAN ALBERTO','SAN JAVIER','PUNILLA','SANTA MARIA','MINAS','POCHO']);
+const DEPV={'RIO CUARTO':'Agrícola-ganadero del sur provincial y nodo de servicios; soja, maíz, maní y ganadería.','GENERAL ROCA':'Agrícola-ganadero del sur; maní, soja, maíz y girasol.','JUAREZ CELMAN':'Corazón agroindustrial del maní y los aceites (pampa húmeda).','MARCOS JUAREZ':'Núcleo agrícola de alta productividad (soja/maíz) y semillero.','UNION':'Agrícola-ganadero y agroindustria del sudeste.','SAN JUSTO':'Cuenca lechera e industria láctea del este.','TERCERO ARRIBA':'Industria (polo de Río Tercero) y agro.','GENERAL SAN MARTIN':'Agroindustria y cuenca lechera del centro.','RIO SEGUNDO':'Agro y agroindustria periurbana del centro.','RIO PRIMERO':'Agrícola-ganadero periurbano del este.','COLON':'Periurbano del Gran Córdoba; servicios, agro y residencial.','SANTA MARIA':'Periurbano sur (Valle de Paravachasca); servicios, turismo e industria liviana.','CALAMUCHITA':'Turismo serrano, forestal y agropecuario.','SAN ALBERTO':'Turismo de Traslasierra y agro de secano.','SAN JAVIER':'Turismo de Traslasierra, olivícola y agro.','PUNILLA':'Turismo serrano del Valle de Punilla.','CRUZ DEL EJE':'Olivícola y agro de secano del noroeste; minería.','ISCHILIN':'Ganadería extensiva y agro de secano del norte.','TULUMBA':'Ganadería extensiva y baja densidad del norte.','TOTORAL':'Agropecuario del norte cercano a la capital.','RIO SECO':'Ganadería extensiva del noreste.','SOBREMONTE':'Ganadería extensiva del norte profundo.','MINAS':'Minería, ganadería y agro de secano del noroeste.','POCHO':'Agro de secano, ganadería y turismo serrano del oeste.','PRESIDENTE ROQUE SAENZ PEÑA':'Agrícola-ganadero del sur (zona de Laboulaye).'};
+
+function fmt(n){if(n==null||isNaN(n))return '—';return Math.round(n).toLocaleString('es-AR');}
+function fmt1(n){return (Math.round(n*100)/100).toLocaleString('es-AR');}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function info(t){return '<span class="info" title="'+esc(t)+'">i</span>';}
+function hav(aLat,aLon,bLat,bLon){const R=6371,dLa=(bLat-aLat)*Math.PI/180,dLo=(bLon-aLon)*Math.PI/180,la1=aLat*Math.PI/180,la2=bLat*Math.PI/180;const h=Math.sin(dLa/2)**2+Math.cos(la1)*Math.cos(la2)*Math.sin(dLo/2)**2;return 2*R*Math.asin(Math.sqrt(h));}
+function mm(a){const mn=Math.min.apply(null,a),mx=Math.max.apply(null,a);return v=>mx>mn?(v-mn)/(mx-mn):0;}
+
+COOPS.forEach(c=>{let b=1e9,bn='';HUBS.forEach(h=>{const dd=hav(c.lat,c.lon,h.lat,h.lon);if(dd<b){b=dd;bn=h.n;}});c.dHub=b;c.nearHub=bn;});
+const nUsu=mm(COOPS.map(c=>c.usu)),nDem=mm(COOPS.map(c=>c.dem)),nGu=mm(COOPS.map(c=>c.gu)),nKm=mm(COOPS.map(c=>c.km));
+const dA=COOPS.map(c=>c.dHub),dMin=Math.min.apply(null,dA),dMax=Math.max.apply(null,dA);
+COOPS.forEach(c=>{c.s_pop=nUsu(c.usu);c.s_act=0.6*nDem(c.dem)+0.4*nGu(c.gu);c.s_log=dMax>dMin?(dMax-c.dHub)/(dMax-dMin):1;c.s_inf=nKm(c.km);c.raw=0.30*c.s_pop+0.30*c.s_act+0.25*c.s_log+0.15*c.s_inf;});
+const nRaw=mm(COOPS.map(c=>c.raw));
+COOPS.forEach(c=>{c.score=Math.round(nRaw(c.raw)*100);c.d_pop=Math.round(c.s_pop*100);c.d_act=Math.round(c.s_act*100);c.d_log=Math.round(c.s_log*100);c.d_inf=Math.round(c.s_inf*100);});
+const AVG=Math.round(COOPS.reduce((s,c)=>s+c.score,0)/COOPS.length);
+function median(a){const s=a.slice().sort((x,y)=>x-y),n=s.length;return n%2?s[(n-1)/2]:(s[n/2-1]+s[n/2])/2;}
+function pctile(metric,val){const a=COOPS.map(c=>c[metric]);let b=0;for(let i=0;i<a.length;i++)if(a[i]<=val)b++;return Math.round(b/a.length*100);}
+const MED_POP=median(COOPS.map(c=>c.s_pop)),MED_ACT=median(COOPS.map(c=>c.s_act));
+COOPS.forEach(c=>{c.arch=c.s_pop>=MED_POP?(c.s_act>=MED_ACT?'Polo consolidado':'Centro de consumo'):(c.s_act>=MED_ACT?'Nicho productivo':'Zona emergente');});
+const byLoc={};COOPS.forEach(c=>byLoc[c.loc]=c);
+
+function meterHtml(s,a){return '<div class="meter'+(a?' avg':'')+'" style="--p:'+s+';--avg:'+AVG+'"></div>';}
+function driversHtml(c){function r(l,v,am,tip){return '<div class="drv"><span>'+l+info(tip)+'</span><div class="bar'+(am?' amber':'')+'"><i style="width:'+v+'%"></i></div><span class="vv">'+v+'</span></div>';}
+ return '<div class="drivers">'+r('Población',c.d_pop,false,'Usuarios eléctricos normalizados 0–100 respecto del máximo provincial. Proxy de hogares y consumo.')+r('Actividad',c.d_act,true,'Demanda máxima (kW, 60%) + grandes usuarios (40%), normalizado 0–100. Refleja actividad económica conectada.')+r('Logística',c.d_log,false,'Cercanía al hub más próximo (Córdoba, Río Cuarto, Villa María, San Francisco, Marcos Juárez, Río Tercero, Bell Ville), normalizada 0–100. Más alto = más cerca.')+r('Infraestr.',c.d_inf,false,'Kilómetros de red de distribución normalizados 0–100. Capacidad de infraestructura instalada.')+'</div>';}
+
+let showAll=false;
+function currentList(){const dep=document.getElementById('depFilter').value,by=document.getElementById('sortBy').value;
+ let l=COOPS.filter(c=>!dep||c.dep===dep);const k={score:'score',usu:'usu',gu:'gu',dem:'dem',log:'s_log'}[by];
+ return l.slice().sort((a,b)=>b[k]-a[k]);}
+function renderRanking(){const l=currentList(),lim=showAll?l.length:Math.min(12,l.length),host=document.getElementById('ranking');
+ host.innerHTML=l.slice(0,lim).map((c,i)=>'<a class="card" href="?coop='+encodeURIComponent(c.loc)+'"><span class="rank">#'+(i+1)+'</span><h3>'+esc(c.loc)+'</h3><div class="dep">'+esc(c.dep)+'</div><div class="scorerow"><span class="scorebig">'+c.score+'</span><span class="scoreunit">/100<br>oportunidad</span></div>'+meterHtml(c.score,false)+driversHtml(c)+'<div class="cardfoot"><span>👥 <b>'+fmt(c.usu)+'</b> usuarios</span><span>📍 '+esc(c.nearHub)+' · <b>'+fmt(c.dHub)+' km</b></span></div></a>').join('');
+ document.getElementById('seemore').textContent=showAll?'Ver menos ▴':('Ver todas las zonas ('+l.length+') ▾');}
+function renderKpis(){const tU=COOPS.reduce((s,c)=>s+c.usu,0),tE=COOPS.reduce((s,c)=>s+c.en,0),tD=COOPS.reduce((s,c)=>s+c.dem,0);
+ document.getElementById('kpis').innerHTML=
+  '<div class="kpi"><div class="v">204</div><div class="l">Cooperativas eléctricas</div><div class="d">Prestadoras relevadas por el ERSeP.</div></div>'
+ +'<div class="kpi"><div class="v">'+fmt(tU)+'</div><div class="l">Usuarios <span class="u">población/mercado</span></div><div class="d">Conexiones eléctricas activas (proxy de hogares y comercios).</div></div>'
+ +'<div class="kpi"><div class="v">'+fmt(tE)+'</div><div class="l">MWh/año <span class="u">energía</span></div><div class="d">Energía eléctrica anual distribuida por las cooperativas.</div></div>'
+ +'<div class="kpi"><div class="v">'+fmt(tD/1000)+'</div><div class="l">MW <span class="u">demanda máx.</span></div><div class="d">Potencia máxima sumada; proxy de actividad económica conectada.</div></div>';}
+function depOptions(){const d=Array.from(new Set(COOPS.map(c=>c.dep))).sort();document.getElementById('depFilter').innerHTML='<option value="">Todos</option>'+d.map(x=>'<option value="'+esc(x)+'">'+esc(x)+'</option>').join('');}
+function renderSources(){const S=[
+ ['Datos de cooperativas','Base ERSeP','Usuarios (urbanos/rurales), grandes usuarios, energía (MWh), demanda máxima (kW), red (km) y personal por cooperativa. Relevamiento jul-2023.','https://ersep.cba.gov.ar/'],
+ ['Energía solar / eólica / biomasa','IDECOR · Sec. Planificación Energética','Rásters de potencial de generación eléctrica. Solar (kWh/kWp·año), eólico (MWh/MW·año) y biomasa pecuaria+FORSU (MWh/año). Insumos: APRHI, Min. Infraestructura y Min. Bioagroindustria.','https://www.idecor.gob.ar/mapas-de-energias-renovables-de-la-provincia-de-cordoba/'],
+ ['Visores de los mapas de energía','Mapas Córdoba (IDECOR)','Solar (mapa/637), eólico (mapa/636) y biomasa (mapa/635); consulta a nivel de lote.','https://www.mapascordoba.gob.ar/'],
+ ['Redes eléctricas nacionales','Secretaría de Energía de la Nación / CFEE','Media y alta tensión, líneas de transporte, estaciones y centrales (capas WMS).','https://sig.energia.gob.ar/'],
+ ['Logística y corredores','Cálculo propio + Vialidad Nacional','Distancias geodésicas a hubs provinciales; corredores RN9/RN19/RN36/RN8/RN158 representados de forma esquemática.','https://www.argentina.gob.ar/obras-publicas/vialidad-nacional'],
+ ['Empresas y perfil productivo','Referencias públicas — verificar en padrón','Empresas emblemáticas citadas desde fuentes públicas; el detalle por firma debe validarse en el padrón industrial provincial, Rentas de Córdoba (ATM) y AFIP-ARCA.','https://www.cba.gov.ar/'],
+ ['Indicadores económicos y fiscales','Pendientes de integración','Para profundizar: Dirección General de Estadística y Censos de Córdoba, INDEC, Rentas de Córdoba y Agencia ProCórdoba.','https://estadistica.cba.gov.ar/'],
+ ['Cartografía base','OpenStreetMap · CARTO · Leaflet','Mapa base y motor de visualización.','https://www.openstreetmap.org/copyright']
+];
+ document.getElementById('srcgrid').innerHTML=S.map(s=>'<div class="srccard"><div class="lab">'+esc(s[1])+'</div><h4>'+esc(s[0])+'</h4><p>'+esc(s[2])+'</p><a href="'+s[3]+'" target="_blank" rel="noopener">'+s[3].replace('https://','')+' ↗</a></div>').join('');}
+
+function renderDept(){const m={};COOPS.forEach(c=>{const d=m[c.dep]||(m[c.dep]={dep:c.dep,n:0,usu:0,dem:0,en:0,sc:0});d.n++;d.usu+=c.usu;d.dem+=c.dem;d.en+=c.en;d.sc+=c.score;});
+ const rows=Object.keys(m).map(k=>{const d=m[k];d.avg=Math.round(d.sc/d.n);return d;}).sort((a,b)=>b.usu-a.usu);
+ document.getElementById('deptTable').innerHTML='<table class="dtbl"><thead><tr><th>Departamento</th><th class="num">Coop.</th><th class="num">Usuarios</th><th class="num">Demanda (MW)</th><th class="num">Energía (MWh)</th><th class="num">Índice prom.</th></tr></thead><tbody>'+rows.map(d=>'<tr><td>'+esc(d.dep)+'</td><td class="num">'+d.n+'</td><td class="num">'+fmt(d.usu)+'</td><td class="num">'+fmt(d.dem/1000)+'</td><td class="num">'+fmt(d.en)+'</td><td class="num"><b>'+d.avg+'</b></td></tr>').join('')+'</tbody></table>';}
+
+function renderArch(){const G={'Polo consolidado':[],'Centro de consumo':[],'Nicho productivo':[],'Zona emergente':[]};COOPS.forEach(c=>G[c.arch].push(c));
+ const D={'Polo consolidado':'Mercado y actividad altos. Inversiones de escala: industria, logística y servicios avanzados.','Centro de consumo':'Mercado alto con actividad industrial menor. Comercio, servicios, consumo y vivienda.','Nicho productivo':'Actividad alta con mercado acotado. Proveedores y especialización industrial/agroindustrial.','Zona emergente':'Mercado y actividad bajo la mediana. Servicios de proximidad, agro y valor agregado primario.'};
+ const I={'Polo consolidado':'🏙️','Centro de consumo':'🛒','Nicho productivo':'⚙️','Zona emergente':'🌱'};
+ document.getElementById('archGrid').innerHTML=Object.keys(G).map(k=>{const g=G[k].slice().sort((a,b)=>b.score-a.score),ex=g.slice(0,3).map(c=>esc(c.loc)).join(', ');
+  return '<div class="qcard"><div class="tag">'+I[k]+' '+g.length+' zonas</div><h4>'+k+'</h4><p>'+D[k]+'</p><div style="font-size:12px;color:var(--soft);margin-top:8px">Ej.: '+(ex||'—')+'</div></div>';}).join('');}
+
+function relPanel(c){
+ function prow(l,metric,tip){const p=pctile(metric,c[metric]);return '<div class="prow"><span class="pl">'+l+info(tip)+'</span><div class="pb"><i style="width:'+p+'%"></i></div><span class="pp">P'+p+'</span></div>';}
+ const cons=c.usu?Math.round(c.en*1000/c.usu):0,dens=c.km?Math.round(c.usu/c.km*10)/10:0,mpu=c.usu?Math.round(c.km*1000/c.usu):0;
+ const AD={'Polo consolidado':'Mercado y actividad por encima de la mediana: apto para inversiones de escala.','Centro de consumo':'Mercado alto con actividad industrial menor: comercio, servicios y consumo.','Nicho productivo':'Actividad alta con mercado acotado: proveedores y especialización.','Zona emergente':'Mercado y actividad bajo la mediana: servicios de proximidad y agro.'}[c.arch];
+ return '<div class="ph">Posición relativa y ratios'+info('Percentil = % de las 204 cooperativas con valor igual o menor. P90 = entre el 10% más alto de la provincia.')+'</div>'
+  +'<div class="reltwo"><div class="pcts">'
+   +prow('Índice','score','Posición en el índice de oportunidad.')
+   +prow('Usuarios','usu','Tamaño de mercado.')
+   +prow('Demanda (kW)','dem','Actividad económica conectada.')
+   +prow('Grandes usuarios','gu','Demanda industrial/comercial.')
+   +prow('Energía (MWh)','en','Consumo anual.')
+   +prow('Red (km)','km','Infraestructura instalada.')
+  +'</div><div class="ratios">'
+   +'<div class="rt2"><div class="rl">Consumo por usuario'+info('Energía anual ÷ usuarios. Intensidad de consumo de la zona.')+'</div><div class="rv">'+fmt(cons)+' <small>kWh/usuario·año</small></div></div>'
+   +'<div class="rt2"><div class="rl">Densidad de red'+info('Usuarios ÷ km de red. Más alto = concentrado (urbano); más bajo = disperso (rural).')+'</div><div class="rv">'+fmt(dens)+' <small>usuarios/km</small></div></div>'
+   +'<div class="rt2"><div class="rl">Red por usuario'+info('Metros de red por usuario. Proxy de dispersión territorial y costo de servicio.')+'</div><div class="rv">'+fmt(mpu)+' <small>m/usuario</small></div></div>'
+   +'<div class="rt2"><div class="rl">Arquetipo'+info('Cruce de mercado y actividad respecto de la mediana provincial.')+'</div><div class="rv" style="font-size:15px">'+c.arch+'</div><div class="cap" style="font-size:11px;color:var(--soft);margin-top:5px;line-height:1.35">'+AD+'</div></div>'
+  +'</div></div>';}
+
+function scoreColor(s){return s>=85?'#cf5a1f':s>=70?'#e07a2f':s>=55?'#caa23e':s>=40?'#5fa595':'#9cc1b8';}
+let gmap=null;
+function gradLayer(metric,color){const vals=COOPS.map(c=>c[metric]),f=mm(vals);const g=L.layerGroup();
+ COOPS.forEach(c=>{const r=4+Math.sqrt(Math.max(0,f(c[metric])))*16;
+  L.circleMarker([c.lat,c.lon],{radius:Math.max(4,Math.min(r,20)),fillColor:color,color:'#fff',weight:1,fillOpacity:.78})
+   .bindPopup('<b>'+esc(c.loc)+'</b><br>'+({usu:'Usuarios: ',dem:'Demanda: ',gu:'Grandes usuarios: '}[metric])+fmt(c[metric])+({usu:'',dem:' kW',gu:''}[metric])+'<br><a href="?coop='+encodeURIComponent(c.loc)+'">Ver detalle →</a>').addTo(g);});
+ return g;}
+function corridorLayer(){const g=L.layerGroup();const segs=[['Córdoba','Marcos Juárez','RN9 (a Rosario)'],['Córdoba','San Francisco','RN19 (a Santa Fe)'],['Córdoba','Río Tercero','RN36'],['Río Tercero','Río Cuarto','RN36 (a Río Cuarto)'],['Río Cuarto','Villa María','RN158'],['Villa María','San Francisco','RN158 (bioceánico)'],['Córdoba','Bell Ville','RN9']];
+ segs.forEach(s=>{L.polyline([HUBC[s[0]],HUBC[s[1]]],{color:'#2f6f93',weight:3,dashArray:'7 6',opacity:.75}).bindTooltip(s[2],{sticky:true}).addTo(g);});
+ HUBS.forEach(h=>L.circleMarker([h.lat,h.lon],{radius:5,fillColor:'#16403a',color:'#fff',weight:1.5,fillOpacity:1}).bindTooltip(h.n+' · '+HUBCORR[h.n],{direction:'top'}).addTo(g));
+ return g;}
+function initGmap(){if(gmap)return;
+ gmap=L.map('gmap',{scrollWheelZoom:false}).setView([-32.1,-63.6],7);
+ const base=L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap &copy; CARTO'}).addTo(gmap);
+ const score=L.layerGroup();
+ COOPS.forEach(c=>{const r=4+Math.sqrt(c.usu)/22;L.circleMarker([c.lat,c.lon],{radius:Math.min(r,18),fillColor:scoreColor(c.score),color:'#fff',weight:1,fillOpacity:.88}).bindPopup('<b>'+esc(c.loc)+'</b><br>Índice: <b>'+c.score+'</b>/100<br>'+fmt(c.usu)+' usuarios · '+esc(c.dep)+'<br><a href="?coop='+encodeURIComponent(c.loc)+'">Ver detalle →</a>').addTo(score);});
+ score.addTo(gmap);
+ const corr=corridorLayer().addTo(gmap);
+ function wms(layer){return L.tileLayer.wms(EN.url,{layers:layer,format:'image/png',transparent:true,version:'1.3.0',opacity:.75,attribution:'IDECOR'});}
+ const overlays={'Índice de oportunidad':score,'Población (usuarios)':gradLayer('usu','#0b6e62'),'Actividad (demanda kW)':gradLayer('dem','#b85716'),'Grandes usuarios':gradLayer('gu','#7c3aed'),'Corredores viales (esquem.)':corr,'Solar FV (IDECOR)':wms(EN.layers.solar),'Eólico (IDECOR)':wms(EN.layers.eolico),'Biomasa (IDECOR)':wms(EN.layers.biomasa)};
+ L.control.layers({'Mapa claro':base},overlays,{collapsed:false}).addTo(gmap);
+ document.getElementById('gmaplegend').innerHTML='<b style="color:var(--ink2)">Índice:</b> <span><span class="sw" style="background:#cf5a1f"></span>85–100</span><span><span class="sw" style="background:#e07a2f"></span>70–84</span><span><span class="sw" style="background:#caa23e"></span>55–69</span><span><span class="sw" style="background:#5fa595"></span>40–54</span><span><span class="sw" style="background:#9cc1b8"></span>0–39</span><span><span class="ln"></span>corredor (esquem.)</span><span style="margin-left:auto">En índice/población/actividad, el tamaño ∝ al indicador.</span>';
+ setTimeout(()=>gmap.invalidateSize(),60);}
+
+function coopList(){document.getElementById('coopList').innerHTML=COOPS.slice().sort((a,b)=>a.loc.localeCompare(b.loc)).map(c=>'<option value="'+esc(c.loc)+'">'+esc(c.nom)+'</option>').join('');}
+function clustersFor(c){const t=[];
+ if(MANI.has(c.loc)||['JUAREZ CELMAN','GENERAL ROCA'].indexOf(c.dep)>=0)t.push('Cuenca manisera');
+ if(DAIRY.has(c.loc)||c.dep==='SAN JUSTO')t.push('Cuenca lechera');
+ if(SIERRA.has(c.dep))t.push('Turismo serrano');
+ if(c.dep==='CRUZ DEL EJE')t.push('Olivícola');
+ if(c.gu>=20)t.push('Tejido industrial');
+ return t;}
+let cmap=null;
+function renderCoop(loc){const c=byLoc[loc],body=document.getElementById('coopBody');
+ if(!c){body.innerHTML='<div class="panel"><div class="ph">Elegí una cooperativa</div><p class="muted" style="margin:0">Usá el buscador de arriba para ver el potencial de inversión de una zona, o volvé a <a href="?">la vista global</a>.</p></div>';return;}
+ document.getElementById('coopInput').value=c.loc;
+ const sd=v=>v>0?fmt(v):'<span class="sd">s/d</span>';
+ const prof=DEPV[c.dep]||'Perfil agropecuario y de servicios.';
+ const cls=clustersFor(c);
+ const firm=FIRMS[c.loc];
+ // competitive advantages (derived)
+ const adv=[];
+ adv.push(['Mercado','<b>'+fmt(c.usu)+'</b> usuarios eléctricos ('+fmt(c.usuU)+' urbanos / '+fmt(c.usuR)+' rurales) — base de consumo de hogares y comercios.']);
+ adv.push(['Logística','A <b>'+fmt(c.dHub)+' km</b> de <b>'+esc(c.nearHub)+'</b> ('+HUBCORR[c.nearHub]+').']);
+ if(c.dem>0)adv.push(['Actividad','Demanda máxima instalada de <b>'+fmt(c.dem)+' kW</b>'+(c.gu>0?' y <b>'+fmt(c.gu)+'</b> grandes usuarios':'')+' — actividad económica conectada.']);
+ adv.push(['Infraestructura','<b>'+fmt(c.km)+' km</b> de red de distribución'+(c.en>0?' y <b>'+fmt(c.en)+'</b> MWh/año':'')+'.']);
+ body.innerHTML=
+  '<div class="coophead"><h2 class="coophead-h">'+esc(c.loc)+'</h2><span class="chip">Depto '+esc(c.dep)+'</span><span class="chip">Grupo '+(c.g+1)+(c.gh?' · Hist. '+esc(c.gh):'')+'</span><div class="sub" style="flex-basis:100%">'+esc(c.nom)+'</div></div>'
+  +'<div class="two">'
+   +'<div class="panel scorepanel"><div class="topr"><div class="num">'+c.score+'</div><div><div style="font-family:var(--disp);font-weight:600;font-size:16px">Índice de oportunidad'+info('Índice compuesto 0–100 (mín–máx provincial): Población 30%, Actividad 30%, Logística 25%, Infraestructura 15%.')+'</div><div class="cap">sobre 100 · promedio provincial '+AVG+' (línea)</div></div></div>'+meterHtml(c.score,true)+driversHtml(c)+'<div class="ctx">Comparación relativa entre las 204 zonas; no es una valuación ni recomendación financiera.</div></div>'
+   +'<div class="panel"><div class="ph">Perfil de la zona</div><div class="mgrid">'
+    +'<div class="m"><div class="l">Usuarios totales'+info('Conexiones eléctricas activas. Proxy de hogares/comercios. ERSeP, jul-2023.')+'</div><div class="v">'+fmt(c.usu)+'</div><div class="cap">conexiones activas</div></div>'
+    +'<div class="m"><div class="l">Urbanos / rurales'+info('Distribución de los usuarios por ámbito.')+'</div><div class="v" style="font-size:15px">'+fmt(c.usuU)+' <small>/ '+fmt(c.usuR)+'</small></div><div class="cap">composición del mercado</div></div>'
+    +'<div class="m"><div class="l">Grandes usuarios'+info('Usuarios de alta demanda (industria/comercio) computados por la cooperativa.')+'</div><div class="v">'+(c.gu>0?fmt(c.gu):'0')+'</div><div class="cap">demanda industrial/comercial</div></div>'
+    +'<div class="m"><div class="l">Demanda máx.'+info('Potencia máxima registrada. Indicador de actividad económica conectada.')+'</div><div class="v">'+sd(c.dem)+' <small>kW</small></div><div class="cap">pico de potencia</div></div>'
+    +'<div class="m"><div class="l">Energía/año'+info('Energía eléctrica anual distribuida por la cooperativa.')+'</div><div class="v">'+sd(c.en)+' <small>MWh</small></div><div class="cap">consumo anual</div></div>'
+    +'<div class="m"><div class="l">Red eléctrica'+info('Kilómetros de líneas de distribución de la cooperativa.')+'</div><div class="v">'+sd(c.km)+' <small>km</small></div><div class="cap">extensión de la red</div></div>'
+   +'</div></div>'
+  +'</div>'
+  +'<div class="two"><div class="panel" style="grid-column:1 / -1">'+relPanel(c)+'</div></div>'
+  +'<div class="two">'
+   +'<div class="panel prof"><div class="ph">Perfil productivo y empresas</div><p>'+esc(prof)+'</p>'
+     +(cls.length?'<div class="clrow">'+cls.map(x=>'<span class="clbadge">'+esc(x)+'</span>').join('')+'</div>':'')
+     +'<div style="font-weight:600;font-size:12.5px;color:var(--soft);margin-bottom:6px">Ventajas competitivas</div><ul class="adv">'+adv.map(a=>'<li><span class="k">▸</span><span><b>'+a[0]+':</b> '+a[1]+'</span></li>').join('')+'</ul>'
+     +(firm?'<div class="firm"><div class="fs">Empresa emblemática de la zona</div><div class="fn">'+esc(firm.n)+'</div><p>'+esc(firm.s)+'. '+esc(firm.d)+'</p></div>':'')
+     +'<div class="note">El detalle de empresas por localidad se completa con fuentes oficiales (padrón industrial provincial, Rentas de Córdoba / AFIP-ARCA). Las firmas citadas son referencias públicas y deben verificarse.</div></div>'
+   +'<div class="panel"><div class="ph">⚡ Potencial energético en este punto'+info('Lectura puntual de los rásters de IDECOR en la ubicación de la cooperativa.')+'</div><div class="potlist" id="potlist"><div class="row"><span class="muted">Consultando IDECOR…</span></div></div><div class="note">Valores de los rásters de IDECOR (Sec. Planificación Energética). Si aparece «s/d» puede deberse a restricción CORS del servidor; se consultan igual en el <a href="https://www.mapascordoba.gob.ar/" target="_blank" rel="noopener">visor de Mapas Córdoba</a> (solar mapa/637 · eólico mapa/636 · biomasa mapa/635).</div></div>'
+  +'</div>'
+  +'<div class="two"><div class="panel" style="grid-column:1 / -1"><div class="ph">Inversiones recomendadas en '+esc(c.loc)+info('Sugerencias orientativas derivadas del perfil de la zona y del recurso energético; no constituyen asesoramiento de inversión.')+'</div><div class="recs" id="recs"></div></div></div>'
+  +'<div class="two"><div class="panel" style="grid-column:1 / -1"><div class="ph">Ubicación</div><div id="cmap"></div><div class="linkrow"><a class="solid" href="?">← Volver al ranking global</a><a href="https://naninimarcos.github.io/mapa-cba.html">Ver en el mapa de cooperativas</a><a href="https://www.mapascordoba.gob.ar/" target="_blank" rel="noopener">Visor IDECOR ↗</a></div></div></div>'
+  +'<details class="gloss"><summary>Cómo leer estos números (glosario)</summary><div class="gc"><dl>'
+    +'<dt>Índice de oportunidad (0–100)</dt><dd>Combinación normalizada de población (30%), actividad (30%), logística (25%) e infraestructura (15%). Es relativo a la provincia: 100 = la mejor zona en cada combinación, no un valor absoluto.</dd>'
+    +'<dt>Usuarios</dt><dd>Conexiones eléctricas activas. Se usan como proxy de hogares y comercios (tamaño de mercado).</dd>'
+    +'<dt>Grandes usuarios / Demanda máx. (kW)</dt><dd>Indicadores de actividad económica conectada (industria y comercio de mayor consumo).</dd>'
+    +'<dt>Solar — kWh/kWp·año</dt><dd>Energía eléctrica neta anual esperada por cada kWp instalado (módulos cSi, inclinación óptima). IDECOR.</dd>'
+    +'<dt>Eólico — MWh/MW·año</dt><dd>Energía anual por MW instalado de un aerogenerador de 3,45 MW a 100 m (Clase IEC II). Equivale a las horas equivalentes de plena carga; gradiente provincial &lt;800 a &gt;4800. IDECOR.</dd>'
+    +'<dt>Biomasa — MWh/año</dt><dd>Generación eléctrica anual posible vía biogás de biomasa húmeda pecuaria (por pedanía) y FORSU (por radio censal). IDECOR.</dd>'
+   +'</dl></div></details>';
+ // recommendations
+ const ruralShare=c.usu?c.usuR/c.usu:0,recs=[];
+ if(c.s_pop>0.55||c.usu>15000)recs.push(['biz','🏘️','Mercado y consumo','Base amplia de usuarios: comercio, servicios, salud, educación y vivienda.']);
+ if(c.gu>=20||c.s_act>0.5)recs.push(['biz','🏭','Industria y servicios a la industria','Demanda y grandes usuarios señalan tejido productivo activo: proveedores, mantenimiento, logística industrial.']);
+ if(c.s_log>0.6)recs.push(['biz','🚚','Logística y distribución','Buena conectividad (cerca de '+c.nearHub+'): depósitos, centros de distribución y last-mile.']);
+ if(ruralShare>0.25)recs.push(['biz','🌾','Agroindustria','Fuerte componente rural: acopio, frío, procesamiento y agregado de valor a la producción primaria.']);
+ if(cls.indexOf('Cuenca manisera')>=0)recs.push(['biz','🥜','Cadena del maní','Selección, descascarado, blancheado y subproductos para consumo humano y exportación.']);
+ if(cls.indexOf('Cuenca lechera')>=0)recs.push(['biz','🧀','Lácteos','Tambos, enfriado, quesería e industrialización de la leche.']);
+ if(cls.indexOf('Turismo serrano')>=0)recs.push(['biz','⛰️','Turismo y servicios','Alojamiento, gastronomía y economía del visitante.']);
+ if(!recs.length)recs.push(['biz','🧭','Servicios de proximidad','Comercio minorista, oficios y servicios a hogares y al agro local.']);
+ document.getElementById('recs').innerHTML=recs.map(r=>'<div class="rec '+r[0]+'"><div class="ic">'+r[1]+'</div><div><h5>'+r[2]+'</h5><p>'+r[3]+'</p></div></div>').join('')+'<div class="rec energy" id="recEnergy" style="display:none"><div class="ic">🔆</div><div><h5 id="recEnergyT"></h5><p id="recEnergyP"></p></div></div>';
+ if(cmap){cmap.remove();cmap=null;}
+ cmap=L.map('cmap',{scrollWheelZoom:false}).setView([c.lat,c.lon],11);
+ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap &copy; CARTO'}).addTo(cmap);
+ L.circleMarker([c.lat,c.lon],{radius:11,fillColor:scoreColor(c.score),color:'#fff',weight:2,fillOpacity:.95}).addTo(cmap).bindPopup('<b>'+esc(c.loc)+'</b>');
+ setTimeout(()=>cmap.invalidateSize(),60);
+ queryEnergy(c);
+}
+function gfi(layer,c){const d=0.0025,bbox=(c.lon-d)+','+(c.lat-d)+','+(c.lon+d)+','+(c.lat+d);return EN.url+'?service=WMS&version=1.1.1&request=GetFeatureInfo&layers='+encodeURIComponent(layer)+'&query_layers='+encodeURIComponent(layer)+'&styles=&srs=EPSG:4326&bbox='+bbox+'&width=101&height=101&x=50&y=50&info_format=application/json&feature_count=1';}
+function pick(js){try{const f=js&&js.features&&js.features[0];if(!f)return null;const pr=f.properties||{};for(const k in pr){if(typeof pr[k]==='number')return pr[k];}for(const k in pr){const v=parseFloat(pr[k]);if(!isNaN(v))return v;}return null;}catch(e){return null;}}
+function solarBand(v){return v>=1750?['Muy bueno','b1']:v>=1650?['Bueno','b1']:v>=1500?['Moderado','b2']:['Bajo','b3'];}
+function eolicoBand(v){return v>=3000?['Muy bueno','b1']:v>=2000?['Bueno','b1']:v>=1200?['Moderado','b2']:['Bajo','b3'];}
+async function queryEnergy(c){
+ const defs=[['solar','Solar fotovoltaico','kWh/kWp·año','#e0a32f',solarBand],['eolico','Eólico','MWh/MW·año','#2f8f7f',eolicoBand],['biomasa','Biomasa (pecuario+FORSU)','MWh/año','#7a8f3a',null]];
+ const res=await Promise.all(defs.map(async d=>{try{const r=await fetch(gfi(EN.layers[d[0]],c));if(!r.ok)throw 0;const js=await r.json();return [d,pick(js)];}catch(e){return [d,undefined];}}));
+ const host=document.getElementById('potlist');if(!host)return;
+ host.innerHTML=res.map(([d,v])=>{let band='';if(typeof v==='number'&&d[4]){const b=d[4](v);band='<div class="band '+b[1]+'">'+b[0]+'</div>';}
+  const val=(v===undefined?'<span class="sd">s/d</span>':(v===null?'<span class="sd">sin dato</span>':fmt1(v)));
+  return '<div class="row"><span class="nm"><i style="background:'+d[3]+'"></i><span>'+d[1]+'<div class="du">'+d[2]+'</div></span></span><span class="rt"><span class="val">'+val+'</span><br>'+band+'</span></div>';}).join('');
+ const vals=res.map(([d,v])=>({d,v:(typeof v==='number')?v:null})).filter(x=>x.v!=null);
+ const er=document.getElementById('recEnergy');
+ if(vals.length&&er){vals.sort((a,b)=>b.v-a.v);const top=vals[0].d;
+  const cov=c.en>0?Math.round(vals[0].v/c.en*100):null;
+  const txt={solar:'El recurso de mayor valor relativo en este punto es el solar ('+fmt1(vals[0].v)+' kWh/kWp·año). Referencia: 1 MWp instalado generaría ~'+fmt(vals[0].v)+' MWh/año'+(cov!=null?' (≈ '+cov+'% de la energía anual de la cooperativa)':'')+'. Apto para parque fotovoltaico, autoconsumo industrial/agroindustrial o generación distribuida.',eolico:'El recurso de mayor valor relativo es el eólico ('+fmt1(vals[0].v)+' MWh/MW·año ≈ horas equivalentes de plena carga). Evaluá generación de pequeña/media escala según mediciones de viento del sitio.',biomasa:'El recurso de mayor valor relativo es la biomasa de origen pecuario ('+fmt1(vals[0].v)+' MWh/año de generación posible vía biogás): oportunidad para energía a partir de efluentes (economía circular).'}[top[0]];
+  document.getElementById('recEnergyT').textContent='Energía renovable — '+top[1].replace(/ \(.*\)/,'');document.getElementById('recEnergyP').textContent=txt;er.style.display='';}
+}
+
+function show(view){const g=view==='coop'?'viewCoop':'viewGlobal',o=view==='coop'?'viewGlobal':'viewCoop';
+ document.getElementById(g).classList.remove('hide');document.getElementById(o).classList.add('hide');
+ document.getElementById('tabG').classList.toggle('on',view!=='coop');document.getElementById('tabC').classList.toggle('on',view==='coop');
+ if(view==='coop')coopList();else initGmap();if(window.__navScroll){var dz=document.getElementById('donde');if(dz)dz.scrollIntoView({behavior:'smooth',block:'start'});window.__navScroll=false;}}
+function go(view,loc,push){const u=new URL(location.href);u.search='';if(view==='coop'){if(loc)u.searchParams.set('coop',loc);else u.searchParams.set('view','coop');}
+ if(push)window.__navScroll=true;history[push?'pushState':'replaceState']({},'',u);if(view==='coop'){show('coop');renderCoop(loc||'');}else show('global');}
+document.getElementById('tabG').onclick=()=>go('global',null,true);
+document.getElementById('tabC').onclick=()=>go('coop',document.getElementById('coopInput').value||null,true);
+document.getElementById('sortBy').onchange=()=>{showAll=false;renderRanking();};
+document.getElementById('depFilter').onchange=()=>{showAll=false;renderRanking();};
+document.getElementById('seemore').onclick=()=>{showAll=!showAll;renderRanking();};
+document.getElementById('coopInput').addEventListener('change',function(){const v=this.value.trim();if(byLoc[v])go('coop',v,true);});
+document.addEventListener('click',function(e){const a=e.target.closest('a');if(!a)return;const href=a.getAttribute('href');if(!href)return;
+ if(href.indexOf('?coop=')===0){e.preventDefault();go('coop',decodeURIComponent(href.split('?coop=')[1]),true);}else if(href==='?'){e.preventDefault();go('global',null,true);}});
+window.addEventListener('popstate',route);
+function route(){const q=new URLSearchParams(location.search),coop=q.get('coop');
+ if(coop&&byLoc[coop]){show('coop');renderCoop(coop);}else if(q.get('view')==='coop'){show('coop');renderCoop('');}else show('global');}
+renderKpis();depOptions();renderRanking();renderSources();renderDept();renderArch();route();
+
+
+/* ---- tabla comparativa accesible (reusa COOPS, clustersFor, c.arch) ---- */
+var CT_sort={key:'score',dir:-1};
+function _v(id){var e=document.getElementById(id);return e?e.value:'';}
+function ctRows(){
+ var dep=_v('ctDep'),arch=_v('ctArch'),sec=_v('ctSector'),q=(_v('ctSearch')||'').toLowerCase();
+ var l=COOPS.filter(function(c){return (!dep||c.dep===dep)&&(!arch||c.arch===arch)&&(!sec||clustersFor(c).indexOf(sec)>=0)&&(!q||c.loc.toLowerCase().indexOf(q)>=0||c.dep.toLowerCase().indexOf(q)>=0);});
+ var k=CT_sort.key;
+ return l.slice().sort(function(x,y){var a=x[k],b=y[k];if(typeof a==='string')return CT_sort.dir*a.localeCompare(b);return CT_sort.dir*((a||0)-(b||0));});
+}
+function ctSetup(){
+ var deps=Array.from(new Set(COOPS.map(function(c){return c.dep;}))).sort();
+ var dd=document.getElementById('ctDep'); if(dd)dd.innerHTML='<option value="">Todos los departamentos</option>'+deps.map(function(d){return '<option>'+esc(d)+'</option>';}).join('');
+ var ar=document.getElementById('ctArch'); if(ar)ar.innerHTML='<option value="">Todos los arquetipos</option>'+['Polo consolidado','Centro de consumo','Nicho productivo','Zona emergente'].map(function(x){return '<option>'+x+'</option>';}).join('');
+ var se=document.getElementById('ctSector'); if(se)se.innerHTML='<option value="">Todos los sectores</option>'+['Cuenca manisera','Cuenca lechera','Turismo serrano','Olivícola','Tejido industrial'].map(function(x){return '<option>'+x+'</option>';}).join('');
+ ['ctDep','ctArch','ctSector'].forEach(function(id){var e=document.getElementById(id);if(e)e.onchange=renderCTable;});
+ var s=document.getElementById('ctSearch'); if(s)s.oninput=renderCTable;
+}
+function renderCTable(){
+ var l=ctRows();
+ var cols=[['loc','Zona'],['dep','Departamento'],['score','Puntaje'],['d_act','Actividad'],['d_inf','Infraestr.'],['d_log','Conectividad'],['en','Energía (MWh/año)'],['arch','Observaciones']];
+ var h='<table class="dtbl ctbl" id="ctbl"><caption class="sr-only">Tabla comparativa de zonas: puntaje territorial, actividad, infraestructura, conectividad y energía. Ordenable por columna.</caption><thead><tr>';
+ cols.forEach(function(c){var on=CT_sort.key===c[0];h+='<th scope="col" aria-sort="'+(on?(CT_sort.dir<0?'descending':'ascending'):'none')+'"><button type="button" class="thbtn" data-k="'+c[0]+'">'+c[1]+(on?(CT_sort.dir<0?' \u25be':' \u25b4'):'')+'</button></th>';});
+ h+='<th scope="col">Parques cercanos</th><th scope="col">Detalle</th></tr></thead><tbody>';
+ l.forEach(function(c){h+='<tr><th scope="row">'+esc(c.loc)+'</th><td>'+esc(c.dep)+'</td><td class="num"><b>'+c.score+'</b></td><td class="num">'+c.d_act+'</td><td class="num">'+c.d_inf+'</td><td class="num">'+c.d_log+'</td><td class="num">'+fmt(c.en)+'</td><td>'+c.arch+'</td><td class="num" title="Dato no disponible \u2014 consultar el portal oficial de Parques Industriales">n/d</td><td><a href="?coop='+encodeURIComponent(c.loc)+'" data-ev="tabla-detalle">Ver detalle</a></td></tr>';});
+ h+='</tbody></table>';
+ var host=document.getElementById('ctable-wrap'); if(host){host.innerHTML=h;
+  host.querySelectorAll('.thbtn').forEach(function(btn){btn.onclick=function(){var k=btn.getAttribute('data-k');if(CT_sort.key===k)CT_sort.dir*=-1;else{CT_sort.key=k;CT_sort.dir=(k==='loc'||k==='dep'||k==='arch')?1:-1;}renderCTable();};});}
+ var cnt=document.getElementById('ctCount'); if(cnt)cnt.textContent=l.length+' zonas';
+}
+/* ---- analítica liviana (sin tracker externo) ---- */
+window.track=window.track||function(ev,meta){try{(window.__events=window.__events||[]).push({ev:ev,meta:meta||null,t:Date.now()});}catch(e){}};
+document.addEventListener('click',function(e){var el=e.target.closest('[data-ev]');if(el)window.track(el.getAttribute('data-ev'),{href:el.getAttribute('href')||null});},true);
+window.__fixmaps=function(){if(typeof gmap!=='undefined'&&gmap){try{gmap.invalidateSize();}catch(e){}}if(typeof cmap!=='undefined'&&cmap){try{cmap.invalidateSize();}catch(e){}}};
+ctSetup();renderCTable();
+
+</script>
+<script>
+(function(){
+ var INV=window.INV; if(!INV){return;}
+ function E(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+ function X(u){return /^https?:/.test(u||'')?(' target="_blank" rel="noopener"'):'';}
+ function up(u){return /^https?:/.test(u||'')?' \u2197':'';}
+ function badge(s){var m={vigente:['Verificado','est-ok'],consultar:['Consultar fuente','est-warn'],historico:['Dato histórico','est-hist']};var x=m[s]||m.consultar;return '<span class="est '+x[1]+'">'+x[0]+'</span>';}
+ function set(id,html){var el=document.getElementById(id);if(el)el.innerHTML=html;}
+ var ic=window.__INVICONS||{};
+
+ if(INV.hero&&INV.hero.pilares){set('hero-pilares',INV.hero.pilares.map(function(p){return '<div class="pil"><h3>'+E(p.t)+'</h3><p>'+E(p.d)+'</p></div>';}).join(''));}
+
+ set('cifras-grid',(INV.cifras||[]).map(function(c){
+  return '<div class="cif">'+badge(c.estado)+'<div class="cif-v">'+E(c.valor)+(c.unidad?' <span class="cif-u">'+E(c.unidad)+'</span>':'')+'</div><div class="cif-t">'+E(c.titulo)+'</div>'+(c.nota?'<div class="cif-n">'+E(c.nota)+'</div>':'')+'<div class="cif-src">'+E(c.fuente)+' · '+E(c.fecha)+(c.enlace?' · <a href="'+E(c.enlace)+'"'+X(c.enlace)+' data-ev="fuente">fuente'+up(c.enlace)+'</a>':'')+'</div></div>';
+ }).join(''));
+
+ set('perfiles-grid',(INV.perfiles||[]).map(function(p){
+  return '<a class="perfil" href="'+E(p.target)+'" data-ev="perfil"><span class="perfil-ic" aria-hidden="true">'+(ic[p.icon]||'')+'</span><h3>'+E(p.nombre)+'</h3><p>'+E(p.desc)+'</p><span class="perfil-go">Ver \u203a</span></a>';
+ }).join(''));
+
+ set('sectores-grid',(INV.sectores||[]).map(function(s){
+  var progs=(s.programas||[]).map(function(p){return '<a href="'+E(p.enlace)+'"'+X(p.enlace)+' data-ev="programa">'+E(p.nombre)+up(p.enlace)+'</a>';}).join(' · ');
+  return '<div class="qcard sector">'+badge(s.estado)+'<h3>'+E(s.nombre)+'</h3><p>'+E(s.desc)+'</p><dl class="sx"><dt>Fortalezas territoriales</dt><dd>'+E(s.fortalezas)+'</dd><dt>Zonas con potencial relativo</dt><dd>'+E(s.zonas)+'</dd></dl><div class="sx-links"><a href="#donde" data-ev="sector-mapa">Ver oportunidades territoriales \u203a</a>'+(progs?'<div class="sx-prog">Programas y fuentes: '+progs+'</div>':'')+'</div></div>';
+ }).join(''));
+
+ set('incentivos-host','<div class="advisory" role="note"><strong>Importante.</strong> '+E(INV.meta.aviso_incentivos)+'</div><div class="tbl-scroll"><table class="dtbl"><thead><tr><th scope="col">Categoría</th><th scope="col">Programa o régimen</th><th scope="col">Beneficio</th><th scope="col">Destinatarios</th><th scope="col">Vigencia</th><th scope="col">Organismo</th><th scope="col">Estado</th><th scope="col">Acción</th></tr></thead><tbody>'+(INV.incentivos||[]).map(function(i){return '<tr><td>'+E(i.categoria)+'</td><th scope="row">'+E(i.nombre)+'</th><td>'+E(i.beneficio)+'</td><td>'+E(i.destinatarios)+'</td><td>'+E(i.vigencia)+'</td><td>'+E(i.organismo)+'</td><td>'+badge(i.estado)+'</td><td><a href="'+E(i.enlace)+'"'+X(i.enlace)+' data-ev="incentivo">Ver requisitos'+up(i.enlace)+'</a></td></tr>';}).join('')+'</tbody></table></div>');
+
+ if(INV.parques){var pq=INV.parques;set('parques-host','<p class="lede2">'+E(pq.intro)+'</p><div class="cif" style="max-width:520px"><div class="cif-v">'+E(pq.dato.valor)+'</div><div class="cif-n">'+E(pq.dato.nota)+'</div><div class="cif-src">'+E(pq.dato.fuente)+(pq.dato.enlace?' · <a href="'+E(pq.dato.enlace)+'"'+X(pq.dato.enlace)+' data-ev="fuente">fuente'+up(pq.dato.enlace)+'</a>':'')+'</div></div><div class="linkrow"><a class="solid" href="'+E(pq.portal.enlace)+'"'+X(pq.portal.enlace)+' data-ev="parques-portal">'+E(pq.portal.label)+up(pq.portal.enlace)+'</a></div><div class="advisory" role="note">'+E(pq.aviso)+'</div>');}
+
+ set('proceso-host','<ol class="timeline">'+(INV.pasos||[]).map(function(p,i){return '<li><span class="tl-n" aria-hidden="true">'+(i+1)+'</span><div><h3>'+E(p.t)+'</h3><p>'+E(p.d)+'</p>'+(p.target?'<a href="'+E(p.target)+'" data-ev="paso">Ir a la sección \u203a</a>':'')+'</div></li>';}).join('')+'</ol>');
+
+ set('casos-host','<div class="casogrid">'+(INV.casos||[]).map(function(c){return '<div class="caso"><div class="caso-h"><h3>'+E(c.empresa)+'</h3><span class="caso-s">'+E(c.sector)+'</span></div><div class="caso-loc">'+E(c.localidad)+(c.anio&&c.anio!=='\u2014'?' · '+E(c.anio):'')+'</div><p>'+E(c.desc)+'</p><p class="caso-hito">'+E(c.hito)+'</p><div class="caso-src">'+E(c.fuente)+(c.enlace?' · <a href="'+E(c.enlace)+'"'+X(c.enlace)+' data-ev="caso">fuente'+up(c.enlace)+'</a>':'')+'</div></div>';}).join('')+'</div>'+(INV.casos_nota?'<p class="note2">'+E(INV.casos_nota)+'</p>':''));
+
+ set('faq-host',(INV.faq||[]).map(function(f){return '<details class="faqd"><summary>'+E(f.q)+'</summary><div class="faqa">'+E(f.a)+'</div></details>';}).join(''));
+
+ if(INV.metodologia){var m=INV.metodologia;set('metodologia-host','<div class="metcols"><div><h3>Qué mide</h3><p>'+E(m.mide)+'</p><h3>Qué no mide</h3><p>'+E(m.noMide)+'</p><h3>Variables</h3><ul>'+m.variables.map(function(v){return '<li>'+E(v)+'</li>';}).join('')+'</ul><h3>Ponderaciones</h3><p>'+E(m.ponderaciones)+'</p></div><div><h3>Limitaciones</h3><ul>'+m.limitaciones.map(function(v){return '<li>'+E(v)+'</li>';}).join('')+'</ul><h3>Conjuntos de datos y fecha</h3><div class="tbl-scroll"><table class="dtbl"><thead><tr><th scope="col">Conjunto</th><th scope="col">Fuente</th><th scope="col">Fecha</th></tr></thead><tbody>'+m.grupos_datos.map(function(g){return '<tr><th scope="row">'+E(g.t)+'</th><td>'+E(g.f)+'</td><td>'+E(g.fecha)+'</td></tr>';}).join('')+'</tbody></table></div></div></div><p class="note2"><strong>Última actualización general:</strong> '+E(INV.meta.actualizacion)+'. Las fuentes se actualizan con distinta periodicidad; interpretá cada resultado según la fecha de su conjunto de datos.</p>');}
+
+ set('fuentes-inst-host',(INV.fuentes||[]).map(function(g){return '<div class="srcgroup"><h3>'+E(g.grupo)+'</h3><ul class="srclist">'+g.items.map(function(it){return '<li><a href="'+E(it.enlace)+'"'+X(it.enlace)+' data-ev="fuente">'+E(it.nombre)+up(it.enlace)+'</a></li>';}).join('')+'</ul></div>';}).join(''));
+
+ if(INV.contacto){var ct=INV.contacto;set('contacto-host','<p class="lede2">'+E(ct.texto)+'</p><div class="linkrow">'+ct.enlaces.map(function(e){return '<a class="'+(e.solid?'solid':'')+'" href="'+E(e.enlace)+'"'+X(e.enlace)+' data-ev="contacto">'+E(e.label)+up(e.enlace)+'</a>';}).join('')+'</div><div class="advisory" role="note">'+E(ct.aviso)+'</div>');}
+
+ try{var ld={"@context":"https://schema.org","@type":"FAQPage","mainEntity":(INV.faq||[]).map(function(f){return {"@type":"Question","name":f.q,"acceptedAnswer":{"@type":"Answer","text":f.a}};})};var s=document.createElement('script');s.type='application/ld+json';s.text=JSON.stringify(ld);document.head.appendChild(s);}catch(e){}
+})();
+</script>
+<script>
+(function(){
+ var VIEWS={inicio:['inicio','cifras'],perfiles:['perfiles'],sectores:['sectores'],incentivos:['incentivos'],donde:['donde'],parques:['parques'],avanzar:['proceso','casos'],transparencia:['faq','metodologia','fuentes'],contacto:['contacto']};
+ var ALL=['inicio','cifras','perfiles','sectores','incentivos','donde','parques','proceso','casos','faq','metodologia','fuentes','contacto'];
+ var SEC2VIEW={}; Object.keys(VIEWS).forEach(function(v){VIEWS[v].forEach(function(s){SEC2VIEW[s]=v;});});
+ function setView(name,push){
+  if(!VIEWS[name])name='inicio';
+  ALL.forEach(function(id){var el=document.getElementById(id);if(el)el.style.display=(VIEWS[name].indexOf(id)>=0)?'':'none';});
+  document.querySelectorAll('[data-view]').forEach(function(a){var on=a.getAttribute('data-view')===name;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+  if(name==='donde'&&window.__fixmaps){setTimeout(window.__fixmaps,40);}
+  window.__view=name;
+  if(push&&location.hash!=='#'+name){try{history.pushState({v:name},'','#'+name);}catch(e){location.hash=name;}}
+  window.scrollTo(0,0);
+ }
+ window.setView=setView;
+ document.addEventListener('click',function(e){
+  var a=e.target.closest('a[href^="#"]'); if(!a)return;
+  var id=a.getAttribute('href').slice(1); if(!id)return;
+  var v=a.getAttribute('data-view')||SEC2VIEW[id];
+  if(v){e.preventDefault(); setView(v,true);
+   if(!a.hasAttribute('data-view')&&id!==v){var el=document.getElementById(id);if(el){setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'});},80);}}
+  }
+ });
+ window.addEventListener('hashchange',function(){var h=location.hash.slice(1); if(VIEWS[h])setView(h,false);});
+ var q=new URLSearchParams(location.search);
+ var hv=location.hash.slice(1);
+ var init=(q.get('coop')||q.get('view')==='coop')?'donde':(VIEWS[hv]?hv:'inicio');
+ setView(init,false);
+})();
+</script>
+</body>
+</html>
