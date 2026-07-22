@@ -210,7 +210,7 @@ body.locked{overflow:hidden}
 <label class="chk"><input type="checkbox" id="sat"> Capa satelital</label>
 <label class="chk"><input type="checkbox" id="cuenca"> Cuenca Eólica (zona de promoción)</label>
 <label class="chk"><input type="checkbox" id="hover"> Info al pasar el mouse (potencial + cooperativa)</label>
-<div class="ttl">Potencial energético <span class="ct">IDECOR</span></div>
+<div class="ttl">Potencial energético <span class="ct">Secretaría de Planificación Energética de Córdoba</span></div>
 <div class="enbox">
  <label class="chk"><input type="checkbox" id="enSolar"> Solar fotovoltaico</label>
  <label class="chk"><input type="checkbox" id="enEolico"> Eólico</label>
@@ -699,7 +699,7 @@ async function queryPotential(p){const box=document.getElementById('potBox');if(
   const res=await Promise.all(defs.map(async([k,lbl])=>{try{const r=await fetch(potGfiUrl(EN_CFG.layers[k],p));if(!r.ok)throw 0;const js=await r.json();return [lbl,potPick(js)];}catch(e){return [lbl,undefined];}}));
   if(!document.getElementById('potBox'))return;
   rows.innerHTML=res.map(([lbl,v])=>'<div class="kv"><span>'+lbl+'</span><span>'+(v===undefined?'<span class="sd">s/d</span>':(v===null?'sin dato':(Math.round(v*100)/100)))+'</span></div>').join('')
-    +'<div class="potnote">Valor del ráster de IDECOR en la ubicación de la cooperativa. Si aparece «s/d» puede deberse a restricción CORS del servidor (se puede consultar igual en el visor de mapascordoba).</div>';}
+    +'<div class="potnote">Valor del ráster de Secretaría de Planificación Energética de Córdoba en la ubicación de la cooperativa. Si aparece «s/d» puede deberse a restricción CORS del servidor (se puede consultar igual en el visor de mapascordoba).</div>';}
 function bringTop(){[staticBeam,beamLayerD].forEach(g=>g.eachLayer(l=>l.bringToFront&&l.bringToFront()));feats.forEach(f=>{if(f.kind==='pt')f.marker.bringToFront();else f.dot&&f.dot.bringToFront();});}
 
 // ---- marca de agua en el mapa ----
