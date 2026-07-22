@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inversión y oportunidades en Córdoba — Accesos</title>
+<meta name="description" content="Accesos a información de inversión y energías en Córdoba: portal oficial de la Provincia y observatorio personal (en prueba).">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230e2a28'/%3E%3Cpath d='M7 22 L14 11 L19 18 L25 9' fill='none' stroke='%23e07a2f' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{--ink:#0e2a28;--ink2:#16403a;--soft:#496761;--canvas:#e7edeb;--paper:#fff;--line:#cad8d3;--accent:#0b6e62;--accent2:#0a5249;--signal:#e07a2f;--signalink:#b85716;--shadow:0 1px 2px rgba(14,42,40,.06),0 10px 30px rgba(14,42,40,.08);--disp:"Space Grotesk",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif}
+*{box-sizing:border-box}html,body{margin:0}
+body{font-family:var(--body);color:var(--ink);background:var(--canvas);line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid #1f6f8b;outline-offset:3px;border-radius:8px}
+.wrap{width:100%;max-width:840px;margin:0 auto;padding:0 20px}
+.top{border-bottom:1px solid var(--line);background:rgba(231,237,235,.9);backdrop-filter:blur(8px)}
+.top .wrap{display:flex;align-items:center;gap:14px;min-height:58px}
+.brand{font-family:var(--disp);font-weight:700;font-size:15px;margin-right:auto}
+.back{font-family:var(--disp);font-weight:700;font-size:12.5px;color:#fff;background:var(--ink);padding:8px 13px;border-radius:999px;text-decoration:none}
+.back:hover{background:var(--accent2)}
+main{flex:1;display:flex;align-items:center;padding:40px 0}
+.head{text-align:center;margin-bottom:26px}
+.eyebrow{font-family:var(--disp);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--signalink);margin:0 0 10px}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(24px,4.5vw,36px);letter-spacing:-.5px;margin:0 0 10px}
+.head p{color:var(--soft);font-size:15px;max-width:60ch;margin:0 auto}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow);text-decoration:none;color:inherit;transition:transform .12s,box-shadow .15s,border-color .15s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(14,42,40,.14)}
+.card.official{border-color:#bfe0d6}
+.card.official:hover{border-color:var(--accent)}
+.card.personal{border-color:#f0d9bd}
+.card.personal:hover{border-color:var(--signal)}
+.badge{align-self:flex-start;font-family:var(--disp);font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:5px 11px;border-radius:999px;margin-bottom:14px}
+.badge.of{background:#e7f3ee;color:var(--accent)}
+.badge.pe{background:#fbf0e2;color:var(--signalink)}
+.card h2{font-family:var(--disp);font-weight:600;font-size:19px;margin:0 0 8px}
+.card p{margin:0 0 18px;font-size:13.5px;color:var(--ink2);flex:1}
+.card .host{font-family:var(--body);font-size:11.5px;color:var(--soft);margin:0 0 16px;word-break:break-all}
+.go{align-self:flex-start;font-family:var(--disp);font-weight:700;font-size:14px;padding:12px 20px;border-radius:11px;text-decoration:none;color:#fff}
+.go.of{background:linear-gradient(135deg,#0b7a6b,#0a5249)}
+.go.pe{background:linear-gradient(135deg,#f0843a,#e0530f)}
+.note{margin:22px auto 0;max-width:66ch;font-size:12.5px;color:var(--ink2);background:#fbf3e8;border:1px solid #f0d9bd;border-left:4px solid var(--signal);border-radius:10px;padding:12px 15px}
+footer{border-top:1px solid var(--line);padding:20px 0;color:var(--soft);font-size:12px;text-align:center}
+@media(max-width:640px){.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+ <span class="brand">Inversión y oportunidades · Córdoba</span>
+ <a class="back" href="https://naninimarcos.github.io/mapa-cba.html">← Volver al mapa</a>
+</div></header>
+
+<main><div class="wrap">
+ <div class="head">
+  <p class="eyebrow">Elegí un acceso</p>
+  <h1>Inversión, energías y oportunidades en Córdoba</h1>
+  <p>Dos accesos distintos: el portal oficial de la Provincia y un observatorio personal en prueba. Elegí según lo que necesites.</p>
+ </div>
+
+ <div class="cards">
+  <a class="card official" href="https://futurocordobasostenible.cba.gov.ar/portal/apps/sites/#/energias" target="_blank" rel="noopener">
+   <span class="badge of">Oficial · Provincia</span>
+   <h2>Portal oficial de la Provincia de Córdoba</h2>
+   <p>Futuro Córdoba Sostenible — sección Energías. Información y datos oficiales del Gobierno de la Provincia de Córdoba.</p>
+   <p class="host">futurocordobasostenible.cba.gov.ar</p>
+   <span class="go of">Ir al portal oficial ↗</span>
+  </a>
+
+  <a class="card personal" href="https://naninimarcos.github.io/inversiones.html" target="_blank" rel="noopener">
+   <span class="badge pe">Personal · En prueba</span>
+   <h2>Observatorio de inversiones (personal)</h2>
+   <p>Página personal, en prueba, <strong>no oficial</strong> y no vinculada a ningún organismo. Análisis territorial propio de oportunidades de inversión.</p>
+   <p class="host">naninimarcos.github.io/inversiones.html</p>
+   <span class="go pe">Ir al observatorio personal ↗</span>
+  </a>
+ </div>
+
+ <p class="note"><strong>Aclaración.</strong> El observatorio personal no es un sitio oficial ni representa al Gobierno de la Provincia de Córdoba. Para información oficial, usá el portal de la Provincia. Ambos enlaces se abren en una pestaña nueva.</p>
+</div></main>
+
+<footer><div class="wrap">Accesos a información de inversión y energías · Córdoba</div></footer>
+</body>
+</html>
