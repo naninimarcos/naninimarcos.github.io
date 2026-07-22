@@ -180,7 +180,7 @@ body.locked{overflow:hidden}
 <div class="ttl">Totales por grupo</div><div id="grouptotals"></div>
 <div class="note" id="note"></div></div>
 <aside>
-<a id="invBtn" href="inversiones.html" target="_blank" rel="noopener">🚀 Potencial para Inversiones</a>
+<a id="invBtn" href="inversiones-portal.html" target="_blank" rel="noopener">🚀 Potencial para Inversiones</a>
 <a id="gdBtn" href="GD.html">⚡ Generación Distribuida</a>
 <div class="tog"><button id="bA" class="on">Grupos</button><button id="bE">Aglomerados por zonas</button></div>
 <div id="xtools" style="display:none">
@@ -409,7 +409,7 @@ function showCoop(idx){const p=DATA.pts[idx],d=p.d,asg=curAssign(),nm=names(asg)
    +'<div style="font-size:10px;color:var(--mut);margin-top:6px">s/d = valor 0 en la fuente (posible faltante).</div>'
    +'<div class="pot" id="potBox"><div class="pothdr">⚡ Potencial energético en este punto</div><div class="potrows">consultando…</div></div>'
    +'<div class="lks"><a href="'+(prestUrl(p)||ersepLocUrl(p))+'" target="_blank" rel="noopener">📄 Ficha en ERSeP ↗</a>'
-   +'<a class="potlink" href="inversiones.html?coop='+encodeURIComponent(p.loc)+'" target="_blank" rel="noopener">⚡ Potencial de la cooperativa ↗</a></div>'
+   +'<a class="potlink" href="inversiones-portal.html?coop='+encodeURIComponent(p.loc)+'" target="_blank" rel="noopener">⚡ Potencial de la cooperativa ↗</a></div>'
    +'<button class="btnlead'+(leaders[p.loc]?' on':'')+'" id="leadBtn">'+(leaders[p.loc]?'★ Líder de zona ✓ (tocá para quitar)':'☆ Marcar como líder de zona')+'</button>';
   document.getElementById('leadBtn').onclick=()=>{toggleLeader(p.loc);showCoop(idx);};
   if(mode==='excel'){const sel=document.getElementById('xCoopSel');if(sel)sel.onchange=()=>{let v=sel.value;
