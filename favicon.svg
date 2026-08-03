@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#6C5CE0"/>
+  <text x="32" y="14" text-anchor="middle" dominant-baseline="central"
+        font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="700"
+        fill="#ffffff">MN</text>
+  <path d="M12 26 L12 54 L55 54" fill="none" stroke="#ffffff" stroke-opacity="0.55"
+        stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="17,50 27,43 36,46 45,37" fill="none" stroke="#ffffff"
+            stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="53,21 46,33 50,33 48,43 57,29 51,29" fill="#FFD700"/>
+</svg>
