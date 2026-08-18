@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html lang="es-AR" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ficha energética y regulatoria de la Provincia de Corrientes</title>
+<meta name="description" content="Ficha técnica del régimen jurídico, institucional y tarifario del servicio público de energía eléctrica de la Provincia de Corrientes. Datos oficiales, cálculos propios y análisis diferenciados.">
+<style>
+/* ============================================================
+   ESTILOS · 1. TOKENS
+   ============================================================ */
+:root{
+  color-scheme: light;
+  --surface-1:#fcfcfb; --page:#f4f4f1; --panel:#ffffff;
+  --text-primary:#0b0b0b; --text-secondary:#52514e; --text-muted:#7d7b75;
+  --grid:#e1e0d9; --axis:#c3c2b7;
+  --border:rgba(11,11,11,0.10); --border-strong:rgba(11,11,11,0.18);
+  --brand:#184f95; --brand-deep:#0d366b; --brand-soft:#eef4fc;
+  --series-1:#2a78d6; --series-2:#eb6834; --series-3:#1baf7a; --series-4:#eda100;
+  --series-5:#e87ba4; --series-6:#008300; --series-7:#4a3aa7; --series-8:#e34948;
+  --st-good:#0ca30c; --st-warning:#fab219; --st-serious:#ec835a; --st-critical:#d03b3b;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --maxw: 1560px; --radius: 10px;
+  --shadow: 0 1px 2px rgba(11,11,11,.05), 0 8px 24px -18px rgba(11,11,11,.22);
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --surface-1:#1a1a19; --page:#0d0d0d; --panel:#1a1a19;
+  --text-primary:#ffffff; --text-secondary:#c3c2b7; --text-muted:#898781;
+  --grid:#2c2c2a; --axis:#383835;
+  --border:rgba(255,255,255,0.12); --border-strong:rgba(255,255,255,0.20);
+  --brand:#5598e7; --brand-deep:#86b6ef; --brand-soft:#16233a;
+  --series-1:#3987e5; --series-2:#d95926; --series-3:#199e70; --series-4:#c98500;
+  --series-5:#d55181; --series-6:#008300; --series-7:#9085e9; --series-8:#e66767;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -18px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--page);color:var(--text-primary);font-family:var(--sans);
+  font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{line-height:1.24;margin:0 0 .5em;font-weight:650;letter-spacing:-.012em}
+h2{font-size:1.5rem;margin-top:0}
+h3{font-size:1.08rem;margin-top:2.2rem}
+h4{font-size:.96rem;margin-top:1.4rem;color:var(--text-secondary)}
+p{margin:0 0 .9em}
+a{color:var(--brand);text-underline-offset:2px}
+ul,ol{margin:0 0 .9em;padding-left:1.1rem}
+li{margin:.24em 0}
+strong{font-weight:640}
+code,kbd{font-family:var(--mono);font-size:.85em;background:var(--brand-soft);padding:.08em .35em;border-radius:4px;color:var(--brand-deep)}
+pre{font-family:var(--mono);background:var(--surface-1);border:1px solid var(--border);border-radius:8px;
+  padding:.85rem 1rem;overflow:auto;font-size:.78rem;line-height:1.7;margin:0 0 1rem}
+hr{border:0;border-top:1px solid var(--border);margin:2rem 0}
+
+/* ============================================================
+   2. CABECERA Y NAVEGACIÓN
+   ============================================================ */
+.topbar{position:sticky;top:0;z-index:60;background:color-mix(in srgb,var(--panel) 93%,transparent);
+  backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--border)}
+.topbar-inner{max-width:var(--maxw);margin:0 auto;padding:.5rem 2rem;display:flex;align-items:center;gap:.8rem}
+.brandmark{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit}
+.brandmark .glyph{width:32px;height:32px;border-radius:8px;background:linear-gradient(150deg,var(--brand),var(--brand-deep));
+  display:grid;place-items:center;color:#fff;font-size:16px;font-weight:700}
+.brandmark .txt strong{display:block;font-size:.86rem;line-height:1.2}
+.brandmark .txt span{display:block;font-size:.68rem;color:var(--text-muted);line-height:1.2}
+.spacer{flex:1}
+.iconbtn{border:1px solid var(--border);background:var(--panel);color:var(--text-secondary);
+  border-radius:7px;padding:.35rem .6rem;cursor:pointer;font-size:.76rem;font-family:inherit}
+.iconbtn:hover{border-color:var(--border-strong);color:var(--text-primary)}
+nav.tabs{border-bottom:1px solid var(--border);background:var(--panel);position:sticky;top:45px;z-index:55}
+.tabs-inner{max-width:var(--maxw);margin:0 auto;padding:0 2rem;display:flex;gap:0;overflow-x:auto;scrollbar-width:thin}
+.tabs-inner::-webkit-scrollbar{height:3px}
+.tabs-inner::-webkit-scrollbar-thumb{background:var(--axis);border-radius:3px}
+.tab{appearance:none;border:0;background:none;font-family:inherit;font-size:.85rem;font-weight:530;
+  color:var(--text-secondary);padding:.7rem .82rem .6rem;cursor:pointer;white-space:nowrap;
+  border-bottom:2.5px solid transparent}
+.tab .n{font-size:.66rem;color:var(--text-muted);font-variant-numeric:tabular-nums}
+.tab:hover{color:var(--text-primary)}
+.tab[aria-selected="true"]{color:var(--brand);border-bottom-color:var(--brand);font-weight:640}
+.tab[aria-selected="true"] .n{color:var(--brand)}
+main{max-width:var(--maxw);margin:0 auto;padding:1.8rem 2rem 4rem}
+.view{display:none;animation:fade .24s ease;scroll-margin-top:110px}
+.view.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.sec-head{display:flex;flex-wrap:wrap;gap:.6rem;align-items:baseline;margin-bottom:.4rem}
+.sec-head .idx{font-variant-numeric:tabular-nums;font-size:.78rem;font-weight:700;color:var(--text-muted);
+  border:1px solid var(--border);border-radius:5px;padding:.05rem .38rem}
+.lede{font-size:1.02rem;color:var(--text-secondary);max-width:92ch;margin-bottom:1.4rem}
+
+/* ============================================================
+   3. ETIQUETAS DE EVIDENCIA
+   ============================================================ */
+.ev{display:inline-flex;align-items:center;gap:.28rem;font-size:.64rem;font-weight:700;letter-spacing:.055em;
+  text-transform:uppercase;padding:.12rem .42rem;border-radius:4px;white-space:nowrap;vertical-align:middle;
+  border:1px solid transparent;line-height:1.5}
+.ev::before{content:"";width:6px;height:6px;border-radius:2px;background:currentColor;flex:0 0 auto}
+.ev-of{color:#0d5c8f;background:color-mix(in srgb,#2a78d6 12%,transparent)}
+.ev-cp{color:#7a4a00;background:color-mix(in srgb,#eda100 20%,transparent)}
+.ev-an{color:#3b2e8a;background:color-mix(in srgb,#4a3aa7 12%,transparent)}
+.ev-pr{color:#0d6c4b;background:color-mix(in srgb,#1baf7a 15%,transparent)}
+.ev-vp{color:#a33b0b;background:color-mix(in srgb,#eb6834 15%,transparent)}
+:root[data-theme="dark"] .ev-of{color:#9ec5f4}
+:root[data-theme="dark"] .ev-cp{color:#f0c766}
+:root[data-theme="dark"] .ev-an{color:#b7aef0}
+:root[data-theme="dark"] .ev-pr{color:#6ddcae}
+:root[data-theme="dark"] .ev-vp{color:#f4a077}
+.ev-legend{display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;padding:.8rem 1rem;background:var(--surface-1);
+  border:1px solid var(--border);border-radius:var(--radius);margin:0 0 1.5rem;font-size:.79rem;color:var(--text-secondary)}
+.ev-legend div{display:flex;align-items:center;gap:.45rem}
+
+/* ============================================================
+   4. BLOQUES DE CONTENIDO
+   ============================================================ */
+.hero{background:linear-gradient(155deg,var(--brand-deep),var(--brand) 62%,#256abf);color:#fff;
+  border-radius:14px;padding:2.1rem 1.9rem;margin-bottom:1.4rem;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto -60px -120px auto;width:320px;height:320px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.15),transparent 68%)}
+.hero .kicker{font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;opacity:.85;margin-bottom:.6rem;font-weight:600}
+.hero h1{font-size:clamp(1.5rem,3.3vw,2.35rem);margin-bottom:.5rem;max-width:30ch}
+.hero p{max-width:96ch;opacity:.93;margin-bottom:0;font-size:.98rem}
+.hero .stamp{display:inline-flex;gap:.5rem;align-items:center;margin-top:1.1rem;font-size:.76rem;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);padding:.3rem .7rem;border-radius:999px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.2rem 1.3rem;margin:1rem 0;box-shadow:var(--shadow)}
+.card > :last-child{margin-bottom:0}
+.card h4:first-child,.card h3:first-child{margin-top:0}
+.grid{display:grid;gap:.9rem}
+.g2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.stat{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:.95rem 1rem}
+.stat .label{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);font-weight:650;
+  display:flex;justify-content:space-between;gap:.4rem;align-items:center}
+.stat .value{font-size:1.65rem;font-weight:660;line-height:1.15;margin:.22rem 0 .1rem;letter-spacing:-.02em}
+.stat .value.sm{font-size:1.18rem}
+.stat .value .u{font-size:.85rem;font-weight:550;color:var(--text-secondary);margin-left:.15rem}
+.stat .sub{font-size:.78rem;color:var(--text-secondary);line-height:1.42}
+.stat.accent{border-left:3px solid var(--brand)}
+.stat.pending{border-style:dashed;background:transparent}
+.stat.pending .value{color:var(--text-muted);font-size:1.05rem;font-weight:600}
+.note{border-radius:var(--radius);padding:.85rem 1.05rem;margin:1rem 0;border:1px solid var(--border);background:var(--surface-1)}
+.note .nt{font-weight:650;font-size:.8rem;margin-bottom:.35rem;display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+.note > :last-child{margin-bottom:0}
+.note.problem{border-left:3px solid var(--st-critical);background:color-mix(in srgb,var(--st-critical) 5%,var(--panel))}
+.note.problem .nt{color:var(--st-critical)}
+.note.pending{border-left:3px solid var(--st-warning);background:color-mix(in srgb,var(--st-warning) 8%,var(--panel))}
+.note.pending .nt{color:#8a5c00}
+:root[data-theme="dark"] .note.pending .nt{color:var(--st-warning)}
+.note.explain{border-left:3px solid var(--brand);background:var(--brand-soft)}
+.note.explain .nt{color:var(--brand)}
+.note.ok{border-left:3px solid var(--st-good);background:color-mix(in srgb,var(--st-good) 6%,var(--panel))}
+.note.ok .nt{color:#0a7d0a}
+:root[data-theme="dark"] .note.ok .nt{color:var(--st-good)}
+
+/* tablas */
+.tablewrap{overflow-x:auto;margin:.9rem 0;border:1px solid var(--border);border-radius:var(--radius);background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:.845rem}
+caption{text-align:left;padding:.8rem 1rem .15rem;font-size:.8rem;color:var(--text-muted);caption-side:top}
+th,td{padding:.5rem .8rem;text-align:left;border-bottom:1px solid var(--grid);vertical-align:top}
+thead th{background:var(--surface-1);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--text-secondary);font-weight:650;border-bottom:1px solid var(--axis);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:color-mix(in srgb,var(--brand) 4%,transparent)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.src{font-size:.74rem;color:var(--text-muted);padding:.5rem 1rem;border-top:1px solid var(--grid);background:var(--surface-1);
+  display:flex;flex-wrap:wrap;gap:.4rem .7rem;align-items:baseline}
+.src a{color:var(--brand)}
+
+.pill{display:inline-block;font-size:.68rem;font-weight:650;letter-spacing:.04em;text-transform:uppercase;
+  padding:.12rem .45rem;border-radius:999px;border:1px solid var(--border-strong);color:var(--text-secondary);white-space:nowrap}
+.pill.nac{background:color-mix(in srgb,var(--series-7) 12%,transparent);border-color:transparent;color:#3b2e8a}
+.pill.prov{background:color-mix(in srgb,var(--series-1) 13%,transparent);border-color:transparent;color:#1b5697}
+.pill.reg{background:color-mix(in srgb,var(--series-3) 15%,transparent);border-color:transparent;color:#0d6c4b}
+.pill.tar{background:color-mix(in srgb,var(--series-2) 14%,transparent);border-color:transparent;color:#a8410f}
+:root[data-theme="dark"] .pill.nac{color:#b7aef0}
+:root[data-theme="dark"] .pill.prov{color:#9ec5f4}
+:root[data-theme="dark"] .pill.reg{color:#6ddcae}
+:root[data-theme="dark"] .pill.tar{color:#f4a077}
+.st{display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;font-weight:600;white-space:nowrap}
+.st::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.st-vig{color:#0a7d0a}
+.st-par{color:#8a5c00}
+.st-der{color:var(--text-muted)}
+.st-sus{color:var(--text-muted)}
+.st-val{color:#a33b0b}
+:root[data-theme="dark"] .st-vig{color:var(--st-good)}
+:root[data-theme="dark"] .st-par{color:var(--st-warning)}
+:root[data-theme="dark"] .st-val{color:#f4a077}
+
+details.acc{border:1px solid var(--border);border-radius:var(--radius);background:var(--panel);margin:.55rem 0;overflow:hidden}
+details.acc summary{cursor:pointer;padding:.75rem 1rem;font-weight:600;font-size:.93rem;list-style:none;
+  display:flex;gap:.55rem;align-items:center;flex-wrap:wrap}
+details.acc summary::-webkit-details-marker{display:none}
+details.acc summary::before{content:"▸";color:var(--brand);font-size:.85rem;transition:transform .18s;flex:0 0 auto}
+details.acc[open] summary::before{transform:rotate(90deg)}
+details.acc summary:hover{background:var(--surface-1)}
+details.acc .body{padding:0 1rem 1rem;border-top:1px solid var(--grid);padding-top:.85rem}
+details.acc .body > :last-child{margin-bottom:0}
+
+.chain{display:flex;flex-wrap:wrap;gap:.35rem;align-items:stretch;margin:1rem 0}
+.chain .node{flex:1 1 128px;background:var(--surface-1);border:1px solid var(--border);border-radius:8px;
+  padding:.6rem .65rem;font-size:.76rem;line-height:1.35}
+.chain .node b{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--brand);margin-bottom:.12rem}
+.chain .node.hi{border-color:var(--brand);background:var(--brand-soft)}
+.chain .arrow{align-self:center;color:var(--axis);font-size:.95rem;flex:0 0 auto}
+
+/* filtros */
+.filters{display:flex;flex-wrap:wrap;gap:.7rem 1rem;align-items:flex-end;padding:.95rem 1.1rem;
+  background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);margin:0 0 1rem}
+.fld{display:flex;flex-direction:column;gap:.25rem}
+.fld label{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);font-weight:650}
+.fld select,.fld input{font-family:inherit;font-size:.85rem;padding:.36rem .5rem;border-radius:7px;
+  border:1px solid var(--border-strong);background:var(--panel);color:var(--text-primary);min-width:130px}
+.fld input[type=number]{width:120px;font-variant-numeric:tabular-nums}
+.fld select:focus,.fld input:focus{outline:2px solid var(--brand);outline-offset:1px}
+.chip{appearance:none;font-family:inherit;font-size:.78rem;font-weight:560;cursor:pointer;
+  border:1px solid var(--border-strong);background:var(--panel);color:var(--text-secondary);
+  padding:.3rem .72rem;border-radius:999px}
+.chip:hover{color:var(--text-primary);border-color:var(--text-muted)}
+.chip[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+.chiprow{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin:0 0 1rem}
+.chiprow .lbl{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);font-weight:650;margin-right:.2rem}
+.count{font-size:.78rem;color:var(--text-muted);margin:.3rem 0 .8rem}
+
+/* línea de tiempo */
+.timeline{position:relative;padding-left:1.9rem}
+.timeline::before{content:"";position:absolute;left:.55rem;top:.4rem;bottom:.4rem;width:2px;background:var(--grid)}
+.tl-item{position:relative;margin:0 0 .85rem}
+.tl-item::before{content:"";position:absolute;left:-1.53rem;top:.6rem;width:10px;height:10px;border-radius:50%;
+  background:var(--panel);border:2.5px solid var(--c,var(--brand))}
+.tl-item.milestone::before{background:var(--c,var(--brand))}
+.tl-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:.75rem .95rem}
+.tl-head{display:flex;flex-wrap:wrap;gap:.45rem;align-items:baseline;margin-bottom:.25rem}
+.tl-date{font-variant-numeric:tabular-nums;font-weight:680;font-size:.86rem;color:var(--c,var(--brand))}
+.tl-title{font-weight:620;font-size:.92rem}
+.tl-body{font-size:.83rem;color:var(--text-secondary);margin:0}
+.tl-foot{margin-top:.45rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;font-size:.75rem}
+.empty{color:var(--text-muted);font-size:.88rem;padding:1.2rem;text-align:center;border:1px dashed var(--border-strong);border-radius:var(--radius)}
+
+/* gráficos */
+.figure{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.05rem 1.15rem;margin:1rem 0;box-shadow:var(--shadow)}
+.figure .fig-title{font-weight:640;font-size:.96rem;margin-bottom:.12rem}
+.figure .fig-sub{font-size:.79rem;color:var(--text-secondary);margin-bottom:.8rem}
+.figure .fig-note{font-size:.74rem;color:var(--text-muted);margin-top:.65rem;border-top:1px solid var(--grid);padding-top:.55rem}
+.legend{display:flex;flex-wrap:wrap;gap:.85rem;margin-bottom:.7rem;font-size:.78rem;color:var(--text-secondary)}
+.legend i{width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:.32rem;vertical-align:-1px}
+svg.chart{display:block;width:100%;height:auto;overflow:visible}
+svg.chart text{font-family:var(--sans)}
+.tick{font-size:11px;fill:var(--text-muted)}
+.tick.val{font-size:11px;fill:var(--text-secondary);font-variant-numeric:tabular-nums}
+.axline{stroke:var(--axis);stroke-width:1}
+.gridline{stroke:var(--grid);stroke-width:1}
+.tbl-toggle{font-size:.76rem;color:var(--brand);background:none;border:0;padding:.3rem 0 0;cursor:pointer;font-family:inherit;font-weight:600}
+.tbl-toggle:hover{text-decoration:underline}
+.viztip{position:fixed;pointer-events:none;z-index:200;background:var(--panel);border:1px solid var(--border-strong);
+  border-radius:8px;padding:.45rem .6rem;font-size:.77rem;box-shadow:0 8px 24px -8px rgba(0,0,0,.3);
+  opacity:0;transition:opacity .12s;max-width:250px;line-height:1.4}
+.viztip.on{opacity:1}
+.viztip b{display:block;margin-bottom:.18rem}
+.viztip .row{display:flex;justify-content:space-between;gap:1rem;font-variant-numeric:tabular-nums}
+.ph-frame{border:1px dashed var(--border-strong);border-radius:var(--radius);padding:2rem 1.2rem;text-align:center;
+  color:var(--text-muted);font-size:.84rem;background:repeating-linear-gradient(45deg,transparent,transparent 9px,color-mix(in srgb,var(--text-muted) 5%,transparent) 9px,color-mix(in srgb,var(--text-muted) 5%,transparent) 18px)}
+.ph-frame b{display:block;color:var(--text-secondary);font-size:.9rem;margin-bottom:.3rem}
+
+/* cascada de factura */
+.wf{display:flex;flex-direction:column;gap:.28rem;margin:1rem 0}
+.wf-row{display:grid;grid-template-columns:1.6rem 1fr auto;gap:.7rem;align-items:center;
+  background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--c,var(--axis));
+  border-radius:8px;padding:.55rem .8rem;cursor:pointer;text-align:left;font-family:inherit;font-size:.86rem;color:inherit;width:100%}
+.wf-row:hover{border-color:var(--brand-deep);background:var(--surface-1)}
+.wf-row .op{font-weight:700;color:var(--c,var(--text-muted));font-size:1rem;text-align:center}
+.wf-row .lb{line-height:1.35}
+.wf-row .lb small{display:block;color:var(--text-muted);font-size:.73rem}
+.wf-row .vl{font-variant-numeric:tabular-nums;font-weight:620;white-space:nowrap}
+.wf-row.total{background:var(--brand-soft);border-color:var(--brand);border-left-color:var(--brand);font-weight:650}
+.wf-row.sub{background:var(--surface-1)}
+.wf-exp{font-size:.83rem;color:var(--text-secondary);background:var(--surface-1);border:1px solid var(--border);
+  border-radius:8px;padding:.75rem .9rem;margin:.15rem 0 .35rem}
+.wf-exp > :last-child{margin-bottom:0}
+
+/* organigrama */
+.org{display:grid;gap:.55rem;margin:1.1rem 0}
+.org-box{border:1px solid var(--border);border-left:3px solid var(--c,var(--brand));border-radius:9px;
+  background:var(--panel);padding:.75rem .95rem}
+.org-box .rol{font-size:.68rem;text-transform:uppercase;letter-spacing:.07em;color:var(--c,var(--brand));font-weight:700}
+.org-box h4{margin:.1rem 0 .2rem;font-size:.98rem;color:var(--text-primary)}
+.org-box p{font-size:.82rem;color:var(--text-secondary);margin:0}
+.org-lvl{display:grid;gap:.55rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.org-conn{font-size:.72rem;color:var(--text-muted);padding-left:.9rem;border-left:2px dashed var(--border-strong);margin-left:.6rem;padding-top:.15rem;padding-bottom:.15rem}
+
+.kv{display:grid;grid-template-columns:auto 1fr;gap:.3rem .9rem;font-size:.85rem;margin:.5rem 0 1rem}
+.kv dt{color:var(--text-muted);font-weight:650;white-space:nowrap}
+.kv dd{margin:0;color:var(--text-secondary)}
+.toc{display:grid;gap:.45rem;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));margin:1rem 0 0}
+.toc a{display:block;text-decoration:none;color:inherit;background:var(--surface-1);border:1px solid var(--border);
+  border-radius:9px;padding:.65rem .8rem;transition:border-color .15s,transform .15s}
+.toc a:hover{border-color:var(--brand);transform:translateY(-1px)}
+.toc a b{display:block;font-size:.86rem;margin-bottom:.1rem}
+.toc a span{font-size:.75rem;color:var(--text-muted);line-height:1.35;display:block}
+.badge-row{display:flex;flex-wrap:wrap;gap:.3rem;margin:.4rem 0 1rem}
+
+footer{border-top:1px solid var(--border);background:var(--panel);margin-top:2.5rem}
+.footer-inner{max-width:var(--maxw);margin:0 auto;padding:1.8rem 2rem;font-size:.8rem;color:var(--text-muted)}
+.footer-inner strong{color:var(--text-secondary)}
+
+@media print{nav.tabs,.topbar,.tbl-toggle{display:none}.view{display:block !important}}
+@media (max-width:900px){
+  main,.topbar-inner,.tabs-inner,.footer-inner{padding-left:1rem;padding-right:1rem}
+}
+@media (max-width:640px){
+  main{padding:1.2rem .85rem 3rem}
+  .hero{padding:1.6rem 1.1rem}
+  .card{padding:1rem}
+  .wf-row{grid-template-columns:1.2rem 1fr;grid-template-areas:"op lb" ". vl"}
+  .wf-row .vl{grid-area:vl;text-align:right}
+  .filters{padding:.85rem}
+  .fld select,.fld input{min-width:0;width:100%}
+  .fld{flex:1 1 140px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brandmark" href="#panorama">
+      <span class="glyph">⚡</span>
+      <span class="txt">
+        <strong>Ficha energética · Corrientes</strong>
+        <span>Régimen jurídico, institucional y tarifario</span>
+      </span>
+    </a>
+    <span class="spacer"></span>
+    <button class="iconbtn" id="themeBtn" type="button" title="Alternar tema claro/oscuro">◐ Tema</button>
+  </div>
+</div>
+
+<nav class="tabs" aria-label="Secciones"><div class="tabs-inner" id="tabs" role="tablist"></div></nav>
+
+<main id="main">
+<!-- 01 PANORAMA -->
+<section class="view" id="panorama">
+  <div class="hero">
+    <div class="kicker">Provincia de Corrientes · Servicio público de electricidad</div>
+    <h1>Ficha energética y regulatoria</h1>
+    <p>El régimen eléctrico correntino no surge de una sola norma. Se forma por capas: legislación federal del mercado mayorista, legislación provincial del servicio público, normas institucionales de DPEC, la Secretaría de Energía y el EPRE, reglamentos de suministro, mecanismos de actualización tarifaria, subsidios nacionales y actos administrativos periódicos que finalmente producen un cuadro tarifario aplicable.</p>
+    <div class="stamp">◷ Estado del análisis: 18 de agosto de 2026</div>
+  </div>
+
+  <div class="ev-legend">
+    <div><span class="ev ev-of">Oficial</span> dato tomado de norma, acto o publicación oficial</div>
+    <div><span class="ev ev-cp">Cálculo propio</span> aritmética sobre datos oficiales</div>
+    <div><span class="ev ev-an">Análisis</span> interpretación del autor</div>
+    <div><span class="ev ev-pr">Propuesta</span> reforma sugerida, no vigente</div>
+    <div><span class="ev ev-vp">Validación pendiente</span> no verificable en las fuentes consultadas</div>
+  </div>
+
+  <div class="grid g4" id="panoStats"></div>
+
+  <h3>Cómo se forma la factura</h3>
+  <p class="lede">La regulación provincial controla una parte importante de esta cadena, pero no todos sus componentes: la adquisición de energía, potencia y transporte en el Mercado Eléctrico Mayorista está sujeta a legislación federal. <span class="ev ev-an">Análisis</span></p>
+  <div class="chain">
+    <div class="node"><b>1 · Federal</b>Generación y mercado mayorista</div><span class="arrow">→</span>
+    <div class="node"><b>2 · Federal</b>Transporte y SADI</div><span class="arrow">→</span>
+    <div class="node"><b>3 · Mixto</b>Adquisición por la distribuidora</div><span class="arrow">→</span>
+    <div class="node"><b>4 · Provincial</b>Red de distribución</div><span class="arrow">→</span>
+    <div class="node"><b>5 · Provincial</b>Costos comerciales y VAD</div>
+  </div>
+  <div class="chain">
+    <div class="node"><b>6 · Provincial</b>Política tarifaria y aprobación del PE</div><span class="arrow">→</span>
+    <div class="node"><b>7 · Nac./Prov.</b>Subsidios y bonificaciones</div><span class="arrow">→</span>
+    <div class="node"><b>8 · Tributario</b>Impuestos, tasas y otros conceptos</div><span class="arrow">→</span>
+    <div class="node hi"><b>9 · Resultado</b>Factura final</div>
+  </div>
+
+  <div class="grid g2">
+    <div class="figure" id="fig-urbrur"></div>
+    <div class="figure" id="fig-boni"></div>
+  </div>
+
+  <h3>Recorrido</h3>
+  <div class="toc" id="toc"></div>
+</section>
+
+<!-- 03 INSTITUCIONES -->
+<section class="view" id="instituciones">
+  <div class="sec-head"><h2>Arquitectura institucional</h2></div>
+  <p class="lede">El modelo de empresa pública integrada de 1980 fue <strong>superpuesto, no derogado</strong>, por el marco regulatorio de 2011. Para cada organismo se distingue su competencia legal, el tipo de organismo, la autoridad efectivamente actuante, su estado actual y la norma que le atribuye competencia.</p>
+
+  <h3>Relaciones institucionales</h3>
+  <div class="org" id="orgDiagram"></div>
+  <div class="note pending">
+    <div class="nt">◈ Precisión jurídica sobre el diagrama <span class="ev ev-an">Análisis</span></div>
+    <p style="margin-bottom:0">El esquema anterior no es un organigrama jerárquico: la DPEC <strong>no depende del EPRE</strong>. El EPRE ejerce potestades de regulación, fiscalización y sanción sobre los prestadores (entre ellos la DPEC) sin relación de dependencia administrativa, y se vincula con el Poder Ejecutivo a través de la Secretaría de Energía conservando autonomía funcional y autarquía financiera. La DPEC es un ente autárquico creado por su propia ley orgánica.</p>
+  </div>
+
+  <h3>Fichas institucionales</h3>
+  <div id="instFichas"></div>
+
+  <h3>Cadena de decisión tarifaria <span class="ev ev-of">Oficial</span></h3>
+  <div class="chain">
+    <div class="node"><b>1</b>Resolución nacional que modifica PEST o subsidio</div><span class="arrow">→</span>
+    <div class="node"><b>2</b>Informe de costos de DPEC</div><span class="arrow">→</span>
+    <div class="node"><b>3</b>Resolución DPEC</div><span class="arrow">→</span>
+    <div class="node"><b>4</b>Evaluación y resolución del EPRE</div>
+  </div>
+  <div class="chain">
+    <div class="node"><b>5</b>Intervención del Órgano Consultivo</div><span class="arrow">→</span>
+    <div class="node"><b>6</b>Decreto del Poder Ejecutivo</div><span class="arrow">→</span>
+    <div class="node"><b>7</b>Cuadro tarifario consolidado</div><span class="arrow">→</span>
+    <div class="node hi"><b>8</b>Período de facturación</div>
+  </div>
+  <p>El Cuadro 108-E permite observar la cadena completa: seis actos administrativos de tres autoridades distintas (dos decretos, dos resoluciones del EPRE y dos resoluciones de DPEC) convergen en un único cuadro.</p>
+
+  <h3>Audiencia pública y revisión tarifaria <span class="ev ev-of">Oficial</span></h3>
+  <div class="grid g2">
+    <div class="card" style="margin-top:0;border-top:3px solid var(--series-1)">
+      <h4>Revisión estructural del VAD</h4>
+      <p style="margin-bottom:0">Analiza costos eficientes propios de distribución, inversiones, operación, mantenimiento, capital y calidad. Exige evaluación amplia y participación pública. Los valores de distribución publicados por DPEC corresponden al VAD presentado en la audiencia pública del <strong>8 de febrero de 2024</strong>.</p>
+    </div>
+    <div class="card" style="margin-top:0;border-top:3px solid var(--series-2)">
+      <h4>Pass-through de costos exógenos</h4>
+      <p style="margin-bottom:0">Traslada variaciones de energía, potencia o transporte mayorista que el distribuidor no controla. Es un mecanismo distinto, con procedimiento y frecuencia propios.</p>
+    </div>
+  </div>
+  <p>Los cuadros tienen una vigencia máxima legal de cinco años; durante el período pueden producirse modificaciones justificadas, incluidos ajustes por costos externos. La Ley provincial 6.629 modificó el régimen general de audiencias públicas de la Ley 5.982 para exigir accesibilidad física, cognitiva y comunicacional, incluida la disponibilidad en sistema Braille cuando sea requerida. <span class="ev ev-vp">Fecha de sanción pendiente de verificación</span></p>
+  <div class="note explain">
+    <div class="nt">◆ Por qué conviene no mezclarlos <span class="ev ev-an">Análisis</span></div>
+    <p style="margin-bottom:0">Presentar ambos mecanismos como un único “aumento tarifario” impide responder la pregunta que más importa ante cada modificación: qué proporción proviene de decisiones nacionales sobre el mercado mayorista y qué proporción del componente provincial de distribución.</p>
+  </div>
+</section>
+
+<!-- 04 MARCO NORMATIVO -->
+<section class="view" id="normativo">
+  <div class="sec-head"><h2>Marco normativo</h2></div>
+  <p class="lede">Todas las normas relevadas, con jurisdicción, materia, estado de vigencia, relaciones de modificación y fuente. Los estados se asignan según lo que pudo verificarse: cuando una norma no pudo confirmarse en fuentes oficiales figura como <em>validación pendiente</em>.</p>
+
+  <div class="filters" id="normFiltros"></div>
+  <div class="count" id="normCount"></div>
+  <div class="tablewrap"><table id="normTabla">
+    <thead><tr>
+      <th>Norma</th><th class="num">Año</th><th>Jurisdicción</th><th>Materia</th><th>Estado</th>
+      <th>Modifica</th><th>Modificada por</th><th>Vigencia</th><th>Fuente</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <div id="normDetalle"></div>
+
+  <h3>Los dos planos que se superponen <span class="ev ev-of">Oficial</span></h3>
+  <div class="grid g2">
+    <div class="card" style="margin-top:0;border-top:3px solid var(--series-1)">
+      <h4>Plano provincial</h4>
+      <p style="margin-bottom:0">La Ley 6.073 ratifica la jurisdicción provincial sobre el Sistema Eléctrico Provincial y la prestación del servicio público en el territorio, salvo instalaciones o actividades sometidas a jurisdicción nacional. Caracteriza como servicio público el transporte, la distribución y la generación aislada, lo que implica continuidad, obligatoriedad, regulación tarifaria, control de calidad y potestades administrativas específicas.</p>
+    </div>
+    <div class="card" style="margin-top:0;border-top:3px solid var(--series-7)">
+      <h4>Plano federal</h4>
+      <p style="margin-bottom:0">La Ley 15.336, modificada por el Decreto 450/2025, mantiene las facultades provinciales pero somete a las distribuidoras a reglas federales cuando actúan en la Red Nacional de Interconexión y en el MEM. La Ley 24.065, en su texto ordenado posterior, caracteriza como servicio público al transporte y la distribución.</p>
+    </div>
+  </div>
+  <div class="note problem">
+    <div class="nt">⚠ Artículo 12 bis de la Ley 15.336: el límite federal <span class="ev ev-of">Oficial</span></div>
+    <p>Se considera interferente con los objetivos federales todo acto o norma local que impida o restrinja el traslado a tarifa del costo de adquisición de energía en el MEM cuando sea trasladable, el pago de deudas de los distribuidores en el mercado mayorista o la autosuficiencia económico-financiera del mercado eléctrico.</p>
+    <p style="margin-bottom:0"><strong>Consecuencia práctica <span class="ev ev-an">Análisis</span>:</strong> una política provincial puede regular el VAD, la estructura tarifaria, las categorías, la calidad y mecanismos locales de protección social, pero encuentra límites federales expresos para congelar o impedir unilateralmente el traslado de determinados costos mayoristas.</p>
+  </div>
+
+  <h3>Definiciones legales del sistema <span class="ev ev-of">Oficial</span></h3>
+  <p>La Ley 6.073 define el <strong>Sistema Eléctrico Provincial</strong>, el <strong>Sistema Interconectado Provincial</strong>, los <strong>sistemas aislados</strong> y la <strong>generación aislada</strong>. Caracteriza como servicio público el transporte, la distribución y la generación aislada, lo que implica continuidad, obligatoriedad, regulación tarifaria, control de calidad y potestades administrativas específicas.</p>
+<h3>Actores reconocidos por el marco provincial <span class="ev ev-of">Oficial</span></h3>
+  <p>La Ley 6.073 reconoce generadores, prestadores de la función técnica de transporte, distribuidores, transportistas y usuarios, y define las figuras de generador, autogenerador, cogenerador, gran usuario y usuario del distribuidor.</p>
+  <ul>
+    <li>El <strong>distribuidor</strong> presta el servicio público en su área y puede desempeñar la función técnica de transporte poniendo capacidad remanente de sus redes a disposición de terceros agentes.</li>
+    <li>El <strong>gran usuario</strong> puede contratar independientemente su abastecimiento con un generador, distribuidor, autogenerador o cogenerador.</li>
+  </ul>
+  <p>Por eso el Cuadro 108-E no se limita al hogar residencial: contiene categorías comerciales, industriales, oficiales, de asociaciones sin fines de lucro, riego agrícola, demandas medianas y grandes, otros distribuidores y cooperativas, y cargos de utilización de redes por agentes del MEM.</p>
+
+
+  <h3>Principios tarifarios de la Ley 6.073 <span class="ev ev-of">Oficial</span></h3>
+  <div class="tablewrap"><table>
+    <caption>Ocho principios con efecto económico concreto, no meras declaraciones.</caption>
+    <thead><tr><th>Principio</th><th>Contenido</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Sostenibilidad</strong></td><td>La tarifa debe financiar costos razonables de operación, mantenimiento, expansión, impuestos y amortizaciones y, cuando corresponda, una rentabilidad razonable.</td></tr>
+      <tr><td><strong>Aditividad</strong></td><td>La tarifa debe contener el costo propio de distribución y un término representativo del costo de adquirir energía en el mercado mayorista.</td></tr>
+      <tr><td><strong>Eficiencia económica</strong></td><td>El usuario debe pagar el menor costo razonable compatible con seguridad y calidad.</td></tr>
+      <tr><td><strong>Eficiencia asignativa</strong></td><td>La estructura debe enviar señales que promuevan un uso racional de la energía.</td></tr>
+      <tr><td><strong>Equidad</strong></td><td>Tratamiento semejante para usuarios que utilizan el sistema de forma semejante. De aquí deriva la prohibición de recuperar costos de una categoría cobrándolos a otra.</td></tr>
+      <tr><td><strong>Equidad distributiva y solidaridad</strong></td><td>Habilitan a considerar la capacidad de pago en el diseño tarifario.</td></tr>
+      <tr><td><strong>Simplicidad y transparencia</strong></td><td>Fórmulas, metodología y costos deben poder ser entendidos y controlados.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note explain">
+    <div class="nt">◆ Integración con la legislación de consumidores <span class="ev ev-of">Oficial</span></div>
+    <p style="margin-bottom:0">La Ley nacional 24.240 establece que los servicios públicos domiciliarios con legislación específica quedan sujetos <em>tanto</em> a esa normativa especial <em>como</em> a la de consumidores, y que en caso de duda prevalece la solución más favorable al consumidor. Es determinante en Corrientes porque parte del Reglamento de Suministro es anterior a la Ley 6.073 y a reformas nacionales posteriores.</p>
+  </div>
+</section>
+<!-- 05 TARIFAS -->
+<section class="view" id="tarifas">
+  <div class="sec-head"><h2>Explorador tarifario · Cuadro 108-E</h2></div>
+  <p class="lede">Filtrá por tipo de usuario, zona y nivel de potencia. Ingresando un consumo, el explorador calcula el <strong>subtotal tarifario</strong> con los valores del cuadro. <strong>Tarifa ≠ factura final:</strong> el resultado no incluye impuestos, tasas, contribuciones, intereses ni otros conceptos no tarifarios.</p>
+
+  <div class="filters" id="tarFiltros"></div>
+  <div class="count" id="tarCount"></div>
+  <div id="tarResultados"></div>
+
+  <div class="note pending">
+    <div class="nt">◈ Vigencia del cuadro <span class="ev ev-vp">Validación pendiente</span></div>
+    <p style="margin-bottom:0">El documento analizado no consigna fecha de inicio ni de fin de vigencia. Los valores deben contrastarse con el cuadro efectivamente aplicable al período de facturación antes de usarse en una liquidación.</p>
+    <p style="margin-bottom:0">A esto se suma una inconsistencia en la publicación oficial: en la página de DPEC el texto descriptivo enumera la serie de cuadros hasta 108-C, mientras que el listado de actos administrativos de esa misma página incluye los Decretos 1438/2026 y 1454/2026, las Resoluciones EPRE 10/2026 y 12/2026 y las Resoluciones DPEC 629/2026 y 679/2026, que son los actos de aprobación que figuran en la portada del Cuadro 108-E.</p>
+  </div>
+
+  <h3>Cómo leer las unidades <span class="ev ev-of">Oficial</span></h3>
+  <div class="grid g3">
+    <div class="stat"><div class="label">$/bimestre</div><div class="value sm">Cargo fijo</div><div class="sub">Costos comerciales, medición y parte de la infraestructura. Pequeñas demandas y servicios generales.</div></div>
+    <div class="stat"><div class="label">$/kWh</div><div class="value sm">Energía</div><div class="sub">Volumen utilizado. En grandes demandas se abre en punta, resto y valle.</div></div>
+    <div class="stat"><div class="label">$/kW-mes</div><div class="value sm">Potencia</div><div class="sub">Capacidad de red que debe estar disponible para atender la demanda máxima. Desde las demandas medianas.</div></div>
+  </div>
+  <p>El Reglamento de Suministro define la demanda como la potencia máxima promedio registrada durante quince minutos consecutivos: ese concepto sostiene los cargos $/kW-mes. Dos empresas pueden consumir los mismos kWh y demandar potencias muy distintas; la que concentra el consumo obliga al sistema a disponer de mayor capacidad.</p>
+
+  <div class="grid g2">
+    <div class="figure" id="fig-bloques"></div>
+    <div class="figure" id="fig-inyeccion"></div>
+  </div>
+
+  <h3 id="discontinuidad">Discontinuidad potencial en el cargo fijo SEF</h3>
+  <div class="note pending">
+    <div class="nt">◈ Discontinuidad potencial bajo interpretación literal del cuadro <span class="ev ev-cp">Cálculo propio</span></div>
+    <p>El cuadro consigna una cuota fija reducida mientras el consumo se mantiene “hasta el Base” y la cuota fija completa si es “mayor al Base”. Bajo lectura literal de esa tabla, en junio de 2026 un usuario residencial urbano pasaría de <strong>$ 89.647,60</strong> con 600 kWh a <strong>$ 102.847,02</strong> con 601 kWh: una diferencia de aproximadamente <strong>$ 13.199,42</strong> (14,72%) por un solo kWh. En julio el equivalente sería de unos $ 12.927,42 (14,23%).</p>
+    <p style="margin-bottom:0"><strong>Debe verificarse contra el algoritmo real de facturación antes de concluir que el efecto se produce efectivamente en la factura.</strong> El motor de liquidación podría aplicar prorrateo, transición gradual u otro criterio no explicitado en el cuadro. Lo que este análisis afirma es que la tabla, leída literalmente, produce esa discontinuidad; no que la facturación la aplique.</p>
+  </div>
+  <div class="figure" id="fig-notch"></div>
+  <div class="figure" id="fig-facturas"></div>
+  <div class="note ok">
+    <div class="nt">✓ Diseños alternativos <span class="ev ev-pr">Propuesta</span></div>
+    <p style="margin-bottom:0">Si se confirmara el efecto, tres alternativas evitan el escalón: reducción lineal del beneficio a medida que crece el consumo; subsidio decreciente por bloque; o un cargo fijo independiente del consumo con la ayuda focalizada íntegramente en la energía.</p>
+  </div>
+
+  <h3>Baja tensión frente a media tensión</h3>
+  <div class="grid g2">
+    <div class="figure" id="fig-btmt"></div>
+    <div class="figure" id="fig-btmt-e"></div>
+  </div>
+  <div class="note explain">
+    <div class="nt">◆ Causalidad de costos <span class="ev ev-an">Análisis</span></div>
+    <p style="margin-bottom:0">La brecha es mucho mayor en potencia que en energía, lo cual es coherente: el nivel de tensión determina cuántas etapas de transformación y de red secundaria utiliza el usuario, más que el volumen de energía transportado. La Ley 6.073 establece que una categoría no debe soportar costos atribuibles a otra.</p>
+  </div>
+
+  <h3>Zonas bioambientales y bloque subsidiado <span class="ev ev-of">Oficial</span></h3>
+  <div class="tablewrap"><table id="zonasTabla">
+    <caption>Límites del bloque base según zona, convertidos a facturación bimestral por el cuadro provincial.</caption>
+    <thead><tr><th>Zona</th><th class="num">Verano (mensual)</th><th class="num">Verano (bimestral)</th><th class="num">Mayo a agosto (bim.)</th><th class="num">Resto del año (bim.)</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <div class="note pending">
+    <div class="nt">◈ Conversión mensual → bimestral <span class="ev ev-pr">Propuesta</span></div>
+    <p style="margin-bottom:0">El régimen nacional trabaja en kWh mensuales y DPEC factura ciertas categorías en forma bimestral. La conversión 300 → 600 es aritméticamente trivial, pero deja sin resolver: períodos que no coinciden con meses calendario, lecturas de 58, 60 o 64 días, cambio de porcentaje a mitad de bimestre, mudanzas, altas y bajas y cambios de zona. Una norma específica debería definir prorrateo diario.</p>
+  </div>
+</section>
+
+<!-- 06 FACTURA -->
+<section class="view" id="factura">
+  <div class="sec-head"><h2>Cómo se forma la factura</h2></div>
+  <p class="lede">La estructura de abajo es la <strong>secuencia conceptual</strong> de formación del importe. Hacé clic en cualquier fila para ver qué es cada componente, quién lo determina y con qué norma.</p>
+
+  <div class="note problem">
+    <div class="nt">⚠ Tarifa ≠ factura final</div>
+    <p style="margin-bottom:0">Un valor unitario del cuadro tarifario nunca equivale al importe a pagar. La factura puede incluir cargo fijo, energía, potencia, energía por banda horaria, penalidades técnicas, ajustes de abastecimiento, subsidios, créditos de inyección, impuestos, tasas y contribuciones legalmente autorizadas, deudas e intereses. La Ley 6.073 exige que todos esos conceptos aparezcan discriminados y que los tributos se transfieran a sus beneficiarios.</p>
+  </div>
+
+  <div class="filters" id="facFiltros"></div>
+  <div id="facCascada"></div>
+
+  <div class="note pending">
+    <div class="nt">◈ Qué no puede calcularse con la información disponible <span class="ev ev-vp">Validación pendiente</span></div>
+    <p style="margin-bottom:0">El desglose interno entre <strong>PEST</strong>, <strong>VAD</strong>, <strong>transporte</strong>, <strong>FNEE</strong> y <strong>ajuste por contratos de abastecimiento</strong> no está publicado por categoría en el material relevado: el cuadro presenta el resultado agregado. Del mismo modo, los <strong>impuestos, tasas y contribuciones</strong> dependen de la jurisdicción provincial y municipal del suministro. Por eso la cascada muestra su posición en la secuencia, pero no atribuye montos a esos componentes.</p>
+  </div>
+
+  <h3>Modelo de factura explicable <span class="ev ev-pr">Propuesta</span></h3>
+  <p>Al hacer clic en cualquier concepto de una factura real, el usuario debería poder ver la trazabilidad completa del importe:</p>
+  <div class="grid g3">
+    <div class="card" style="margin-top:0"><h4>Cargo tarifario</h4><p style="margin-bottom:0">“Este cargo surge de la categoría X, Cuadro 108-E, página N, aprobado por Resolución DPEC…, Resolución EPRE… y Decreto…, calculado como 243 kWh × $ X.”</p></div>
+    <div class="card" style="margin-top:0"><h4>Subsidio</h4><p style="margin-bottom:0">“Usted recibió $ X de bonificación nacional SEF sobre Y kWh de consumo base. El límite aplicable es Z porque su suministro está clasificado en zona bioambiental…”</p></div>
+    <div class="card" style="margin-top:0"><h4>Generación distribuida</h4><p style="margin-bottom:0">“Inyectó X kWh × tarifa de inyección Y = crédito Z, imputado al período…”</p></div>
+  </div>
+</section>
+
+<!-- 07 SUBSIDIOS -->
+<section class="view" id="subsidios">
+  <div class="sec-head"><h2>Régimen de Subsidios Energéticos Focalizados</h2></div>
+  <p class="lede">El Decreto nacional 943/2025 creó, con vigencia desde 2026, el régimen único SEF y dejó atrás la segmentación N1/N2/N3. Toda referencia a ese esquema anterior corresponde a régimen no vigente.</p>
+
+  <div class="note problem">
+    <div class="nt">⚠ Cuatro magnitudes que no deben confundirse <span class="ev ev-an">Análisis</span></div>
+    <div class="tablewrap" style="margin:.6rem 0 0"><table>
+      <thead><tr><th>Magnitud</th><th>Qué es</th><th>Quién la fija</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Bonificación nacional</strong></td><td>Porcentaje que la Nación decide bonificar: 50% general más la extraordinaria vigente en el mes.</td><td>Secretaría de Energía de la Nación</td></tr>
+        <tr><td><strong>Porcentaje aplicado al PEST</strong></td><td>La bonificación se aplica sobre el precio estacional de la energía correspondiente al bloque base, no sobre la tarifa completa.</td><td>Decreto 943/2025, art. 7°</td></tr>
+        <tr><td><strong>Reducción efectiva de la tarifa minorista</strong></td><td>Cuánto baja el valor del cuadro tarifario provincial, que también contiene VAD y otros componentes no subsidiados.</td><td>Resultado del cuadro provincial</td></tr>
+        <tr><td><strong>Subsidio total sobre la factura</strong></td><td>Proporción del importe final finalmente ahorrada, una vez incorporados cargo fijo, impuestos y demás conceptos.</td><td>Resultado de la liquidación</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <p><strong>“50% sobre el PEST” no significa “50% de descuento sobre la factura”.</strong> En el Cuadro 108-E la reducción efectiva del componente variable del bloque subsidiado resulta de aproximadamente 38,22% en junio y 37,41% en julio para el usuario urbano, y de 25,02% y 24,50% para el rural. <span class="ev ev-cp">Cálculo propio</span></p>
+
+  <h3>Bloques base <span class="ev ev-of">Oficial</span></h3>
+  <div class="grid g2" id="sefBloques"></div>
+
+  <h3>Evolución mensual de la bonificación extraordinaria</h3>
+  <div class="figure" id="fig-boni2"></div>
+  <div class="tablewrap"><table id="sefTabla">
+    <caption>Secuencia normativa nacional de 2026. La columna de verificación indica si el acto pudo confirmarse en fuentes oficiales.</caption>
+    <thead><tr><th>Mes</th><th class="num">Bonificación extraordinaria</th><th>Norma</th><th>Fecha</th><th>Verificación</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+
+  <h3>Aplicación en Corrientes</h3>
+  <div class="figure" id="fig-sefahorro"></div>
+  <div class="note pending">
+    <div class="nt">◈ Desfase entre el cuadro provincial y la norma nacional <span class="ev ev-an">Análisis</span></div>
+    <p style="margin-bottom:0">Las columnas de julio del Cuadro 108-E fueron construidas dentro de una cadena normativa que preveía un porcentaje menor para ese mes. La Resolución 146/2026, publicada el 1 de julio de 2026 y verificada en el Boletín Oficial, elevó la bonificación de julio a 16,59%. No es prudente utilizar esas columnas como única fuente del importe aplicable sin identificar qué acto provincial posterior instrumentó la nueva bonificación; en las fuentes consultadas no se localizó un cuadro consolidado posterior.</p>
+  </div>
+  <div class="note explain">
+    <div class="nt">◆ Subsidio nacional y beneficio provincial son cosas distintas <span class="ev ev-of">Oficial</span></div>
+    <p style="margin-bottom:0">El SEF es un régimen nacional que opera sobre el componente mayorista. La provincia puede además establecer bonificaciones propias, y el régimen de generación distribuida contempla beneficios provinciales específicos (como exenciones impositivas de la Ley 6.503). Agruparlos en una sola línea “subsidio” impide saber quién financia cada beneficio.</p>
+  </div>
+  <div class="badge-row">
+    <span class="pill nac">Subsidio al precio mayorista nacional</span>
+    <span class="pill prov">Bonificación provincial</span>
+    <span class="pill reg">Electrodependencia</span>
+    <span class="pill reg">Entidad de bien público / club</span>
+    <span class="pill tar">Créditos por generación</span>
+  </div>
+</section>
+<!-- 08 VAD Y MEM -->
+<section class="view" id="vadmem">
+  <div class="sec-head"><h2>VAD, MEM y formación del costo</h2></div>
+  <p class="lede">El principio de aditividad de la Ley 6.073 permite escribir la tarifa como <code>costo propio eficiente de distribución + costo de abastecimiento + ajustes permitidos ± subsidios + otros conceptos legalmente incorporados</code>. Cada componente tiene autoridad, norma y frecuencia de actualización distintas.</p>
+
+  <h3>Trazabilidad por componente</h3>
+  <div class="tablewrap"><table id="compTabla">
+    <caption>Quién determina cada componente del costo y con qué instrumento.</caption>
+    <thead><tr><th>Componente</th><th>Ámbito</th><th>Autoridad</th><th>Instrumento</th><th>Frecuencia</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+
+  <h3>Diagrama de formación tarifaria</h3>
+  <div class="chain">
+    <div class="node" style="border-left:3px solid var(--series-7)"><b>Nacional</b>PEST: precio estacional de la energía</div>
+    <div class="node" style="border-left:3px solid var(--series-7)"><b>Nacional</b>Potencia mayorista</div>
+    <div class="node" style="border-left:3px solid var(--series-7)"><b>Nacional</b>Transporte</div>
+    <div class="node" style="border-left:3px solid var(--series-7)"><b>Nacional</b>FNEE</div>
+    <div class="node" style="border-left:3px solid var(--series-7)"><b>Nacional</b>Bonificación SEF</div>
+  </div>
+  <div class="chain">
+    <div class="node" style="border-left:3px solid var(--series-4)"><b>Mixto</b>Contratos de abastecimiento de DPEC</div>
+    <div class="node" style="border-left:3px solid var(--series-4)"><b>Mixto</b>Ajuste por diferencia entre precio estacional y contractual</div>
+    <div class="node" style="border-left:3px solid var(--series-4)"><b>Mixto</b>Pass-through</div>
+  </div>
+  <div class="chain">
+    <div class="node" style="border-left:3px solid var(--series-1)"><b>Provincial</b>VAD</div>
+    <div class="node" style="border-left:3px solid var(--series-1)"><b>Provincial</b>Estructura de categorías y cargos</div>
+    <div class="node" style="border-left:3px solid var(--series-1)"><b>Provincial</b>Bonificaciones provinciales</div>
+    <div class="node" style="border-left:3px solid var(--series-1)"><b>Provincial</b>Aprobación del cuadro</div>
+  </div>
+
+  <h3>El mecanismo de pass-through <span class="ev ev-of">Oficial</span></h3>
+  <p>El Decreto provincial 3518/2022 documenta el circuito completo: DPEC tramitó el traslado de nuevos costos mayoristas de potencia, energía y transporte; la Subgerencia de Asuntos Regulatorios calculó los valores con la ecuación general aprobada por la Res. MOPySP 70/2018 y el Decreto 340/2018, homologados luego por la Res. EPRE 5/2021 y el Decreto 1155/2021. La Resolución DPEC 629/2026 refiere nuevamente a esa ecuación y a la necesidad de autorización previa del EPRE.</p>
+  <div class="chain">
+    <div class="node"><b>1</b>DPEC calcula</div><span class="arrow">→</span>
+    <div class="node"><b>2</b>Resolución DPEC</div><span class="arrow">→</span>
+    <div class="node"><b>3</b>EPRE analiza y autoriza</div><span class="arrow">→</span>
+    <div class="node"><b>4</b>Decreto del Poder Ejecutivo</div><span class="arrow">→</span>
+    <div class="node hi"><b>5</b>Aplicación tarifaria</div>
+  </div>
+
+  <h3>Contratos de abastecimiento <span class="ev ev-of">Oficial</span></h3>
+  <p>La documentación tarifaria de 2026 indica que DPEC contrató energía y potencia para cubrir demanda estacionalizada no atendida de otro modo y determinados usuarios de gran demanda. El costo contractual puede variar por cargos variables de generación, tipo de cambio y condiciones particulares. Por eso la metodología calcula primero la tarifa suponiendo adquisición al precio estacional y luego aplica un <strong>ajuste por la diferencia entre precio estacional y precio contractual</strong>; cuando el contrato resulta más barato, el ajuste opera a favor del usuario. La página 4 del cuadro muestra esas tres columnas de forma explícita.</p>
+  <div class="note ok">
+    <div class="nt">✓ Simetría del mecanismo <span class="ev ev-an">Análisis</span></div>
+    <p style="margin-bottom:0">Que el ajuste pueda operar en ambos sentidos es correcto: un pass-through simétrico traslada tanto aumentos como ahorros. La observación es de <em>parametrización</em>, no de diseño.</p>
+  </div>
+  <div class="note pending">
+    <div class="nt">◈ Reglas que convendría explicitar <span class="ev ev-pr">Propuesta</span></div>
+    <p style="margin-bottom:0">Precio de referencia; contratos elegibles; costos reconocidos; pérdidas; tipo de cambio; periodicidad del ajuste; diferencias acumuladas; intereses; conciliación posterior; auditoría; tratamiento de errores; y mecanismo de devolución. Sin esa parametrización, el usuario ve una columna “ajuste por contrato” sin poder reconstruir cómo se obtuvo.</p>
+  </div>
+
+  <h3>Incentivos de compra eficiente <span class="ev ev-pr">Propuesta</span></h3>
+  <p>El artículo 25 de la Ley 6.073 obliga al EPRE a regular el tratamiento de menores o mayores costos de adquisición de energía por parte del distribuidor <span class="ev ev-of">Oficial</span>. Sobre esa base, una metodología futura podría establecer un precio <em>benchmark</em>: si la compra se realiza por debajo, parte del ahorro se traslada de inmediato y una fracción acotada puede reconocerse como incentivo; si se realiza por encima sin justificación, la diferencia no necesariamente debería trasladarse en su totalidad. Debe adaptarse a las obligaciones federales de contratación y traslado de costos reconocidos.</p>
+
+  <h3>Cuenta regulatoria de diferencias <span class="ev ev-pr">Propuesta</span></h3>
+  <p>Cuando el costo efectivo y el facturado divergen, una cuenta regulatoria pública permitiría ver qué parte del ajuste corresponde a costos pasados. Fórmula sugerida y estructura de la cuenta:</p>
+  <pre>PT_t = (CostoMEM_t + Transporte_t + Contratos_t + FNEE_t + OtrosReconocidos_t)
+       − CostoBaseReconocido + Saldo_(t−1)
+
+Saldo inicial              + $ …
+Costo mayorista real       + $ …
+Recaudación pass-through   − $ …
+Intereses reconocidos      + $ …
+= Saldo a recuperar        + $ …</pre>
+  <p>Debería indicar además qué costos son plenamente trasladables, cuáles son controlables por DPEC, qué eficiencia se exige, qué pérdidas se reconocen, cómo se distribuyen diferencias por contratos, qué ocurre con ajustes retroactivos de CAMMESA, cómo se devuelven sobre-recuperaciones y qué tasa aplica a los saldos acumulados.</p>
+
+  <h3>Metodología tarifaria reproducible <span class="ev ev-pr">Propuesta</span></h3>
+  <pre>Base de capital regulatoria → depreciaciones → OPEX eficiente →
+pérdidas reconocidas → inversiones → costo de capital →
+demanda proyectada → asignación por nivel de tensión →
+costos comerciales → categorías → cargos → subsidios → factura</pre>
+  <p>Con indicadores de productividad publicables: OPEX por usuario, OPEX por MWh, empleados por mil usuarios, pérdidas técnicas y no técnicas, km de red por usuario, costo comercial por factura, inversión por usuario, SAIDI por inversión, cobrabilidad y morosidad. El objetivo no es trasladar los costos históricos a tarifa, sino determinar un costo eficiente.</p>
+</section>
+
+<!-- 09 GENERACIÓN DISTRIBUIDA -->
+<section class="view" id="gd">
+  <div class="sec-head"><h2>Generación distribuida</h2></div>
+  <p class="lede">Dos planos separados: lo que hoy está vigente y verificable, y la agenda regulatoria futura. Nada de lo que figura como agenda constituye obligación normativa actual.</p>
+
+  <h3>Régimen vigente</h3>
+  <div class="badge-row">
+    <span class="pill nac">Ley nacional 27.424</span>
+    <span class="pill nac">Decreto nacional 986/2018</span>
+    <span class="pill nac">Res. SE 314/2018 y modif.</span>
+    <span class="pill nac">Res. SE 287/2025</span>
+    <span class="pill prov">Ley provincial 6.503</span>
+    <span class="pill prov">Ley 6.428, arts. 16 a 25</span>
+    <span class="pill reg">Res. SE provincial 240/2020</span>
+  </div>
+
+  <div class="grid g2">
+    <div class="card" style="margin-top:0;border-top:3px solid var(--series-3)">
+      <h4>Derechos del usuario-generador <span class="ev ev-of">Oficial</span></h4>
+      <ul style="margin-bottom:0">
+        <li>Instalar generación renovable hasta una potencia equivalente a la contratada, sujeto a autorización.</li>
+        <li>Autoconsumir e inyectar excedentes bajo balance neto monetario.</li>
+        <li>Que la distribuidora tramite la conexión en los plazos previstos para medidores.</li>
+        <li>Llevar las controversias al regulador jurisdiccional.</li>
+      </ul>
+    </div>
+    <div class="card" style="margin-top:0;border-top:3px solid var(--series-8)">
+      <h4>Límites al distribuidor <span class="ev ev-of">Oficial</span></h4>
+      <p style="margin-bottom:0">No puede agregar cargos específicos de mantenimiento de red, peaje, respaldo eléctrico u otros conceptos por el solo hecho de que el usuario posea generación distribuida. Los estudios técnicos de seguridad de red tampoco pueden transformarse por sí mismos en un cargo de acceso o respaldo.</p>
+    </div>
+  </div>
+
+  <h3>Reglamentación provincial · Resolución 240/2020 <span class="ev ev-of">Oficial</span></h3>
+  <p>Dictada el 8 de octubre de 2020 por la Secretaría de Energía de Corrientes como autoridad de aplicación, reglamenta la Ley 6.503 en cinco artículos. Contenido verificado en las publicaciones oficiales de la Secretaría y de DPEC:</p>
+  <ul>
+    <li><strong>Datos de generación:</strong> reporte mensual de generación de energía renovable o acceso a los datos del inversor.</li>
+    <li><strong>Reserva de potencia:</strong> obligación de solicitar incremento de la potencia contratada si la instalación excede la potencia actual.</li>
+    <li><strong>Registro de instaladores:</strong> dos registros según potencia, por encima y por debajo de 20 kW, administrados por el CPIAyA.</li>
+    <li><strong>Tarifa de inyección:</strong> equivalente al precio estabilizado de la energía más transporte en el Mercado Eléctrico Mayorista.</li>
+    <li><strong>Cesión de créditos:</strong> conforme a la normativa nacional (Res. 314/2018).</li>
+  </ul>
+  <div class="note explain">
+    <div class="nt">◆ Net billing, no net metering <span class="ev ev-an">Análisis</span></div>
+    <p style="margin-bottom:0">El usuario no vende su excedente al precio minorista completo: recibe un valor relacionado con el <strong>costo evitado de adquisición</strong>. La brecha entre tarifa de inyección y precio minorista no es margen del distribuidor, porque el precio minorista incluye distribución, comercialización y capacidad, costos que no se evitan porque un prosumidor inyecte 1 kWh. Ver los valores comparados en la sección de tarifas.</p>
+  </div>
+
+  <div class="note explain">
+    <div class="nt">◆ La prohibición de reventa no alcanza a la inyección <span class="ev ev-an">Análisis</span></div>
+    <p style="margin-bottom:0">El Reglamento de Suministro prohíbe al usuario vender o transferir la energía que DPEC le suministra. Esa cláusula, anterior al régimen de generación distribuida, no comprende la inyección de energía propia de fuente renovable por un usuario-generador autorizado, que es una actividad expresamente regulada por las Leyes 27.424 y 6.503. Una consolidación del Reglamento debería explicitar la excepción para eliminar la contradicción aparente.</p>
+  </div>
+
+  <h3>Generación Distribuida Comunitaria</h3>
+  <div class="note pending">
+    <div class="nt">◈ Resolución provincial 217/2026: validación documental pendiente <span class="ev ev-vp">Validación pendiente</span></div>
+    <p>La documentación suministrada para este análisis describe una Resolución 217/2026 del 10 de junio de 2026 que incorporaría al reglamento provincial las condiciones técnicas, económicas y administrativas de la Generación Distribuida Comunitaria y su modalidad virtual. <strong>En las búsquedas realizadas en fuentes oficiales no fue posible localizar el acto publicado.</strong></p>
+    <p style="margin-bottom:0">Hasta su verificación, el contenido que sigue se presenta como <strong>descripción de la documentación aportada</strong>, no como régimen vigente. Debe confirmarse en el Boletín Oficial provincial o en las publicaciones de la Secretaría de Energía de Corrientes antes de invocarse. A nivel nacional, en cambio, la Resolución SE 287/2025 (verificada) sí reconoce las categorías de usuario-generador comunitario y comunitario virtual.</p>
+  </div>
+
+  <details class="acc">
+    <summary>Contenido descripto en la documentación aportada <span class="ev ev-vp">Validación pendiente</span></summary>
+    <div class="body">
+      <h4 style="margin-top:0">Figuras del régimen</h4>
+      <div class="tablewrap" style="margin-top:.4rem"><table>
+        <thead><tr><th>Figura</th><th>Descripción según la documentación aportada</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Usuario-Generador Comunitario</strong></td><td>Usuario-generador comprendido en la normativa nacional y provincial.</td></tr>
+          <tr><td><strong>Usuario Titular Comunitario</strong></td><td>Titular del suministro donde se vincula la generación; actúa como interlocutor y administrador.</td></tr>
+          <tr><td><strong>Usuario Integrante Comunitario</strong></td><td>Usuario que recibe por cesión una proporción de los créditos originados en la inyección.</td></tr>
+          <tr><td><strong>Usuario-Generador Mixto</strong></td><td>Posee generación propia y además recibe créditos de generación comunitaria.</td></tr>
+          <tr><td><strong>Generación Distribuida Comunitaria</strong></td><td>Sistema renovable de autoconsumo e inyección cuyos créditos se asignan a los participantes.</td></tr>
+          <tr><td><strong>GDC Virtual</strong></td><td>La generación y los puntos de consumo no requieren estar conectados físicamente detrás de un mismo suministro.</td></tr>
+        </tbody>
+      </table></div>
+      <h4>Requisitos descriptos</h4>
+      <dl class="kv">
+        <dt>Participantes</dt><dd>Dos o más usuarios con puntos de suministro independientes atendidos por el mismo distribuidor; personas humanas, jurídicas, consorcios y establecimientos públicos.</dd>
+        <dt>Límite de potencia</dt><dd>No superior a la suma de las potencias contratadas de los participantes, con tope de 12 MW (coincidente con la Res. SE 287/2025, que sí está verificada).</dd>
+        <dt>Potencia de conexión</dt><dd>Determinada por la capacidad del equipo de acople o inversor, no por la suma nominal de paneles. Criterio técnicamente correcto: la red “ve” la máxima potencia intercambiable por el inversor.</dd>
+        <dt>Procedimiento</dt><dd>Instalación por instalador habilitado → medición bidireccional → verificación del distribuidor → contrato → habilitación de la inyección → certificado nacional → distribución de créditos.</dd>
+        <dt>Bonificación</dt><dd>Bonificación del 100% de los cargos de potencia del Usuario-Generador Comunitario, manteniéndose los contratos de suministro de cada integrante.</dd>
+        <dt>Créditos</dt><dd>Asignación por período según los porcentajes informados; horizonte de doce meses para saldos no utilizados.</dd>
+        <dt>Gobernanza interna</dt><dd>Los integrantes fijan sus propias reglas; la distribuidora queda ajena a los conflictos internos del grupo.</dd>
+      </dl>
+      <p style="margin-bottom:0"><strong>Observación <span class="ev ev-an">Análisis</span>:</strong> si el esquema se confirma, la bonificación del 100% del cargo de potencia requiere identificar quién absorbe el costo de capacidad de red que de otro modo se habría cobrado. Si es política pública provincial, debería tener fuente de financiamiento explícita para no generar subsidios cruzados incompatibles con el principio de causalidad de la Ley 6.073. Del mismo modo, dejar toda la gobernanza interna al contrato privado puede ser problemático cuando participan consumidores residenciales con distinto poder negociador: convendría un contenido mínimo obligatorio (porcentajes, entrada y salida, cesión, fallecimiento, insolvencia, mora, mantenimiento, seguros, reposición de equipos, desmantelamiento).</p>
+    </div>
+  </details>
+
+  <h3>Agenda regulatoria futura <span class="ev ev-pr">Propuesta</span></h3>
+  <p>Ninguno de los puntos siguientes constituye obligación vigente. Son materias que un desarrollo regulatorio posterior debería resolver.</p>
+  <div class="tablewrap"><table>
+    <caption>Materias abiertas, ordenadas por área.</caption>
+    <thead><tr><th>Área</th><th>Materia</th><th>Pregunta a resolver</th></tr></thead>
+    <tbody>
+      <tr><td>Red</td><td>Pérdidas</td><td>¿Se asignan al generador, al distribuidor o a los integrantes?</td></tr>
+      <tr><td>Red</td><td>Congestión</td><td>¿Qué ocurre si la red no puede aceptar toda la inyección?</td></tr>
+      <tr><td>Red</td><td><em>Curtailment</em></td><td>¿Cómo se remunera o distribuye un recorte de generación?</td></tr>
+      <tr><td>Red</td><td>Ubicación</td><td>¿Una instalación cercana a la carga debe recibir una señal distinta de otra distante?</td></tr>
+      <tr><td>Red</td><td><em>Hosting capacity</em></td><td>Publicación por alimentador de capacidad instalada, demanda máxima y mínima, GD instalada y en trámite, potencia adicional admisible y restricciones.</td></tr>
+      <tr><td>Medición</td><td>Simultaneidad</td><td>¿Qué intervalo se usa para la modalidad virtual: 15 minutos, una hora, otro?</td></tr>
+      <tr><td>Medición</td><td>Medidores inteligentes</td><td>Requisitos, propiedad y costos.</td></tr>
+      <tr><td>Datos</td><td>Acceso y consentimiento</td><td>¿Quién puede acceder a los perfiles horarios?</td></tr>
+      <tr><td>Datos</td><td>API</td><td>Estándares para que titular y participantes consulten producción y créditos.</td></tr>
+      <tr><td>Datos</td><td>Ciberseguridad</td><td>Autenticación, integridad, disponibilidad y recuperación.</td></tr>
+      <tr><td>Usuarios</td><td>Portabilidad</td><td>¿El crédito sigue al usuario o al punto de suministro ante una mudanza?</td></tr>
+      <tr><td>Usuarios</td><td>Mora, sucesión e insolvencia</td><td>¿Puede recibir crédito quien adeuda facturas? ¿Se transmite la participación?</td></tr>
+      <tr><td>Tecnología</td><td>Almacenamiento</td><td>¿Puede cargarse desde la red e inyectarse luego? ¿Recibe tarifa de inyección? ¿Cómo se evita el arbitraje con subsidios? ¿Puede una batería comunitaria prestar servicios de red?</td></tr>
+      <tr><td>Tecnología</td><td>Demanda flexible</td><td>¿Puede remunerarse la reducción de consumo?</td></tr>
+      <tr><td>Tecnología</td><td>Movilidad eléctrica</td><td>Carga domiciliaria con señal valle, electrolineras, potencia flexible, interrumpibilidad voluntaria y <em>vehicle-to-grid</em>. No se identificó categoría específica en el material relevado.</td></tr>
+      <tr><td>Fomento</td><td>Fondo de la Ley 6.428</td><td>Los arts. 16 a 25 siguen vigentes, pero el estado operativo del fondo a la fecha de este análisis no pudo establecerse. Requiere auditoría normativa y presupuestaria antes de publicarse como beneficio disponible.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+<!-- 10 USUARIOS -->
+<section class="view" id="usuarios">
+  <div class="sec-head"><h2>Usuarios: derechos, trámites y reclamos</h2></div>
+  <p class="lede">Sección orientada a quien usa el servicio. El régimen aplicable surge de la combinación entre el Reglamento General de Suministro, la Ley provincial 6.073 y la Ley nacional 24.240.</p>
+
+  <div class="note pending">
+    <div class="nt">◈ Superposición normativa a resolver <span class="ev ev-an">Análisis</span></div>
+    <p style="margin-bottom:0">El Reglamento General de Suministro publicado por DPEC fue aprobado por Resolución de Intervención 568/2000 y modificatorias, y publicado en el Boletín Oficial provincial el 30 de octubre de 2003. La Ley 6.073, posterior, encomienda al EPRE dictar un Reglamento Técnico de Suministro que abarque seguridad, medición, facturación, uso de medidores, interrupción y reconexión, acceso a inmuebles y calidad. <strong>En la documentación relevada no se localizó un texto integral del EPRE que lo sustituya.</strong> Esto no equivale a afirmar que no existan resoluciones parciales posteriores: significa que no fue posible identificar un texto consolidado.</p>
+  </div>
+
+  <h3>Derechos y deberes <span class="ev ev-of">Oficial</span></h3>
+  <div class="grid g2">
+    <div class="card" style="margin-top:0;border-top:3px solid var(--series-3)">
+      <h4>Derechos (Ley 6.073)</h4>
+      <ul style="margin-bottom:0">
+        <li>Suministro continuo, regular, uniforme y general.</li>
+        <li>Niveles mínimos de calidad determinados por el EPRE.</li>
+        <li>Facturación sobre consumos efectivamente medidos y tarifas aprobadas.</li>
+        <li>Verificar la información utilizada en la facturación.</li>
+        <li>Recurrir al EPRE si el distribuidor no responde adecuadamente.</li>
+        <li>Información clara y precisa y tratamiento diligente de reclamos.</li>
+        <li>Compensación por daños imputables al servicio.</li>
+        <li>No ser privado del suministro sin causa real y prevista normativamente.</li>
+        <li>Aviso anticipado de cortes programados.</li>
+        <li>Conocer el régimen tarifario y sus modificaciones antes de su aplicación.</li>
+        <li>Factura con todos los conceptos discriminados.</li>
+      </ul>
+    </div>
+    <div class="card" style="margin-top:0;border-top:3px solid var(--series-2)">
+      <h4>Deberes</h4>
+      <ul>
+        <li>Pago en término.</li>
+        <li>Uso racional de la energía.</li>
+        <li>Destino del suministro conforme al encuadramiento.</li>
+        <li>Permitir el acceso para inspecciones.</li>
+        <li>Comunicar desperfectos.</li>
+        <li>Mantener el factor de potencia dentro del mínimo aplicable.</li>
+      </ul>
+      <h4>Factor de potencia</h4>
+      <p style="margin-bottom:0">El Reglamento prevé intimación por sesenta días y, si persiste la deficiencia, recargos; cuando compromete severamente el servicio puede llegar a la suspensión. Fundamento: un bajo factor de potencia obliga a transportar mayor corriente y a usar capacidad de red sin aportar energía activa proporcional.</p>
+    </div>
+  </div>
+
+  <h3>Titularidad y conexión <span class="ev ev-of">Oficial</span></h3>
+  <div class="grid g3">
+    <div class="stat"><div class="label">Figura 1</div><div class="value sm">Titular</div><div class="sub">Acredita posesión o tenencia legal del inmueble o instalación.</div></div>
+    <div class="stat"><div class="label">Figura 2</div><div class="value sm">Titular precario</div><div class="sub">Ocupante que acredita posesión o tenencia mediante certificado de domicilio o instrumento equivalente.</div></div>
+    <div class="stat"><div class="label">Figura 3</div><div class="value sm">Titular transitorio</div><div class="sub">Suministros temporales: obras, exposiciones, publicidad, ferias o circos.</div></div>
+  </div>
+  <p>El acceso al servicio no está restringido al propietario registral. Para habilitar el servicio el Reglamento exige, entre otros elementos, no registrar determinadas deudas con DPEC, documentación de titularidad o posesión, datos personales y técnicos, carga instalada y destino del suministro, garantía cuando corresponda y pago de derechos de conexión conforme al cuadro tarifario.</p>
+  <p><strong>Frontera de responsabilidades:</strong> el límite se ubica inmediatamente después del último elemento de medición. Los elementos de medición son propiedad de DPEC; las instalaciones civiles y electromecánicas, del usuario. Si una nueva demanda supera la capacidad de las redes existentes, DPEC puede requerir espacio para un centro de transformación, que puede abastecer a terceros si técnicamente corresponde, instrumentado por convenio.</p>
+  <div class="note pending">
+    <div class="nt">◈ Vacío en el financiamiento de expansiones <span class="ev ev-pr">Propuesta</span></div>
+    <p style="margin-bottom:0">Cuando un usuario provoca una expansión que luego beneficia a muchos, el marco debería definir contribuciones iniciales, reembolsos posteriores, qué activos pasan al prestador, amortización y reglas de no discriminación. El Reglamento actual remite a convenio sin fijar esos parámetros.</p>
+  </div>
+
+  <h3>Medición y contraste <span class="ev ev-of">Oficial</span></h3>
+  <ul>
+    <li>El usuario puede pedir verificación, contraste <em>in situ</em> y contraste en laboratorio.</li>
+    <li>Si el equipo está <strong>dentro de tolerancia</strong>, los gastos de determinados contrastes pueden quedar a su cargo.</li>
+    <li>Si está <strong>fuera de tolerancia</strong>, DPEC ajusta la facturación mediante notas de crédito o débito y asume los gastos.</li>
+    <li>Si no puede determinarse el consumo, se estima con los últimos doce meses o con una medición posterior de treinta días ajustada por estacionalidad.</li>
+  </ul>
+
+  <h3>Facturación, mora y factura cuestionada</h3>
+  <div class="tablewrap"><table>
+    <caption>Divergencias entre el Reglamento de 2003 y la legislación nacional de consumidores vigente. En caso de duda prevalece la solución más favorable al consumidor.</caption>
+    <thead><tr><th>Materia</th><th>Reglamento DPEC (2003)</th><th>Ley nacional 24.240 (vigente)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Interés por mora</strong></td><td>Mora automática e intereses vinculados con la tasa de descuento de documentos a 30 días del Banco Nación.</td><td>No puede exceder en más del <strong>50%</strong> la tasa pasiva para depósitos a 30 días del Banco Nación del último día del mes anterior al pago.</td></tr>
+      <tr><td><strong>Umbral estacional</strong></td><td>Los reclamos, como regla, no tienen efecto suspensivo. Excepción cuando el consumo supera en más del <strong>70%</strong> el promedio del mismo período de los dos años anteriores.</td><td>Umbral del <strong>75%</strong> para servicios con variaciones estacionales.</td></tr>
+      <tr><td><strong>Conceptos indebidos</strong></td><td>No previsto de manera específica.</td><td>El usuario puede reclamar pagando <strong>solo los conceptos no cuestionados</strong>. El prestador tiene <strong>30 días</strong> para acreditar el consumo. Si el reclamo prospera: devolución con intereses más un <strong>crédito adicional del 25%</strong>.</td></tr>
+      <tr><td><strong>Anticipación</strong></td><td>Pago dentro del vencimiento.</td><td>Entrega con al menos <strong>10 días</strong> de anticipación al vencimiento.</td></tr>
+      <tr><td><strong>Interrupciones</strong></td><td>Régimen de daños con exclusiones amplias.</td><td>Se <strong>presume</strong> que la causa es imputable al prestador salvo prueba en contrario dentro del plazo legal; si no lo demuestra, corresponde reintegrar el valor del servicio no prestado.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note explain">
+    <div class="nt">◆ Cláusula de armonización sugerida <span class="ev ev-pr">Propuesta</span></div>
+    <p style="margin-bottom:0">“Las disposiciones del presente régimen se integran con la Ley 24.240 y demás normativa de protección de consumidores; en caso de duda se aplicará la interpretación más favorable al usuario conforme al ordenamiento vigente.” Un motor de cálculo de deuda no debería basarse en una lectura aislada del texto de 2003.</p>
+  </div>
+
+  <h3>Daños en artefactos <span class="ev ev-of">Oficial</span></h3>
+  <p>El Reglamento reconoce responsabilidad por daños causados por deficiencias de calidad imputables a DPEC que no hayan podido evitarse mediante las protecciones normales. Exige identificación, factura, acreditación sobre los bienes y presupuestos o facturas de reparación, con respuesta dentro de treinta días. Excluye daños por sobretensiones atmosféricas, caso fortuito, interrupciones y hechos de terceros en determinadas circunstancias. <span class="ev ev-an">Análisis:</span> esas exclusiones deberían armonizarse con las reglas generales de responsabilidad para no trasladar al usuario riesgos atribuibles a falta de protección o mantenimiento de la red.</p>
+
+  <h3>Ruta del reclamo</h3>
+  <div class="chain">
+    <div class="node"><b>Paso 1 · DPEC</b>Reclamo ante el prestador. Guardia telefónica 24 h, autogestión, oficinas y guardias de distritos del interior. Corresponde siempre como instancia inicial.</div><span class="arrow">→</span>
+    <div class="node"><b>Paso 2 · EPRE</b>Recurso ante el regulador. Corresponde cuando el distribuidor no resolvió el reclamo, o ante incumplimientos de calidad o del contrato de servicio.</div><span class="arrow">→</span>
+    <div class="node"><b>Paso 3</b>Vías administrativas y judiciales correspondientes, agotada la instancia regulatoria.</div>
+  </div>
+  <div class="note explain">
+    <div class="nt">◆ En paralelo, no en serie <span class="ev ev-of">Oficial</span></div>
+    <p style="margin-bottom:0">Las facultades que la legislación de defensa del consumidor reconoce al usuario no quedan desplazadas por la escalera administrativa: operan de manera concurrente.</p>
+  </div>
+  <div class="note pending">
+    <div class="nt">◈ Trazabilidad del reclamo <span class="ev ev-pr">Propuesta</span></div>
+    <p style="margin-bottom:0">Todo reclamo debería recibir número único, hora de recepción, clasificación, estado, plazo máximo, solución y posibilidad de escalamiento directo al EPRE, de modo que el usuario no deba reconstruir verbalmente su historia en cada canal.</p>
+  </div>
+
+  <h3>Electrodependientes</h3>
+  <div class="note problem">
+    <div class="nt">⚠ La fila del cuadro tarifario no es el importe que paga el beneficiario</div>
+    <p>La Ley nacional 27.351 garantiza la continuidad del servicio a los usuarios registrados, reconoce tratamiento tarifario gratuito respecto del servicio bajo jurisdicción nacional (el beneficio consiste en el reconocimiento de la totalidad de esa facturación), exime derechos de conexión y contempla equipamiento alternativo sin cargo y una línea de atención permanente. Para los componentes provinciales, invita a las provincias a adherir y reconocer la gratuidad correspondiente.</p>
+    <p style="margin-bottom:0">En consecuencia, los valores del Cuadro 108-E para esta categoría pueden representar un <strong>valor técnico previo</strong> a créditos, compensaciones o reconocimientos. Presentarlos aislados genera riesgo de desinformación para un colectivo vulnerable.</p>
+  </div>
+  <div class="chain">
+    <div class="node"><b>1</b>Tarifa técnica del cuadro<br><span style="color:var(--text-muted)">Urbano: $ 10.771/bim. + $ 57,820/kWh<br>Rural: $ 20.140/bim. + $ 148,332/kWh</span></div><span class="arrow">↓</span>
+    <div class="node"><b>2</b>Beneficio nacional<br><span style="color:var(--text-muted)">Ley 27.351, sobre el servicio bajo jurisdicción nacional</span></div><span class="arrow">↓</span>
+    <div class="node"><b>3</b>Beneficio provincial<br><span style="color:var(--text-muted)">Según adhesión y alcance provincial, pendiente de verificación</span></div><span class="arrow">↓</span>
+    <div class="node"><b>4</b>Créditos y compensaciones<br><span style="color:var(--text-muted)">Inyección, ajustes, notas de crédito</span></div><span class="arrow">↓</span>
+    <div class="node hi"><b>5</b>Importe final<br><span style="color:var(--text-muted)">No deducible del cuadro tarifario por sí solo</span></div>
+  </div>
+</section>
+
+<!-- 11 CALIDAD -->
+<section class="view" id="calidad">
+  <div class="sec-head"><h2>Calidad del servicio</h2></div>
+  <p class="lede">Qué exige el marco vigente, qué información pública pudo identificarse y qué convendría incorporar. La distinción es deliberada: la ausencia de un dato en las fuentes relevadas no equivale a su inexistencia.</p>
+
+  <div class="note explain">
+    <div class="nt">◆ Base normativa vigente <span class="ev ev-of">Oficial</span></div>
+    <p style="margin-bottom:0">La Ley 6.073 consagra el derecho del usuario a niveles mínimos de calidad determinados por el EPRE, y atribuye al regulador el control de calidad, de interrupciones y reconexiones y la potestad sancionatoria (advertencias, multas, decomisos, intervención y hasta revocación de concesiones o permisos, con posibilidad de destinar multas a los usuarios perjudicados). La Ley 24.240 agrega la presunción de imputabilidad al prestador ante interrupciones.</p>
+  </div>
+
+  <div class="note pending">
+    <div class="nt">◈ Limitaciones de información pública identificadas <span class="ev ev-an">Análisis</span></div>
+    <p style="margin-bottom:0">Dentro del conjunto documental relevado no fue posible identificar un instrumento único, actualizado y de acceso directo que reúna indicadores públicos de frecuencia y duración de interrupciones, calidad de tensión, calidad comercial y penalidades individualizadas. Esto describe el estado de la <strong>información pública consultada</strong>: no afirma que no existan controles, mediciones técnicas ni resoluciones parciales del regulador.</p>
+  </div>
+
+  <h3>Dimensiones de la calidad <span class="ev ev-an">Análisis</span></h3>
+  <div class="grid g3">
+    <div class="stat"><div class="label">Dimensión 1</div><div class="value sm">Producto técnico</div><div class="sub">Tensión, frecuencia, perturbaciones, armónicos, flicker.</div></div>
+    <div class="stat"><div class="label">Dimensión 2</div><div class="value sm">Servicio técnico</div><div class="sub">Número de interrupciones, duración individual y acumulada, programadas y forzadas.</div></div>
+    <div class="stat"><div class="label">Dimensión 3</div><div class="value sm">Calidad comercial</div><div class="sub">Plazos de conexión, reconexión, lectura, facturación, reclamos, cambio de titularidad y contraste.</div></div>
+    <div class="stat"><div class="label">Dimensión 4</div><div class="value sm">Atención</div><div class="sub">Espera telefónica o digital, trazabilidad, tiempo hasta respuesta y solución.</div></div>
+    <div class="stat"><div class="label">Dimensión 5</div><div class="value sm">Información</div><div class="sub">Aviso de cortes, acceso a datos históricos y explicación de la factura.</div></div>
+  </div>
+
+  <h3>Indicadores</h3>
+  <div class="tablewrap"><table id="calTabla">
+    <caption>Estado de cada indicador dentro de las fuentes relevadas para este análisis.</caption>
+    <thead><tr><th>Indicador</th><th>Qué mide</th><th>Estado en las fuentes relevadas</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+
+  <h3>Régimen de créditos automáticos <span class="ev ev-pr">Propuesta</span></h3>
+  <p>Ninguno de los mecanismos siguientes está vigente. Se presentan como diseño posible: su ventaja es convertir la calidad en un incentivo económico del prestador, y no en un derecho que sólo obtiene el usuario suficientemente informado para iniciar un expediente.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Área</th><th>Indicador</th><th>Consecuencia propuesta</th></tr></thead>
+    <tbody>
+      <tr><td>Continuidad</td><td>Cantidad de cortes</td><td>Crédito automático al superar el límite</td></tr>
+      <tr><td>Continuidad</td><td>Horas acumuladas sin servicio</td><td>Crédito creciente</td></tr>
+      <tr><td>Corte prolongado</td><td>Duración individual máxima</td><td>Penalidad adicional</td></tr>
+      <tr><td>Tensión</td><td>Desviación respecto del rango</td><td>Crédito según gravedad y duración</td></tr>
+      <tr><td>Reclamo</td><td>Tiempo de respuesta</td><td>Compensación por demora</td></tr>
+      <tr><td>Conexión</td><td>Plazo máximo</td><td>Multa o crédito</td></tr>
+      <tr><td>Reconexión</td><td>Plazo máximo tras el pago</td><td>Crédito</td></tr>
+      <tr><td>Facturación</td><td>Porcentaje de lecturas estimadas</td><td>Límite anual</td></tr>
+      <tr><td>Medidor</td><td>Plazo de contraste</td><td>Sanción por incumplimiento</td></tr>
+      <tr><td>Información</td><td>Aviso previo de cortes programados</td><td>Sanción o compensación</td></tr>
+    </tbody>
+  </table></div>
+  <p><span class="ev ev-pr">Propuesta</span> Los indicadores deberían publicarse combinando nivel sistémico, por localidad, por alimentador y límites máximos individuales por usuario, para evitar que un buen promedio provincial oculte alimentadores con desempeño deficiente. Cuando la telemedición o el SCADA permitan acreditar el incumplimiento, el crédito debería ser automático.</p>
+</section>
+
+<!-- 13 CRONOLOGÍA -->
+<section class="view" id="cronologia">
+  <div class="sec-head"><h2>Cronología normativa</h2></div>
+  <p class="lede">Hitos entre 1960 y 2026. Cada evento indica norma, fecha, jurisdicción, tema, estado y fuente documental.</p>
+  <div class="filters" id="tlFiltros"></div>
+  <div class="count" id="tlCount"></div>
+  <div class="timeline" id="timeline"></div>
+</section>
+
+<!-- 15 FUENTES -->
+<section class="view" id="fuentes">
+  <div class="sec-head"><h2>Fuentes</h2></div>
+  <p class="lede">Origen de la información utilizada. Las fuentes marcadas como verificadas fueron consultadas durante la elaboración de esta ficha; las restantes corresponden a documentación aportada cuyo respaldo público no pudo localizarse.</p>
+
+  <h3>Fuentes provinciales</h3>
+  <div id="fuentesProv"></div>
+  <h3>Fuentes nacionales</h3>
+  <div id="fuentesNac"></div>
+  <h3>Documentación sin respaldo público localizado</h3>
+  <div id="fuentesPend"></div>
+
+  <div class="note pending">
+    <div class="nt">◈ Criterio aplicado <span class="ev ev-an">Análisis</span></div>
+    <p style="margin-bottom:0">No se incorporaron enlaces que no pudieran comprobarse. Cuando un dato proviene únicamente de la documentación aportada para este análisis y no fue posible ubicar el acto en una fuente pública, se lo etiquetó como validación pendiente en lugar de citarlo como oficial. Las fechas y porcentajes de las Resoluciones 146/2026 y 187/2026 y la información de la página tarifaria de DPEC (incluida la mención textual del Valor Agregado de Distribución presentado en la audiencia pública del 8 de febrero de 2024 y el listado de actos aprobatorios) fueron contrastadas con sus publicaciones oficiales.</p>
+  </div>
+
+  <h3>Documentación normativa de base</h3>
+  <p>Leyes provinciales 3.588, 6.073, 6.233, 6.428, 6.503 y 6.629; Decreto provincial 625/2012; Reglamento General de Suministro Eléctrico (Res. de Intervención 568/2000 y modificatorias); antecedentes del mecanismo de pass-through (Res. MOPySP 70/2018, Decreto 340/2018, Res. EPRE 5/2021, Decreto 1155/2021, Decreto 3518/2022); Cuadro Tarifario 108-E y actos de aprobación (Decretos 1438/2026 y 1454/2026, Res. EPRE 10/2026 y 12/2026, Res. DPEC 629/2026 y 679/2026); Leyes nacionales 15.336 (con la reforma del Decreto 450/2025), 24.065, 24.240, 27.351 y 27.424; Decreto nacional 943/2025; Resoluciones de la Secretaría de Energía de la Nación 314/2018, 287/2025, 13/2026, 109/2026, 121/2026, 146/2026 y 187/2026.</p>
+</section>
+<!--SECTIONS-->
+</main>
+
+<div class="viztip" id="viztip" role="status" aria-live="polite"></div>
+
+<footer>
+  <div class="footer-inner">
+    <p><strong>Ficha energética y regulatoria de la Provincia de Corrientes.</strong> Estado del análisis: 18 de agosto de 2026. Documento de trabajo de carácter técnico; no constituye asesoramiento jurídico ni liquidación oficial. Ante cualquier discrepancia prevalecen los actos administrativos y la facturación emitida por la autoridad competente.</p>
+    <p>Todo contenido está etiquetado según su naturaleza: <strong>dato oficial</strong>, <strong>cálculo propio</strong>, <strong>análisis</strong>, <strong>propuesta regulatoria</strong> o <strong>validación documental pendiente</strong>. Los cálculos propios se realizaron aritméticamente sobre valores del Cuadro Tarifario 108-E y no incluyen impuestos, tasas ni otros conceptos no tarifarios.</p>
+    <p id="footSources"></p>
+  </div>
+</footer>
+<script>
+/* ============================================================================
+   DATOS · Estructuras centralizadas. Toda la interfaz se genera desde acá.
+   ============================================================================ */
+const HOY = '18 de agosto de 2026';
+
+/* -- Secciones -------------------------------------------------------------- */
+const SECCIONES = [
+  ['panorama','Panorama','Síntesis, cadena de valor y lectura general del régimen.'],
+  ['instituciones','Instituciones','Competencias legales, autoridad actuante y relaciones reales.'],
+  ['normativo','Normativa','Tabla interactiva de normas con estado, vigencia y fuente.'],
+  ['tarifas','Tarifas','Explorador del Cuadro 108-E con filtros y cálculo.'],
+  ['factura','Factura','Cómo se forma el importe, componente por componente.'],
+  ['subsidios','Subsidios','Régimen SEF, bloques base y bonificaciones 2026.'],
+  ['vadmem','VAD y MEM','Componentes nacionales, provinciales y mixtos.'],
+  ['gd','Gen. distribuida','Régimen vigente y agenda regulatoria futura.'],
+  ['usuarios','Usuarios','Derechos, obligaciones, reclamos y electrodependientes.'],
+  ['calidad','Calidad','Indicadores, información disponible y propuestas.'],
+  ['cronologia','Cronología','Hitos normativos filtrables por jurisdicción y estado.'],
+  ['fuentes','Fuentes','Origen oficial de cada dato utilizado.']
+];
+
+/* -- Fuentes oficiales verificadas ------------------------------------------ */
+const FUENTES = {
+  dpec:       {t:'DPEC ( sitio institucional', u:'https://www.dpec.com.ar/', j:'prov', ver:true},
+  dpecTar:    {t:'DPEC ) Tarifas', u:'https://www.dpec.com.ar/comercial/tarifas/', j:'prov', ver:true},
+  dpecCuadro: {t:'DPEC ( Cuadro Tarifario (listado de actos y descargas)', u:'https://www.dpec.com.ar/1500', j:'prov', ver:true},
+  dpecRegimen:{t:'DPEC ) Régimen Tarifario', u:'https://dpec.com.ar/2972', j:'prov', ver:true},
+  dpecGD:     {t:'DPEC ( Reglamentación provincial de generación distribuida', u:'https://www.dpec.com.ar/3422', j:'prov', ver:true},
+  senergia:   {t:'Secretaría de Energía de Corrientes ) nota sobre Res. 240/2020', u:'https://senergia.corrientes.gob.ar/noticia/nueva-reglamentacion-provincial-para-generacion-distribuida-con-energias-renovables', j:'prov', ver:true},
+  epreCtes:   {t:'Ente Provincial Regulador Eléctrico (portal del Gobierno de Corrientes)', u:'https://www.corrientes.gob.ar/ente-provincial-regulador-electrico', j:'prov', ver:true},
+  boCtes:     {t:'Boletín Oficial de la Provincia de Corrientes', u:'https://boletinoficial.corrientes.gob.ar/', j:'prov', ver:true},
+  cuadrosNac: {t:'Secretaría de Energía de la Nación ( Cuadros Tarifarios DPEC', u:'https://www.argentina.gob.ar/economia/energia/energia-electrica/estadisticas/cuadros-tarifarios-dpec', j:'nac', ver:true},
+  entesNac:   {t:'Argentina.gob.ar ) Entes reguladores provinciales', u:'https://www.argentina.gob.ar/energia/entes-reguladores-provinciales-de-energia-electrica-y-gas-natural', j:'nac', ver:true},
+  res146:     {t:'Boletín Oficial ( Resolución SE 146/2026 (01/07/2026)', u:'https://www.boletinoficial.gob.ar/detalleAviso/primera/343833/20260701', j:'nac', ver:true},
+  res187:     {t:'Boletín Oficial ) Resolución SE 187/2026 (31/07/2026)', u:'https://www.boletinoficial.gob.ar/detalleAviso/primera/345281/20260731', j:'nac', ver:true},
+  res187n:    {t:'Argentina.gob.ar ( Resolución 187/2026 (texto normativo)', u:'https://www.argentina.gob.ar/normativa/nacional/norma-428453', j:'nac', ver:true},
+  res187news: {t:'Argentina.gob.ar ) Prórroga y refuerzo de bonificaciones SEF para agosto', u:'https://www.argentina.gob.ar/noticias/el-gobierno-nacional-prorroga-y-refuerza-las-bonificaciones-del-regimen-de-subsidios', j:'nac', ver:true},
+  res287:     {t:'Boletín Oficial ( Resolución SE 287/2025 (04/07/2025)', u:'https://www.boletinoficial.gob.ar/detalleAviso/primera/327866/20250704', j:'nac', ver:true},
+  cammesa:    {t:'CAMMESA ) sitio institucional', u:'https://cammesaweb.cammesa.com/', j:'nac', ver:true},
+  datosCam:   {t:'Datos Energía: publicaciones de CAMMESA', u:'http://datos.energia.gob.ar/dataset/publicaciones-cammesa', j:'nac', ver:true},
+  boNac:      {t:'Boletín Oficial de la República Argentina', u:'https://www.boletinoficial.gob.ar/', j:'nac', ver:true},
+  cuadro108E: {t:'Cuadro Tarifario 108-E (documento suministrado para este análisis)', u:null, j:'prov', ver:false},
+  docAporte:  {t:'Documentación normativa suministrada para este análisis', u:null, j:'prov', ver:false}
+};
+
+/* -- Normas ---------------------------------------------------------------- */
+/* estado: vig | par | der | sus | val   (vigente, parcialmente vigente, derogada,
+   sustituida/reemplazada en parte, validación documental pendiente)            */
+const NORMAS = [
+  {tipo:'Ley nacional', num:'15.336', anio:1960, jur:'nac', materia:'Régimen de la energía eléctrica',
+   estado:'vig', modifica:'No registra', modificadaPor:'Decreto 450/2025', vigencia:'1960; texto vigente según reforma de 2025',
+   art:'Art. 12 bis (incorporado en 2025): actos locales interferentes', fuente:'boNac', nota:'Mantiene las facultades provinciales sobre sistemas locales, pero somete a las distribuidoras a reglas federales en la Red Nacional de Interconexión y en el MEM.'},
+  {tipo:'Ley nacional', num:'24.065', anio:1992, jur:'nac', materia:'Marco regulatorio eléctrico',
+   estado:'vig', modifica:'No registra', modificadaPor:'Decreto 450/2025', vigencia:'1992; t.o. posterior a 2025',
+   art:'Caracterización de transporte y distribución como servicio público', fuente:'boNac', nota:'Política federal: protección de usuarios, competencia, inversiones y funcionamiento económico del sistema.'},
+  {tipo:'Ley nacional', num:'24.240', anio:1993, jur:'nac', materia:'Defensa del consumidor',
+   estado:'vig', modifica:'No registra', modificadaPor:'Múltiples reformas posteriores', vigencia:'1993 y modificatorias',
+   art:'Arts. sobre servicios públicos domiciliarios: interés por mora, anticipación de factura, umbral estacional, conceptos indebidos', fuente:'boNac', nota:'Se integra con la normativa eléctrica específica; en caso de duda prevalece la interpretación más favorable al consumidor.'},
+  {tipo:'Ley nacional', num:'27.351', anio:2017, jur:'nac', materia:'Electrodependientes por cuestiones de salud',
+   estado:'vig', modifica:'No registra', modificadaPor:'No registra', vigencia:'2017',
+   art:'Garantía de continuidad; tratamiento tarifario bajo jurisdicción nacional; exención de derechos de conexión', fuente:'boNac', nota:'Invita a las provincias a adherir y reconocer la gratuidad de los componentes provinciales.'},
+  {tipo:'Ley nacional', num:'27.424', anio:2017, jur:'nac', materia:'Generación distribuida renovable',
+   estado:'vig', modifica:'No registra', modificadaPor:'Reglamentada por Decreto 986/2018 y Res. 314/2018', vigencia:'2017',
+   art:'Derecho a autoconsumir e inyectar; prohibición de cargos por respaldo o acceso', fuente:'boNac', nota:'Establece el balance neto monetario y vincula la tarifa de inyección con el precio de la energía que el distribuidor adquiriría en el MEM.'},
+  {tipo:'Resolución SE', num:'314/2018', anio:2018, jur:'nac', materia:'Reglamentación de generación distribuida',
+   estado:'par', modifica:'Reglamenta Ley 27.424', modificadaPor:'Res. 287/2025 y modificatorias', vigencia:'2018; texto actualizado',
+   art:'Categorías de usuario-generador: individual, comunitario y comunitario virtual', fuente:'res287', nota:'La versión actualizada reconoce las tres categorías de usuario-generador.'},
+  {tipo:'Resolución SE', num:'287/2025', anio:2025, jur:'nac', materia:'Reorganización de la generación distribuida',
+   estado:'vig', modifica:'Res. 314/2018', modificadaPor:'No registra', vigencia:'Publicada el 04/07/2025',
+   art:'Límite de 12 MW de potencia de acople en un mismo punto de suministro', fuente:'res287', nota:'Para usuarios comunitarios la potencia máxima puede vincularse a la suma de las potencias contratadas de los participantes.'},
+  {tipo:'Decreto nacional', num:'450/2025', anio:2025, jur:'nac', materia:'Reforma de las Leyes 15.336 y 24.065',
+   estado:'vig', modifica:'Leyes 15.336 y 24.065', modificadaPor:'No registra', vigencia:'2025',
+   art:'Incorpora el art. 12 bis a la Ley 15.336', fuente:'boNac', nota:'Considera interferente todo acto local que impida el traslado a tarifa de costos mayoristas trasladables, el pago de deudas en el MEM o la autosuficiencia económico-financiera del mercado.'},
+  {tipo:'Decreto nacional', num:'943/2025', anio:2025, jur:'nac', materia:'Régimen de Subsidios Energéticos Focalizados (SEF)',
+   estado:'vig', modifica:'Deja atrás la segmentación N1/N2/N3', modificadaPor:'Res. 13/2026, 109/2026, 121/2026, 146/2026 y 187/2026', vigencia:'Vigencia desde 2026',
+   art:'Art. 7°: bonificación general sobre el PEST del bloque base', fuente:'res187n', nota:'Bloques base de 300 kWh/mes (enero, febrero, mayo, junio, julio, agosto y diciembre) y 150 kWh/mes (marzo, abril, septiembre, octubre y noviembre).'},
+  {tipo:'Resolución SE', num:'13/2026', anio:2026, jur:'nac', materia:'Consumos base diferenciales por zona bioambiental',
+   estado:'vig', modifica:'Complementa el Decreto 943/2025', modificadaPor:'No registra', vigencia:'2026',
+   art:'Bloques diferenciales para zonas cálida y muy cálida', fuente:'docAporte', nota:'En verano: 550 kWh/mes para zona muy cálida y 370 kWh/mes para cálida. Referencia tomada de la documentación suministrada; enlace oficial pendiente de incorporación.', pend:true},
+  {tipo:'Resolución SE', num:'109/2026', anio:2026, jur:'nac', materia:'Bonificación extraordinaria y recargo FNEE',
+   estado:'sus', modifica:'Complementa el Decreto 943/2025', modificadaPor:'Res. 121/2026 (junio), 146/2026 (julio) y 187/2026 (agosto)', vigencia:'Dictada el 30/04/2026',
+   art:'Bonificación extraordinaria de 10,67% para mayo, junio y julio; recargo FNEE', fuente:'res187n', nota:'Su fecha (30 de abril de 2026) y su sustitución parcial constan expresamente en las Resoluciones 146/2026 y 187/2026. El valor del recargo del FNEE proviene de la documentación suministrada y su enlace oficial está pendiente de incorporación.'},
+  {tipo:'Resolución SE', num:'121/2026', anio:2026, jur:'nac', materia:'Bonificación extraordinaria de junio',
+   estado:'sus', modifica:'Res. 109/2026 (junio)', modificadaPor:'No registra', vigencia:'2026',
+   art:'Eleva la bonificación extraordinaria de junio a 11,97%', fuente:'docAporte', nota:'Dato tomado de la documentación suministrada; no fue posible localizar el acto en las fuentes oficiales consultadas. Validación documental pendiente.', pend:true},
+  {tipo:'Resolución SE', num:'146/2026', anio:2026, jur:'nac', materia:'Bonificación extraordinaria de julio',
+   estado:'vig', modifica:'Res. 109/2026 (julio)', modificadaPor:'No registra', vigencia:'Publicada el 01/07/2026',
+   art:'Art. 2°: bonificación adicional extraordinaria del 16,59% para julio de 2026', fuente:'res146', nota:'Verificada en el Boletín Oficial. Sustituye lo establecido por la Res. 109 del 30 de abril de 2026 en materia de electricidad. Gas: 25%.'},
+  {tipo:'Resolución SE', num:'187/2026', anio:2026, jur:'nac', materia:'Bonificación extraordinaria de agosto',
+   estado:'vig', modifica:'Res. 109/2026 (agosto)', modificadaPor:'No registra', vigencia:'Dictada el 30/07/2026, publicada el 31/07/2026',
+   art:'Art. 2°: bonificación adicional extraordinaria del 16,59% sobre el consumo base de 300 kWh mensuales. Art. 3°: se adiciona a la bonificación general del art. 7° del Decreto 943/25', fuente:'res187', nota:'Verificada en el Boletín Oficial. Gas natural y propano: 25%. Alcanza también a entidades de bien público y clubes de barrio y de pueblo (Leyes 27.098 y 27.218).'},
+  {tipo:'Ley provincial', num:'3.588', anio:1980, jur:'prov', materia:'Creación y organización de la DPEC',
+   estado:'par', modifica:'No registra', modificadaPor:'Superpuesta por la Ley 6.073 en materia regulatoria', vigencia:'1980',
+   art:'Art. 17: el Directorio somete las tarifas a aprobación del Poder Ejecutivo', fuente:'docAporte', nota:'Base orgánica del ente distribuidor provincial. Su modelo institucional fue superpuesto (no derogado) por el marco regulatorio de 2011.'},
+  {tipo:'Res. de Intervención DPEC', num:'568/2000 y modif.', anio:2000, jur:'prov', materia:'Reglamento General de Suministro Eléctrico',
+   estado:'par', modifica:'No registra', modificadaPor:'Res. 620/2001, 623/2001, 020/2002 y 694/2003', vigencia:'Publicado en el B.O. provincial el 30/10/2003',
+   art:'Titularidad, conexión, medición, facturación, reclamos, daños y suspensión', fuente:'dpec', nota:'Continúa publicado por DPEC. La Ley 6.073 (art. 17) encomienda al EPRE dictar un Reglamento Técnico de Suministro; en la documentación relevada no se localizó un texto integral que lo sustituya.'},
+  {tipo:'Ley provincial', num:'6.073', anio:2011, jur:'prov', materia:'Marco regulatorio electroenergético',
+   estado:'vig', modifica:'No registra', modificadaPor:'Reglamentada parcialmente por el Decreto 625/2012', vigencia:'2011',
+   art:'Art. 17 (Reglamento Técnico de Suministro), art. 18 (peaje), art. 25 (costos de adquisición), art. 59 (discriminación de tributos)', fuente:'docAporte', nota:'Pieza central: jurisdicción provincial, principios tarifarios, creación de la Secretaría de Energía y del EPRE, derechos de usuarios, audiencias públicas, control y sanciones.'},
+  {tipo:'Decreto provincial', num:'625/2012', anio:2012, jur:'prov', materia:'Reglamentación parcial de la Ley 6.073',
+   estado:'vig', modifica:'Reglamenta la Ley 6.073', modificadaPor:'No registra', vigencia:'2012',
+   art:'Art. 10: intervención obligatoria del Órgano Consultivo antes de modificar cuadros tarifarios', fuente:'docAporte', nota:'Regula la designación del Directorio del EPRE por concurso, incompatibilidades y el Órgano Consultivo.'},
+  {tipo:'Ley provincial', num:'6.233', anio:null, jur:'prov', materia:'Organización ministerial',
+   estado:'val', modifica:'No registra', modificadaPor:'No registra', vigencia:'Año de sanción no consignado en la documentación relevada',
+   art:'Inserción de las competencias energéticas en el Poder Ejecutivo', fuente:'docAporte', nota:'Mencionada en la documentación suministrada sin fecha de sanción. Requiere verificación en el Boletín Oficial provincial antes de citarse.', pend:true},
+  {tipo:'Ley provincial', num:'6.428', anio:2018, jur:'prov', materia:'Generación distribuida renovable (régimen original)',
+   estado:'par', modifica:'No registra', modificadaPor:'Ley 6.503 (deroga arts. 1 a 15)', vigencia:'Arts. 16 a 25 vigentes',
+   art:'Arts. 16 a 25: fondo de fomento', fuente:'docAporte', nota:'El estado operativo del fondo de fomento a agosto de 2026 no pudo establecerse con la documentación disponible.'},
+  {tipo:'Ley provincial', num:'6.503', anio:2019, jur:'prov', materia:'Adhesión a la Ley nacional 27.424',
+   estado:'vig', modifica:'Deroga los arts. 1 a 15 de la Ley 6.428', modificadaPor:'Reglamentada por la Res. 240/2020', vigencia:'2019',
+   art:'Exención de Ingresos Brutos sobre ingresos por inyección y de Sellos sobre determinados instrumentos', fuente:'senergia', nota:'Invita a los municipios a establecer beneficios propios.'},
+  {tipo:'Resolución SE provincial', num:'240/2020', anio:2020, jur:'prov', materia:'Reglamentación provincial de generación distribuida',
+   estado:'vig', modifica:'Reglamenta la Ley 6.503', modificadaPor:'No registra', vigencia:'Dictada el 08/10/2020',
+   art:'Cinco artículos: reporte mensual, reserva de potencia, registro de instaladores (CPIAyA), tarifa de inyección y cesión de créditos', fuente:'senergia', nota:'Verificada en el portal de la Secretaría de Energía de Corrientes y en DPEC. La tarifa de inyección se define como el precio estabilizado de la energía más transporte en el MEM. Registros diferenciados para instalaciones menores y mayores de 20 kW.'},
+  {tipo:'Ley provincial', num:'6.629', anio:null, jur:'prov', materia:'Accesibilidad en audiencias públicas',
+   estado:'vig', modifica:'Ley provincial 5.982', modificadaPor:'No registra', vigencia:'Año de sanción no consignado en la documentación relevada',
+   art:'Accesibilidad física, cognitiva y comunicacional; sistema Braille cuando sea requerido', fuente:'docAporte', nota:'Mencionada en la documentación suministrada sin fecha de sanción. Requiere verificación en el Boletín Oficial provincial.', pend:true},
+  {tipo:'Resolución SE provincial', num:'217/2026', anio:2026, jur:'prov', materia:'Generación Distribuida Comunitaria',
+   estado:'val', modifica:'Modificaría el reglamento provincial de generación distribuida', modificadaPor:'No registra', vigencia:'Fecha consignada en la documentación: 10/06/2026',
+   art:'Incorporación de GDC y GDC virtual, cesión de créditos y bonificación de cargos de potencia', fuente:'docAporte',
+   nota:'VALIDACIÓN DOCUMENTAL PENDIENTE. El contenido descripto proviene de la documentación suministrada para este análisis. En las búsquedas realizadas en fuentes oficiales (DPEC, Secretaría de Energía de Corrientes) no fue posible localizar el acto publicado. Hasta su verificación, no debe presentarse como régimen vigente.', pend:true},
+  {tipo:'Mecanismo tarifario', num:'Res. MOPySP 70/2018 + Dec. 340/2018', anio:2018, jur:'prov', materia:'Mecanismo de pass-through',
+   estado:'vig', modifica:'No registra', modificadaPor:'Homologado por Res. EPRE 5/2021 y Decreto 1155/2021', vigencia:'2018, homologado en 2021',
+   art:'Ecuación general de traslado de variaciones de costos mayoristas', fuente:'docAporte', nota:'Aplicación documentada en el Decreto 3518/2022 y referida nuevamente en la Res. DPEC 629/2026.'},
+  {tipo:'Cuadro tarifario', num:'108-E', anio:2026, jur:'prov', materia:'Cuadro Tarifario vigente analizado',
+   estado:'vig', modifica:'Sustituye cuadros anteriores de la serie', modificadaPor:'Eventuales actos posteriores no identificados',
+   vigencia:'2026. Fecha exacta de inicio y fin no consignada en el documento',
+   art:'Aprobado por Decretos 1438/2026 y 1454/2026, Res. EPRE 10/2026 y 12/2026, Res. DPEC 629/2026 y 679/2026', fuente:'dpecCuadro',
+   nota:'Los seis actos de aprobación figuran en el listado publicado por DPEC. El texto descriptivo de esa misma página enumera la serie hasta 108-C, de modo que la publicación no permite establecer de forma inmediata qué cuadro rige en cada período.'}
+];
+
+/* -- Cronología ------------------------------------------------------------ */
+const TL_CATS = {
+  nac:{label:'Nacional', color:'var(--series-7)'},
+  prov:{label:'Provincial', color:'var(--series-1)'},
+  reg:{label:'Reglamentaria', color:'var(--series-3)'},
+  tar:{label:'Tarifaria', color:'var(--series-2)'}
+};
+const CRONOLOGIA = [
+ {o:1960, fecha:'1960', cat:'nac', tema:'Marco federal', estado:'vig', norma:'Ley nacional 15.336', fuente:'boNac',
+  titulo:'Régimen de la energía eléctrica',
+  body:'Mantiene en cabeza de las provincias las facultades sobre sus sistemas eléctricos y servicios públicos locales, pero somete a las distribuidoras provinciales a reglas federales cuando actúan en la Red Nacional de Interconexión y en el MEM.'},
+ {o:1980, fecha:'1980', cat:'prov', tema:'Institucional', estado:'par', ms:true, norma:'Ley provincial 3.588', fuente:'docAporte',
+  titulo:'Creación de la DPEC',
+  body:'Ente autárquico con autarquía financiera y administrativa. Objeto amplio: promoción, estudio, proyecto, ejecución y explotación de obras y servicios energéticos; generación, transporte, distribución y comercialización. Estructura de Directorio y tres gerencias.'},
+ {o:1992, fecha:'1992', cat:'nac', tema:'Marco federal', estado:'vig', norma:'Ley nacional 24.065', fuente:'boNac',
+  titulo:'Marco regulatorio eléctrico nacional',
+  body:'Caracteriza como servicio público al transporte y la distribución. Fija la política federal de protección al usuario, competencia, inversiones y funcionamiento económico del sistema.'},
+ {o:1993, fecha:'1993', cat:'nac', tema:'Usuarios', estado:'vig', norma:'Ley nacional 24.240', fuente:'boNac',
+  titulo:'Defensa del consumidor',
+  body:'Los servicios públicos domiciliarios con legislación específica quedan sujetos tanto a esa normativa especial como a la de consumidores; en caso de duda prevalece la solución más favorable al consumidor.'},
+ {o:2003, fecha:'2000 a 2003', cat:'reg', tema:'Suministro', estado:'par', ms:true, norma:'Res. Intervención DPEC 568/2000 y modif.', fuente:'dpec',
+  titulo:'Reglamento General de Suministro Eléctrico',
+  body:'Aprobado por Res. 568/2000 y modificatorias 620/2001, 623/2001, 020/2002 y 694/2003; publicado en el Boletín Oficial provincial el 30 de octubre de 2003. Continúa publicado oficialmente por DPEC.'},
+ {o:2011, fecha:'2011', cat:'prov', tema:'Marco provincial', estado:'vig', ms:true, norma:'Ley provincial 6.073', fuente:'docAporte',
+  titulo:'Marco regulatorio electroenergético provincial',
+  body:'Ratifica la jurisdicción provincial sobre el Sistema Eléctrico Provincial; caracteriza como servicio público el transporte, la distribución y la generación aislada; fija los principios tarifarios; crea la Secretaría de Energía y el EPRE.'},
+ {o:2012, fecha:'2012', cat:'prov', tema:'Institucional', estado:'vig', norma:'Decreto provincial 625/2012', fuente:'docAporte',
+  titulo:'Reglamentación parcial de la Ley 6.073',
+  body:'Concurso de antecedentes para el Directorio del EPRE, incompatibilidades y restricción de dos años posteriores. Crea el Órgano Consultivo: su art. 10 impide dictar actos que modifiquen cuadros tarifarios sin darle intervención.'},
+ {o:2017, fecha:'2017', cat:'nac', tema:'Usuarios', estado:'vig', norma:'Ley nacional 27.351', fuente:'boNac',
+  titulo:'Electrodependientes por cuestiones de salud',
+  body:'Garantiza la continuidad del servicio a usuarios registrados; reconoce tratamiento tarifario gratuito respecto del servicio bajo jurisdicción nacional; exime derechos de conexión; contempla equipamiento alternativo y atención permanente.'},
+ {o:2017.5, fecha:'2017', cat:'nac', tema:'Generación distribuida', estado:'vig', norma:'Ley nacional 27.424', fuente:'boNac',
+  titulo:'Régimen de fomento a la generación distribuida',
+  body:'Derecho a instalar generación renovable hasta la potencia contratada, autoconsumir e inyectar excedentes bajo balance neto monetario. Prohíbe cargos de mantenimiento de red, peaje o respaldo por el solo hecho de generar.'},
+ {o:2018, fecha:'2018', cat:'tar', tema:'Pass-through', estado:'vig', ms:true, norma:'Res. MOPySP 70/2018 y Decreto 340/2018', fuente:'docAporte',
+  titulo:'Creación del mecanismo de pass-through',
+  body:'Aprueban la ecuación general de traslado a tarifa de las variaciones de costos mayoristas de energía, potencia y transporte que la distribuidora no controla.'},
+ {o:2018.5, fecha:'2018', cat:'prov', tema:'Generación distribuida', estado:'par', norma:'Ley provincial 6.428', fuente:'docAporte',
+  titulo:'Régimen provincial original de generación distribuida',
+  body:'Autorización, medidor bidireccional, contrato, balance neto de facturación, tarifa de inyección, créditos y Fondo Fiduciario de fomento. Sus artículos 1 a 15 fueron derogados en 2019.'},
+ {o:2019, fecha:'2019', cat:'prov', tema:'Generación distribuida', estado:'vig', norma:'Ley provincial 6.503', fuente:'senergia',
+  titulo:'Adhesión a la Ley nacional 27.424',
+  body:'Deroga los artículos 1 a 15 de la Ley 6.428 y mantiene los artículos 16 a 25. Exime de Ingresos Brutos los ingresos por inyección y de Sellos determinados instrumentos; invita a los municipios a establecer beneficios propios.'},
+ {o:2020, fecha:'8 de octubre de 2020', cat:'reg', tema:'Generación distribuida', estado:'vig', norma:'Res. SE provincial 240/2020', fuente:'senergia',
+  titulo:'Reglamentación provincial de generación distribuida',
+  body:'Reporte mensual de generación, reserva de potencia, registro de instaladores administrado por el CPIAyA con categorías por encima y por debajo de 20 kW, tarifa de inyección equivalente al precio estabilizado más transporte en el MEM, y cesión de créditos.'},
+ {o:2021, fecha:'2021', cat:'tar', tema:'Pass-through', estado:'vig', norma:'Res. EPRE 5/2021 y Decreto 1155/2021', fuente:'docAporte',
+  titulo:'Homologación provincial del pass-through',
+  body:'El regulador provincial homologa el mecanismo creado en 2018, incorporándolo al circuito DPEC → EPRE → Poder Ejecutivo.'},
+ {o:2022, fecha:'2022', cat:'tar', tema:'Pass-through', estado:'vig', norma:'Decreto provincial 3518/2022', fuente:'docAporte',
+  titulo:'Aplicación documentada del pass-through',
+  body:'DPEC tramita el traslado de nuevos costos mayoristas de potencia, energía y transporte; la Subgerencia de Asuntos Regulatorios calcula los valores con la ecuación general; el EPRE analiza y el Poder Ejecutivo aprueba por decreto.'},
+ {o:2024, fecha:'8 de febrero de 2024', cat:'tar', tema:'VAD', estado:'vig', ms:true, norma:'Audiencia pública', fuente:'dpecCuadro',
+  titulo:'Audiencia pública del Valor Agregado de Distribución',
+  body:'DPEC informa textualmente que los valores de distribución publicados “corresponden al Valor Agregado de Distribución, que fuera presentado en la Audiencia Pública realizada el día 08.febrero.2024”.'},
+ {o:2025, fecha:'2025', cat:'nac', tema:'Marco federal', estado:'vig', ms:true, norma:'Decreto nacional 450/2025', fuente:'boNac',
+  titulo:'Reforma de las Leyes 15.336 y 24.065',
+  body:'Incorpora el art. 12 bis: se considera interferente con los objetivos federales todo acto o norma local que impida el traslado a tarifa de costos mayoristas trasladables, el pago de deudas de los distribuidores en el MEM o la autosuficiencia económico-financiera del mercado.'},
+ {o:2025.4, fecha:'4 de julio de 2025', cat:'nac', tema:'Generación distribuida', estado:'vig', norma:'Res. SE 287/2025', fuente:'res287',
+  titulo:'Reorganización de la generación distribuida',
+  body:'Reordena las categorías de usuario-generador (individual, comunitario y comunitario virtual) y permite instalaciones de hasta 12 MW de potencia de acople en un mismo punto de suministro.'},
+ {o:2025.6, fecha:'2025', cat:'nac', tema:'Subsidios', estado:'vig', ms:true, norma:'Decreto nacional 943/2025', fuente:'res187n',
+  titulo:'Creación del régimen SEF',
+  body:'Con vigencia desde 2026 crea el régimen único de Subsidios Energéticos Focalizados y deja atrás la segmentación N1/N2/N3. Bloques base de 300 y 150 kWh mensuales según el mes; bonificación general sobre el PEST del bloque base (art. 7°).'},
+ {o:2026.05, fecha:'2026', cat:'nac', tema:'Subsidios', estado:'val', norma:'Res. SE 13/2026', fuente:'docAporte',
+  titulo:'Consumos base por zona bioambiental',
+  body:'Habilita bloques base diferenciales por zona bioambiental: en verano, 550 kWh/mes para zona muy cálida y 370 kWh/mes para cálida. Referencia tomada de la documentación suministrada; enlace oficial pendiente.'},
+ {o:2026.4, fecha:'30 de abril de 2026', cat:'nac', tema:'Subsidios', estado:'sus', norma:'Res. SE 109/2026', fuente:'res187n',
+  titulo:'Bonificación extraordinaria de mayo a julio',
+  body:'Fija una bonificación extraordinaria eléctrica de 10,67% para mayo, junio y julio. Su fecha y su posterior sustitución parcial constan en las Resoluciones 146/2026 y 187/2026. También actualiza el recargo del FNEE (valor pendiente de verificación oficial).'},
+ {o:2026.5, fecha:'Junio 2026', cat:'nac', tema:'Subsidios', estado:'val', norma:'Res. SE 121/2026', fuente:'docAporte',
+  titulo:'Junio elevado a 11,97%',
+  body:'Según la documentación suministrada, eleva la bonificación extraordinaria de junio de 10,67% a 11,97%. No fue posible localizar el acto en las fuentes oficiales consultadas: validación documental pendiente.'},
+ {o:2026.52, fecha:'10 de junio de 2026', cat:'reg', tema:'Generación distribuida', estado:'val', norma:'Res. SE provincial 217/2026', fuente:'docAporte',
+  titulo:'Generación Distribuida Comunitaria (validación pendiente)',
+  body:'La documentación suministrada describe la incorporación de la GDC y su modalidad virtual, con cesión de créditos, reserva de potencia, límite de 12 MW y bonificación del 100% de los cargos de potencia del generador comunitario. No fue posible verificar el acto publicado en fuentes oficiales.'},
+ {o:2026.55, fecha:'2026', cat:'tar', tema:'Tarifas', estado:'vig', ms:true, norma:'Cuadro Tarifario 108-E', fuente:'dpecCuadro',
+  titulo:'Cuadro Tarifario 108-E',
+  body:'Aprobado por Decretos provinciales 1438/2026 y 1454/2026, Resoluciones EPRE 10/2026 y 12/2026 y Resoluciones DPEC 629/2026 y 679/2026. Esos seis actos figuran en el listado publicado por DPEC.'},
+ {o:2026.6, fecha:'1 de julio de 2026', cat:'nac', tema:'Subsidios', estado:'vig', ms:true, norma:'Res. SE 146/2026', fuente:'res146',
+  titulo:'Julio elevado a 16,59%',
+  body:'Verificada en el Boletín Oficial. Establece para julio de 2026 una bonificación adicional extraordinaria del 16,59% aplicable a usuarios de electricidad beneficiarios del SEF, sustituyendo lo previsto por la Res. 109 del 30 de abril de 2026. Gas: 25%.'},
+ {o:2026.7, fecha:'30 de julio de 2026', cat:'nac', tema:'Subsidios', estado:'vig', ms:true, norma:'Res. SE 187/2026', fuente:'res187',
+  titulo:'Agosto se mantiene en 16,59%',
+  body:'Verificada en el Boletín Oficial (publicada el 31/07/2026). Establece para agosto de 2026 una bonificación adicional extraordinaria del 16,59% sobre el consumo base de 300 kWh mensuales, que se adiciona a la bonificación general del art. 7° del Decreto 943/25. Gas natural y propano: 25%.'}
+];
+
+/* -- Catálogo tarifario · Cuadro 108-E -------------------------------------
+   fijo: $/bimestre · bloques: [{h:hasta kWh|null, p:$/kWh}] · pot: $/kW-mes
+   e: $/kWh energía única · punta/resto/valle: $/kWh · iny: $/kWh inyectado
+   per: periodicidad del cargo fijo · pag: página del cuadro                  */
+const TARIFAS = [
+ {id:'res-u',  n:'Pequeña demanda residencial urbana', g:'Residencial', tipo:'residencial', zona:'urbana', pot:'<10', sef:null, per:'bimestral',
+  fijo:31700, bloques:[{h:600,p:191.306},{h:null,p:229.417}], iny:103.157, pag:2},
+ {id:'res-u-j',n:'Residencial urbana · SEF junio 2026', g:'Residencial', tipo:'residencial', zona:'urbana', pot:'<10', sef:'jun', per:'bimestral',
+  fijo:18730, fijoPleno:31700, base:600, bloques:[{h:600,p:118.196},{h:null,p:229.417}], iny:40.644, pag:2},
+ {id:'res-u-l',n:'Residencial urbana · SEF julio 2026', g:'Residencial', tipo:'residencial', zona:'urbana', pot:'<10', sef:'jul', per:'bimestral',
+  fijo:19002, fijoPleno:31700, base:600, bloques:[{h:600,p:119.730},{h:null,p:229.417}], iny:41.955, pag:2},
+ {id:'res-r',  n:'Pequeña demanda residencial rural', g:'Residencial', tipo:'residencial', zona:'rural', pot:'<10', sef:null, per:'bimestral',
+  fijo:35470, bloques:[{h:600,p:273.123},{h:null,p:342.638}], iny:103.157, pag:2},
+ {id:'res-r-j',n:'Residencial rural · SEF junio 2026', g:'Residencial', tipo:'residencial', zona:'rural', pot:'<10', sef:'jun', per:'bimestral',
+  fijo:25970, fijoPleno:35470, base:600, bloques:[{h:600,p:204.775},{h:null,p:342.638}], iny:40.644, pag:2},
+ {id:'res-r-l',n:'Residencial rural · SEF julio 2026', g:'Residencial', tipo:'residencial', zona:'rural', pot:'<10', sef:'jul', per:'bimestral',
+  fijo:26169, fijoPleno:35470, base:600, bloques:[{h:600,p:206.209},{h:null,p:342.638}], iny:41.955, pag:2},
+ {id:'ele-u',  n:'Residencial urbano electrodependiente', g:'Electrodependiente', tipo:'electrodependiente', zona:'urbana', pot:'<10', sef:null, per:'bimestral',
+  fijo:10771, bloques:[{h:null,p:57.820}], iny:0, pag:3, aviso:'tecnica'},
+ {id:'ele-r',  n:'Residencial rural electrodependiente', g:'Electrodependiente', tipo:'electrodependiente', zona:'rural', pot:'<10', sef:null, per:'bimestral',
+  fijo:20140, bloques:[{h:null,p:148.332}], iny:0, pag:3, aviso:'tecnica'},
+
+ {id:'com-u',  n:'Comercial y oficial con carácter comercial, urbano', g:'Servicios generales', tipo:'comercial', zona:'urbana', pot:'<10', sef:null, per:'bimestral',
+  fijo:89079, bloques:[{h:4000,p:174.233},{h:null,p:211.609}], iny:102.805, pag:4},
+ {id:'ind-u',  n:'Industrial y oficial con carácter industrial, urbano', g:'Servicios generales', tipo:'industrial', zona:'urbana', pot:'<10', sef:null, per:'bimestral',
+  fijo:null, fijoNota:'El cuadro lo incorpora en la misma estructura que la categoría comercial urbana; no consigna un cargo fijo diferenciado.',
+  bloques:[{h:4000,p:174.233},{h:null,p:211.609}], iny:102.805, pag:4},
+ {id:'of-u',   n:'Autoridades nacionales, provinciales y municipales, urbano', g:'Servicios generales', tipo:'oficial', zona:'urbana', pot:'<10', sef:null, per:'bimestral',
+  fijo:216320, bloques:[{h:4000,p:186.578},{h:null,p:227.045}], iny:105.079, pag:4},
+ {id:'aso-u',  n:'Asociaciones civiles sin fines de lucro, urbano', g:'Servicios generales', tipo:'asociaciones', zona:'urbana', pot:'<10', sef:null, per:'bimestral',
+  fijo:93058, bloques:[{h:4000,p:175.715},{h:null,p:216.109}], iny:103.827, pag:4},
+ {id:'rie-u',  n:'Riego agrícola, urbano', g:'Servicios generales', tipo:'riego', zona:'urbana', pot:'<10', sef:null, per:'bimestral',
+  fijo:88042, bloques:[{h:4000,p:180.154},{h:null,p:229.267}], iny:102.704, pag:4},
+ {id:'com-r',  n:'Comercial / industrial, rural', g:'Servicios generales', tipo:'comercial', zona:'rural', pot:'<10', sef:null, per:'bimestral',
+  fijo:97732, bloques:[{h:4000,p:234.975},{h:null,p:292.705}], iny:102.805, pag:4},
+ {id:'of-r',   n:'Autoridades, rural', g:'Servicios generales', tipo:'oficial', zona:'rural', pot:'<10', sef:null, per:'bimestral',
+  fijo:131678, bloques:[{h:4000,p:230.039},{h:null,p:287.725}], iny:105.079, pag:4},
+ {id:'aso-r',  n:'Asociaciones sin fines de lucro, rural', g:'Servicios generales', tipo:'asociaciones', zona:'rural', pot:'<10', sef:null, per:'bimestral',
+  fijo:82482, bloques:[{h:4000,p:234.377},{h:null,p:300.800}], iny:103.827, pag:4},
+ {id:'rie-r',  n:'Riego agrícola, rural', g:'Servicios generales', tipo:'riego', zona:'rural', pot:'<10', sef:null, per:'bimestral',
+  fijo:98724, bloques:[{h:4000,p:232.621},{h:null,p:294.174}], iny:102.704, pag:4},
+
+ {id:'clu-u-j',n:'Asociaciones civiles y clubes urbanos · SEF junio', g:'Entidades de bien público', tipo:'asociaciones', zona:'urbana', pot:'<10', sef:'jun', per:'bimestral',
+  fijo:64333, bloques:[{h:4000,p:107.117},{h:null,p:147.191}], iny:49.003, pag:5},
+ {id:'clu-u-l',n:'Asociaciones civiles y clubes urbanos · SEF julio', g:'Entidades de bien público', tipo:'asociaciones', zona:'urbana', pot:'<10', sef:'jul', per:'bimestral',
+  fijo:64949, bloques:[{h:4000,p:108.553},{h:null,p:148.627}], iny:50.151, pag:5},
+ {id:'clu-r-j',n:'Asociaciones civiles y clubes rurales · SEF junio', g:'Entidades de bien público', tipo:'asociaciones', zona:'rural', pot:'<10', sef:'jun', per:'bimestral',
+  fijo:82065, bloques:[{h:4000,p:165.779},{h:null,p:231.881}], iny:49.003, pag:5},
+ {id:'clu-r-l',n:'Asociaciones civiles y clubes rurales · SEF julio', g:'Entidades de bien público', tipo:'asociaciones', zona:'rural', pot:'<10', sef:'jul', per:'bimestral',
+  fijo:82865, bloques:[{h:4000,p:167.215},{h:null,p:233.317}], iny:50.151, pag:5},
+
+ {id:'alum',   n:'Alumbrado público suministrado al prestador', g:'Alumbrado público', tipo:'alumbrado', zona:'na', pot:'na', sef:null, per:'mensual',
+  bloques:[{h:null,p:233.034}], cargoConvenio:3.184, pag:4,
+  nota:'Además, cargo por servicio mediante convenio al usuario de $ 3,184 mensuales. Debe distinguirse de cualquier tasa municipal que pueda aparecer en la factura.'},
+
+ {id:'med',    n:'Mediana demanda (10 a 50 kW)', g:'Mediana demanda', tipo:'comercial', zona:'na', pot:'10-50', sef:null, per:'mensual',
+  potc:31409, e:136.579, iny:94.641, pag:6},
+ {id:'gd-bt-1',n:'Gran demanda BT · >50 y <300 kW', g:'Gran demanda', tipo:'industrial', zona:'na', pot:'>50', sef:null, per:'mensual',
+  potc:30967, punta:139.802, resto:136.214, valle:134.543, inyP:97.494, inyR:94.626, inyV:93.291, pag:6},
+ {id:'gd-bt-2',n:'Gran demanda BT · ≥300 kW', g:'Gran demanda', tipo:'industrial', zona:'na', pot:'>50', sef:null, per:'mensual',
+  potc:30851, punta:140.055, resto:136.458, valle:134.782, inyP:96.538, inyR:93.663, inyV:92.324, pag:6},
+ {id:'gd-mt-1',n:'Gran demanda MT · >50 y <300 kW', g:'Gran demanda', tipo:'industrial', zona:'na', pot:'>50', sef:null, per:'mensual',
+  potc:17802, punta:122.825, resto:120.588, valle:119.547, pag:6},
+ {id:'gd-mt-2',n:'Gran demanda MT · ≥300 kW', g:'Gran demanda', tipo:'industrial', zona:'na', pot:'>50', sef:null, per:'mensual',
+  potc:17788, punta:123.532, resto:121.211, valle:120.131, pag:6},
+ {id:'san',    n:'Servicios sanitarios públicos <10 kW en BT', g:'Servicios sanitarios', tipo:'sanitario', zona:'na', pot:'<10', sef:null, per:'mensual',
+  potc:32551, e:136.860, iny:93.081, pag:6},
+
+ {id:'coo-res',   n:'Otros distribuidores · residencial sin bonificación', g:'Cooperativas y otros distribuidores', tipo:'cooperativa', zona:'na', pot:'na', sef:null, per:'mensual',
+  potc:19088, punta:127.825, resto:124.492, valle:122.963, pag:7},
+ {id:'coo-res-j', n:'Otros distribuidores · residencial SEF junio (dentro de la base)', g:'Cooperativas y otros distribuidores', tipo:'cooperativa', zona:'na', pot:'na', sef:'jun', per:'mensual',
+  potc:12647, punta:62.271, resto:61.004, valle:60.422, pag:7},
+ {id:'coo-res-l', n:'Otros distribuidores · residencial SEF julio (dentro de la base)', g:'Cooperativas y otros distribuidores', tipo:'cooperativa', zona:'na', pot:'na', sef:'jul', per:'mensual',
+  potc:12782, punta:63.646, resto:62.336, valle:61.734, pag:7},
+ {id:'coo-nr1',   n:'Otros distribuidores · no residenciales ≥300 kW / GUDI', g:'Cooperativas y otros distribuidores', tipo:'cooperativa', zona:'na', pot:'>50', sef:null, per:'mensual',
+  potc:19088, punta:128.509, resto:125.153, valle:123.590, pag:8},
+ {id:'coo-nr2',   n:'Otros distribuidores · resto no residencial <300 kW', g:'Cooperativas y otros distribuidores', tipo:'cooperativa', zona:'na', pot:'na', sef:null, per:'mensual',
+  potc:19088, punta:128.273, resto:124.925, valle:123.367, pag:8},
+ {id:'coo-ele',   n:'Otros distribuidores · electrodependientes', g:'Cooperativas y otros distribuidores', tipo:'electrodependiente', zona:'na', pot:'na', sef:null, per:'mensual',
+  pag:9, pend:true, nota:'La página 9 consigna un cargo de potencia y valores energéticos muy reducidos, pero el formato del PDF presenta una expresión decimal ambigua (el cargo de potencia aparece como “8694” y la energía como “8,515”). Los valores no se cargan hasta su validación documental.'},
+
+ {id:'pea-gupa',  n:'Peaje · GUPA (primer grupo)', g:'Peaje y función técnica de transporte', tipo:'granusuario', zona:'na', pot:'na', sef:null, per:'mensual',
+  potc:23201, e:26.159, pag:10, pend:true,
+  nota:'El cuadro presenta una inconsistencia de clasificación: el título hace referencia a un rango de potencia que no coincide exactamente con la descripción interna de la categoría. Requiere corrección oficial.'},
+ {id:'pea-bt-1',  n:'Peaje · GUPA/GUME >50 y <300 kW, BT', g:'Peaje y función técnica de transporte', tipo:'granusuario', zona:'na', pot:'>50', sef:null, per:'mensual',
+  potc:22758, punta:26.577, resto:26.111, valle:25.895, pag:10},
+ {id:'pea-bt-2',  n:'Peaje · GUDI/GUME/GUMA ≥300 kW, BT', g:'Peaje y función técnica de transporte', tipo:'granusuario', zona:'na', pot:'>50', sef:null, per:'mensual',
+  potc:22643, punta:26.610, resto:26.143, valle:25.926, pag:10},
+ {id:'pea-mt-1',  n:'Peaje · MT >50 y <300 kW', g:'Peaje y función técnica de transporte', tipo:'granusuario', zona:'na', pot:'>50', sef:null, per:'mensual',
+  potc:9594, punta:16.602, resto:16.377, valle:16.272, pag:10},
+ {id:'pea-mt-2',  n:'Peaje · MT ≥300 kW', g:'Peaje y función técnica de transporte', tipo:'granusuario', zona:'na', pot:'>50', sef:null, per:'mensual',
+  potc:9471, punta:16.617, resto:16.392, valle:16.287, pag:10}
+];
+
+const FILTROS_TIPO = [
+  ['todos','Todos'],['residencial','Residencial'],['comercial','Comercial'],['industrial','Industrial'],
+  ['oficial','Oficial'],['riego','Riego'],['asociaciones','Asociaciones y clubes'],['sanitario','Servicios sanitarios'],
+  ['alumbrado','Alumbrado público'],['electrodependiente','Electrodependiente'],
+  ['cooperativa','Cooperativa / otro distribuidor'],['granusuario','Gran usuario del MEM']
+];
+
+/* -- Régimen SEF ----------------------------------------------------------- */
+const SEF = {
+  general: 50,
+  topeExtra: 25,
+  bloques:[
+    {meses:'Enero, febrero, mayo, junio, julio, agosto y diciembre', kwh:300, norma:'Decreto 943/2025'},
+    {meses:'Marzo, abril, septiembre, octubre y noviembre', kwh:150, norma:'Decreto 943/2025'}
+  ],
+  zonas:[
+    {zona:'Muy cálida', verano:550, veranoBim:1100, invBim:600, restoBim:300},
+    {zona:'Cálida', verano:370, veranoBim:740, invBim:600, restoBim:300},
+    {zona:'Regla general', verano:300, veranoBim:600, invBim:600, restoBim:300}
+  ],
+  meses:[
+    {m:'Mayo 2026',   pct:10.67, norma:'Res. SE 109/2026', fecha:'30/04/2026', estado:'sus', fuente:'res187n', ver:'parcial',
+     nota:'Fijó 10,67% para mayo, junio y julio. Su fecha y su sustitución parcial constan en las Res. 146/2026 y 187/2026.'},
+    {m:'Junio 2026',  pct:11.97, norma:'Res. SE 121/2026', fecha:'2026', estado:'sus', fuente:'docAporte', ver:false,
+     nota:'Elevación a 11,97% según la documentación suministrada. No fue posible localizar el acto en las fuentes oficiales consultadas.'},
+    {m:'Julio 2026',  pct:16.59, norma:'Res. SE 146/2026', fecha:'01/07/2026', estado:'vig', fuente:'res146', ver:true,
+     nota:'Verificada en el Boletín Oficial. Sustituye lo previsto por la Res. 109/2026 para julio.'},
+    {m:'Agosto 2026', pct:16.59, norma:'Res. SE 187/2026', fecha:'31/07/2026', estado:'vig', fuente:'res187', ver:true,
+     nota:'Verificada en el Boletín Oficial. Sobre el consumo base de 300 kWh mensuales; se adiciona a la bonificación general del art. 7° del Decreto 943/25.'}
+  ]
+};
+
+/* -- Instituciones --------------------------------------------------------- */
+const INSTITUCIONES = [
+  {id:'pe', nombre:'Poder Ejecutivo provincial', rol:'Aprueba', color:'var(--series-7)',
+   tipoOrg:'Órgano constitucional', competencia:'Aprobación previa de los cuadros tarifarios; dictado de decretos reglamentarios y aprobatorios.',
+   normaComp:'Ley provincial 6.073', autoridad:'Gobernador de la Provincia', estado:'En funciones',
+   detalle:'Los cuadros tarifarios no pueden aplicarse sin aprobación previa del Poder Ejecutivo. El EPRE elabora, propone y controla; la aprobación político-administrativa final está reservada al Ejecutivo.'},
+  {id:'se', nombre:'Secretaría de Energía de Corrientes', rol:'Formula política', color:'var(--series-3)',
+   tipoOrg:'Órgano de la administración centralizada, dependencia directa del Poder Ejecutivo',
+   competencia:'Planificación e instrumentación de la política electroenergética; concesiones, licencias y autorizaciones provinciales; prospectiva de abastecimiento; administración de recursos sectoriales.',
+   normaComp:'Ley provincial 6.073', autoridad:'Titular no consignado en la documentación relevada', estado:'En funciones', pendAut:true,
+   detalle:'Es además autoridad de aplicación del régimen de generación distribuida: dictó la Resolución 240/2020 que reglamenta la Ley 6.503.'},
+  {id:'epre', nombre:'EPRE (Ente Provincial Regulador Eléctrico)', rol:'Regula y fiscaliza', color:'var(--series-2)',
+   tipoOrg:'Organismo con autonomía funcional y autarquía financiera; capacidad jurídica pública y privada',
+   competencia:'Protección de usuarios; control del cumplimiento normativo; reglamentos técnicos; regulación de medición y facturación; normas de seguridad; control de calidad; bases de cálculo tarifario y propuesta de cuadros; fiscalización; sanciones; resolución de controversias.',
+   normaComp:'Ley provincial 6.073; Decreto provincial 625/2012', autoridad:'Directorio de tres miembros (Presidente, Vicepresidente y Vocal), mandatos de cuatro años. Integración actual no consignada en la documentación relevada.',
+   estado:'En funciones', pendAut:true,
+   detalle:'Se vincula con el Poder Ejecutivo a través de la Secretaría de Energía. La designación del Directorio exige concurso público de antecedentes, jurado, propuesta al Poder Ejecutivo e intervención de la Comisión Bicameral.'},
+  {id:'dpec', nombre:'DPEC (Dirección Provincial de Energía de Corrientes)', rol:'Presta y opera', color:'var(--series-1)',
+   tipoOrg:'Ente autárquico con autarquía financiera y administrativa',
+   competencia:'Promoción, estudio, proyecto, ejecución y explotación de obras y servicios energéticos; generación, transporte, distribución y comercialización de energía eléctrica; coordinación de servicios de terceros.',
+   normaComp:'Ley provincial 3.588', autoridad:'Las resoluciones tarifarias de 2026 relevadas están dictadas como “Resoluciones de Intervención” y suscriptas por el Interventor.',
+   estado:'Bajo intervención según los actos relevados', pendAut:true,
+   detalle:'Existe una diferencia entre la organización permanente que describe la Ley 3.588 (Directorio y tres gerencias) y la modalidad de conducción observada en los actos tarifarios recientes. El alcance y la vigencia del acto que dispone la intervención no constan en la documentación relevada.'},
+  {id:'oc', nombre:'Órgano Consultivo', rol:'Participación', color:'var(--series-4)',
+   tipoOrg:'Cuerpo consultivo ad honórem en el ámbito del EPRE',
+   competencia:'Intervención obligatoria previa a todo acto que implique modificación de cuadros tarifarios.',
+   normaComp:'Decreto provincial 625/2012, art. 10', autoridad:'Un representante por municipalidad interesada y uno por asociación de usuarios con personería jurídica que solicite participar.',
+   estado:'Integración y actas no publicadas en las fuentes relevadas', pendAut:true,
+   detalle:'Puede reunirse por convocatoria del Directorio del EPRE o por sí mismo dentro de las reglas aplicables.'}
+];
+
+
+
+
+const COMPONENTES_COSTO = [
+ ['PEST: precio estacional de la energía','Nacional','Secretaría de Energía de la Nación','Programación estacional','Estacional, con ajustes'],
+ ['Potencia mayorista','Nacional','Secretaría de Energía / CAMMESA','Programación estacional','Estacional'],
+ ['Transporte','Nacional','Secretaría de Energía / transportistas','Cuadros de transporte','Periódica'],
+ ['FNEE: Fondo Nacional de Energía Eléctrica','Nacional','Secretaría de Energía de la Nación','Resolución (recargo $/MWh)','Periódica'],
+ ['Bonificación SEF','Nacional','Secretaría de Energía de la Nación','Decreto 943/2025 y resoluciones mensuales','Mensual'],
+ ['Contratos de abastecimiento de DPEC','Mixto','DPEC, con control del EPRE','Contratos y metodología del cuadro','Según contrato'],
+ ['Ajuste por diferencia entre precio estacional y contractual','Mixto','DPEC / EPRE','Columna de ajuste del cuadro tarifario','Mensual'],
+ ['Pass-through de costos mayoristas','Mixto','DPEC → EPRE → Poder Ejecutivo','Res. 70/2018, Dec. 340/2018, Res. EPRE 5/2021, Dec. 1155/2021','Ante cada variación'],
+ ['VAD: Valor Agregado de Distribución','Provincial','EPRE, aprueba el Poder Ejecutivo','Revisión tarifaria con audiencia pública','Período regulatorio (última audiencia: 08/02/2024)'],
+ ['Estructura de categorías y cargos','Provincial','EPRE / Poder Ejecutivo','Cuadro tarifario','Con cada cuadro'],
+ ['Impuestos, tasas y contribuciones','Nacional, provincial y municipal','Autoridades tributarias respectivas','Legislación tributaria aplicable','Según norma tributaria']
+];
+
+const CALIDAD_IND = [
+ ['SAIDI','Duración promedio de las interrupciones por usuario','No identificado como serie pública en las fuentes relevadas'],
+ ['SAIFI','Frecuencia promedio de interrupciones por usuario','No identificado como serie pública en las fuentes relevadas'],
+ ['CAIDI','Duración media por interrupción','No identificado como serie pública en las fuentes relevadas'],
+ ['Calidad de tensión','Desviaciones respecto del rango admitido','Competencia del EPRE conforme a la Ley 6.073; datos no identificados'],
+ ['Interrupciones programadas y forzadas','Cantidad, duración y usuarios afectados','No identificado como serie pública en las fuentes relevadas'],
+ ['Reclamos','Recibidos, resueltos y tiempos de resolución','Canales de reclamo publicados por DPEC; estadísticas no identificadas'],
+ ['Plazos de conexión y reconexión','Cumplimiento de plazos máximos','Materia atribuida al EPRE; indicadores no identificados'],
+ ['Calidad comercial','Lectura, facturación, cambio de titularidad, contraste de medidores','Regulada por el Reglamento de Suministro; indicadores no publicados'],
+ ['Energía no suministrada','Volumen no entregado por interrupciones','No identificado en las fuentes relevadas']
+];
+</script>
+
+<script>
+/* ============================================================================
+   COMPONENTES · Helpers de presentación
+   ============================================================================ */
+const F3  = new Intl.NumberFormat('es-AR',{minimumFractionDigits:0,maximumFractionDigits:3});
+const F0  = new Intl.NumberFormat('es-AR',{maximumFractionDigits:0});
+const F2  = new Intl.NumberFormat('es-AR',{minimumFractionDigits:2,maximumFractionDigits:2});
+const money  = v => '$ ' + (Math.abs(v)>=1000 ? F0.format(Math.round(v)) : F3.format(v));
+const money2 = v => '$ ' + F2.format(v);
+const pct    = v => F3.format(v)+' %';
+const $  = id => document.getElementById(id);
+const el = (tag,cls,html) => { const n=document.createElement(tag); if(cls)n.className=cls; if(html!=null)n.innerHTML=html; return n; };
+
+const EV_LABEL = {of:'Oficial', cp:'Cálculo propio', an:'Análisis', pr:'Propuesta', vp:'Validación pendiente'};
+const ev = k => `<span class="ev ev-${k}">${EV_LABEL[k]}</span>`;
+
+const ESTADOS = {vig:['st-vig','Vigente'], par:['st-par','Parcialmente vigente'], der:['st-der','Derogada'],
+                 sus:['st-sus','Sustituida'], val:['st-val','Validación pendiente']};
+const estado = k => { const e=ESTADOS[k]||ESTADOS.val; return `<span class="st ${e[0]}">${e[1]}</span>`; };
+
+function fuenteLink(key){
+  const f = FUENTES[key];
+  if(!f) return '<span style="color:var(--text-muted)">No registra</span>';
+  if(!f.u) return `<span style="color:var(--text-muted)" title="${f.t}">Doc. aportada</span>`;
+  return `<a href="${f.u}" target="_blank" rel="noopener" title="${f.t}">Fuente ↗</a>`;
+}
+function fuenteNota(keys){
+  const arr = (Array.isArray(keys)?keys:[keys]).map(k=>FUENTES[k]).filter(Boolean);
+  return arr.map(f => f.u ? `<a href="${f.u}" target="_blank" rel="noopener">${f.t} ↗</a>` : f.t).join(' · ');
+}
+
+/* ============================================================================
+   LÓGICA · Navegación
+   ============================================================================ */
+const tabsBox = $('tabs');
+let drawn = new Set();
+SECCIONES.forEach(([id,label])=>{
+  const b = el('button','tab',label);
+  b.type='button'; b.setAttribute('role','tab'); b.dataset.target=id;
+  b.addEventListener('click',()=>go(id));
+  tabsBox.appendChild(b);
+});
+function go(id, push=true){
+  const target = SECCIONES.some(s=>s[0]===id) ? id : SECCIONES[0][0];
+  document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active', v.id===target));
+  [...tabsBox.children].forEach(b=>b.setAttribute('aria-selected', b.dataset.target===target));
+  if(push) history.replaceState(null,'','#'+target);
+  window.scrollTo({top:0,behavior:'instant'});
+  const active = [...tabsBox.children].find(b=>b.dataset.target===target);
+  if(active) active.scrollIntoView({block:'nearest',inline:'nearest'});
+  if(!drawn.has(target)){ drawn.add(target); drawCharts(target); }
+}
+window.addEventListener('hashchange',()=>go(location.hash.slice(1),false));
+$('themeBtn').addEventListener('click',()=>{
+  const cur=document.documentElement.getAttribute('data-theme');
+  document.documentElement.setAttribute('data-theme', cur==='dark'?'light':'dark');
+  drawn.clear();
+  const act=document.querySelector('.view.active'); if(act) drawCharts(act.id);
+});
+
+/* índice del panorama */
+SECCIONES.slice(1).forEach(([id,label,desc])=>{
+  const a=el('a',null,`<b>${label}</b><span>${desc}</span>`); a.href='#'+id; $('toc').appendChild(a);
+});
+
+/* ============================================================================
+   01 · Panorama
+   ============================================================================ */
+(function(){
+  const ago = SEF.meses[SEF.meses.length-1];
+  const stats = [
+    ['Norma central','6.073','Ley provincial de marco regulatorio electroenergético (2011): principios tarifarios, EPRE, derechos del usuario y control.','of'],
+    ['Cuadro analizado','108-E','Aprobado por dos decretos, dos resoluciones del EPRE y dos resoluciones de DPEC.','of'],
+    ['Reglamento de suministro','2003','Sigue publicado por DPEC pese a que la Ley 6.073 encomienda al EPRE dictar un Reglamento Técnico de Suministro.','of'],
+    ['Bonificación extraordinaria', F3.format(ago.pct)+'%','Nivel nacional vigente para agosto de 2026 (Res. SE 187/2026), adicional al 50% general sobre el PEST del bloque base.','of']
+  ];
+  $('panoStats').innerHTML = stats.map(([l,v,s,e])=>
+    `<div class="stat accent"><div class="label">${l} ${ev(e)}</div><div class="value">${v}</div><div class="sub">${s}</div></div>`).join('');
+
+})();
+
+
+/* ============================================================================
+   03 · Instituciones
+   ============================================================================ */
+(function(){
+  const byId = id => INSTITUCIONES.find(i=>i.id===id);
+  const box=(i)=>`<div class="org-box" style="--c:${i.color}"><div class="rol">${i.rol}</div><h4>${i.nombre}</h4><p>${i.competencia}</p></div>`;
+  $('orgDiagram').innerHTML =
+    box(byId('pe')) +
+    `<div class="org-conn">Dependencia directa · vinculación funcional</div>` +
+    `<div class="org-lvl">${box(byId('se'))}${box(byId('epre'))}</div>` +
+    `<div class="org-conn">El EPRE regula, fiscaliza y sanciona a los prestadores, sin relación de dependencia administrativa</div>` +
+    `<div class="org-lvl">${box(byId('dpec'))}${box(byId('oc'))}</div>`;
+
+  $('instFichas').innerHTML = INSTITUCIONES.map(i=>`
+    <details class="acc"><summary>${i.nombre} <span class="pill">${i.rol}</span></summary>
+      <div class="body"><dl class="kv">
+        <dt>Competencia legal</dt><dd>${i.competencia}</dd>
+        <dt>Tipo de organismo</dt><dd>${i.tipoOrg}</dd>
+        <dt>Autoridad actuante</dt><dd>${i.autoridad} ${i.pendAut?ev('vp'):''}</dd>
+        <dt>Estado actual</dt><dd>${i.estado}</dd>
+        <dt>Norma que atribuye competencia</dt><dd>${i.normaComp} ${ev('of')}</dd>
+      </dl><p style="margin-bottom:0">${i.detalle}</p></div>
+    </details>`).join('');
+})();
+
+/* ============================================================================
+   04 · Tabla de normas
+   ============================================================================ */
+(function(){
+  const st = {jur:'todas', estado:'todos', q:''};
+  const fb=$('normFiltros');
+  fb.innerHTML = `
+    <div class="fld"><label for="nJur">Jurisdicción</label><select id="nJur">
+      <option value="todas">Todas</option><option value="nac">Nacional</option><option value="prov">Provincial</option></select></div>
+    <div class="fld"><label for="nEst">Estado</label><select id="nEst">
+      <option value="todos">Todos</option><option value="vig">Vigente</option><option value="par">Parcialmente vigente</option>
+      <option value="sus">Sustituida</option><option value="der">Derogada</option><option value="val">Validación pendiente</option></select></div>
+    <div class="fld" style="flex:1 1 200px"><label for="nQ">Buscar</label><input id="nQ" type="search" placeholder="Número, materia o palabra clave" style="width:100%"></div>`;
+  const tb = document.querySelector('#normTabla tbody');
+  const render=()=>{
+    const q = st.q.toLowerCase();
+    const list = NORMAS.filter(n =>
+      (st.jur==='todas'||n.jur===st.jur) &&
+      (st.estado==='todos'||n.estado===st.estado) &&
+      (!q || (n.tipo+' '+n.num+' '+n.materia+' '+(n.art||'')+' '+(n.nota||'')).toLowerCase().includes(q))
+    );
+    tb.innerHTML = list.length ? list.map((n,i)=>`
+      <tr data-i="${NORMAS.indexOf(n)}" style="cursor:pointer">
+        <td><strong>${n.tipo} ${n.num}</strong>${n.pend?' <span class="ev ev-vp" title="No fue posible localizar el acto publicado en las fuentes oficiales consultadas">Fuente pendiente</span>':''}</td>
+        <td class="num">${n.anio ?? 's/d'}</td>
+        <td><span class="pill ${n.jur}">${n.jur==='nac'?'Nacional':'Provincial'}</span></td>
+        <td>${n.materia}</td>
+        <td>${estado(n.estado)}</td>
+        <td>${n.modifica}</td>
+        <td>${n.modificadaPor}</td>
+        <td>${n.vigencia}</td>
+        <td>${fuenteLink(n.fuente)}</td>
+      </tr>`).join('') : `<tr><td colspan="9"><div class="empty">Ninguna norma coincide con los filtros.</div></td></tr>`;
+    $('normCount').textContent = `${list.length} de ${NORMAS.length} normas · ${NORMAS.filter(n=>n.pend).length} con fuente oficial pendiente de localizar · hacé clic en una fila para ver el detalle.`;
+    tb.querySelectorAll('tr[data-i]').forEach(tr=>tr.addEventListener('click',()=>detalle(+tr.dataset.i)));
+  };
+  const detalle=(i)=>{
+    const n=NORMAS[i];
+    $('normDetalle').innerHTML = `<div class="note ${n.pend?'pending':'explain'}">
+      <div class="nt">${n.tipo} ${n.num}: ${n.materia} ${ev(n.pend?'vp':'of')}</div>
+      <p><strong>Artículo o contenido relevante:</strong> ${n.art}</p>
+      <p style="margin-bottom:0">${n.nota} <br><span style="font-size:.8rem">Fuente: ${fuenteNota(n.fuente)}</span></p></div>`;
+    $('normDetalle').scrollIntoView({block:'nearest',behavior:'smooth'});
+  };
+  $('nJur').addEventListener('change',e=>{st.jur=e.target.value;render();});
+  $('nEst').addEventListener('change',e=>{st.estado=e.target.value;render();});
+  $('nQ').addEventListener('input',e=>{st.q=e.target.value;render();});
+  render();
+})();
+
+/* ============================================================================
+   05 · Explorador tarifario
+   ============================================================================ */
+function calcularBloques(t, kwh){
+  let rest = kwh, det = [], total = 0, prev = 0;
+  for(const b of t.bloques){
+    const cap = b.h==null ? Infinity : b.h - prev;
+    const q = Math.max(0, Math.min(rest, cap));
+    if(q>0 || t.bloques.length===1){
+      det.push({q, p:b.p, sub:q*b.p, lbl: b.h==null ? (prev? `excedente de ${F0.format(prev)} kWh` : 'todo el consumo') : `primeros ${F0.format(b.h)} kWh`});
+      total += q*b.p; rest -= q;
+    }
+    if(b.h!=null) prev = b.h;
+    if(rest<=0) break;
+  }
+  return {det,total};
+}
+function calcularTarifa(t, kwh, kw){
+  const filas=[]; let total=0, calculable=true;
+  if(t.pend) return {filas:[], total:0, calculable:false, motivo:'Valores no cargados hasta su validación documental.'};
+  if(t.bloques){
+    let fijo = t.fijo;
+    if(t.base!=null) fijo = (kwh<=t.base) ? t.fijo : t.fijoPleno;
+    if(fijo!=null){
+      filas.push({k:'Cargo fijo'+(t.base!=null ? (kwh<=t.base?' (bonificado, consumo ≤ base)':' (pleno, consumo > base)') : ''), v:fijo, u:'$/'+t.per});
+      total += fijo;
+    } else {
+      filas.push({k:'Cargo fijo', v:null, nota:t.fijoNota});
+    }
+    const r = calcularBloques(t,kwh);
+    r.det.forEach(d=>{ filas.push({k:`Energía · ${d.lbl}`, v:d.sub, u:`${F0.format(d.q)} kWh × ${money(d.p)}`}); });
+    total += r.total;
+  }
+  if(t.potc!=null){
+    if(kw>0){ filas.push({k:'Potencia', v:t.potc*kw, u:`${F3.format(kw)} kW × ${money(t.potc)} /kW-mes`}); total += t.potc*kw; }
+    else { filas.push({k:'Potencia', v:null, nota:`${money(t.potc)} por kW-mes. Ingresá la potencia para calcular.`}); calculable=false; }
+  }
+  if(t.e!=null && !t.bloques){
+    filas.push({k:'Energía', v:t.e*kwh, u:`${F0.format(kwh)} kWh × ${money(t.e)}`}); total += t.e*kwh;
+  }
+  if(t.punta!=null){
+    calculable=false;
+    filas.push({k:'Energía · banda punta', v:t.punta*kwh, u:`escenario: ${F0.format(kwh)} kWh × ${money(t.punta)}`, esc:true});
+    filas.push({k:'Energía · banda resto', v:t.resto*kwh, u:`escenario: ${F0.format(kwh)} kWh × ${money(t.resto)}`, esc:true});
+    filas.push({k:'Energía · banda valle', v:t.valle*kwh, u:`escenario: ${F0.format(kwh)} kWh × ${money(t.valle)}`, esc:true});
+  }
+  return {filas,total,calculable};
+}
+(function(){
+  const st={tipo:'todos', zona:'todas', pot:'todas', kwh:600, kw:0};
+  $('tarFiltros').innerHTML = `
+    <div class="fld"><label for="tTipo">Tipo de usuario</label><select id="tTipo">${FILTROS_TIPO.map(([k,l])=>`<option value="${k}">${l}</option>`).join('')}</select></div>
+    <div class="fld"><label for="tZona">Zona</label><select id="tZona"><option value="todas">Todas</option><option value="urbana">Urbana</option><option value="rural">Rural</option><option value="na">Sin distinción</option></select></div>
+    <div class="fld"><label for="tPot">Potencia</label><select id="tPot"><option value="todas">Todas</option><option value="&lt;10">Menos de 10 kW</option><option value="10-50">10 a 50 kW</option><option value="&gt;50">Más de 50 kW</option><option value="na">Sin distinción</option></select></div>
+    <div class="fld"><label for="tKwh">Consumo (kWh)</label><input id="tKwh" type="number" min="0" step="10" value="600"></div>
+    <div class="fld"><label for="tKw">Potencia (kW)</label><input id="tKw" type="number" min="0" step="1" value="0" placeholder="opcional"></div>`;
+  const render=()=>{
+    const list = TARIFAS.filter(t =>
+      (st.tipo==='todos'||t.tipo===st.tipo) &&
+      (st.zona==='todas'||t.zona===st.zona) &&
+      (st.pot==='todas'||t.pot===st.pot));
+    $('tarCount').textContent = `${list.length} de ${TARIFAS.length} categorías del cuadro. Los importes son subtotales tarifarios, sin impuestos ni otros conceptos.`;
+    if(!list.length){ $('tarResultados').innerHTML='<div class="empty">Ninguna categoría coincide con los filtros seleccionados.</div>'; return; }
+    const grupos={};
+    list.forEach(t=>{ (grupos[t.g]=grupos[t.g]||[]).push(t); });
+    $('tarResultados').innerHTML = Object.entries(grupos).map(([g,items])=>`
+      <h4>${g}</h4>` + items.map(t=>{
+        const c = calcularTarifa(t, st.kwh, st.kw);
+        const filas = c.filas.map(f=>`<tr><td>${f.k}</td><td class="num">${f.v!=null?money2(f.v):'s/d'}</td><td style="color:var(--text-muted);font-size:.8rem">${f.u||f.nota||''}</td></tr>`).join('');
+        const tot = (c.calculable && c.filas.some(f=>f.v!=null))
+          ? `<tr style="background:var(--brand-soft)"><td><strong>Subtotal tarifario</strong></td><td class="num"><strong>${money2(c.total)}</strong></td><td style="font-size:.8rem">${ev('cp')} sin impuestos ni otros conceptos</td></tr>`
+          : `<tr><td colspan="3" style="font-size:.8rem;color:var(--text-muted)">${c.motivo || 'Subtotal no calculable con los datos ingresados: esta categoría requiere el reparto horario del consumo y/o la potencia demandada. Los importes por banda se muestran como escenarios independientes.'}</td></tr>`;
+        return `<div class="tablewrap"><table>
+          <caption><strong>${t.n}</strong> · página ${t.pag} del Cuadro 108-E ${t.pend?ev('vp'):ev('of')}${t.sef?` · <span class="pill tar">SEF ${t.sef==='jun'?'junio':'julio'}</span>`:''}</caption>
+          <thead><tr><th>Concepto</th><th class="num">Importe</th><th>Detalle</th></tr></thead>
+          <tbody>${filas||'<tr><td colspan="3" style="color:var(--text-muted)">Sin valores cargados.</td></tr>'}${tot}</tbody></table>
+          ${t.nota?`<div class="src">${t.pend?'⚠ ':''}${t.nota}</div>`:''}
+          ${t.iny!=null||t.inyP!=null?`<div class="src">Tarifa de reinyección: ${t.iny!=null?money(t.iny)+' /kWh':`punta ${money(t.inyP)} · resto ${money(t.inyR)} · valle ${money(t.inyV)} por kWh`} (página 11).</div>`:''}
+          ${t.aviso==='tecnica'?`<div class="src">⚠ Valor técnico: no equivale al importe final que abona el beneficiario. Ver la sección Usuarios.</div>`:''}
+        </div>`;
+      }).join('')).join('');
+  };
+  ['tTipo','tZona','tPot'].forEach((id,i)=>$(id).addEventListener('change',e=>{
+    st[['tipo','zona','pot'][i]] = e.target.value; render();
+  }));
+  $('tKwh').addEventListener('input',e=>{ st.kwh=Math.max(0,+e.target.value||0); render(); });
+  $('tKw').addEventListener('input',e=>{ st.kw=Math.max(0,+e.target.value||0); render(); });
+  render();
+
+  document.querySelector('#zonasTabla tbody').innerHTML = SEF.zonas.map(z=>
+    `<tr><td>${z.zona}</td><td class="num">${F0.format(z.verano)} kWh</td><td class="num">${F0.format(z.veranoBim)} kWh</td><td class="num">${F0.format(z.invBim)} kWh</td><td class="num">${F0.format(z.restoBim)} kWh</td></tr>`).join('');
+})();
+
+/* ============================================================================
+   06 · Cascada de factura
+   ============================================================================ */
+(function(){
+  const opciones = TARIFAS.filter(t=>t.bloques && (t.fijo!=null));
+  const st={id:'res-u', kwh:600};
+  $('facFiltros').innerHTML = `
+    <div class="fld" style="flex:1 1 320px"><label for="fCat">Categoría</label><select id="fCat" style="width:100%">
+      ${opciones.map(t=>`<option value="${t.id}">${t.n}</option>`).join('')}</select></div>
+    <div class="fld"><label for="fKwh">Consumo bimestral (kWh)</label><input id="fKwh" type="number" min="0" step="10" value="600"></div>`;
+  const EXPL = {
+    mem:['Costo mayorista sin subsidio','Precio de la energía y la potencia adquiridas en el Mercado Eléctrico Mayorista, más transporte. Lo determina la Nación mediante la programación estacional; la provincia no lo fija.'],
+    sub:['Subsidio nacional SEF','Bonificación general del 50% sobre el PEST del bloque base (art. 7° del Decreto 943/2025) más la bonificación extraordinaria del mes. Se aplica sobre el componente mayorista, no sobre la factura completa.'],
+    rec:['Costo mayorista reconocido','Resultado de los dos pasos anteriores: lo que efectivamente se traslada al usuario por el abastecimiento.'],
+    vad:['Valor Agregado de Distribución','Remunera redes, personal, operación, mantenimiento, comercialización, medición, inversiones, pérdidas reconocidas y capital. Es el componente estrictamente provincial: surge de la revisión tarifaria con audiencia pública (la última informada por DPEC es del 8 de febrero de 2024).'],
+    aju:['Ajuste por contratos de abastecimiento','El cuadro calcula primero la tarifa a precio estacional y luego ajusta por la diferencia con el precio contractual. Cuando el contrato resulta más barato, el ajuste opera a favor del usuario.'],
+    car:['Cargo fijo y cargos de potencia','El cargo fijo cubre costos comerciales, medición y parte de la infraestructura. En categorías medianas y grandes aparece además un cargo por la capacidad de red que debe estar disponible.'],
+    ene:['Energía','Consumo medido valorizado según los bloques o bandas horarias de la categoría.'],
+    gd:['Créditos por generación distribuida','Si el usuario es usuario-generador, el valor de la energía inyectada se acredita según la tarifa de inyección de su categoría (página 11 del cuadro).'],
+    sub2:['Subtotal eléctrico regulado','Suma de los conceptos tarifarios. Es lo máximo que puede calcularse con el cuadro tarifario.'],
+    imp:['Impuestos, tasas y contribuciones','Tributos nacionales, provinciales y municipales cobrados a través de la factura. La Ley 6.073 exige que se transfieran a sus beneficiarios y aparezcan expresamente discriminados.'],
+    fin:['Factura final','Resultado de todos los pasos anteriores. No es deducible del cuadro tarifario por sí solo.']
+  };
+  const render=()=>{
+    const t = TARIFAS.find(x=>x.id===st.id) || opciones[0];
+    const c = calcularTarifa(t, st.kwh, 0);
+    const fijo = c.filas.find(f=>f.k.startsWith('Cargo fijo'));
+    const energia = c.filas.filter(f=>f.k.startsWith('Energía')).reduce((a,f)=>a+(f.v||0),0);
+    const nd = '<span style="color:var(--text-muted);font-weight:500">no publicado</span>';
+    const rows = [
+      ['mem','','var(--series-7)', nd, 'Componente nacional'],
+      ['sub','−','var(--series-7)', nd, 'Componente nacional'],
+      ['rec','=','var(--series-7)', nd, 'Resultado intermedio', 'sub'],
+      ['vad','+','var(--series-1)', nd, 'Componente provincial'],
+      ['aju','±','var(--series-4)', nd, 'Componente mixto'],
+      ['car','+','var(--series-1)', fijo && fijo.v!=null ? money2(fijo.v) : nd, 'Del cuadro tarifario'],
+      ['ene','+','var(--series-1)', money2(energia), 'Del cuadro tarifario'],
+      ['gd','−','var(--series-3)', t.iny!=null? `${money(t.iny)} por kWh inyectado` : nd, 'Según inyección del período'],
+      ['sub2','=','var(--brand)', money2(c.total), 'Calculado', 'total'],
+      ['imp','+','var(--series-2)', nd, 'Depende de la jurisdicción del suministro'],
+      ['fin','=','var(--series-8)', nd, 'No determinable con el cuadro tarifario', 'sub']
+    ];
+    $('facCascada').innerHTML = rows.map(([k,op,c2,val,hint,cls])=>`
+      <button class="wf-row ${cls||''}" data-k="${k}" style="--c:${c2}" type="button" aria-expanded="false">
+        <span class="op">${op}</span>
+        <span class="lb">${EXPL[k][0]}<small>${hint}</small></span>
+        <span class="vl">${val}</span>
+      </button><div class="wf-exp" hidden data-exp="${k}"></div>`).join('') +
+      `<p style="font-size:.8rem;color:var(--text-muted);margin-top:.7rem">Los conceptos con importe corresponden al Cuadro 108-E para <strong>${t.n}</strong> con ${F0.format(st.kwh)} kWh ${ev('cp')}. Los marcados como “no publicado” no pueden calcularse porque su desglose por categoría no consta en el material relevado ${ev('vp')}.</p>`;
+    $('facCascada').querySelectorAll('.wf-row').forEach(b=>b.addEventListener('click',()=>{
+      const exp = $('facCascada').querySelector(`[data-exp="${b.dataset.k}"]`);
+      const open = !exp.hasAttribute('hidden');
+      if(open){ exp.setAttribute('hidden',''); b.setAttribute('aria-expanded','false'); }
+      else { exp.innerHTML = `<p style="margin-bottom:0">${EXPL[b.dataset.k][1]}</p>`; exp.removeAttribute('hidden'); b.setAttribute('aria-expanded','true'); }
+    }));
+  };
+  $('fCat').addEventListener('change',e=>{st.id=e.target.value;render();});
+  $('fKwh').addEventListener('input',e=>{st.kwh=Math.max(0,+e.target.value||0);render();});
+  render();
+})();
+
+/* ============================================================================
+   07 · SEF
+   ============================================================================ */
+(function(){
+  $('sefBloques').innerHTML = SEF.bloques.map(b=>
+    `<div class="stat accent"><div class="label">Bloque base ${ev('of')}</div><div class="value">${b.kwh} <span class="u">kWh/mes</span></div><div class="sub">${b.meses}. ${b.norma}.</div></div>`).join('') +
+    `<div class="stat accent"><div class="label">Bonificación general ${ev('of')}</div><div class="value">${SEF.general} <span class="u">% sobre el PEST</span></div><div class="sub">Art. 7° del Decreto 943/2025. Durante 2026 puede adicionarse una bonificación extraordinaria de hasta ${SEF.topeExtra} puntos porcentuales.</div></div>`;
+
+  document.querySelector('#sefTabla tbody').innerHTML = SEF.meses.map(m=>`
+    <tr><td>${m.m}</td><td class="num">${F3.format(m.pct)} %</td><td>${m.norma}</td><td>${m.fecha}</td>
+    <td>${m.ver===true?'<span class="st st-vig">Verificada en el Boletín Oficial</span>':m.ver==='parcial'?'<span class="st st-par">Verificada indirectamente</span>':'<span class="st st-val">Validación pendiente</span>'} ${fuenteLink(m.fuente)}</td></tr>`).join('');
+})();
+
+/* ============================================================================
+   08 · Componentes del costo
+   ============================================================================ */
+document.querySelector('#compTabla tbody').innerHTML = COMPONENTES_COSTO.map(([c,a,au,i,f])=>{
+  const cls = a==='Nacional'?'nac':a==='Provincial'?'prov':'tar';
+  return `<tr><td><strong>${c}</strong></td><td><span class="pill ${cls}">${a}</span></td><td>${au}</td><td>${i}</td><td>${f}</td></tr>`;
+}).join('');
+
+/* ============================================================================
+   11 · Calidad
+   ============================================================================ */
+document.querySelector('#calTabla tbody').innerHTML = CALIDAD_IND.map(([i,q,e])=>
+  `<tr><td><strong>${i}</strong></td><td>${q}</td><td>${e} ${ev('vp')}</td></tr>`).join('');
+
+
+/* ============================================================================
+   13 · Cronología
+   ============================================================================ */
+(function(){
+  const st={cat:'todas', estado:'todos', tema:'todos'};
+  const temas=[...new Set(CRONOLOGIA.map(c=>c.tema))];
+  $('tlFiltros').innerHTML = `
+    <div class="fld"><label for="cJur">Jurisdicción / tipo</label><select id="cJur"><option value="todas">Todas</option>
+      ${Object.entries(TL_CATS).map(([k,v])=>`<option value="${k}">${v.label}</option>`).join('')}</select></div>
+    <div class="fld"><label for="cEst">Estado</label><select id="cEst"><option value="todos">Todos</option>
+      <option value="vig">Vigente</option><option value="par">Parcialmente vigente</option>
+      <option value="sus">Sustituida</option><option value="val">Validación pendiente</option></select></div>
+    <div class="fld"><label for="cTem">Tema</label><select id="cTem"><option value="todos">Todos</option>
+      ${temas.map(t=>`<option value="${t}">${t}</option>`).join('')}</select></div>`;
+  const render=()=>{
+    const list = CRONOLOGIA.slice().sort((a,b)=>a.o-b.o).filter(c =>
+      (st.cat==='todas'||c.cat===st.cat) && (st.estado==='todos'||c.estado===st.estado) && (st.tema==='todos'||c.tema===st.tema));
+    $('tlCount').textContent = `${list.length} de ${CRONOLOGIA.length} hitos.`;
+    $('timeline').innerHTML = list.length ? list.map(c=>`
+      <div class="tl-item ${c.ms?'milestone':''}" style="--c:${TL_CATS[c.cat].color}">
+        <div class="tl-card">
+          <div class="tl-head"><span class="tl-date">${c.fecha}</span><span class="tl-title">${c.titulo}</span>
+            <span class="pill ${c.cat}">${TL_CATS[c.cat].label}</span></div>
+          <p class="tl-body">${c.body}</p>
+          <div class="tl-foot">
+            <span style="color:var(--text-muted)"><strong>${c.norma}</strong></span>
+            <span class="pill">${c.tema}</span>
+            ${estado(c.estado)}
+            <span>${fuenteLink(c.fuente)}</span>
+          </div>
+        </div></div>`).join('') : '<div class="empty">No hay hitos para esta combinación de filtros.</div>';
+  };
+  $('cJur').addEventListener('change',e=>{st.cat=e.target.value;render();});
+  $('cEst').addEventListener('change',e=>{st.estado=e.target.value;render();});
+  $('cTem').addEventListener('change',e=>{st.tema=e.target.value;render();});
+  render();
+})();
+
+
+/* ============================================================================
+   15 · Fuentes
+   ============================================================================ */
+(function(){
+  const fila = f => `<div class="stat" style="border-left:3px solid ${f.ver?'var(--st-good)':'var(--st-warning)'}">
+      <div class="label"><span>${f.ver?'Verificada':'Sin respaldo público localizado'}</span>${f.ver?ev('of'):ev('vp')}</div>
+      <div style="margin-top:.35rem;font-size:.9rem;line-height:1.4">${f.u?`<a href="${f.u}" target="_blank" rel="noopener">${f.t} ↗</a>`:f.t}</div>
+      ${f.u?`<div class="sub" style="margin-top:.3rem;word-break:break-all;font-family:var(--mono);font-size:.7rem">${f.u}</div>`:''}
+    </div>`;
+  const all = Object.values(FUENTES);
+  $('fuentesProv').innerHTML = `<div class="grid g2">${all.filter(f=>f.j==='prov'&&f.ver).map(fila).join('')}</div>`;
+  $('fuentesNac').innerHTML  = `<div class="grid g2">${all.filter(f=>f.j==='nac'&&f.ver).map(fila).join('')}</div>`;
+  $('fuentesPend').innerHTML = `<div class="grid g2">${all.filter(f=>!f.ver).map(fila).join('')}</div>`;
+  $('footSources').innerHTML = `Fuentes verificadas: ${all.filter(f=>f.ver).length} · Referencias sin respaldo público localizado: ${all.filter(f=>!f.ver).length}. Ver la sección <a href="#fuentes">Fuentes</a>.`;
+})();
+</script>
+
+<script>
+/* ============================================================================
+   GRÁFICOS · Motor SVG sin dependencias
+   ============================================================================ */
+const tip=$('viztip');
+const showTip=(h,e)=>{ tip.innerHTML=h; tip.classList.add('on'); moveTip(e); };
+function moveTip(e){
+  const pad=14,w=tip.offsetWidth,h=tip.offsetHeight;
+  let x=e.clientX+pad, y=e.clientY-h-8;
+  if(x+w>innerWidth-8) x=e.clientX-w-pad;
+  if(y<8) y=e.clientY+pad;
+  tip.style.left=x+'px'; tip.style.top=y+'px';
+}
+const hideTip=()=>tip.classList.remove('on');
+const C = k => getComputedStyle(document.documentElement).getPropertyValue('--series-'+k).trim();
+
+const legendHTML = S => S.length<2 ? '' :
+  '<div class="legend">'+S.map(s=>`<span><i style="background:${s.color}"></i>${s.name}</span>`).join('')+'</div>';
+const tableHTML = (cats,S,unit,fmt) =>
+  `<div class="tablewrap" hidden><table><thead><tr><th>Categoría</th>${S.map(s=>`<th class="num">${s.name}</th>`).join('')}</tr></thead><tbody>`+
+  cats.map((c,i)=>`<tr><td>${c}</td>${S.map(s=>`<td class="num">${fmt(s.values[i])}</td>`).join('')}</tr>`).join('')+
+  `</tbody></table><div class="src">Vista de tabla del gráfico. Unidad: ${unit}.</div></div>`;
+function attachToggle(root){
+  const btn=root.querySelector('.tbl-toggle'), tw=root.querySelector('.tablewrap');
+  btn.addEventListener('click',()=>{
+    if(tw.hasAttribute('hidden')){ tw.removeAttribute('hidden'); btn.textContent='◱ Ocultar tabla de datos'; }
+    else { tw.setAttribute('hidden',''); btn.textContent='◱ Ver tabla de datos'; }
+  });
+}
+function bindMarks(root){
+  root.querySelectorAll('.mk').forEach(m=>{
+    m.addEventListener('mouseenter',e=>showTip(`<b>${m.dataset.t}</b><div class="row"><span>${m.dataset.s}</span><span>${m.dataset.v}</span></div>`,e));
+    m.addEventListener('mousemove',moveTip);
+    m.addEventListener('mouseleave',hideTip);
+  });
+}
+function hBars(root,o){
+  const cats=o.categories, S=o.series, fmt=o.fmt||money;
+  const W=680, LBL=o.labelWidth||205, R=o.valueWidth||100;
+  const barH=o.barH||15, gap=2, groupGap=16;
+  const rowH=S.length*barH+(S.length-1)*gap, H=cats.length*(rowH+groupGap)+8, plotW=W-LBL-R;
+  const max=Math.max(...S.flatMap(s=>s.values))*1.02;
+  let g='';
+  cats.forEach((c,i)=>{
+    const y0=i*(rowH+groupGap)+4;
+    g+=`<text class="tick" x="${LBL-10}" y="${y0+rowH/2+4}" text-anchor="end">${c}</text>`;
+    S.forEach((s,j)=>{
+      const v=s.values[i], w=Math.max(2,v/max*plotW), y=y0+j*(barH+gap);
+      g+=`<rect x="${LBL}" y="${y}" width="${w}" height="${barH}" rx="4" fill="${s.color}" class="mk" data-t="${c}" data-s="${s.name}" data-v="${fmt(v)}"></rect>`;
+      g+=`<text class="tick val" x="${LBL+w+7}" y="${y+barH-3}">${fmt(v)}</text>`;
+    });
+  });
+  root.innerHTML=`<div class="fig-title">${o.title}</div><div class="fig-sub">${o.sub}</div>`+legendHTML(S)+
+    `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${o.title}"><line class="axline" x1="${LBL}" y1="0" x2="${LBL}" y2="${H-6}"/>${g}</svg>`+
+    (o.note?`<div class="fig-note">${o.note}</div>`:'')+
+    `<button class="tbl-toggle" type="button">◱ Ver tabla de datos</button>`+tableHTML(cats,S,o.unit||'',fmt);
+  bindMarks(root); attachToggle(root);
+}
+function stepPath(vals,X,Y){
+  let d='M'+X(0)+' '+Y(vals[0]);
+  for(let i=1;i<vals.length;i++) d+=' L'+X(i)+' '+Y(vals[i-1])+' L'+X(i)+' '+Y(vals[i]);
+  return d;
+}
+function lineChart(root,o){
+  const xs=o.x, S=o.series, fmt=o.fmt||money;
+  const W=680,H=290,M={t:16,r:26,b:38,l:o.leftPad||92};
+  const pw=W-M.l-M.r, ph=H-M.t-M.b;
+  const all=S.flatMap(s=>s.values);
+  let lo=o.min!==undefined?o.min:Math.min(...all), hi=o.max!==undefined?o.max:Math.max(...all);
+  if(o.max===undefined){ const pad=(hi-lo)*0.12||1; hi+=pad; if(o.min===undefined) lo-=pad; }
+  const xv=o.xVals, xlo=xv?Math.min(...xv):0, xhi=xv?Math.max(...xv):0;
+  const Xn=v=>M.l+(v-xlo)/(xhi-xlo)*pw;
+  const X=i=>xv?Xn(xv[i]):M.l+(xs.length===1?pw/2:i/(xs.length-1)*pw);
+  const Y=v=>M.t+ph-(v-lo)/(hi-lo)*ph;
+  let g='';
+  for(let k=0;k<=4;k++){
+    const v=lo+(hi-lo)*k/4, y=Y(v);
+    g+=`<line class="gridline" x1="${M.l}" y1="${y}" x2="${W-M.r}" y2="${y}"/><text class="tick" x="${M.l-9}" y="${y+4}" text-anchor="end">${fmt(v)}</text>`;
+  }
+  if(o.ticks) o.ticks.forEach(t=>{ g+=`<text class="tick" x="${Xn(t.v)}" y="${H-M.b+20}" text-anchor="middle">${t.label}</text>`; });
+  else xs.forEach((x,i)=>{ g+=`<text class="tick" x="${X(i)}" y="${H-M.b+20}" text-anchor="middle">${x}</text>`; });
+  g+=`<line class="axline" x1="${M.l}" y1="${M.t+ph}" x2="${W-M.r}" y2="${M.t+ph}"/>`;
+  S.forEach(s=>{
+    const d=s.values.map((v,i)=>(i?'L':'M')+X(i)+' '+Y(v)).join(' ');
+    g+=`<path d="${o.step?stepPath(s.values,X,Y):d}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+    s.values.forEach((v,i)=>{
+      g+=`<circle cx="${X(i)}" cy="${Y(v)}" r="4.5" fill="${s.color}" stroke="var(--panel)" stroke-width="2"/>`;
+      g+=`<circle cx="${X(i)}" cy="${Y(v)}" r="13" fill="transparent" class="mk" data-t="${xs[i]}" data-s="${s.name}" data-v="${fmt(v)}"/>`;
+      if(o.pointLabels) g+=`<text class="tick val" x="${X(i)}" y="${Y(v)-13}" text-anchor="middle">${fmt(v)}</text>`;
+    });
+  });
+  root.innerHTML=`<div class="fig-title">${o.title}</div><div class="fig-sub">${o.sub}</div>`+legendHTML(S)+
+    `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${o.title}">${g}</svg>`+
+    (o.note?`<div class="fig-note">${o.note}</div>`:'')+
+    `<button class="tbl-toggle" type="button">◱ Ver tabla de datos</button>`+tableHTML(xs,S,o.unit||'',fmt);
+  bindMarks(root); attachToggle(root);
+}
+
+/* -- Definiciones de cada figura ------------------------------------------- */
+const billSEF  = c => c<=600 ? 18730+c*118.196 : 31700+600*118.196+(c-600)*229.417;
+const billFull = c => c<=600 ? 31700+c*191.306 : 31700+600*191.306+(c-600)*229.417;
+
+function figBoni(root){
+  lineChart(root,{
+    title:'Bonificación extraordinaria nacional · 2026',
+    sub:'Porcentaje adicional al 50% general sobre el PEST del bloque base.',
+    x:SEF.meses.map(m=>m.m.replace(' 2026','')),
+    series:[{name:'Bonificación extraordinaria', color:C(2), values:SEF.meses.map(m=>m.pct)}],
+    fmt:pct, step:true, min:0, max:20, leftPad:58, pointLabels:true, unit:'% adicional',
+    note:'Res. SE 109/2026 (30/04/2026) fijó 10,67% para mayo, junio y julio; junio habría pasado a 11,97% según la Res. 121/2026 (validación pendiente); la Res. 146/2026 llevó julio a 16,59% y la Res. 187/2026 mantuvo ese nivel en agosto. Las dos últimas fueron verificadas en el Boletín Oficial.'
+  });
+}
+function drawCharts(view){
+  if(view==='panorama'){
+    hBars($('fig-urbrur'),{
+      title:'Brecha urbano y rural en el precio de la energía',
+      sub:'Cargos variables de pequeñas demandas residenciales, en $/kWh. Cuadro 108-E, página 2.',
+      categories:['Urbano · primeros 600 kWh','Urbano · excedente','Rural · primeros 600 kWh','Rural · excedente'],
+      series:[{name:'$/kWh', color:C(1), values:[191.306,229.417,273.123,342.638]}], unit:'$/kWh',
+      note:'El usuario rural paga 42,8% más que el urbano en el primer bloque y 49,4% más en el excedente (cálculo propio). La Ley 6.073 prohíbe recuperar costos de una categoría cobrándolos a otra: la diferencia requiere base de costos demostrable o una compensación explícita.'
+    });
+    figBoni($('fig-boni'));
+  }
+  if(view==='tarifas'){
+    hBars($('fig-bloques'),{
+      title:'Energía del bloque subsidiado frente al valor pleno',
+      sub:'Cargo variable de los primeros 600 kWh bimestrales, en $/kWh.',
+      categories:['Urbano · sin bonificación','Urbano · SEF junio','Urbano · SEF julio','Rural · sin bonificación','Rural · SEF junio','Rural · SEF julio'],
+      series:[{name:'$/kWh', color:C(1), values:[191.306,118.196,119.730,273.123,204.775,206.209]}], unit:'$/kWh',
+      note:'Reducción del componente variable: ~38,22% en junio y ~37,41% en julio para el usuario urbano; ~25,02% y ~24,50% para el rural (cálculo propio). No equivale al porcentaje nacional sobre el PEST, porque la tarifa minorista contiene componentes no subsidiados.'
+    });
+    hBars($('fig-inyeccion'),{
+      title:'Tarifa de inyección frente al precio minorista',
+      sub:'Valores en $/kWh de las categorías con ambos datos publicados.',
+      categories:['Residencial urbano · 1er bloque','Residencial urbano · excedente','Comercial / industrial','Autoridades','Asociaciones sin fines de lucro'],
+      series:[{name:'Precio minorista', color:C(2), values:[191.306,229.417,174.233,186.578,175.715]},
+              {name:'Tarifa de inyección', color:C(1), values:[103.157,103.157,102.805,105.079,103.827]}],
+      labelWidth:230, barH:15, unit:'$/kWh',
+      note:'La brecha no es margen del distribuidor: el precio minorista incluye distribución, comercialización y capacidad, costos que no se evitan porque un prosumidor inyecte 1 kWh. Es net billing monetario, no net metering 1:1.'
+    });
+    const xs=[560,580,600,601,620,640];
+    lineChart($('fig-notch'),{
+      title:'Discontinuidad potencial entre 600 y 601 kWh',
+      sub:'Importe tarifario bimestral bajo interpretación literal del cuadro. Junio de 2026, residencial urbano.',
+      x:xs.map(v=>v+' kWh'), xVals:xs,
+      ticks:[{v:560,label:'560 kWh'},{v:580,label:'580 kWh'},{v:600.5,label:'600 → 601'},{v:620,label:'620 kWh'},{v:640,label:'640 kWh'}],
+      series:[{name:'Con SEF (junio)', color:C(3), values:xs.map(billSEF)},
+              {name:'Sin bonificación', color:C(2), values:xs.map(billFull)}],
+      note:'Cálculo propio sobre la lectura literal de la tabla. El salto se produce porque la cuota fija pasa de $ 18.730 a $ 31.700. Debe verificarse contra el algoritmo real de facturación antes de concluir que el efecto se produce en la factura.'
+    });
+    hBars($('fig-facturas'),{
+      title:'Facturas modelo residenciales urbanas',
+      sub:'Subtotal tarifario bimestral, sin impuestos ni otros conceptos. Base subsidiada de 600 kWh en junio.',
+      categories:['300 kWh','600 kWh','601 kWh','800 kWh','1.100 kWh'],
+      series:[{name:'Sin SEF', color:C(2), values:[89091.80,146483.60,146713.02,192367.00,261192.10]},
+              {name:'Con SEF (junio)', color:C(3), values:[54188.80,89647.60,102847.02,148501.00,217326.10]}],
+      labelWidth:110, valueWidth:112, barH:16, unit:'$ por bimestre',
+      note:'Cálculo propio. No son facturas finales. El porcentaje de ayuda decrece a medida que el consumo supera el bloque subsidiado: es la lógica de focalización del SEF.'
+    });
+    const gdCats=['BT · >50 y <300 kW','BT · ≥300 kW','MT · >50 y <300 kW','MT · ≥300 kW'];
+    hBars($('fig-btmt'),{
+      title:'Cargo de potencia', sub:'Grandes demandas, en $/kW-mes.',
+      categories:gdCats, labelWidth:165, valueWidth:105, barH:20,
+      series:[{name:'$/kW-mes', color:C(1), values:[30967,30851,17802,17788]}], unit:'$/kW-mes',
+      note:'El cargo de potencia en media tensión es ~42,5% menor que en baja tensión (cálculo propio).'
+    });
+    hBars($('fig-btmt-e'),{
+      title:'Energía en banda punta', sub:'Grandes demandas, en $/kWh.',
+      categories:gdCats, labelWidth:165, valueWidth:105, barH:20,
+      series:[{name:'$/kWh', color:C(2), values:[139.802,140.055,122.825,123.532]}], unit:'$/kWh',
+      note:'La brecha en energía (~12%) es mucho menor que en potencia (~42,5%): el nivel de tensión pesa sobre la capacidad de red utilizada más que sobre el volumen transportado.'
+    });
+  }
+  if(view==='subsidios'){
+    figBoni($('fig-boni2'));
+    lineChart($('fig-sefahorro'),{
+      title:'El ahorro efectivo decrece con el consumo',
+      sub:'Diferencia porcentual entre el subtotal tarifario sin bonificación y con SEF. Junio de 2026, residencial urbano.',
+      x:['300 kWh','600 kWh','601 kWh','800 kWh','1.100 kWh'],
+      series:[{name:'Ahorro sobre el subtotal tarifario', color:C(3), values:[39.18,38.80,29.90,22.80,16.79]}],
+      fmt:pct, min:0, max:44, leftPad:58, pointLabels:true, unit:'% de ahorro',
+      note:'Cálculo propio, sin impuestos ni otros conceptos. Ilustra la diferencia entre el porcentaje nacional aplicado al PEST y la reducción efectiva del importe tarifario.'
+    });
+  }
+}
+
+/* arranque */
+go(location.hash.slice(1)||'panorama', false);
+</script>
+</body>
+</html>
