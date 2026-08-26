@@ -3,322 +3,707 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ficha energética y regulatoria de la Provincia de Corrientes</title>
+<title>Corrientes · Datos Energía Eléctrica</title>
 <meta name="description" content="Ficha técnica del régimen jurídico, institucional y tarifario del servicio público de energía eléctrica de la Provincia de Corrientes. Datos oficiales, cálculos propios y análisis diferenciados.">
 <style>
 /* ============================================================
-   ESTILOS · 1. TOKENS
+   1 · SISTEMA DE DISEÑO
    ============================================================ */
 :root{
   color-scheme: light;
-  --surface-1:#fcfcfb; --page:#f4f4f1; --panel:#ffffff;
-  --text-primary:#0b0b0b; --text-secondary:#52514e; --text-muted:#7d7b75;
-  --grid:#e1e0d9; --axis:#c3c2b7;
-  --border:rgba(11,11,11,0.10); --border-strong:rgba(11,11,11,0.18);
-  --brand:#184f95; --brand-deep:#0d366b; --brand-soft:#eef4fc;
+  /* superficies */
+  --bg:#f4f6f8;
+  --bg-grid:rgba(11,22,40,.035);
+  --panel:#ffffff;
+  --panel-2:#f8fafc;
+  --panel-3:#eef2f7;
+  --surface-1:#f8fafc;
+  --page:#f4f6f8;
+  /* tinta */
+  --text-primary:#0d1520;
+  --text-secondary:#4a5768;
+  --text-muted:#7c8798;
+  /* líneas */
+  --grid:#e4e9ef;
+  --axis:#c3ccd7;
+  --border:rgba(13,21,32,.09);
+  --border-strong:rgba(13,21,32,.16);
+  --ring:rgba(42,120,214,.38);
+  /* marca */
+  --brand:#1b5fae;
+  --brand-2:#2a78d6;
+  --brand-deep:#0f3f7d;
+  --brand-soft:#eaf2fc;
+  --brand-line:rgba(42,120,214,.28);
+  /* series */
   --series-1:#2a78d6; --series-2:#eb6834; --series-3:#1baf7a; --series-4:#eda100;
   --series-5:#e87ba4; --series-6:#008300; --series-7:#4a3aa7; --series-8:#e34948;
   --st-good:#0ca30c; --st-warning:#fab219; --st-serious:#ec835a; --st-critical:#d03b3b;
-  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  --maxw: 1560px; --radius: 10px;
-  --shadow: 0 1px 2px rgba(11,11,11,.05), 0 8px 24px -18px rgba(11,11,11,.22);
+  /* elevación */
+  --sh-1:0 1px 2px rgba(13,21,32,.05);
+  --sh-2:0 1px 2px rgba(13,21,32,.05), 0 6px 16px -10px rgba(13,21,32,.22);
+  --sh-3:0 2px 4px rgba(13,21,32,.06), 0 14px 32px -14px rgba(13,21,32,.28);
+  --sh-4:0 8px 24px -6px rgba(13,21,32,.14), 0 24px 60px -20px rgba(13,21,32,.32);
+  --sh-inset:inset 0 1px 0 rgba(255,255,255,.7);
+  /* forma */
+  --r-xs:5px; --r-sm:7px; --r:10px; --r-lg:14px; --r-xl:18px;
+  /* movimiento */
+  --d1:130ms; --d2:200ms; --d3:320ms;
+  --ease:cubic-bezier(.2,.7,.3,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  /* capas */
+  --z-nav:50; --z-top:60; --z-fab:70; --z-drawer:90; --z-palette:120; --z-tip:200;
+  /* medidas */
+  --maxw:1560px; --pad:2rem; --prose:74ch;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
 :root[data-theme="dark"]{
   color-scheme: dark;
-  --surface-1:#1a1a19; --page:#0d0d0d; --panel:#1a1a19;
-  --text-primary:#ffffff; --text-secondary:#c3c2b7; --text-muted:#898781;
-  --grid:#2c2c2a; --axis:#383835;
-  --border:rgba(255,255,255,0.12); --border-strong:rgba(255,255,255,0.20);
-  --brand:#5598e7; --brand-deep:#86b6ef; --brand-soft:#16233a;
+  --bg:#0d1117;
+  --bg-grid:rgba(255,255,255,.028);
+  --panel:#151b23;
+  --panel-2:#1a212b;
+  --panel-3:#212a35;
+  --surface-1:#1a212b;
+  --page:#0d1117;
+  --text-primary:#e9eef5;
+  --text-secondary:#a9b6c6;
+  --text-muted:#7b8798;
+  --grid:#232c37;
+  --axis:#39434f;
+  --border:rgba(255,255,255,.10);
+  --border-strong:rgba(255,255,255,.18);
+  --ring:rgba(86,152,231,.5);
+  --brand:#5f9ce8;
+  --brand-2:#3987e5;
+  --brand-deep:#8fbcf2;
+  --brand-soft:#152337;
+  --brand-line:rgba(95,156,232,.32);
   --series-1:#3987e5; --series-2:#d95926; --series-3:#199e70; --series-4:#c98500;
   --series-5:#d55181; --series-6:#008300; --series-7:#9085e9; --series-8:#e66767;
-  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -18px rgba(0,0,0,.8);
+  --sh-1:0 1px 2px rgba(0,0,0,.4);
+  --sh-2:0 1px 2px rgba(0,0,0,.4), 0 6px 16px -10px rgba(0,0,0,.7);
+  --sh-3:0 2px 4px rgba(0,0,0,.45), 0 14px 32px -14px rgba(0,0,0,.8);
+  --sh-4:0 8px 24px -6px rgba(0,0,0,.5), 0 24px 60px -20px rgba(0,0,0,.9);
+  --sh-inset:inset 0 1px 0 rgba(255,255,255,.045);
 }
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--page);color:var(--text-primary);font-family:var(--sans);
-  font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{line-height:1.24;margin:0 0 .5em;font-weight:650;letter-spacing:-.012em}
-h2{font-size:1.5rem;margin-top:0}
-h3{font-size:1.08rem;margin-top:2.2rem}
-h4{font-size:.96rem;margin-top:1.4rem;color:var(--text-secondary)}
+body{
+  margin:0;color:var(--text-primary);font-family:var(--sans);
+  font-size:15.5px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  background:
+    radial-gradient(1100px 460px at 8% -10%, var(--brand-soft), transparent 60%),
+    radial-gradient(900px 400px at 100% 0%, color-mix(in srgb,var(--series-3) 5%,transparent), transparent 55%),
+    var(--bg);
+  background-attachment:fixed;
+  transition:background-color var(--d3) var(--ease), color var(--d3) var(--ease);
+}
+h1,h2,h3,h4{line-height:1.22;margin:0 0 .5em;font-weight:660;letter-spacing:-.016em}
+h2{font-size:clamp(1.35rem,1.1rem + .9vw,1.7rem);margin-top:0}
+h3{font-size:1.1rem;margin-top:2.4rem;letter-spacing:-.012em}
+h4{font-size:.95rem;margin-top:1.4rem;color:var(--text-secondary);letter-spacing:-.006em}
 p{margin:0 0 .9em}
-a{color:var(--brand);text-underline-offset:2px}
-ul,ol{margin:0 0 .9em;padding-left:1.1rem}
+a{color:var(--brand);text-underline-offset:2px;transition:color var(--d1) var(--ease)}
+a:hover{color:var(--brand-deep)}
+ul,ol{margin:0 0 .9em;padding-left:1.15rem}
 li{margin:.24em 0}
-strong{font-weight:640}
-code,kbd{font-family:var(--mono);font-size:.85em;background:var(--brand-soft);padding:.08em .35em;border-radius:4px;color:var(--brand-deep)}
-pre{font-family:var(--mono);background:var(--surface-1);border:1px solid var(--border);border-radius:8px;
-  padding:.85rem 1rem;overflow:auto;font-size:.78rem;line-height:1.7;margin:0 0 1rem}
-hr{border:0;border-top:1px solid var(--border);margin:2rem 0}
+li::marker{color:var(--text-muted)}
+strong{font-weight:645}
+code,kbd{font-family:var(--mono);font-size:.85em;background:var(--panel-3);padding:.1em .38em;border-radius:var(--r-xs);color:var(--brand-deep);border:1px solid var(--border)}
+kbd{font-size:.72em;padding:.12em .4em;box-shadow:0 1px 0 var(--border-strong)}
+pre{font-family:var(--mono);background:var(--panel-2);border:1px solid var(--border);border-radius:var(--r);
+  padding:.9rem 1.05rem;overflow:auto;font-size:.78rem;line-height:1.7;margin:0 0 1rem;box-shadow:var(--sh-inset)}
+::selection{background:var(--brand-line)}
+:focus-visible{outline:2px solid var(--brand-2);outline-offset:2px;border-radius:var(--r-xs)}
 
 /* ============================================================
-   2. CABECERA Y NAVEGACIÓN
+   2 · CABECERA
    ============================================================ */
-.topbar{position:sticky;top:0;z-index:60;background:color-mix(in srgb,var(--panel) 93%,transparent);
-  backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--border)}
-.topbar-inner{max-width:var(--maxw);margin:0 auto;padding:.5rem 2rem;display:flex;align-items:center;gap:.8rem}
-.brandmark{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit}
-.brandmark .glyph{width:32px;height:32px;border-radius:8px;background:linear-gradient(150deg,var(--brand),var(--brand-deep));
-  display:grid;place-items:center;color:#fff;font-size:16px;font-weight:700}
-.brandmark .txt strong{display:block;font-size:.86rem;line-height:1.2}
-.brandmark .txt span{display:block;font-size:.68rem;color:var(--text-muted);line-height:1.2}
+.topbar{
+  position:sticky;top:0;z-index:var(--z-top);
+  background:color-mix(in srgb,var(--panel) 82%,transparent);
+  backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);
+  border-bottom:1px solid transparent;
+  transition:border-color var(--d2) var(--ease), box-shadow var(--d2) var(--ease), background var(--d2) var(--ease);
+}
+body.scrolled .topbar{border-bottom-color:var(--border);box-shadow:var(--sh-1)}
+.topbar-inner{max-width:var(--maxw);margin:0 auto;padding:.6rem var(--pad);display:flex;align-items:center;gap:.9rem;
+  transition:padding var(--d2) var(--ease)}
+body.scrolled .topbar-inner{padding-top:.34rem;padding-bottom:.34rem}
+.brandmark{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:inherit;border-radius:var(--r-sm);padding:.15rem}
+.brandmark .glyph{
+  width:34px;height:34px;border-radius:9px;flex:0 0 auto;display:grid;place-items:center;
+  background:linear-gradient(145deg,var(--brand-2),var(--brand-deep));color:#fff;
+  box-shadow:0 2px 8px -2px rgba(27,95,174,.55), inset 0 1px 0 rgba(255,255,255,.28);
+  transition:transform var(--d2) var(--ease-out), box-shadow var(--d2) var(--ease), width var(--d2) var(--ease), height var(--d2) var(--ease);
+}
+.brandmark:hover .glyph{transform:translateY(-1px) rotate(-4deg);box-shadow:0 6px 16px -4px rgba(27,95,174,.6), inset 0 1px 0 rgba(255,255,255,.3)}
+.brandmark .glyph svg{width:19px;height:19px;transition:width var(--d2) var(--ease),height var(--d2) var(--ease)}
+body.scrolled .brandmark .glyph{width:28px;height:28px}
+body.scrolled .brandmark .glyph svg{width:16px;height:16px}
+.brandmark .txt strong{display:block;font-size:.9rem;line-height:1.22;letter-spacing:-.014em}
+.brandmark .txt span{display:block;font-size:.685rem;color:var(--text-muted);line-height:1.25;
+  max-height:1.4em;opacity:1;transition:max-height var(--d2) var(--ease),opacity var(--d2) var(--ease)}
+body.scrolled .brandmark .txt span{max-height:0;opacity:0;overflow:hidden}
 .spacer{flex:1}
-.iconbtn{border:1px solid var(--border);background:var(--panel);color:var(--text-secondary);
-  border-radius:7px;padding:.35rem .6rem;cursor:pointer;font-size:.76rem;font-family:inherit}
-.iconbtn:hover{border-color:var(--border-strong);color:var(--text-primary)}
-nav.tabs{border-bottom:1px solid var(--border);background:var(--panel);position:sticky;top:45px;z-index:55}
-.tabs-inner{max-width:var(--maxw);margin:0 auto;padding:0 2rem;display:flex;gap:0;overflow-x:auto;scrollbar-width:thin}
-.tabs-inner::-webkit-scrollbar{height:3px}
-.tabs-inner::-webkit-scrollbar-thumb{background:var(--axis);border-radius:3px}
-.tab{appearance:none;border:0;background:none;font-family:inherit;font-size:.85rem;font-weight:530;
-  color:var(--text-secondary);padding:.7rem .82rem .6rem;cursor:pointer;white-space:nowrap;
-  border-bottom:2.5px solid transparent}
-.tab .n{font-size:.66rem;color:var(--text-muted);font-variant-numeric:tabular-nums}
-.tab:hover{color:var(--text-primary)}
-.tab[aria-selected="true"]{color:var(--brand);border-bottom-color:var(--brand);font-weight:640}
-.tab[aria-selected="true"] .n{color:var(--brand)}
-main{max-width:var(--maxw);margin:0 auto;padding:1.8rem 2rem 4rem}
-.view{display:none;animation:fade .24s ease;scroll-margin-top:110px}
-.view.active{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
-.sec-head{display:flex;flex-wrap:wrap;gap:.6rem;align-items:baseline;margin-bottom:.4rem}
-.sec-head .idx{font-variant-numeric:tabular-nums;font-size:.78rem;font-weight:700;color:var(--text-muted);
-  border:1px solid var(--border);border-radius:5px;padding:.05rem .38rem}
-.lede{font-size:1.02rem;color:var(--text-secondary);max-width:92ch;margin-bottom:1.4rem}
+.tb-actions{display:flex;align-items:center;gap:.4rem}
+
+.iconbtn{
+  display:inline-flex;align-items:center;gap:.4rem;
+  border:1px solid var(--border);background:var(--panel);color:var(--text-secondary);
+  border-radius:var(--r-sm);padding:.36rem .6rem;cursor:pointer;font-size:.78rem;font-family:inherit;font-weight:530;
+  box-shadow:var(--sh-1);transition:all var(--d1) var(--ease);
+}
+.iconbtn:hover{border-color:var(--border-strong);color:var(--text-primary);background:var(--panel-2);transform:translateY(-1px);box-shadow:var(--sh-2)}
+.iconbtn:active{transform:translateY(0);box-shadow:var(--sh-1)}
+.iconbtn svg{width:15px;height:15px;flex:0 0 auto}
+.iconbtn.only{padding:.36rem .45rem}
+.searchbtn{min-width:210px;justify-content:flex-start;color:var(--text-muted)}
+.searchbtn kbd{margin-left:auto;background:var(--panel-3);border-color:var(--border);color:var(--text-muted)}
+@media (max-width:900px){ .searchbtn{min-width:0} .searchbtn .lbl-s,.searchbtn kbd{display:none} }
+
+/* toggle de tema */
+.themebtn{position:relative;width:34px;height:30px;padding:0;overflow:hidden}
+.themebtn svg{position:absolute;left:50%;top:50%;width:16px;height:16px;transition:transform var(--d3) var(--ease-out),opacity var(--d2) var(--ease)}
+.themebtn .sun{transform:translate(-50%,-50%) rotate(0deg);opacity:1}
+.themebtn .moon{transform:translate(-50%,20px) rotate(-40deg);opacity:0}
+:root[data-theme="dark"] .themebtn .sun{transform:translate(-50%,-24px) rotate(40deg);opacity:0}
+:root[data-theme="dark"] .themebtn .moon{transform:translate(-50%,-50%) rotate(0deg);opacity:1}
 
 /* ============================================================
-   3. ETIQUETAS DE EVIDENCIA
+   3 · NAVEGACIÓN
    ============================================================ */
-.ev{display:inline-flex;align-items:center;gap:.28rem;font-size:.64rem;font-weight:700;letter-spacing:.055em;
-  text-transform:uppercase;padding:.12rem .42rem;border-radius:4px;white-space:nowrap;vertical-align:middle;
-  border:1px solid transparent;line-height:1.5}
-.ev::before{content:"";width:6px;height:6px;border-radius:2px;background:currentColor;flex:0 0 auto}
-.ev-of{color:#0d5c8f;background:color-mix(in srgb,#2a78d6 12%,transparent)}
-.ev-cp{color:#7a4a00;background:color-mix(in srgb,#eda100 20%,transparent)}
-.ev-an{color:#3b2e8a;background:color-mix(in srgb,#4a3aa7 12%,transparent)}
-.ev-pr{color:#0d6c4b;background:color-mix(in srgb,#1baf7a 15%,transparent)}
-.ev-vp{color:#a33b0b;background:color-mix(in srgb,#eb6834 15%,transparent)}
-:root[data-theme="dark"] .ev-of{color:#9ec5f4}
+nav.tabs{
+  position:sticky;top:47px;z-index:var(--z-nav);
+  background:color-mix(in srgb,var(--panel) 88%,transparent);
+  backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);
+  border-bottom:1px solid var(--border);
+  transition:top var(--d2) var(--ease),box-shadow var(--d2) var(--ease);
+}
+body.scrolled nav.tabs{top:41px;box-shadow:var(--sh-1)}
+.tabs-wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);position:relative}
+.tabs-wrap::before,.tabs-wrap::after{
+  content:"";position:absolute;top:0;bottom:0;width:34px;pointer-events:none;z-index:2;opacity:0;transition:opacity var(--d2) var(--ease)}
+.tabs-wrap::before{left:var(--pad);background:linear-gradient(90deg,var(--panel),transparent)}
+.tabs-wrap::after{right:var(--pad);background:linear-gradient(270deg,var(--panel),transparent)}
+.tabs-wrap[data-l="1"]::before{opacity:.95}
+.tabs-wrap[data-r="1"]::after{opacity:.95}
+.tabs-inner{display:flex;gap:0;overflow-x:auto;scrollbar-width:none;position:relative;scroll-behavior:smooth}
+.tabs-inner::-webkit-scrollbar{display:none}
+.tab{
+  appearance:none;border:0;background:none;font-family:inherit;font-size:.85rem;font-weight:540;
+  color:var(--text-secondary);padding:.72rem .8rem .66rem;cursor:pointer;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:.42rem;position:relative;
+  transition:color var(--d1) var(--ease);border-radius:var(--r-sm) var(--r-sm) 0 0;
+}
+.tab svg{width:15px;height:15px;opacity:.62;transition:opacity var(--d1) var(--ease),transform var(--d2) var(--ease-out)}
+.tab:hover{color:var(--text-primary)}
+.tab:hover svg{opacity:.95;transform:translateY(-1px)}
+.tab:hover::after{content:"";position:absolute;inset:.28rem .35rem .3rem;background:var(--panel-3);border-radius:var(--r-sm);z-index:-1}
+.tab[aria-selected="true"]{color:var(--brand);font-weight:650}
+.tab[aria-selected="true"] svg{opacity:1}
+.tab-ink{position:absolute;bottom:0;height:2.5px;border-radius:3px 3px 0 0;
+  background:linear-gradient(90deg,var(--brand-2),var(--brand));
+  transition:transform var(--d3) var(--ease-out), width var(--d3) var(--ease-out);
+  box-shadow:0 -1px 8px -1px var(--brand-line);will-change:transform,width}
+.progress{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:transparent;z-index:3;pointer-events:none}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brand-2),var(--series-3));
+  border-radius:0 2px 2px 0;transition:width 90ms linear;opacity:.85}
+
+/* nav móvil */
+.navsel{display:none}
+@media (max-width:760px){
+  .tabs-inner{display:none}
+  .navsel{display:flex;align-items:center;gap:.5rem;padding:.5rem 0}
+  .navsel select{
+    flex:1;font-family:inherit;font-size:.92rem;font-weight:600;color:var(--text-primary);
+    background:var(--panel);border:1px solid var(--border-strong);border-radius:var(--r-sm);padding:.5rem .6rem;
+    box-shadow:var(--sh-1)}
+  .tab-ink{display:none}
+}
+
+/* ============================================================
+   4 · LAYOUT
+   ============================================================ */
+main{max-width:var(--maxw);margin:0 auto;padding:1.6rem var(--pad) 5rem}
+.view{display:none;scroll-margin-top:120px}
+.view.active{display:block;animation:viewIn var(--d3) var(--ease-out) both}
+@keyframes viewIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.view.active > *{animation:riseIn var(--d3) var(--ease-out) both}
+.view.active > *:nth-child(1){animation-delay:0ms}
+.view.active > *:nth-child(2){animation-delay:35ms}
+.view.active > *:nth-child(3){animation-delay:70ms}
+.view.active > *:nth-child(4){animation-delay:100ms}
+.view.active > *:nth-child(n+5){animation-delay:125ms}
+@keyframes riseIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* cabecera de sección */
+.sec-head{display:flex;flex-wrap:wrap;gap:.5rem .8rem;align-items:center;margin:0 0 .35rem;position:relative}
+.sec-head h2{margin:0}
+.eyebrow{display:flex;align-items:center;gap:.5rem;font-size:.7rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brand);margin:0 0 .5rem}
+.eyebrow::before{content:"";width:18px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--brand-2),transparent)}
+.lede{font-size:1.02rem;color:var(--text-secondary);max-width:var(--prose);margin-bottom:1.5rem;line-height:1.66}
+.view > p, .view > ul, .view > ol{max-width:82ch}
+
+/* separadores de zona */
+.zone{margin:2.6rem 0 1rem;display:flex;align-items:center;gap:.9rem}
+.zone h3{margin:0;font-size:.82rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap}
+.zone::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--border-strong),transparent)}
+
+/* ============================================================
+   5 · SUPERFICIES
+   ============================================================ */
+.card{
+  background:var(--panel);border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:1.25rem 1.35rem;margin:1rem 0;box-shadow:var(--sh-2);position:relative;
+  transition:transform var(--d2) var(--ease-out),box-shadow var(--d2) var(--ease),border-color var(--d2) var(--ease);
+}
+.card:hover{transform:translateY(-2px);box-shadow:var(--sh-3);border-color:var(--border-strong)}
+.card > :last-child{margin-bottom:0}
+.card h4:first-child,.card h3:first-child{margin-top:0}
+.grid{display:grid;gap:.95rem}
+.g2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(252px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+
+/* indicadores */
+.stat{
+  background:var(--panel);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.05rem 1.1rem;
+  box-shadow:var(--sh-1);position:relative;overflow:hidden;
+  transition:transform var(--d2) var(--ease-out),box-shadow var(--d2) var(--ease),border-color var(--d2) var(--ease);
+}
+.stat::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(420px 120px at 100% 0%,var(--brand-soft),transparent 70%);opacity:0;transition:opacity var(--d2) var(--ease)}
+.stat:hover{transform:translateY(-3px);box-shadow:var(--sh-3);border-color:var(--brand-line)}
+.stat:hover::after{opacity:.75}
+.stat .label{font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;color:var(--text-muted);font-weight:680;
+  display:flex;justify-content:space-between;gap:.4rem;align-items:center;position:relative;z-index:1}
+.stat .value{font-size:1.85rem;font-weight:680;line-height:1.1;margin:.3rem 0 .18rem;letter-spacing:-.032em;
+  position:relative;z-index:1;font-variant-numeric:tabular-nums}
+.stat .value.sm{font-size:1.16rem;letter-spacing:-.018em}
+.stat .value .u{font-size:.82rem;font-weight:560;color:var(--text-secondary);margin-left:.2rem;letter-spacing:0}
+.stat .sub{font-size:.79rem;color:var(--text-secondary);line-height:1.45;position:relative;z-index:1}
+.stat.accent{border-left:3px solid var(--brand-2)}
+.stat.pending{border-style:dashed;background:transparent;box-shadow:none}
+.stat.pending .value{color:var(--text-muted);font-size:1.02rem;font-weight:620}
+
+/* llamadas */
+.note{border-radius:var(--r-lg);padding:1rem 1.15rem;margin:1.1rem 0;border:1px solid var(--border);
+  background:var(--panel);box-shadow:var(--sh-1);position:relative;overflow:hidden;
+  transition:box-shadow var(--d2) var(--ease),transform var(--d2) var(--ease-out)}
+.note:hover{box-shadow:var(--sh-2)}
+.note::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--nc,var(--border-strong))}
+.note .nt{font-weight:680;font-size:.79rem;margin-bottom:.42rem;display:flex;align-items:center;gap:.45rem;flex-wrap:wrap;
+  letter-spacing:-.004em;color:var(--nc,var(--text-primary))}
+.note .nt svg{width:15px;height:15px;flex:0 0 auto}
+.note > :last-child{margin-bottom:0}
+.note p{max-width:88ch}
+.note.problem{--nc:var(--st-critical);background:linear-gradient(100deg,color-mix(in srgb,var(--st-critical) 6%,var(--panel)),var(--panel) 62%)}
+.note.pending{--nc:#a8720a;background:linear-gradient(100deg,color-mix(in srgb,var(--st-warning) 10%,var(--panel)),var(--panel) 62%)}
+:root[data-theme="dark"] .note.pending{--nc:var(--st-warning)}
+.note.explain{--nc:var(--brand);background:linear-gradient(100deg,var(--brand-soft),var(--panel) 66%)}
+.note.ok{--nc:#0a7d0a;background:linear-gradient(100deg,color-mix(in srgb,var(--st-good) 7%,var(--panel)),var(--panel) 62%)}
+:root[data-theme="dark"] .note.ok{--nc:var(--st-good)}
+
+/* ============================================================
+   6 · TABLAS
+   ============================================================ */
+.tablewrap{
+  overflow:auto;max-height:none;margin:.95rem 0;border:1px solid var(--border);border-radius:var(--r-lg);
+  background:var(--panel);box-shadow:var(--sh-1);position:relative;
+  background-image:linear-gradient(90deg,var(--panel) 30%,transparent),linear-gradient(270deg,var(--panel) 30%,transparent),
+    linear-gradient(90deg,rgba(13,21,32,.10),transparent 22px),linear-gradient(270deg,rgba(13,21,32,.10),transparent 22px);
+  background-position:0 0,100% 0,0 0,100% 0;
+  background-size:44px 100%,44px 100%,22px 100%,22px 100%;
+  background-repeat:no-repeat;background-attachment:local,local,scroll,scroll;
+}
+table{border-collapse:separate;border-spacing:0;width:100%;font-size:.85rem}
+caption{text-align:left;padding:.85rem 1.05rem .3rem;font-size:.8rem;color:var(--text-muted);caption-side:top;line-height:1.5}
+th,td{padding:.56rem .85rem;text-align:left;border-bottom:1px solid var(--grid);vertical-align:top}
+thead th{
+  background:var(--panel-2);font-size:.685rem;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--text-secondary);font-weight:700;border-bottom:1px solid var(--axis);white-space:nowrap;
+  position:sticky;top:0;z-index:2;backdrop-filter:blur(6px);
+}
+tbody tr{transition:background var(--d1) var(--ease)}
+tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--panel-2) 55%,transparent)}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:var(--brand-soft)}
+tbody tr[data-i]{cursor:pointer}
+tbody tr[data-i]:hover td:first-child{box-shadow:inset 3px 0 0 var(--brand-2)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.src{font-size:.745rem;color:var(--text-muted);padding:.55rem 1.05rem;border-top:1px solid var(--grid);
+  background:var(--panel-2);display:flex;flex-wrap:wrap;gap:.4rem .7rem;align-items:baseline;line-height:1.55}
+.src a{color:var(--brand)}
+
+/* ============================================================
+   7 · ETIQUETAS Y ESTADOS
+   ============================================================ */
+.ev{display:inline-flex;align-items:center;gap:.3rem;font-size:.645rem;font-weight:750;letter-spacing:.06em;
+  text-transform:uppercase;padding:.14rem .45rem;border-radius:999px;white-space:nowrap;vertical-align:middle;
+  border:1px solid currentColor;line-height:1.5;cursor:help;
+  transition:transform var(--d1) var(--ease-out),box-shadow var(--d1) var(--ease)}
+.ev:hover{transform:translateY(-1px)}
+.ev::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;flex:0 0 auto;box-shadow:0 0 0 2px color-mix(in srgb,currentColor 22%,transparent)}
+.ev-of{color:#12609b;background:color-mix(in srgb,#2a78d6 10%,transparent)}
+.ev-cp{color:#8a5300;background:color-mix(in srgb,#eda100 16%,transparent)}
+.ev-an{color:#43349b;background:color-mix(in srgb,#4a3aa7 10%,transparent)}
+.ev-pr{color:#0c6f4d;background:color-mix(in srgb,#1baf7a 13%,transparent)}
+.ev-vp{color:#a83f0e;background:color-mix(in srgb,#eb6834 13%,transparent)}
+:root[data-theme="dark"] .ev-of{color:#8fbcf2}
 :root[data-theme="dark"] .ev-cp{color:#f0c766}
 :root[data-theme="dark"] .ev-an{color:#b7aef0}
 :root[data-theme="dark"] .ev-pr{color:#6ddcae}
 :root[data-theme="dark"] .ev-vp{color:#f4a077}
-.ev-legend{display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;padding:.8rem 1rem;background:var(--surface-1);
-  border:1px solid var(--border);border-radius:var(--radius);margin:0 0 1.5rem;font-size:.79rem;color:var(--text-secondary)}
-.ev-legend div{display:flex;align-items:center;gap:.45rem}
 
-/* ============================================================
-   4. BLOQUES DE CONTENIDO
-   ============================================================ */
-.hero{background:linear-gradient(155deg,var(--brand-deep),var(--brand) 62%,#256abf);color:#fff;
-  border-radius:14px;padding:2.1rem 1.9rem;margin-bottom:1.4rem;position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;inset:auto -60px -120px auto;width:320px;height:320px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,255,255,.15),transparent 68%)}
-.hero .kicker{font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;opacity:.85;margin-bottom:.6rem;font-weight:600}
-.hero h1{font-size:clamp(1.5rem,3.3vw,2.35rem);margin-bottom:.5rem;max-width:30ch}
-.hero p{max-width:96ch;opacity:.93;margin-bottom:0;font-size:.98rem}
-.hero .stamp{display:inline-flex;gap:.5rem;align-items:center;margin-top:1.1rem;font-size:.76rem;
-  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);padding:.3rem .7rem;border-radius:999px}
-.card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
-  padding:1.2rem 1.3rem;margin:1rem 0;box-shadow:var(--shadow)}
-.card > :last-child{margin-bottom:0}
-.card h4:first-child,.card h3:first-child{margin-top:0}
-.grid{display:grid;gap:.9rem}
-.g2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.g4{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
-.stat{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:.95rem 1rem}
-.stat .label{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);font-weight:650;
-  display:flex;justify-content:space-between;gap:.4rem;align-items:center}
-.stat .value{font-size:1.65rem;font-weight:660;line-height:1.15;margin:.22rem 0 .1rem;letter-spacing:-.02em}
-.stat .value.sm{font-size:1.18rem}
-.stat .value .u{font-size:.85rem;font-weight:550;color:var(--text-secondary);margin-left:.15rem}
-.stat .sub{font-size:.78rem;color:var(--text-secondary);line-height:1.42}
-.stat.accent{border-left:3px solid var(--brand)}
-.stat.pending{border-style:dashed;background:transparent}
-.stat.pending .value{color:var(--text-muted);font-size:1.05rem;font-weight:600}
-.note{border-radius:var(--radius);padding:.85rem 1.05rem;margin:1rem 0;border:1px solid var(--border);background:var(--surface-1)}
-.note .nt{font-weight:650;font-size:.8rem;margin-bottom:.35rem;display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
-.note > :last-child{margin-bottom:0}
-.note.problem{border-left:3px solid var(--st-critical);background:color-mix(in srgb,var(--st-critical) 5%,var(--panel))}
-.note.problem .nt{color:var(--st-critical)}
-.note.pending{border-left:3px solid var(--st-warning);background:color-mix(in srgb,var(--st-warning) 8%,var(--panel))}
-.note.pending .nt{color:#8a5c00}
-:root[data-theme="dark"] .note.pending .nt{color:var(--st-warning)}
-.note.explain{border-left:3px solid var(--brand);background:var(--brand-soft)}
-.note.explain .nt{color:var(--brand)}
-.note.ok{border-left:3px solid var(--st-good);background:color-mix(in srgb,var(--st-good) 6%,var(--panel))}
-.note.ok .nt{color:#0a7d0a}
-:root[data-theme="dark"] .note.ok .nt{color:var(--st-good)}
-
-/* tablas */
-.tablewrap{overflow-x:auto;margin:.9rem 0;border:1px solid var(--border);border-radius:var(--radius);background:var(--panel)}
-table{border-collapse:collapse;width:100%;font-size:.845rem}
-caption{text-align:left;padding:.8rem 1rem .15rem;font-size:.8rem;color:var(--text-muted);caption-side:top}
-th,td{padding:.5rem .8rem;text-align:left;border-bottom:1px solid var(--grid);vertical-align:top}
-thead th{background:var(--surface-1);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;
-  color:var(--text-secondary);font-weight:650;border-bottom:1px solid var(--axis);white-space:nowrap}
-tbody tr:last-child td{border-bottom:0}
-tbody tr:hover{background:color-mix(in srgb,var(--brand) 4%,transparent)}
-td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-.src{font-size:.74rem;color:var(--text-muted);padding:.5rem 1rem;border-top:1px solid var(--grid);background:var(--surface-1);
-  display:flex;flex-wrap:wrap;gap:.4rem .7rem;align-items:baseline}
-.src a{color:var(--brand)}
-
-.pill{display:inline-block;font-size:.68rem;font-weight:650;letter-spacing:.04em;text-transform:uppercase;
-  padding:.12rem .45rem;border-radius:999px;border:1px solid var(--border-strong);color:var(--text-secondary);white-space:nowrap}
-.pill.nac{background:color-mix(in srgb,var(--series-7) 12%,transparent);border-color:transparent;color:#3b2e8a}
-.pill.prov{background:color-mix(in srgb,var(--series-1) 13%,transparent);border-color:transparent;color:#1b5697}
-.pill.reg{background:color-mix(in srgb,var(--series-3) 15%,transparent);border-color:transparent;color:#0d6c4b}
-.pill.tar{background:color-mix(in srgb,var(--series-2) 14%,transparent);border-color:transparent;color:#a8410f}
+.pill{display:inline-flex;align-items:center;font-size:.675rem;font-weight:670;letter-spacing:.045em;text-transform:uppercase;
+  padding:.14rem .48rem;border-radius:999px;border:1px solid var(--border-strong);color:var(--text-secondary);white-space:nowrap;
+  background:var(--panel-2)}
+.pill.nac{background:color-mix(in srgb,var(--series-7) 11%,transparent);border-color:transparent;color:#3b2e8a}
+.pill.prov{background:color-mix(in srgb,var(--series-1) 12%,transparent);border-color:transparent;color:#1b5697}
+.pill.reg{background:color-mix(in srgb,var(--series-3) 14%,transparent);border-color:transparent;color:#0d6c4b}
+.pill.tar{background:color-mix(in srgb,var(--series-2) 13%,transparent);border-color:transparent;color:#a8410f}
 :root[data-theme="dark"] .pill.nac{color:#b7aef0}
 :root[data-theme="dark"] .pill.prov{color:#9ec5f4}
 :root[data-theme="dark"] .pill.reg{color:#6ddcae}
 :root[data-theme="dark"] .pill.tar{color:#f4a077}
-.st{display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;font-weight:600;white-space:nowrap}
-.st::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+
+.st{display:inline-flex;align-items:center;gap:.35rem;font-size:.735rem;font-weight:640;white-space:nowrap}
+.st::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 0 3px color-mix(in srgb,currentColor 18%,transparent)}
 .st-vig{color:#0a7d0a}
-.st-par{color:#8a5c00}
-.st-der{color:var(--text-muted)}
-.st-sus{color:var(--text-muted)}
-.st-val{color:#a33b0b}
+.st-par{color:#a8720a}
+.st-der,.st-sus{color:var(--text-muted)}
+.st-sus::before{border-radius:2px}
+.st-der::before{border-radius:2px;transform:rotate(45deg)}
+.st-val{color:#a83f0e}
+.st-val::before{clip-path:polygon(50% 0,100% 100%,0 100%);border-radius:0}
 :root[data-theme="dark"] .st-vig{color:var(--st-good)}
 :root[data-theme="dark"] .st-par{color:var(--st-warning)}
 :root[data-theme="dark"] .st-val{color:#f4a077}
 
-details.acc{border:1px solid var(--border);border-radius:var(--radius);background:var(--panel);margin:.55rem 0;overflow:hidden}
-details.acc summary{cursor:pointer;padding:.75rem 1rem;font-weight:600;font-size:.93rem;list-style:none;
-  display:flex;gap:.55rem;align-items:center;flex-wrap:wrap}
+/* ============================================================
+   8 · ACORDEONES
+   ============================================================ */
+details.acc{border:1px solid var(--border);border-radius:var(--r-lg);background:var(--panel);margin:.55rem 0;
+  overflow:hidden;box-shadow:var(--sh-1);transition:box-shadow var(--d2) var(--ease),border-color var(--d2) var(--ease)}
+details.acc:hover{border-color:var(--border-strong);box-shadow:var(--sh-2)}
+details.acc[open]{box-shadow:var(--sh-2);border-color:var(--brand-line)}
+details.acc summary{cursor:pointer;padding:.8rem 1.05rem;font-weight:620;font-size:.94rem;list-style:none;
+  display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;transition:background var(--d1) var(--ease)}
 details.acc summary::-webkit-details-marker{display:none}
-details.acc summary::before{content:"▸";color:var(--brand);font-size:.85rem;transition:transform .18s;flex:0 0 auto}
+details.acc summary::before{
+  content:"";width:15px;height:15px;flex:0 0 auto;
+  background:currentColor;color:var(--brand);
+  -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='9 18 15 12 9 6'/></svg>") center/contain no-repeat;
+  mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='9 18 15 12 9 6'/></svg>") center/contain no-repeat;
+  transition:transform var(--d2) var(--ease-out)}
 details.acc[open] summary::before{transform:rotate(90deg)}
-details.acc summary:hover{background:var(--surface-1)}
-details.acc .body{padding:0 1rem 1rem;border-top:1px solid var(--grid);padding-top:.85rem}
+details.acc summary:hover{background:var(--panel-2)}
+details.acc[open] summary{background:var(--panel-2);border-bottom:1px solid var(--grid)}
+details.acc .body{padding:.9rem 1.05rem 1.05rem}
 details.acc .body > :last-child{margin-bottom:0}
+details.acc[open] .body{animation:accIn var(--d3) var(--ease-out) both}
+@keyframes accIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 
-.chain{display:flex;flex-wrap:wrap;gap:.35rem;align-items:stretch;margin:1rem 0}
-.chain .node{flex:1 1 128px;background:var(--surface-1);border:1px solid var(--border);border-radius:8px;
-  padding:.6rem .65rem;font-size:.76rem;line-height:1.35}
-.chain .node b{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--brand);margin-bottom:.12rem}
-.chain .node.hi{border-color:var(--brand);background:var(--brand-soft)}
+/* ============================================================
+   9 · CADENAS Y DIAGRAMAS
+   ============================================================ */
+.chain{display:flex;flex-wrap:wrap;gap:.4rem;align-items:stretch;margin:1rem 0}
+.chain .node{
+  flex:1 1 130px;background:var(--panel);border:1px solid var(--border);border-radius:var(--r);
+  padding:.65rem .72rem;font-size:.775rem;line-height:1.4;box-shadow:var(--sh-1);
+  transition:transform var(--d2) var(--ease-out),box-shadow var(--d2) var(--ease),border-color var(--d2) var(--ease)}
+.chain .node:hover{transform:translateY(-2px);box-shadow:var(--sh-2);border-color:var(--brand-line)}
+.chain .node b{display:block;font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin-bottom:.16rem;font-weight:750}
+.chain .node.hi{border-color:var(--brand-2);background:linear-gradient(140deg,var(--brand-soft),var(--panel));box-shadow:var(--sh-2)}
 .chain .arrow{align-self:center;color:var(--axis);font-size:.95rem;flex:0 0 auto}
 
-/* filtros */
-.filters{display:flex;flex-wrap:wrap;gap:.7rem 1rem;align-items:flex-end;padding:.95rem 1.1rem;
-  background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);margin:0 0 1rem}
-.fld{display:flex;flex-direction:column;gap:.25rem}
-.fld label{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);font-weight:650}
-.fld select,.fld input{font-family:inherit;font-size:.85rem;padding:.36rem .5rem;border-radius:7px;
-  border:1px solid var(--border-strong);background:var(--panel);color:var(--text-primary);min-width:130px}
-.fld input[type=number]{width:120px;font-variant-numeric:tabular-nums}
-.fld select:focus,.fld input:focus{outline:2px solid var(--brand);outline-offset:1px}
-.chip{appearance:none;font-family:inherit;font-size:.78rem;font-weight:560;cursor:pointer;
+.org{display:grid;gap:.6rem;margin:1.1rem 0}
+.org-box{border:1px solid var(--border);border-left:3px solid var(--c,var(--brand));border-radius:var(--r-lg);
+  background:var(--panel);padding:.85rem 1rem;box-shadow:var(--sh-1);
+  transition:transform var(--d2) var(--ease-out),box-shadow var(--d2) var(--ease)}
+.org-box:hover{transform:translateX(2px);box-shadow:var(--sh-2)}
+.org-box .rol{font-size:.66rem;text-transform:uppercase;letter-spacing:.09em;color:var(--c,var(--brand));font-weight:750}
+.org-box h4{margin:.12rem 0 .22rem;font-size:.98rem;color:var(--text-primary)}
+.org-box p{font-size:.82rem;color:var(--text-secondary);margin:0;max-width:86ch}
+.org-lvl{display:grid;gap:.6rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.org-conn{font-size:.72rem;color:var(--text-muted);padding:.2rem 0 .2rem .9rem;border-left:2px dashed var(--border-strong);margin-left:.7rem}
+
+/* ============================================================
+   10 · FILTROS
+   ============================================================ */
+.filters{display:flex;flex-wrap:wrap;gap:.75rem 1.05rem;align-items:flex-end;padding:1rem 1.15rem;
+  background:var(--panel);border:1px solid var(--border);border-radius:var(--r-lg);margin:0 0 1rem;box-shadow:var(--sh-1)}
+.fld{display:flex;flex-direction:column;gap:.28rem}
+.fld label{font-size:.665rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);font-weight:720}
+.fld select,.fld input{
+  font-family:inherit;font-size:.86rem;padding:.42rem .55rem;border-radius:var(--r-sm);
+  border:1px solid var(--border-strong);background:var(--panel);color:var(--text-primary);min-width:132px;
+  transition:border-color var(--d1) var(--ease),box-shadow var(--d1) var(--ease),background var(--d1) var(--ease)}
+.fld select:hover,.fld input:hover{border-color:var(--brand-line)}
+.fld select:focus,.fld input:focus{outline:none;border-color:var(--brand-2);box-shadow:0 0 0 3px var(--ring)}
+.fld input[type=number]{width:124px;font-variant-numeric:tabular-nums}
+.chip{
+  appearance:none;font-family:inherit;font-size:.79rem;font-weight:570;cursor:pointer;
   border:1px solid var(--border-strong);background:var(--panel);color:var(--text-secondary);
-  padding:.3rem .72rem;border-radius:999px}
-.chip:hover{color:var(--text-primary);border-color:var(--text-muted)}
-.chip[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
-.chiprow{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin:0 0 1rem}
-.chiprow .lbl{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);font-weight:650;margin-right:.2rem}
-.count{font-size:.78rem;color:var(--text-muted);margin:.3rem 0 .8rem}
+  padding:.34rem .78rem;border-radius:999px;box-shadow:var(--sh-1);
+  transition:all var(--d1) var(--ease)}
+.chip:hover{color:var(--text-primary);border-color:var(--brand-line);background:var(--panel-2);transform:translateY(-1px)}
+.chip:active{transform:translateY(0)}
+.chip[aria-pressed="true"]{background:linear-gradient(140deg,var(--brand-2),var(--brand));border-color:transparent;color:#fff;
+  box-shadow:0 2px 10px -3px var(--brand-line)}
+.chiprow{display:flex;flex-wrap:wrap;gap:.38rem;align-items:center;margin:0 0 .9rem}
+.chiprow .lbl{font-size:.665rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);font-weight:720;margin-right:.25rem}
+.count{font-size:.79rem;color:var(--text-muted);margin:.35rem 0 .85rem;display:flex;align-items:center;gap:.45rem}
+.count::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--brand-2);opacity:.55}
 
-/* línea de tiempo */
-.timeline{position:relative;padding-left:1.9rem}
-.timeline::before{content:"";position:absolute;left:.55rem;top:.4rem;bottom:.4rem;width:2px;background:var(--grid)}
-.tl-item{position:relative;margin:0 0 .85rem}
-.tl-item::before{content:"";position:absolute;left:-1.53rem;top:.6rem;width:10px;height:10px;border-radius:50%;
-  background:var(--panel);border:2.5px solid var(--c,var(--brand))}
-.tl-item.milestone::before{background:var(--c,var(--brand))}
-.tl-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:.75rem .95rem}
-.tl-head{display:flex;flex-wrap:wrap;gap:.45rem;align-items:baseline;margin-bottom:.25rem}
-.tl-date{font-variant-numeric:tabular-nums;font-weight:680;font-size:.86rem;color:var(--c,var(--brand))}
-.tl-title{font-weight:620;font-size:.92rem}
-.tl-body{font-size:.83rem;color:var(--text-secondary);margin:0}
-.tl-foot{margin-top:.45rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;font-size:.75rem}
-.empty{color:var(--text-muted);font-size:.88rem;padding:1.2rem;text-align:center;border:1px dashed var(--border-strong);border-radius:var(--radius)}
+/* ============================================================
+   11 · CRONOLOGÍA
+   ============================================================ */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:"";position:absolute;left:.58rem;top:.5rem;bottom:.5rem;width:2px;
+  background:linear-gradient(180deg,transparent,var(--grid) 6%,var(--grid) 94%,transparent)}
+.tl-year{position:relative;margin:1.4rem 0 .7rem;font-size:.74rem;font-weight:760;letter-spacing:.1em;color:var(--text-muted)}
+.tl-year::before{content:"";position:absolute;left:-1.72rem;top:.28rem;width:13px;height:13px;border-radius:3px;
+  background:var(--panel);border:2px solid var(--border-strong);transform:rotate(45deg)}
+.tl-year:first-child{margin-top:.2rem}
+.tl-item{position:relative;margin:0 0 .7rem}
+.tl-item::before{content:"";position:absolute;left:-1.62rem;top:.72rem;width:11px;height:11px;border-radius:50%;
+  background:var(--panel);border:2.5px solid var(--c,var(--brand));z-index:1;
+  transition:transform var(--d2) var(--ease-out),box-shadow var(--d2) var(--ease)}
+.tl-item.milestone::before{background:var(--c,var(--brand));box-shadow:0 0 0 4px color-mix(in srgb,var(--c,var(--brand)) 16%,transparent)}
+.tl-item:hover::before{transform:scale(1.28)}
+.tl-card{max-width:112ch;background:var(--panel);border:1px solid var(--border);border-radius:var(--r-lg);padding:.78rem 1rem;
+  box-shadow:var(--sh-1);transition:transform var(--d2) var(--ease-out),box-shadow var(--d2) var(--ease),border-color var(--d2) var(--ease)}
+.tl-item:hover .tl-card{transform:translateX(3px);box-shadow:var(--sh-2);border-color:var(--c,var(--brand-line))}
+.tl-head{display:flex;flex-wrap:wrap;gap:.45rem;align-items:baseline;margin-bottom:.28rem}
+.tl-date{font-variant-numeric:tabular-nums;font-weight:700;font-size:.85rem;color:var(--c,var(--brand))}
+.tl-title{font-weight:640;font-size:.93rem}
+.tl-body{font-size:.83rem;color:var(--text-secondary);margin:0;max-width:92ch}
+.tl-foot{margin-top:.5rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;font-size:.75rem}
+.empty{color:var(--text-muted);font-size:.88rem;padding:1.6rem;text-align:center;border:1px dashed var(--border-strong);border-radius:var(--r-lg)}
 
-/* gráficos */
-.figure{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
-  padding:1.05rem 1.15rem;margin:1rem 0;box-shadow:var(--shadow)}
-.figure .fig-title{font-weight:640;font-size:.96rem;margin-bottom:.12rem}
-.figure .fig-sub{font-size:.79rem;color:var(--text-secondary);margin-bottom:.8rem}
-.figure .fig-note{font-size:.74rem;color:var(--text-muted);margin-top:.65rem;border-top:1px solid var(--grid);padding-top:.55rem}
-.legend{display:flex;flex-wrap:wrap;gap:.85rem;margin-bottom:.7rem;font-size:.78rem;color:var(--text-secondary)}
-.legend i{width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:.32rem;vertical-align:-1px}
+/* ============================================================
+   12 · GRÁFICOS
+   ============================================================ */
+.figure{background:var(--panel);border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:1.1rem 1.2rem;margin:1rem 0;box-shadow:var(--sh-2);position:relative;
+  transition:box-shadow var(--d2) var(--ease),border-color var(--d2) var(--ease)}
+.figure:hover{box-shadow:var(--sh-3);border-color:var(--border-strong)}
+.figure .fig-title{font-weight:660;font-size:.97rem;margin-bottom:.14rem;letter-spacing:-.01em}
+.figure .fig-sub{font-size:.79rem;color:var(--text-secondary);margin-bottom:.85rem;max-width:80ch}
+.figure .fig-note{font-size:.745rem;color:var(--text-muted);margin-top:.7rem;border-top:1px solid var(--grid);padding-top:.6rem;line-height:1.6}
+.legend{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem;font-size:.78rem;color:var(--text-secondary)}
+.legend button{appearance:none;font:inherit;color:inherit;background:var(--panel-2);border:1px solid var(--border);
+  border-radius:999px;padding:.2rem .6rem;cursor:pointer;display:inline-flex;align-items:center;gap:.3rem;
+  transition:all var(--d1) var(--ease)}
+.legend button:hover{border-color:var(--border-strong);background:var(--panel-3)}
+.legend button[aria-pressed="false"]{opacity:.42}
+.legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
 svg.chart{display:block;width:100%;height:auto;overflow:visible}
 svg.chart text{font-family:var(--sans)}
 .tick{font-size:11px;fill:var(--text-muted)}
-.tick.val{font-size:11px;fill:var(--text-secondary);font-variant-numeric:tabular-nums}
+.tick.val{font-size:11px;fill:var(--text-secondary);font-variant-numeric:tabular-nums;font-weight:560}
 .axline{stroke:var(--axis);stroke-width:1}
 .gridline{stroke:var(--grid);stroke-width:1}
-.tbl-toggle{font-size:.76rem;color:var(--brand);background:none;border:0;padding:.3rem 0 0;cursor:pointer;font-family:inherit;font-weight:600}
-.tbl-toggle:hover{text-decoration:underline}
-.viztip{position:fixed;pointer-events:none;z-index:200;background:var(--panel);border:1px solid var(--border-strong);
-  border-radius:8px;padding:.45rem .6rem;font-size:.77rem;box-shadow:0 8px 24px -8px rgba(0,0,0,.3);
-  opacity:0;transition:opacity .12s;max-width:250px;line-height:1.4}
-.viztip.on{opacity:1}
-.viztip b{display:block;margin-bottom:.18rem}
-.viztip .row{display:flex;justify-content:space-between;gap:1rem;font-variant-numeric:tabular-nums}
-.ph-frame{border:1px dashed var(--border-strong);border-radius:var(--radius);padding:2rem 1.2rem;text-align:center;
-  color:var(--text-muted);font-size:.84rem;background:repeating-linear-gradient(45deg,transparent,transparent 9px,color-mix(in srgb,var(--text-muted) 5%,transparent) 9px,color-mix(in srgb,var(--text-muted) 5%,transparent) 18px)}
+.mk{transition:opacity var(--d1) var(--ease)}
+rect.mk{cursor:pointer}
+svg.chart:hover rect.mk{opacity:.62}
+svg.chart rect.mk:hover{opacity:1;filter:brightness(1.06)}
+.figure.anim rect.mk{transform-box:fill-box;transform-origin:left center;animation:barGrow 620ms var(--ease-out) both}
+.figure.anim path.ln{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 900ms var(--ease-out) forwards}
+.figure.anim circle.pt{animation:popIn 320ms var(--ease-out) both}
+@keyframes barGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes popIn{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+.tbl-toggle{font-size:.77rem;color:var(--brand);background:none;border:0;padding:.35rem 0 0;cursor:pointer;font-family:inherit;font-weight:640;
+  display:inline-flex;align-items:center;gap:.32rem;transition:gap var(--d1) var(--ease)}
+.tbl-toggle:hover{text-decoration:underline;gap:.45rem}
+.viztip{position:fixed;pointer-events:none;z-index:var(--z-tip);background:var(--panel);border:1px solid var(--border-strong);
+  border-radius:var(--r);padding:.5rem .65rem;font-size:.78rem;box-shadow:var(--sh-4);
+  opacity:0;transform:translateY(4px) scale(.97);transition:opacity var(--d1) var(--ease),transform var(--d1) var(--ease-out);
+  max-width:260px;line-height:1.45}
+.viztip.on{opacity:1;transform:none}
+.viztip b{display:block;margin-bottom:.22rem;font-size:.79rem}
+.viztip .row{display:flex;justify-content:space-between;gap:1rem;font-variant-numeric:tabular-nums;color:var(--text-secondary)}
+.ph-frame{border:1px dashed var(--border-strong);border-radius:var(--r-lg);padding:2rem 1.2rem;text-align:center;
+  color:var(--text-muted);font-size:.84rem;background:var(--panel-2)}
 .ph-frame b{display:block;color:var(--text-secondary);font-size:.9rem;margin-bottom:.3rem}
 
-/* cascada de factura */
-.wf{display:flex;flex-direction:column;gap:.28rem;margin:1rem 0}
-.wf-row{display:grid;grid-template-columns:1.6rem 1fr auto;gap:.7rem;align-items:center;
+/* ============================================================
+   13 · CASCADA DE FACTURA
+   ============================================================ */
+.wf{display:flex;flex-direction:column;gap:0;margin:1rem 0}
+.wf-row{
+  display:grid;grid-template-columns:2rem 1fr auto;gap:.75rem;align-items:center;position:relative;
   background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--c,var(--axis));
-  border-radius:8px;padding:.55rem .8rem;cursor:pointer;text-align:left;font-family:inherit;font-size:.86rem;color:inherit;width:100%}
-.wf-row:hover{border-color:var(--brand-deep);background:var(--surface-1)}
-.wf-row .op{font-weight:700;color:var(--c,var(--text-muted));font-size:1rem;text-align:center}
-.wf-row .lb{line-height:1.35}
-.wf-row .lb small{display:block;color:var(--text-muted);font-size:.73rem}
-.wf-row .vl{font-variant-numeric:tabular-nums;font-weight:620;white-space:nowrap}
-.wf-row.total{background:var(--brand-soft);border-color:var(--brand);border-left-color:var(--brand);font-weight:650}
-.wf-row.sub{background:var(--surface-1)}
-.wf-exp{font-size:.83rem;color:var(--text-secondary);background:var(--surface-1);border:1px solid var(--border);
-  border-radius:8px;padding:.75rem .9rem;margin:.15rem 0 .35rem}
+  border-radius:var(--r);padding:.62rem .85rem;cursor:pointer;text-align:left;font-family:inherit;font-size:.87rem;
+  color:inherit;width:100%;margin-bottom:.3rem;box-shadow:var(--sh-1);
+  transition:transform var(--d2) var(--ease-out),box-shadow var(--d2) var(--ease),border-color var(--d2) var(--ease),background var(--d1) var(--ease)}
+.wf-row::after{content:"";position:absolute;left:1rem;top:100%;height:.3rem;width:1.5px;background:var(--border-strong);opacity:.6}
+.wf-row:last-of-type::after{display:none}
+.wf-row:hover{transform:translateX(3px);box-shadow:var(--sh-2);border-color:var(--border-strong);background:var(--panel-2)}
+.wf-row[aria-expanded="true"]{border-color:var(--brand-line);background:var(--panel-2)}
+.wf-row .op{font-weight:760;color:var(--c,var(--text-muted));font-size:1.02rem;text-align:center;
+  width:1.55rem;height:1.55rem;line-height:1.5rem;border-radius:50%;background:color-mix(in srgb,var(--c,var(--axis)) 12%,transparent)}
+.wf-row .lb{line-height:1.32;font-weight:560}
+.wf-row .lb small{display:block;color:var(--text-muted);font-size:.735rem;font-weight:440;margin-top:.06rem}
+.wf-row .vl{font-variant-numeric:tabular-nums;font-weight:660;white-space:nowrap;font-size:.93rem}
+.wf-row.total{background:linear-gradient(100deg,var(--brand-soft),var(--panel) 70%);border-color:var(--brand-2);
+  border-left-color:var(--brand-2);font-weight:670;box-shadow:var(--sh-2)}
+.wf-row.total .vl{font-size:1.06rem;color:var(--brand-deep)}
+.wf-row.sub{background:var(--panel-2)}
+.wf-exp{font-size:.84rem;color:var(--text-secondary);background:var(--panel-2);border:1px solid var(--border);
+  border-left:3px solid var(--brand-line);border-radius:var(--r);padding:.75rem .95rem;margin:0 0 .45rem 1rem;
+  animation:accIn var(--d2) var(--ease-out) both;max-width:90ch}
 .wf-exp > :last-child{margin-bottom:0}
 
-/* organigrama */
-.org{display:grid;gap:.55rem;margin:1.1rem 0}
-.org-box{border:1px solid var(--border);border-left:3px solid var(--c,var(--brand));border-radius:9px;
-  background:var(--panel);padding:.75rem .95rem}
-.org-box .rol{font-size:.68rem;text-transform:uppercase;letter-spacing:.07em;color:var(--c,var(--brand));font-weight:700}
-.org-box h4{margin:.1rem 0 .2rem;font-size:.98rem;color:var(--text-primary)}
-.org-box p{font-size:.82rem;color:var(--text-secondary);margin:0}
-.org-lvl{display:grid;gap:.55rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.org-conn{font-size:.72rem;color:var(--text-muted);padding-left:.9rem;border-left:2px dashed var(--border-strong);margin-left:.6rem;padding-top:.15rem;padding-bottom:.15rem}
+/* ============================================================
+   14 · PALETA DE COMANDOS
+   ============================================================ */
+.pal-backdrop{position:fixed;inset:0;z-index:var(--z-palette);background:rgba(8,13,20,.42);
+  backdrop-filter:blur(3px);display:none;align-items:flex-start;justify-content:center;padding:12vh 1rem 1rem}
+.pal-backdrop.on{display:flex;animation:fadeIn var(--d2) var(--ease) both}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.pal{width:min(640px,100%);background:var(--panel);border:1px solid var(--border-strong);border-radius:var(--r-xl);
+  box-shadow:var(--sh-4);overflow:hidden;animation:palIn var(--d3) var(--ease-out) both}
+@keyframes palIn{from{opacity:0;transform:translateY(-14px) scale(.98)}to{opacity:1;transform:none}}
+.pal-head{display:flex;align-items:center;gap:.6rem;padding:.75rem .95rem;border-bottom:1px solid var(--border)}
+.pal-head svg{width:17px;height:17px;color:var(--text-muted);flex:0 0 auto}
+.pal-head input{flex:1;border:0;background:none;font-family:inherit;font-size:1rem;color:var(--text-primary);outline:none}
+.pal-head input::placeholder{color:var(--text-muted)}
+.pal-list{max-height:min(52vh,420px);overflow:auto;padding:.35rem}
+.pal-group{font-size:.65rem;font-weight:750;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);
+  padding:.6rem .7rem .3rem}
+.pal-item{display:flex;align-items:center;gap:.7rem;padding:.5rem .7rem;border-radius:var(--r-sm);cursor:pointer;
+  font-size:.87rem;transition:background var(--d1) var(--ease)}
+.pal-item .ic{width:24px;height:24px;border-radius:var(--r-xs);display:grid;place-items:center;flex:0 0 auto;
+  background:var(--panel-3);color:var(--text-secondary)}
+.pal-item .ic svg{width:13px;height:13px}
+.pal-item .tx{flex:1;min-width:0}
+.pal-item .tx b{display:block;font-weight:590;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pal-item .tx span{display:block;font-size:.745rem;color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pal-item[aria-selected="true"]{background:var(--brand-soft)}
+.pal-item[aria-selected="true"] .ic{background:var(--brand-2);color:#fff}
+.pal-foot{display:flex;gap:1rem;padding:.5rem .95rem;border-top:1px solid var(--border);font-size:.72rem;color:var(--text-muted);background:var(--panel-2)}
+.pal-foot span{display:inline-flex;align-items:center;gap:.32rem}
 
-.kv{display:grid;grid-template-columns:auto 1fr;gap:.3rem .9rem;font-size:.85rem;margin:.5rem 0 1rem}
-.kv dt{color:var(--text-muted);font-weight:650;white-space:nowrap}
+/* ============================================================
+   15 · DRAWER
+   ============================================================ */
+.dr-backdrop{position:fixed;inset:0;z-index:var(--z-drawer);background:rgba(8,13,20,.34);
+  opacity:0;pointer-events:none;transition:opacity var(--d2) var(--ease)}
+.dr-backdrop.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(460px,92vw);z-index:calc(var(--z-drawer) + 1);
+  background:var(--panel);border-left:1px solid var(--border-strong);box-shadow:var(--sh-4);
+  transform:translateX(101%);transition:transform var(--d3) var(--ease-out);
+  display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.dr-head{display:flex;align-items:flex-start;gap:.7rem;padding:1rem 1.1rem .85rem;border-bottom:1px solid var(--border);background:var(--panel-2)}
+.dr-head h3{margin:0;font-size:1.02rem;flex:1;line-height:1.3}
+.dr-head .close{appearance:none;border:1px solid var(--border);background:var(--panel);color:var(--text-secondary);
+  width:28px;height:28px;border-radius:var(--r-sm);cursor:pointer;display:grid;place-items:center;flex:0 0 auto;
+  transition:all var(--d1) var(--ease)}
+.dr-head .close:hover{background:var(--panel-3);color:var(--text-primary);transform:rotate(90deg)}
+.dr-body{padding:1rem 1.1rem 2rem;overflow:auto;font-size:.88rem;color:var(--text-secondary)}
+.dr-body h4{margin:1.1rem 0 .3rem;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);font-weight:750}
+.dr-body h4:first-child{margin-top:0}
+.dr-body p{margin:0 0 .5rem;color:var(--text-secondary)}
+.dr-meta{display:flex;flex-wrap:wrap;gap:.4rem;margin:.2rem 0 .3rem}
+.dr-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:.9rem;font-weight:620;font-size:.85rem;
+  padding:.45rem .8rem;border:1px solid var(--brand-line);border-radius:var(--r-sm);background:var(--brand-soft);
+  text-decoration:none;transition:all var(--d1) var(--ease)}
+.dr-link:hover{background:var(--brand-2);color:#fff;border-color:var(--brand-2)}
+
+/* ============================================================
+   16 · MISCELÁNEA
+   ============================================================ */
+.kv{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;font-size:.85rem;margin:.5rem 0 1rem}
+.kv dt{color:var(--text-muted);font-weight:680;white-space:nowrap;font-size:.79rem}
 .kv dd{margin:0;color:var(--text-secondary)}
-.toc{display:grid;gap:.45rem;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));margin:1rem 0 0}
-.toc a{display:block;text-decoration:none;color:inherit;background:var(--surface-1);border:1px solid var(--border);
-  border-radius:9px;padding:.65rem .8rem;transition:border-color .15s,transform .15s}
-.toc a:hover{border-color:var(--brand);transform:translateY(-1px)}
-.toc a b{display:block;font-size:.86rem;margin-bottom:.1rem}
-.toc a span{font-size:.75rem;color:var(--text-muted);line-height:1.35;display:block}
-.badge-row{display:flex;flex-wrap:wrap;gap:.3rem;margin:.4rem 0 1rem}
+.toc{display:grid;gap:.5rem;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));margin:1rem 0 0}
+.toc a{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--border);
+  border-radius:var(--r-lg);padding:.75rem .9rem;box-shadow:var(--sh-1);position:relative;overflow:hidden;
+  transition:transform var(--d2) var(--ease-out),box-shadow var(--d2) var(--ease),border-color var(--d2) var(--ease)}
+.toc a::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(180deg,var(--brand-2),var(--brand));
+  transition:width var(--d2) var(--ease)}
+.toc a:hover{transform:translateY(-2px);box-shadow:var(--sh-3);border-color:var(--brand-line)}
+.toc a:hover::before{width:3px}
+.toc a b{display:block;font-size:.88rem;margin-bottom:.14rem;font-weight:640}
+.toc a span{font-size:.755rem;color:var(--text-muted);line-height:1.4;display:block}
+.badge-row{display:flex;flex-wrap:wrap;gap:.35rem;margin:.45rem 0 1rem}
 
-footer{border-top:1px solid var(--border);background:var(--panel);margin-top:2.5rem}
-.footer-inner{max-width:var(--maxw);margin:0 auto;padding:1.8rem 2rem;font-size:.8rem;color:var(--text-muted)}
+.fab{position:fixed;right:1.3rem;bottom:1.3rem;z-index:var(--z-fab);width:40px;height:40px;border-radius:50%;
+  border:1px solid var(--border-strong);background:var(--panel);color:var(--text-secondary);cursor:pointer;
+  display:grid;place-items:center;box-shadow:var(--sh-3);opacity:0;pointer-events:none;transform:translateY(10px) scale(.9);
+  transition:all var(--d2) var(--ease-out)}
+.fab.on{opacity:1;pointer-events:auto;transform:none}
+.fab:hover{background:var(--brand-2);color:#fff;border-color:var(--brand-2);transform:translateY(-2px)}
+.fab svg{width:17px;height:17px}
+
+.toast{position:fixed;left:50%;bottom:1.6rem;transform:translate(-50%,14px);z-index:var(--z-tip);
+  background:var(--text-primary);color:var(--panel);font-size:.83rem;font-weight:560;
+  padding:.55rem 1rem;border-radius:999px;box-shadow:var(--sh-4);opacity:0;pointer-events:none;
+  transition:opacity var(--d2) var(--ease),transform var(--d2) var(--ease-out)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+.flash{animation:flash 1.5s var(--ease) both}
+@keyframes flash{0%{box-shadow:0 0 0 0 var(--ring)}18%{box-shadow:0 0 0 7px var(--ring)}100%{box-shadow:0 0 0 0 transparent}}
+
+footer{border-top:1px solid var(--border);background:var(--panel);margin-top:3rem}
+.footer-inner{max-width:var(--maxw);margin:0 auto;padding:2rem var(--pad);font-size:.79rem;color:var(--text-muted);line-height:1.65}
 .footer-inner strong{color:var(--text-secondary)}
+.footer-inner p{max-width:110ch}
 
-@media print{nav.tabs,.topbar,.tbl-toggle{display:none}.view{display:block !important}}
+/* ============================================================
+   17 · RESPONSIVE
+   ============================================================ */
+@media (max-width:1200px){ :root{--pad:1.5rem} }
 @media (max-width:900px){
-  main,.topbar-inner,.tabs-inner,.footer-inner{padding-left:1rem;padding-right:1rem}
-}
-@media (max-width:640px){
-  main{padding:1.2rem .85rem 3rem}
-  .hero{padding:1.6rem 1.1rem}
-  .card{padding:1rem}
-  .wf-row{grid-template-columns:1.2rem 1fr;grid-template-areas:"op lb" ". vl"}
-  .wf-row .vl{grid-area:vl;text-align:right}
-  .filters{padding:.85rem}
+  :root{--pad:1.1rem}
+  body{font-size:15px}
+  .card,.stat,.figure{border-radius:var(--r)}
+  .filters{gap:.6rem .8rem;padding:.85rem}
+  .fld{flex:1 1 145px}
   .fld select,.fld input{min-width:0;width:100%}
-  .fld{flex:1 1 140px}
+  .fld input[type=number]{width:100%}
+  .g2,.g3,.g4{grid-template-columns:1fr}
 }
+@media (max-width:560px){
+  .brandmark .txt span{display:none}
+  .brandmark .txt strong{font-size:.83rem}
+}
+@media (max-width:760px){
+  nav.tabs{top:46px}
+  body.scrolled nav.tabs{top:42px}
+  .wf-row{grid-template-columns:1.7rem 1fr;grid-template-areas:"op lb" ". vl";gap:.45rem .6rem}
+  .wf-row .vl{grid-area:vl;text-align:right}
+  .wf-row::after{display:none}
+  .timeline{padding-left:1.5rem}
+  .tl-item::before{left:-1.28rem}
+  .tl-year::before{left:-1.38rem}
+  .drawer{width:100%;top:auto;height:82vh;border-left:0;border-top:1px solid var(--border-strong);
+    border-radius:var(--r-xl) var(--r-xl) 0 0;transform:translateY(101%)}
+  .drawer.on{transform:none}
+  .pal-backdrop{padding:6vh .8rem 1rem}
+  table{font-size:.8rem}
+  th,td{padding:.5rem .6rem}
+}
+@media print{
+  nav.tabs,.topbar,.tbl-toggle,.fab,.pal-backdrop,.drawer,.dr-backdrop{display:none !important}
+  .view{display:block !important}
+  body{background:#fff}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;scroll-behavior:auto !important}
+  html{scroll-behavior:auto}
+}
+
 </style>
 </head>
 <body>
@@ -326,37 +711,33 @@ footer{border-top:1px solid var(--border);background:var(--panel);margin-top:2.5
 <div class="topbar">
   <div class="topbar-inner">
     <a class="brandmark" href="#panorama">
-      <span class="glyph">⚡</span>
+      <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="currentColor" stroke="none"/></svg></span>
       <span class="txt">
-        <strong>Ficha energética · Corrientes</strong>
-        <span>Régimen jurídico, institucional y tarifario</span>
+        <strong>Corrientes · Datos Energía Eléctrica</strong>
+        <span>Marco normativo, tarifas y subsidios</span>
       </span>
     </a>
     <span class="spacer"></span>
-    <button class="iconbtn" id="themeBtn" type="button" title="Alternar tema claro/oscuro">◐ Tema</button>
+    <div class="tb-actions">
+      <button class="iconbtn searchbtn" id="searchBtn" type="button" aria-label="Buscar en el portal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.2-4.2"/></svg><span class="lbl-s">Buscar norma, tarifa o sección</span><kbd>Ctrl K</kbd></button>
+      <button class="iconbtn only" id="shareBtn" type="button" title="Copiar enlace a esta sección" aria-label="Copiar enlace a esta sección"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg></button>
+      <button class="iconbtn only themebtn" id="themeBtn" type="button" title="Alternar tema claro y oscuro" aria-label="Alternar tema claro y oscuro"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </div>
   </div>
 </div>
 
-<nav class="tabs" aria-label="Secciones"><div class="tabs-inner" id="tabs" role="tablist"></div></nav>
+<nav class="tabs" aria-label="Secciones">
+  <div class="tabs-wrap" id="tabsWrap">
+    <div class="tabs-inner" id="tabs" role="tablist"><span class="tab-ink" id="tabInk"></span></div>
+    <div class="navsel"><select id="navSelect" aria-label="Ir a la sección"></select></div>
+    <div class="progress"><i id="progressBar"></i></div>
+  </div>
+</nav>
 
 <main id="main">
 <!-- 01 PANORAMA -->
 <section class="view" id="panorama">
-  <div class="hero">
-    <div class="kicker">Provincia de Corrientes · Servicio público de electricidad</div>
-    <h1>Ficha energética y regulatoria</h1>
-    <p>El régimen eléctrico correntino no surge de una sola norma. Se forma por capas: legislación federal del mercado mayorista, legislación provincial del servicio público, normas institucionales de DPEC, la Secretaría de Energía y el EPRE, reglamentos de suministro, mecanismos de actualización tarifaria, subsidios nacionales y actos administrativos periódicos que finalmente producen un cuadro tarifario aplicable.</p>
-    <div class="stamp">◷ Estado del análisis: 18 de agosto de 2026</div>
-  </div>
-
-  <div class="ev-legend">
-    <div><span class="ev ev-of">Oficial</span> dato tomado de norma, acto o publicación oficial</div>
-    <div><span class="ev ev-cp">Cálculo propio</span> aritmética sobre datos oficiales</div>
-    <div><span class="ev ev-an">Análisis</span> interpretación del autor</div>
-    <div><span class="ev ev-pr">Propuesta</span> reforma sugerida, no vigente</div>
-    <div><span class="ev ev-vp">Validación pendiente</span> no verificable en las fuentes consultadas</div>
-  </div>
-
   <div class="grid g4" id="panoStats"></div>
 
   <h3>Cómo se forma la factura</h3>
@@ -399,12 +780,13 @@ footer{border-top:1px solid var(--border);background:var(--panel);margin-top:2.5
   <h3>Fichas institucionales</h3>
   <div id="instFichas"></div>
 
-  <h3>Cadena de decisión tarifaria <span class="ev ev-of">Oficial</span></h3>
+  <h3>Cadena observada en el proceso tarifario 2026</h3>
+  <p>La Ley 6.073 fija los elementos estructurales del procedimiento: el EPRE propone los cuadros y ejerce el control, corresponde convocar audiencia pública en los supuestos previstos, el Decreto 625/2012 exige la intervención del Órgano Consultivo antes de modificar cuadros tarifarios y la aprobación final es del Poder Ejecutivo. La secuencia concreta que sigue es la que puede reconstruirse a partir de los actos del Cuadro 108-E y de los antecedentes del pass-through, no un procedimiento uniforme aplicable a toda modificación tarifaria. <span class="ev ev-an">Análisis</span></p>
   <div class="chain">
     <div class="node"><b>1</b>Resolución nacional que modifica PEST o subsidio</div><span class="arrow">→</span>
     <div class="node"><b>2</b>Informe de costos de DPEC</div><span class="arrow">→</span>
     <div class="node"><b>3</b>Resolución DPEC</div><span class="arrow">→</span>
-    <div class="node"><b>4</b>Evaluación y resolución del EPRE</div>
+    <div class="node"><b>4</b>Intervención del EPRE: evaluación y acto dentro de sus competencias</div>
   </div>
   <div class="chain">
     <div class="node"><b>5</b>Intervención del Órgano Consultivo</div><span class="arrow">→</span>
@@ -418,7 +800,7 @@ footer{border-top:1px solid var(--border);background:var(--panel);margin-top:2.5
   <div class="grid g2">
     <div class="card" style="margin-top:0;border-top:3px solid var(--series-1)">
       <h4>Revisión estructural del VAD</h4>
-      <p style="margin-bottom:0">Analiza costos eficientes propios de distribución, inversiones, operación, mantenimiento, capital y calidad. Exige evaluación amplia y participación pública. Los valores de distribución publicados por DPEC corresponden al VAD presentado en la audiencia pública del <strong>8 de febrero de 2024</strong>.</p>
+      <p style="margin-bottom:0">Analiza costos eficientes propios de distribución, inversiones, operación, mantenimiento, capital y calidad. Es el componente de distribución de jurisdicción provincial y exige evaluación amplia y participación pública. Los valores de distribución publicados por DPEC corresponden al VAD presentado en la audiencia pública del <strong>8 de febrero de 2024</strong>.</p>
     </div>
     <div class="card" style="margin-top:0;border-top:3px solid var(--series-2)">
       <h4>Pass-through de costos exógenos</h4>
@@ -462,7 +844,8 @@ footer{border-top:1px solid var(--border);background:var(--panel);margin-top:2.5
   <div class="note problem">
     <div class="nt">⚠ Artículo 12 bis de la Ley 15.336: el límite federal <span class="ev ev-of">Oficial</span></div>
     <p>Se considera interferente con los objetivos federales todo acto o norma local que impida o restrinja el traslado a tarifa del costo de adquisición de energía en el MEM cuando sea trasladable, el pago de deudas de los distribuidores en el mercado mayorista o la autosuficiencia económico-financiera del mercado eléctrico.</p>
-    <p style="margin-bottom:0"><strong>Consecuencia práctica <span class="ev ev-an">Análisis</span>:</strong> una política provincial puede regular el VAD, la estructura tarifaria, las categorías, la calidad y mecanismos locales de protección social, pero encuentra límites federales expresos para congelar o impedir unilateralmente el traslado de determinados costos mayoristas.</p>
+    <p><strong>Artículo 31 bis, incorporado por el mismo decreto <span class="ev ev-of">Oficial</span>:</strong> las jurisdicciones destinatarias de recursos del <strong>Fondo Subsidiario para Compensaciones Regionales de Tarifas a Usuarios Finales</strong> y del <strong>Fondo Especial de Desarrollo Eléctrico del Interior</strong> deben acreditar ante la Secretaría de Energía el cumplimiento de las normas tarifarias conforme a los criterios de la Ley 24.065 y de los pagos de la energía eléctrica en el MEM. La Secretaría determina la periodicidad, la modalidad de acreditación y las consecuencias del incumplimiento.</p>
+    <p style="margin-bottom:0"><strong>Consecuencia práctica <span class="ev ev-an">Análisis</span>:</strong> una política provincial puede regular el VAD, la estructura tarifaria, las categorías, la calidad y mecanismos locales de protección social, pero el margen no es libre. Por un lado hay límites expresos para impedir unilateralmente el traslado de determinados costos mayoristas; por otro, el acceso a fondos eléctricos nacionales queda condicionado al cumplimiento de criterios tarifarios federales y de las obligaciones de pago en el mercado mayorista.</p>
   </div>
 
   <h3>Definiciones legales del sistema <span class="ev ev-of">Oficial</span></h3>
@@ -476,20 +859,27 @@ footer{border-top:1px solid var(--border);background:var(--panel);margin-top:2.5
   <p>Por eso el Cuadro 108-E no se limita al hogar residencial: contiene categorías comerciales, industriales, oficiales, de asociaciones sin fines de lucro, riego agrícola, demandas medianas y grandes, otros distribuidores y cooperativas, y cargos de utilización de redes por agentes del MEM.</p>
 
 
-  <h3>Principios tarifarios de la Ley 6.073 <span class="ev ev-of">Oficial</span></h3>
+  <h3>Tarifas: el artículo 18 de la Ley 6.073 <span class="ev ev-of">Oficial</span></h3>
+  <div class="note explain">
+    <div class="nt">◆ Principio superior</div>
+    <p style="margin-bottom:0">Los servicios públicos de energía eléctrica se ofrecen a tarifas que deben observar el <strong>principio superior de justicia y razonabilidad</strong>. Las directrices que siguen operan dentro de ese principio, no lo reemplazan.</p>
+  </div>
   <div class="tablewrap"><table>
-    <caption>Ocho principios con efecto económico concreto, no meras declaraciones.</caption>
-    <thead><tr><th>Principio</th><th>Contenido</th></tr></thead>
+    <caption>Directrices del artículo 18, incisos a) a i). El inciso i) no es una directriz interpretativa sino una regla tarifaria concreta.</caption>
+    <thead><tr><th style="width:52px">Inciso</th><th>Directriz</th><th>Contenido</th></tr></thead>
     <tbody>
-      <tr><td><strong>Sostenibilidad</strong></td><td>La tarifa debe financiar costos razonables de operación, mantenimiento, expansión, impuestos y amortizaciones y, cuando corresponda, una rentabilidad razonable.</td></tr>
-      <tr><td><strong>Aditividad</strong></td><td>La tarifa debe contener el costo propio de distribución y un término representativo del costo de adquirir energía en el mercado mayorista.</td></tr>
-      <tr><td><strong>Eficiencia económica</strong></td><td>El usuario debe pagar el menor costo razonable compatible con seguridad y calidad.</td></tr>
-      <tr><td><strong>Eficiencia asignativa</strong></td><td>La estructura debe enviar señales que promuevan un uso racional de la energía.</td></tr>
-      <tr><td><strong>Equidad</strong></td><td>Tratamiento semejante para usuarios que utilizan el sistema de forma semejante. De aquí deriva la prohibición de recuperar costos de una categoría cobrándolos a otra.</td></tr>
-      <tr><td><strong>Equidad distributiva y solidaridad</strong></td><td>Habilitan a considerar la capacidad de pago en el diseño tarifario.</td></tr>
-      <tr><td><strong>Simplicidad y transparencia</strong></td><td>Fórmulas, metodología y costos deben poder ser entendidos y controlados.</td></tr>
+      <tr><td class="num">a)</td><td><strong>Sostenibilidad</strong></td><td>Proveer a los prestadores recursos suficientes para costos operativos razonables de mantenimiento y de expansión, más una tasa de rentabilidad razonable.</td></tr>
+      <tr><td class="num">b)</td><td><strong>Aditividad</strong></td><td>En los distribuidores, el precio debe incluir los costos propios de distribución más los costos de adquisición de la energía en el mercado mayorista.</td></tr>
+      <tr><td class="num">c)</td><td><strong>Eficiencia económica</strong></td><td>Asegurar el mínimo costo razonable para los usuarios, compatible con la seguridad del abastecimiento.</td></tr>
+      <tr><td class="num">d)</td><td><strong>Eficiencia asignativa</strong></td><td>Señalar a los usuarios la dirección del mínimo costo, promoviendo el uso racional.</td></tr>
+      <tr><td class="num">e)</td><td><strong>Equidad</strong></td><td>Garantizar igualdad de tratamiento para los diversos grupos de usuarios. De aquí deriva la prohibición de recuperar costos de una categoría cobrándolos a otra.</td></tr>
+      <tr><td class="num">f)</td><td><strong>Equidad distributiva y solidaridad</strong></td><td>Las estructuras tarifarias deben observar la capacidad de pago de los usuarios.</td></tr>
+      <tr><td class="num">g)</td><td><strong>Simplicidad</strong></td><td>Fórmulas que faciliten su comprensión, aplicación y control.</td></tr>
+      <tr><td class="num">h)</td><td><strong>Transparencia</strong></td><td>Información pública sobre metodología y costos.</td></tr>
+      <tr><td class="num">i)</td><td><strong>Tarifa de peaje</strong></td><td>Los usuarios que contratan libremente su abastecimiento abonan una tarifa de peaje compuesta por los costos propios de distribución, los costos de pérdidas y los costos de transporte.</td></tr>
     </tbody>
-  </table></div>
+  </table>
+  <div class="src">Fuente: artículo 18 de la Ley provincial 6.073. Simplicidad y transparencia son incisos separados (g y h), no una directriz única.</div></div>
 
   <div class="note explain">
     <div class="nt">◆ Integración con la legislación de consumidores <span class="ev ev-of">Oficial</span></div>
@@ -499,14 +889,31 @@ footer{border-top:1px solid var(--border);background:var(--panel);margin-top:2.5
 <!-- 05 TARIFAS -->
 <section class="view" id="tarifas">
   <div class="sec-head"><h2>Explorador tarifario · Cuadro 108-E</h2></div>
-  <p class="lede">Filtrá por tipo de usuario, zona y nivel de potencia. Ingresando un consumo, el explorador calcula el <strong>subtotal tarifario</strong> con los valores del cuadro. <strong>Tarifa ≠ factura final:</strong> el resultado no incluye impuestos, tasas, contribuciones, intereses ni otros conceptos no tarifarios.</p>
+  <p class="lede">Elegí una categoría, después la subcategoría, e ingresá el consumo. El explorador calcula el <strong>subtotal tarifario</strong> con los valores del cuadro. <strong>Tarifa ≠ factura final:</strong> el resultado no incluye impuestos, tasas, contribuciones, intereses ni otros conceptos no tarifarios.</p>
 
+  <div class="chiprow" id="tarGrupos"><span class="lbl">Categoría</span></div>
+  <div class="chiprow" id="tarSubs"><span class="lbl">Subcategoría</span></div>
   <div class="filters" id="tarFiltros"></div>
-  <div class="count" id="tarCount"></div>
   <div id="tarResultados"></div>
 
+  <div class="note explain">
+    <div class="nt">◆ El bloque bonificado no siempre es de 600 kWh <span class="ev ev-of">Oficial</span></div>
+    <p>Las categorías SEF del cuadro presentan la energía bonificada en dos tramos de 300 kWh, que corresponden a un bimestre formado por dos meses cuyo bloque base es de 300 kWh mensuales. <strong>Ese límite cambia según el mes y la zona</strong>, de modo que el tramo bonificado del bimestre no es siempre 600 kWh.</p>
+    <div class="tablewrap" style="margin:.6rem 0 0"><table>
+      <thead><tr><th>Período</th><th class="num">Base mensual</th><th class="num">Bimestre</th><th>Norma</th></tr></thead>
+      <tbody>
+        <tr><td>Marzo, abril, septiembre, octubre y noviembre</td><td class="num">150 kWh</td><td class="num">300 kWh</td><td>Decreto 943/2025</td></tr>
+        <tr><td>Enero, febrero, mayo, junio, julio, agosto y diciembre</td><td class="num">300 kWh</td><td class="num">600 kWh</td><td>Decreto 943/2025</td></tr>
+        <tr><td>Enero, febrero y diciembre, zona “Cálido” (IIa y IIb)</td><td class="num">370 kWh</td><td class="num">740 kWh</td><td>Res. SE 13/2026</td></tr>
+        <tr><td>Enero, febrero y diciembre, zona “Muy cálido” (Ia y Ib)</td><td class="num">550 kWh</td><td class="num">1.100 kWh</td><td>Res. SE 13/2026</td></tr>
+      </tbody>
+    </table></div>
+    <p style="margin:.7rem 0 0">Por eso el explorador permite elegir el bloque base: al superarlo, se pierde el valor bonificado de la energía y, en las categorías residenciales, también la cuota fija reducida.</p>
+  </div>
+
   <div class="note pending">
-    <div class="nt">◈ Vigencia del cuadro <span class="ev ev-vp">Validación pendiente</span></div>
+    <div class="nt">◈ Vigencia temporal por precisar <span class="ev ev-vp">Validación pendiente</span></div>
+    <p>El 108-E es el cuadro tarifario 2026 identificado en este análisis, pero la documentación relevada no permite determinar de forma autónoma la fecha exacta de inicio y finalización de su vigencia, ni acreditar qué cuadro anterior sustituye. Por eso figura en la tabla de normas como <em>vigencia temporal por precisar</em> y no simplemente como vigente.</p>
     <p style="margin-bottom:0">El documento analizado no consigna fecha de inicio ni de fin de vigencia. Los valores deben contrastarse con el cuadro efectivamente aplicable al período de facturación antes de usarse en una liquidación.</p>
     <p style="margin-bottom:0">A esto se suma una inconsistencia en la publicación oficial: en la página de DPEC el texto descriptivo enumera la serie de cuadros hasta 108-C, mientras que el listado de actos administrativos de esa misma página incluye los Decretos 1438/2026 y 1454/2026, las Resoluciones EPRE 10/2026 y 12/2026 y las Resoluciones DPEC 629/2026 y 679/2026, que son los actos de aprobación que figuran en la portada del Cuadro 108-E.</p>
   </div>
@@ -527,7 +934,7 @@ footer{border-top:1px solid var(--border);background:var(--panel);margin-top:2.5
   <h3 id="discontinuidad">Discontinuidad potencial en el cargo fijo SEF</h3>
   <div class="note pending">
     <div class="nt">◈ Discontinuidad potencial bajo interpretación literal del cuadro <span class="ev ev-cp">Cálculo propio</span></div>
-    <p>El cuadro consigna una cuota fija reducida mientras el consumo se mantiene “hasta el Base” y la cuota fija completa si es “mayor al Base”. Bajo lectura literal de esa tabla, en junio de 2026 un usuario residencial urbano pasaría de <strong>$ 89.647,60</strong> con 600 kWh a <strong>$ 102.847,02</strong> con 601 kWh: una diferencia de aproximadamente <strong>$ 13.199,42</strong> (14,72%) por un solo kWh. En julio el equivalente sería de unos $ 12.927,42 (14,23%).</p>
+    <p>El cuadro consigna una cuota fija reducida mientras el consumo se mantiene “hasta el Base” y la cuota fija completa si es “mayor al Base”. Bajo lectura literal de esa tabla, en un bimestre con bloque base de 600 kWh un usuario residencial urbano pasaría de <strong>$ 89.647,60</strong> con 600 kWh a <strong>$ 102.847,02</strong> con 601 kWh: una diferencia de aproximadamente <strong>$ 13.199,42</strong> (14,72%) por un solo kWh. El mismo salto se produciría en el kWh siguiente al bloque base cuando éste sea de 300, 740 o 1.100 kWh.</p>
     <p style="margin-bottom:0"><strong>Debe verificarse contra el algoritmo real de facturación antes de concluir que el efecto se produce efectivamente en la factura.</strong> El motor de liquidación podría aplicar prorrateo, transición gradual u otro criterio no explicitado en el cuadro. Lo que este análisis afirma es que la tabla, leída literalmente, produce esa discontinuidad; no que la facturación la aplique.</p>
   </div>
   <div class="figure" id="fig-notch"></div>
@@ -549,7 +956,7 @@ footer{border-top:1px solid var(--border);background:var(--panel);margin-top:2.5
 
   <h3>Zonas bioambientales y bloque subsidiado <span class="ev ev-of">Oficial</span></h3>
   <div class="tablewrap"><table id="zonasTabla">
-    <caption>Límites del bloque base según zona, convertidos a facturación bimestral por el cuadro provincial.</caption>
+    <caption>Límites del bloque base según zona, convertidos a facturación bimestral por el cuadro provincial. El criterio de zonificación es el de la Res. SE 13/2026, que remite a la norma IRAM 11603:2012: “Muy cálido” comprende las zonas bioambientales Ia y Ib, y “Cálido” las zonas IIa y IIb. Los valores de verano aplican a enero, febrero y diciembre.</caption>
     <thead><tr><th>Zona</th><th class="num">Verano (mensual)</th><th class="num">Verano (bimestral)</th><th class="num">Mayo a agosto (bim.)</th><th class="num">Resto del año (bim.)</th></tr></thead>
     <tbody></tbody>
   </table></div>
@@ -562,27 +969,14 @@ footer{border-top:1px solid var(--border);background:var(--panel);margin-top:2.5
 <!-- 06 FACTURA -->
 <section class="view" id="factura">
   <div class="sec-head"><h2>Cómo se forma la factura</h2></div>
-  <p class="lede">La estructura de abajo es la <strong>secuencia conceptual</strong> de formación del importe. Hacé clic en cualquier fila para ver qué es cada componente, quién lo determina y con qué norma.</p>
-
-  <div class="note problem">
-    <div class="nt">⚠ Tarifa ≠ factura final</div>
-    <p style="margin-bottom:0">Un valor unitario del cuadro tarifario nunca equivale al importe a pagar. La factura puede incluir cargo fijo, energía, potencia, energía por banda horaria, penalidades técnicas, ajustes de abastecimiento, subsidios, créditos de inyección, impuestos, tasas y contribuciones legalmente autorizadas, deudas e intereses. La Ley 6.073 exige que todos esos conceptos aparezcan discriminados y que los tributos se transfieran a sus beneficiarios.</p>
-  </div>
+  <p class="lede">Secuencia conceptual del importe. Tocá cualquier fila para ver qué es el componente y quién lo determina. <strong>Una tarifa unitaria nunca equivale al importe a pagar.</strong></p>
 
   <div class="filters" id="facFiltros"></div>
   <div id="facCascada"></div>
 
   <div class="note pending">
-    <div class="nt">◈ Qué no puede calcularse con la información disponible <span class="ev ev-vp">Validación pendiente</span></div>
-    <p style="margin-bottom:0">El desglose interno entre <strong>PEST</strong>, <strong>VAD</strong>, <strong>transporte</strong>, <strong>FNEE</strong> y <strong>ajuste por contratos de abastecimiento</strong> no está publicado por categoría en el material relevado: el cuadro presenta el resultado agregado. Del mismo modo, los <strong>impuestos, tasas y contribuciones</strong> dependen de la jurisdicción provincial y municipal del suministro. Por eso la cascada muestra su posición en la secuencia, pero no atribuye montos a esos componentes.</p>
-  </div>
-
-  <h3>Modelo de factura explicable <span class="ev ev-pr">Propuesta</span></h3>
-  <p>Al hacer clic en cualquier concepto de una factura real, el usuario debería poder ver la trazabilidad completa del importe:</p>
-  <div class="grid g3">
-    <div class="card" style="margin-top:0"><h4>Cargo tarifario</h4><p style="margin-bottom:0">“Este cargo surge de la categoría X, Cuadro 108-E, página N, aprobado por Resolución DPEC…, Resolución EPRE… y Decreto…, calculado como 243 kWh × $ X.”</p></div>
-    <div class="card" style="margin-top:0"><h4>Subsidio</h4><p style="margin-bottom:0">“Usted recibió $ X de bonificación nacional SEF sobre Y kWh de consumo base. El límite aplicable es Z porque su suministro está clasificado en zona bioambiental…”</p></div>
-    <div class="card" style="margin-top:0"><h4>Generación distribuida</h4><p style="margin-bottom:0">“Inyectó X kWh × tarifa de inyección Y = crédito Z, imputado al período…”</p></div>
+    <div class="nt">◈ Qué no puede calcularse acá <span class="ev ev-vp">Validación pendiente</span></div>
+    <p style="margin-bottom:0">El desglose interno entre PEST, VAD, transporte, FNEE y ajuste por contratos no está publicado por categoría en el material relevado: el cuadro presenta el resultado agregado. Los impuestos, tasas y contribuciones dependen de la jurisdicción provincial y municipal del suministro. Por eso esas filas muestran su posición en la secuencia pero no un monto.</p>
   </div>
 </section>
 
@@ -596,7 +990,8 @@ footer{border-top:1px solid var(--border);background:var(--panel);margin-top:2.5
     <div class="tablewrap" style="margin:.6rem 0 0"><table>
       <thead><tr><th>Magnitud</th><th>Qué es</th><th>Quién la fija</th></tr></thead>
       <tbody>
-        <tr><td><strong>Bonificación nacional</strong></td><td>Porcentaje que la Nación decide bonificar: 50% general más la extraordinaria vigente en el mes.</td><td>Secretaría de Energía de la Nación</td></tr>
+        <tr><td><strong>Bonificación general</strong></td><td>50% sobre el PEST del bloque base. Es la bonificación de base del régimen y no la fija una resolución mensual.</td><td>Decreto 943/2025, art. 7°</td></tr>
+        <tr><td><strong>Bonificación extraordinaria</strong></td><td>Porcentaje adicional que se determina mes a mes y se adiciona a la general, dentro del tope previsto por el decreto.</td><td>Secretaría de Energía de la Nación, por resoluciones específicas</td></tr>
         <tr><td><strong>Porcentaje aplicado al PEST</strong></td><td>La bonificación se aplica sobre el precio estacional de la energía correspondiente al bloque base, no sobre la tarifa completa.</td><td>Decreto 943/2025, art. 7°</td></tr>
         <tr><td><strong>Reducción efectiva de la tarifa minorista</strong></td><td>Cuánto baja el valor del cuadro tarifario provincial, que también contiene VAD y otros componentes no subsidiados.</td><td>Resultado del cuadro provincial</td></tr>
         <tr><td><strong>Subsidio total sobre la factura</strong></td><td>Proporción del importe final finalmente ahorrada, una vez incorporados cargo fijo, impuestos y demás conceptos.</td><td>Resultado de la liquidación</td></tr>
@@ -606,6 +1001,7 @@ footer{border-top:1px solid var(--border);background:var(--panel);margin-top:2.5
   <p><strong>“50% sobre el PEST” no significa “50% de descuento sobre la factura”.</strong> En el Cuadro 108-E la reducción efectiva del componente variable del bloque subsidiado resulta de aproximadamente 38,22% en junio y 37,41% en julio para el usuario urbano, y de 25,02% y 24,50% para el rural. <span class="ev ev-cp">Cálculo propio</span></p>
 
   <h3>Bloques base <span class="ev ev-of">Oficial</span></h3>
+  <p>El bloque base general lo fija el Decreto 943/2025. La Res. SE 13/2026 establece bloques diferenciados para enero, febrero y diciembre en función de la zona bioambiental definida por la norma IRAM 11603:2012: 550 kWh/mes en zona “Muy cálido” (zonas Ia y Ib) y 370 kWh/mes en zona “Cálido” (zonas IIa y IIb).</p>
   <div class="grid g2" id="sefBloques"></div>
 
   <h3>Evolución mensual de la bonificación extraordinaria</h3>
@@ -634,82 +1030,6 @@ footer{border-top:1px solid var(--border);background:var(--panel);margin-top:2.5
     <span class="pill tar">Créditos por generación</span>
   </div>
 </section>
-<!-- 08 VAD Y MEM -->
-<section class="view" id="vadmem">
-  <div class="sec-head"><h2>VAD, MEM y formación del costo</h2></div>
-  <p class="lede">El principio de aditividad de la Ley 6.073 permite escribir la tarifa como <code>costo propio eficiente de distribución + costo de abastecimiento + ajustes permitidos ± subsidios + otros conceptos legalmente incorporados</code>. Cada componente tiene autoridad, norma y frecuencia de actualización distintas.</p>
-
-  <h3>Trazabilidad por componente</h3>
-  <div class="tablewrap"><table id="compTabla">
-    <caption>Quién determina cada componente del costo y con qué instrumento.</caption>
-    <thead><tr><th>Componente</th><th>Ámbito</th><th>Autoridad</th><th>Instrumento</th><th>Frecuencia</th></tr></thead>
-    <tbody></tbody>
-  </table></div>
-
-  <h3>Diagrama de formación tarifaria</h3>
-  <div class="chain">
-    <div class="node" style="border-left:3px solid var(--series-7)"><b>Nacional</b>PEST: precio estacional de la energía</div>
-    <div class="node" style="border-left:3px solid var(--series-7)"><b>Nacional</b>Potencia mayorista</div>
-    <div class="node" style="border-left:3px solid var(--series-7)"><b>Nacional</b>Transporte</div>
-    <div class="node" style="border-left:3px solid var(--series-7)"><b>Nacional</b>FNEE</div>
-    <div class="node" style="border-left:3px solid var(--series-7)"><b>Nacional</b>Bonificación SEF</div>
-  </div>
-  <div class="chain">
-    <div class="node" style="border-left:3px solid var(--series-4)"><b>Mixto</b>Contratos de abastecimiento de DPEC</div>
-    <div class="node" style="border-left:3px solid var(--series-4)"><b>Mixto</b>Ajuste por diferencia entre precio estacional y contractual</div>
-    <div class="node" style="border-left:3px solid var(--series-4)"><b>Mixto</b>Pass-through</div>
-  </div>
-  <div class="chain">
-    <div class="node" style="border-left:3px solid var(--series-1)"><b>Provincial</b>VAD</div>
-    <div class="node" style="border-left:3px solid var(--series-1)"><b>Provincial</b>Estructura de categorías y cargos</div>
-    <div class="node" style="border-left:3px solid var(--series-1)"><b>Provincial</b>Bonificaciones provinciales</div>
-    <div class="node" style="border-left:3px solid var(--series-1)"><b>Provincial</b>Aprobación del cuadro</div>
-  </div>
-
-  <h3>El mecanismo de pass-through <span class="ev ev-of">Oficial</span></h3>
-  <p>El Decreto provincial 3518/2022 documenta el circuito completo: DPEC tramitó el traslado de nuevos costos mayoristas de potencia, energía y transporte; la Subgerencia de Asuntos Regulatorios calculó los valores con la ecuación general aprobada por la Res. MOPySP 70/2018 y el Decreto 340/2018, homologados luego por la Res. EPRE 5/2021 y el Decreto 1155/2021. La Resolución DPEC 629/2026 refiere nuevamente a esa ecuación y a la necesidad de autorización previa del EPRE.</p>
-  <div class="chain">
-    <div class="node"><b>1</b>DPEC calcula</div><span class="arrow">→</span>
-    <div class="node"><b>2</b>Resolución DPEC</div><span class="arrow">→</span>
-    <div class="node"><b>3</b>EPRE analiza y autoriza</div><span class="arrow">→</span>
-    <div class="node"><b>4</b>Decreto del Poder Ejecutivo</div><span class="arrow">→</span>
-    <div class="node hi"><b>5</b>Aplicación tarifaria</div>
-  </div>
-
-  <h3>Contratos de abastecimiento <span class="ev ev-of">Oficial</span></h3>
-  <p>La documentación tarifaria de 2026 indica que DPEC contrató energía y potencia para cubrir demanda estacionalizada no atendida de otro modo y determinados usuarios de gran demanda. El costo contractual puede variar por cargos variables de generación, tipo de cambio y condiciones particulares. Por eso la metodología calcula primero la tarifa suponiendo adquisición al precio estacional y luego aplica un <strong>ajuste por la diferencia entre precio estacional y precio contractual</strong>; cuando el contrato resulta más barato, el ajuste opera a favor del usuario. La página 4 del cuadro muestra esas tres columnas de forma explícita.</p>
-  <div class="note ok">
-    <div class="nt">✓ Simetría del mecanismo <span class="ev ev-an">Análisis</span></div>
-    <p style="margin-bottom:0">Que el ajuste pueda operar en ambos sentidos es correcto: un pass-through simétrico traslada tanto aumentos como ahorros. La observación es de <em>parametrización</em>, no de diseño.</p>
-  </div>
-  <div class="note pending">
-    <div class="nt">◈ Reglas que convendría explicitar <span class="ev ev-pr">Propuesta</span></div>
-    <p style="margin-bottom:0">Precio de referencia; contratos elegibles; costos reconocidos; pérdidas; tipo de cambio; periodicidad del ajuste; diferencias acumuladas; intereses; conciliación posterior; auditoría; tratamiento de errores; y mecanismo de devolución. Sin esa parametrización, el usuario ve una columna “ajuste por contrato” sin poder reconstruir cómo se obtuvo.</p>
-  </div>
-
-  <h3>Incentivos de compra eficiente <span class="ev ev-pr">Propuesta</span></h3>
-  <p>El artículo 25 de la Ley 6.073 obliga al EPRE a regular el tratamiento de menores o mayores costos de adquisición de energía por parte del distribuidor <span class="ev ev-of">Oficial</span>. Sobre esa base, una metodología futura podría establecer un precio <em>benchmark</em>: si la compra se realiza por debajo, parte del ahorro se traslada de inmediato y una fracción acotada puede reconocerse como incentivo; si se realiza por encima sin justificación, la diferencia no necesariamente debería trasladarse en su totalidad. Debe adaptarse a las obligaciones federales de contratación y traslado de costos reconocidos.</p>
-
-  <h3>Cuenta regulatoria de diferencias <span class="ev ev-pr">Propuesta</span></h3>
-  <p>Cuando el costo efectivo y el facturado divergen, una cuenta regulatoria pública permitiría ver qué parte del ajuste corresponde a costos pasados. Fórmula sugerida y estructura de la cuenta:</p>
-  <pre>PT_t = (CostoMEM_t + Transporte_t + Contratos_t + FNEE_t + OtrosReconocidos_t)
-       − CostoBaseReconocido + Saldo_(t−1)
-
-Saldo inicial              + $ …
-Costo mayorista real       + $ …
-Recaudación pass-through   − $ …
-Intereses reconocidos      + $ …
-= Saldo a recuperar        + $ …</pre>
-  <p>Debería indicar además qué costos son plenamente trasladables, cuáles son controlables por DPEC, qué eficiencia se exige, qué pérdidas se reconocen, cómo se distribuyen diferencias por contratos, qué ocurre con ajustes retroactivos de CAMMESA, cómo se devuelven sobre-recuperaciones y qué tasa aplica a los saldos acumulados.</p>
-
-  <h3>Metodología tarifaria reproducible <span class="ev ev-pr">Propuesta</span></h3>
-  <pre>Base de capital regulatoria → depreciaciones → OPEX eficiente →
-pérdidas reconocidas → inversiones → costo de capital →
-demanda proyectada → asignación por nivel de tensión →
-costos comerciales → categorías → cargos → subsidios → factura</pre>
-  <p>Con indicadores de productividad publicables: OPEX por usuario, OPEX por MWh, empleados por mil usuarios, pérdidas técnicas y no técnicas, km de red por usuario, costo comercial por factura, inversión por usuario, SAIDI por inversión, cobrabilidad y morosidad. El objetivo no es trasladar los costos históricos a tarifa, sino determinar un costo eficiente.</p>
-</section>
-
 <!-- 09 GENERACIÓN DISTRIBUIDA -->
 <section class="view" id="gd">
   <div class="sec-head"><h2>Generación distribuida</h2></div>
@@ -721,6 +1041,7 @@ costos comerciales → categorías → cargos → subsidios → factura</pre>
     <span class="pill nac">Decreto nacional 986/2018</span>
     <span class="pill nac">Res. SE 314/2018 y modif.</span>
     <span class="pill nac">Res. SE 287/2025</span>
+    <span class="pill" style="opacity:.7">Res. SE 235/2024 (abrogada)</span>
     <span class="pill prov">Ley provincial 6.503</span>
     <span class="pill prov">Ley 6.428, arts. 16 a 25</span>
     <span class="pill reg">Res. SE provincial 240/2020</span>
@@ -730,17 +1051,31 @@ costos comerciales → categorías → cargos → subsidios → factura</pre>
     <div class="card" style="margin-top:0;border-top:3px solid var(--series-3)">
       <h4>Derechos del usuario-generador <span class="ev ev-of">Oficial</span></h4>
       <ul style="margin-bottom:0">
-        <li>Instalar generación renovable hasta una potencia equivalente a la contratada, sujeto a autorización.</li>
-        <li>Autoconsumir e inyectar excedentes bajo balance neto monetario.</li>
+        <li>Instalar generación renovable para autoconsumo e inyección de excedentes bajo balance neto monetario.</li>
+        <li>Como regla general, la <strong>Potencia de Acople a la Red</strong> no puede superar la potencia contratada para la demanda. La distribuidora puede autorizar una potencia mayor, pero esa autorización especial debe obtenerse antes de iniciar el procedimiento de conexión.</li>
+        <li>Para usuarios-generadores comunitarios se considera la suma de las potencias contratadas de los integrantes.</li>
         <li>Que la distribuidora tramite la conexión en los plazos previstos para medidores.</li>
         <li>Llevar las controversias al regulador jurisdiccional.</li>
       </ul>
     </div>
     <div class="card" style="margin-top:0;border-top:3px solid var(--series-8)">
       <h4>Límites al distribuidor <span class="ev ev-of">Oficial</span></h4>
-      <p style="margin-bottom:0">No puede agregar cargos específicos de mantenimiento de red, peaje, respaldo eléctrico u otros conceptos por el solo hecho de que el usuario posea generación distribuida. Los estudios técnicos de seguridad de red tampoco pueden transformarse por sí mismos en un cargo de acceso o respaldo.</p>
+      <p>Conforme al régimen nacional, la distribuidora no puede imponer cargos adicionales por estudios, mantenimiento de red, peaje de acceso o respaldo eléctrico por el solo hecho de que el usuario instale generación distribuida. Los estudios técnicos de seguridad de red tampoco pueden transformarse por sí mismos en un cargo de acceso o respaldo.</p>
+      <p style="margin-bottom:0"><strong>Excepción a tener presente:</strong> la Res. SE 287/2025 prevé que, cuando el equipo de un usuario-generador comunitario <em>no</em> se vincula a ninguno de los puntos de suministro de los participantes, la distribuidora determina la factibilidad de conexión y los cargos adicionales que implique la inclusión de ese equipo en la red. La prohibición general no alcanza a esa configuración.</p>
     </div>
   </div>
+
+  <h3>Categorías nacionales de usuario-generador <span class="ev ev-of">Oficial</span></h3>
+  <div class="tablewrap"><table>
+    <caption>Clasificación por potencia establecida por la Res. SE 287/2025, que sustituyó el Capítulo 2 de la Res. 314/2018 y abrogó la Res. 235/2024.</caption>
+    <thead><tr><th>Categoría</th><th>Rango de potencia</th><th>Observaciones</th></tr></thead>
+    <tbody>
+      <tr><td><strong>UGpe</strong></td><td>Hasta 3 kW</td><td>Usuario-generador pequeño.</td></tr>
+      <tr><td><strong>UGme</strong></td><td>Más de 3 kW y hasta 300 kW</td><td>Usuario-generador mediano.</td></tr>
+      <tr><td><strong>UGma</strong></td><td>Más de 300 kW y hasta 12 MW</td><td>Usuario-generador mayor. En ningún caso la Potencia de Acople a la Red puede exceder 12 MW en un mismo punto de suministro.</td></tr>
+    </tbody>
+  </table>
+  <div class="src">Fuente: Resolución SE 287/2025, dictada el 03/07/2025 y publicada el 04/07/2025.</div></div>
 
   <h3>Reglamentación provincial · Resolución 240/2020 <span class="ev ev-of">Oficial</span></h3>
   <p>Dictada el 8 de octubre de 2020 por la Secretaría de Energía de Corrientes como autoridad de aplicación, reglamenta la Ley 6.503 en cinco artículos. Contenido verificado en las publicaciones oficiales de la Secretaría y de DPEC:</p>
@@ -753,12 +1088,13 @@ costos comerciales → categorías → cargos → subsidios → factura</pre>
   </ul>
   <div class="note explain">
     <div class="nt">◆ Net billing, no net metering <span class="ev ev-an">Análisis</span></div>
-    <p style="margin-bottom:0">El usuario no vende su excedente al precio minorista completo: recibe un valor relacionado con el <strong>costo evitado de adquisición</strong>. La brecha entre tarifa de inyección y precio minorista no es margen del distribuidor, porque el precio minorista incluye distribución, comercialización y capacidad, costos que no se evitan porque un prosumidor inyecte 1 kWh. Ver los valores comparados en la sección de tarifas.</p>
+    <p>Según la reglamentación provincial, la energía inyectada se retribuye a un <strong>valor asociado al precio de adquisición de la energía por el distribuidor</strong>: el precio estabilizado más transporte en el MEM. El usuario no vende su excedente al precio minorista completo.</p>
+    <p style="margin-bottom:0"><strong>Lectura económica <span class="ev ev-an">Análisis</span>:</strong> conceptualmente ese valor puede interpretarse como una aproximación al costo evitado de adquisición de energía. La brecha entre tarifa de inyección y precio minorista no es margen del distribuidor, porque el precio minorista incluye distribución, comercialización y capacidad, costos que no se evitan porque un prosumidor inyecte 1 kWh. Ver los valores comparados en la sección de tarifas.</p>
   </div>
 
   <div class="note explain">
     <div class="nt">◆ La prohibición de reventa no alcanza a la inyección <span class="ev ev-an">Análisis</span></div>
-    <p style="margin-bottom:0">El Reglamento de Suministro prohíbe al usuario vender o transferir la energía que DPEC le suministra. Esa cláusula, anterior al régimen de generación distribuida, no comprende la inyección de energía propia de fuente renovable por un usuario-generador autorizado, que es una actividad expresamente regulada por las Leyes 27.424 y 6.503. Una consolidación del Reglamento debería explicitar la excepción para eliminar la contradicción aparente.</p>
+    <p style="margin-bottom:0">La prohibición del Reglamento de Suministro se refiere a la energía suministrada por DPEC, mientras que la inyección de excedentes de generación renovable propia se encuentra específicamente regulada por el régimen de generación distribuida (Leyes 27.424 y 6.503 y sus reglamentaciones). No existe en el Reglamento una excepción textual que lo diga: la compatibilidad surge de que ambas normas regulan supuestos distintos. Una consolidación del Reglamento debería explicitarlo para eliminar la contradicción aparente.</p>
   </div>
 
   <h3>Generación Distribuida Comunitaria</h3>
@@ -797,30 +1133,6 @@ costos comerciales → categorías → cargos → subsidios → factura</pre>
     </div>
   </details>
 
-  <h3>Agenda regulatoria futura <span class="ev ev-pr">Propuesta</span></h3>
-  <p>Ninguno de los puntos siguientes constituye obligación vigente. Son materias que un desarrollo regulatorio posterior debería resolver.</p>
-  <div class="tablewrap"><table>
-    <caption>Materias abiertas, ordenadas por área.</caption>
-    <thead><tr><th>Área</th><th>Materia</th><th>Pregunta a resolver</th></tr></thead>
-    <tbody>
-      <tr><td>Red</td><td>Pérdidas</td><td>¿Se asignan al generador, al distribuidor o a los integrantes?</td></tr>
-      <tr><td>Red</td><td>Congestión</td><td>¿Qué ocurre si la red no puede aceptar toda la inyección?</td></tr>
-      <tr><td>Red</td><td><em>Curtailment</em></td><td>¿Cómo se remunera o distribuye un recorte de generación?</td></tr>
-      <tr><td>Red</td><td>Ubicación</td><td>¿Una instalación cercana a la carga debe recibir una señal distinta de otra distante?</td></tr>
-      <tr><td>Red</td><td><em>Hosting capacity</em></td><td>Publicación por alimentador de capacidad instalada, demanda máxima y mínima, GD instalada y en trámite, potencia adicional admisible y restricciones.</td></tr>
-      <tr><td>Medición</td><td>Simultaneidad</td><td>¿Qué intervalo se usa para la modalidad virtual: 15 minutos, una hora, otro?</td></tr>
-      <tr><td>Medición</td><td>Medidores inteligentes</td><td>Requisitos, propiedad y costos.</td></tr>
-      <tr><td>Datos</td><td>Acceso y consentimiento</td><td>¿Quién puede acceder a los perfiles horarios?</td></tr>
-      <tr><td>Datos</td><td>API</td><td>Estándares para que titular y participantes consulten producción y créditos.</td></tr>
-      <tr><td>Datos</td><td>Ciberseguridad</td><td>Autenticación, integridad, disponibilidad y recuperación.</td></tr>
-      <tr><td>Usuarios</td><td>Portabilidad</td><td>¿El crédito sigue al usuario o al punto de suministro ante una mudanza?</td></tr>
-      <tr><td>Usuarios</td><td>Mora, sucesión e insolvencia</td><td>¿Puede recibir crédito quien adeuda facturas? ¿Se transmite la participación?</td></tr>
-      <tr><td>Tecnología</td><td>Almacenamiento</td><td>¿Puede cargarse desde la red e inyectarse luego? ¿Recibe tarifa de inyección? ¿Cómo se evita el arbitraje con subsidios? ¿Puede una batería comunitaria prestar servicios de red?</td></tr>
-      <tr><td>Tecnología</td><td>Demanda flexible</td><td>¿Puede remunerarse la reducción de consumo?</td></tr>
-      <tr><td>Tecnología</td><td>Movilidad eléctrica</td><td>Carga domiciliaria con señal valle, electrolineras, potencia flexible, interrumpibilidad voluntaria y <em>vehicle-to-grid</em>. No se identificó categoría específica en el material relevado.</td></tr>
-      <tr><td>Fomento</td><td>Fondo de la Ley 6.428</td><td>Los arts. 16 a 25 siguen vigentes, pero el estado operativo del fondo a la fecha de este análisis no pudo establecerse. Requiere auditoría normativa y presupuestaria antes de publicarse como beneficio disponible.</td></tr>
-    </tbody>
-  </table></div>
 </section>
 <!-- 10 USUARIOS -->
 <section class="view" id="usuarios">
@@ -908,13 +1220,14 @@ costos comerciales → categorías → cargos → subsidios → factura</pre>
 
   <h3>Ruta del reclamo</h3>
   <div class="chain">
-    <div class="node"><b>Paso 1 · DPEC</b>Reclamo ante el prestador. Guardia telefónica 24 h, autogestión, oficinas y guardias de distritos del interior. Corresponde siempre como instancia inicial.</div><span class="arrow">→</span>
-    <div class="node"><b>Paso 2 · EPRE</b>Recurso ante el regulador. Corresponde cuando el distribuidor no resolvió el reclamo, o ante incumplimientos de calidad o del contrato de servicio.</div><span class="arrow">→</span>
-    <div class="node"><b>Paso 3</b>Vías administrativas y judiciales correspondientes, agotada la instancia regulatoria.</div>
+    <div class="node"><b>DPEC</b>Reclamo ante el prestador. Guardia telefónica 24 h, autogestión, oficinas y guardias de distritos del interior. Como regla práctica conviene iniciar acá: deja constancia y obtiene una primera respuesta.</div><span class="arrow">→</span>
+    <div class="node"><b>EPRE</b>Intervención del regulador. Procede cuando el distribuidor no resolvió el reclamo y también, según la materia, por vía directa: cuestiones tarifarias, calidad del servicio, interrupciones o incumplimientos del contrato de servicio.</div><span class="arrow">→</span>
+    <div class="node"><b>Defensa del consumidor</b>La Ley 24.240 habilita al usuario a presentar su reclamo ante el organismo creado por la legislación específica o ante la autoridad de aplicación en materia de consumo. No es una instancia posterior sino una vía disponible.</div><span class="arrow">→</span>
+    <div class="node"><b>Otras vías</b>Vías administrativas y judiciales que resulten procedentes según la naturaleza del reclamo y la normativa aplicable.</div>
   </div>
   <div class="note explain">
-    <div class="nt">◆ En paralelo, no en serie <span class="ev ev-of">Oficial</span></div>
-    <p style="margin-bottom:0">Las facultades que la legislación de defensa del consumidor reconoce al usuario no quedan desplazadas por la escalera administrativa: operan de manera concurrente.</p>
+    <div class="nt">◆ Vías concurrentes, no una escalera obligatoria <span class="ev ev-of">Oficial</span></div>
+    <p style="margin-bottom:0">El artículo 25 de la Ley 24.240 establece que los servicios públicos con legislación específica se rigen por esa normativa y por la ley de defensa del consumidor, y habilita al usuario a reclamar ante el organismo específico o ante la autoridad de aplicación de consumo. No corresponde afirmar que deba agotarse la instancia regulatoria antes de acudir a las vías de consumo.</p>
   </div>
   <div class="note pending">
     <div class="nt">◈ Trazabilidad del reclamo <span class="ev ev-pr">Propuesta</span></div>
@@ -934,57 +1247,6 @@ costos comerciales → categorías → cargos → subsidios → factura</pre>
     <div class="node"><b>4</b>Créditos y compensaciones<br><span style="color:var(--text-muted)">Inyección, ajustes, notas de crédito</span></div><span class="arrow">↓</span>
     <div class="node hi"><b>5</b>Importe final<br><span style="color:var(--text-muted)">No deducible del cuadro tarifario por sí solo</span></div>
   </div>
-</section>
-
-<!-- 11 CALIDAD -->
-<section class="view" id="calidad">
-  <div class="sec-head"><h2>Calidad del servicio</h2></div>
-  <p class="lede">Qué exige el marco vigente, qué información pública pudo identificarse y qué convendría incorporar. La distinción es deliberada: la ausencia de un dato en las fuentes relevadas no equivale a su inexistencia.</p>
-
-  <div class="note explain">
-    <div class="nt">◆ Base normativa vigente <span class="ev ev-of">Oficial</span></div>
-    <p style="margin-bottom:0">La Ley 6.073 consagra el derecho del usuario a niveles mínimos de calidad determinados por el EPRE, y atribuye al regulador el control de calidad, de interrupciones y reconexiones y la potestad sancionatoria (advertencias, multas, decomisos, intervención y hasta revocación de concesiones o permisos, con posibilidad de destinar multas a los usuarios perjudicados). La Ley 24.240 agrega la presunción de imputabilidad al prestador ante interrupciones.</p>
-  </div>
-
-  <div class="note pending">
-    <div class="nt">◈ Limitaciones de información pública identificadas <span class="ev ev-an">Análisis</span></div>
-    <p style="margin-bottom:0">Dentro del conjunto documental relevado no fue posible identificar un instrumento único, actualizado y de acceso directo que reúna indicadores públicos de frecuencia y duración de interrupciones, calidad de tensión, calidad comercial y penalidades individualizadas. Esto describe el estado de la <strong>información pública consultada</strong>: no afirma que no existan controles, mediciones técnicas ni resoluciones parciales del regulador.</p>
-  </div>
-
-  <h3>Dimensiones de la calidad <span class="ev ev-an">Análisis</span></h3>
-  <div class="grid g3">
-    <div class="stat"><div class="label">Dimensión 1</div><div class="value sm">Producto técnico</div><div class="sub">Tensión, frecuencia, perturbaciones, armónicos, flicker.</div></div>
-    <div class="stat"><div class="label">Dimensión 2</div><div class="value sm">Servicio técnico</div><div class="sub">Número de interrupciones, duración individual y acumulada, programadas y forzadas.</div></div>
-    <div class="stat"><div class="label">Dimensión 3</div><div class="value sm">Calidad comercial</div><div class="sub">Plazos de conexión, reconexión, lectura, facturación, reclamos, cambio de titularidad y contraste.</div></div>
-    <div class="stat"><div class="label">Dimensión 4</div><div class="value sm">Atención</div><div class="sub">Espera telefónica o digital, trazabilidad, tiempo hasta respuesta y solución.</div></div>
-    <div class="stat"><div class="label">Dimensión 5</div><div class="value sm">Información</div><div class="sub">Aviso de cortes, acceso a datos históricos y explicación de la factura.</div></div>
-  </div>
-
-  <h3>Indicadores</h3>
-  <div class="tablewrap"><table id="calTabla">
-    <caption>Estado de cada indicador dentro de las fuentes relevadas para este análisis.</caption>
-    <thead><tr><th>Indicador</th><th>Qué mide</th><th>Estado en las fuentes relevadas</th></tr></thead>
-    <tbody></tbody>
-  </table></div>
-
-  <h3>Régimen de créditos automáticos <span class="ev ev-pr">Propuesta</span></h3>
-  <p>Ninguno de los mecanismos siguientes está vigente. Se presentan como diseño posible: su ventaja es convertir la calidad en un incentivo económico del prestador, y no en un derecho que sólo obtiene el usuario suficientemente informado para iniciar un expediente.</p>
-  <div class="tablewrap"><table>
-    <thead><tr><th>Área</th><th>Indicador</th><th>Consecuencia propuesta</th></tr></thead>
-    <tbody>
-      <tr><td>Continuidad</td><td>Cantidad de cortes</td><td>Crédito automático al superar el límite</td></tr>
-      <tr><td>Continuidad</td><td>Horas acumuladas sin servicio</td><td>Crédito creciente</td></tr>
-      <tr><td>Corte prolongado</td><td>Duración individual máxima</td><td>Penalidad adicional</td></tr>
-      <tr><td>Tensión</td><td>Desviación respecto del rango</td><td>Crédito según gravedad y duración</td></tr>
-      <tr><td>Reclamo</td><td>Tiempo de respuesta</td><td>Compensación por demora</td></tr>
-      <tr><td>Conexión</td><td>Plazo máximo</td><td>Multa o crédito</td></tr>
-      <tr><td>Reconexión</td><td>Plazo máximo tras el pago</td><td>Crédito</td></tr>
-      <tr><td>Facturación</td><td>Porcentaje de lecturas estimadas</td><td>Límite anual</td></tr>
-      <tr><td>Medidor</td><td>Plazo de contraste</td><td>Sanción por incumplimiento</td></tr>
-      <tr><td>Información</td><td>Aviso previo de cortes programados</td><td>Sanción o compensación</td></tr>
-    </tbody>
-  </table></div>
-  <p><span class="ev ev-pr">Propuesta</span> Los indicadores deberían publicarse combinando nivel sistémico, por localidad, por alimentador y límites máximos individuales por usuario, para evitar que un buen promedio provincial oculte alimentadores con desempeño deficiente. Cuando la telemedición o el SCADA permitan acreditar el incumplimiento, el crédito debería ser automático.</p>
 </section>
 
 <!-- 13 CRONOLOGÍA -->
@@ -1010,16 +1272,35 @@ costos comerciales → categorías → cargos → subsidios → factura</pre>
 
   <div class="note pending">
     <div class="nt">◈ Criterio aplicado <span class="ev ev-an">Análisis</span></div>
-    <p style="margin-bottom:0">No se incorporaron enlaces que no pudieran comprobarse. Cuando un dato proviene únicamente de la documentación aportada para este análisis y no fue posible ubicar el acto en una fuente pública, se lo etiquetó como validación pendiente en lugar de citarlo como oficial. Las fechas y porcentajes de las Resoluciones 146/2026 y 187/2026 y la información de la página tarifaria de DPEC (incluida la mención textual del Valor Agregado de Distribución presentado en la audiencia pública del 8 de febrero de 2024 y el listado de actos aprobatorios) fueron contrastadas con sus publicaciones oficiales.</p>
+    <p style="margin-bottom:0">No se incorporaron enlaces que no pudieran comprobarse. Cuando un dato proviene únicamente de la documentación aportada para este análisis y no fue posible ubicar el acto en una fuente pública, se lo etiquetó como validación pendiente en lugar de citarlo como oficial. Las fechas, artículos y porcentajes de las Resoluciones 13/2026, 121/2026, 146/2026, 187/2026 y 287/2025, el texto del artículo 18 de la Ley 6.073, los artículos 12 bis y 31 bis incorporados por el Decreto 450/2025, y la información de la página tarifaria de DPEC (incluida la mención textual del Valor Agregado de Distribución presentado en la audiencia pública del 8 de febrero de 2024 y el listado de actos aprobatorios) fueron contrastadas con sus publicaciones oficiales.</p>
   </div>
 
   <h3>Documentación normativa de base</h3>
-  <p>Leyes provinciales 3.588, 6.073, 6.233, 6.428, 6.503 y 6.629; Decreto provincial 625/2012; Reglamento General de Suministro Eléctrico (Res. de Intervención 568/2000 y modificatorias); antecedentes del mecanismo de pass-through (Res. MOPySP 70/2018, Decreto 340/2018, Res. EPRE 5/2021, Decreto 1155/2021, Decreto 3518/2022); Cuadro Tarifario 108-E y actos de aprobación (Decretos 1438/2026 y 1454/2026, Res. EPRE 10/2026 y 12/2026, Res. DPEC 629/2026 y 679/2026); Leyes nacionales 15.336 (con la reforma del Decreto 450/2025), 24.065, 24.240, 27.351 y 27.424; Decreto nacional 943/2025; Resoluciones de la Secretaría de Energía de la Nación 314/2018, 287/2025, 13/2026, 109/2026, 121/2026, 146/2026 y 187/2026.</p>
+  <p>Leyes provinciales 3.588, 6.073, 6.233, 6.428, 6.503 y 6.629; Decreto provincial 625/2012; Reglamento General de Suministro Eléctrico (Res. de Intervención 568/2000 y modificatorias); antecedentes del mecanismo de pass-through (Res. MOPySP 70/2018, Decreto 340/2018, Res. EPRE 5/2021, Decreto 1155/2021, Decreto 3518/2022); Cuadro Tarifario 108-E y actos de aprobación (Decretos 1438/2026 y 1454/2026, Res. EPRE 10/2026 y 12/2026, Res. DPEC 629/2026 y 679/2026); Leyes nacionales 15.336 (con la reforma del Decreto 450/2025), 24.065, 24.240, 27.351 y 27.424; Decreto nacional 943/2025; Resoluciones de la Secretaría de Energía de la Nación 314/2018, 235/2024 (abrogada por la Res. 287/2025), 287/2025, 13/2026, 109/2026, 121/2026, 146/2026 y 187/2026.</p>
 </section>
 <!--SECTIONS-->
 </main>
 
 <div class="viztip" id="viztip" role="status" aria-live="polite"></div>
+
+<div class="pal-backdrop" id="palBackdrop" role="dialog" aria-modal="true" aria-label="Buscador del portal">
+  <div class="pal">
+    <div class="pal-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.2-4.2"/></svg>
+      <input id="palInput" type="text" placeholder="Buscar norma, institución, tarifa, hito o sección…" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="pal-list" id="palList" role="listbox"></div>
+    <div class="pal-foot"><span><kbd>↑</kbd><kbd>↓</kbd> navegar</span><span><kbd>Enter</kbd> abrir</span><span><kbd>Esc</kbd> cerrar</span></div>
+  </div>
+</div>
+
+<div class="dr-backdrop" id="drBackdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="false" aria-labelledby="drTitle" hidden>
+  <div class="dr-head"><h3 id="drTitle"></h3><button class="close" id="drClose" type="button" aria-label="Cerrar"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+  <div class="dr-body" id="drBody"></div>
+</aside>
+
+<button class="fab" id="topBtn" type="button" aria-label="Volver arriba"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <footer>
   <div class="footer-inner">
@@ -1036,38 +1317,41 @@ const HOY = '18 de agosto de 2026';
 
 /* -- Secciones -------------------------------------------------------------- */
 const SECCIONES = [
-  ['panorama','Panorama','Síntesis, cadena de valor y lectura general del régimen.'],
+  ['panorama','Inicio','Cadena de valor y lectura general del régimen.'],
   ['instituciones','Instituciones','Competencias legales, autoridad actuante y relaciones reales.'],
   ['normativo','Normativa','Tabla interactiva de normas con estado, vigencia y fuente.'],
   ['tarifas','Tarifas','Explorador del Cuadro 108-E con filtros y cálculo.'],
   ['factura','Factura','Cómo se forma el importe, componente por componente.'],
   ['subsidios','Subsidios','Régimen SEF, bloques base y bonificaciones 2026.'],
-  ['vadmem','VAD y MEM','Componentes nacionales, provinciales y mixtos.'],
   ['gd','Gen. distribuida','Régimen vigente y agenda regulatoria futura.'],
   ['usuarios','Usuarios','Derechos, obligaciones, reclamos y electrodependientes.'],
-  ['calidad','Calidad','Indicadores, información disponible y propuestas.'],
   ['cronologia','Cronología','Hitos normativos filtrables por jurisdicción y estado.'],
   ['fuentes','Fuentes','Origen oficial de cada dato utilizado.']
 ];
 
 /* -- Fuentes oficiales verificadas ------------------------------------------ */
 const FUENTES = {
-  dpec:       {t:'DPEC ( sitio institucional', u:'https://www.dpec.com.ar/', j:'prov', ver:true},
-  dpecTar:    {t:'DPEC ) Tarifas', u:'https://www.dpec.com.ar/comercial/tarifas/', j:'prov', ver:true},
-  dpecCuadro: {t:'DPEC ( Cuadro Tarifario (listado de actos y descargas)', u:'https://www.dpec.com.ar/1500', j:'prov', ver:true},
-  dpecRegimen:{t:'DPEC ) Régimen Tarifario', u:'https://dpec.com.ar/2972', j:'prov', ver:true},
-  dpecGD:     {t:'DPEC ( Reglamentación provincial de generación distribuida', u:'https://www.dpec.com.ar/3422', j:'prov', ver:true},
-  senergia:   {t:'Secretaría de Energía de Corrientes ) nota sobre Res. 240/2020', u:'https://senergia.corrientes.gob.ar/noticia/nueva-reglamentacion-provincial-para-generacion-distribuida-con-energias-renovables', j:'prov', ver:true},
+  dpec:       {t:'DPEC: sitio institucional', u:'https://www.dpec.com.ar/', j:'prov', ver:true},
+  dpecTar:    {t:'DPEC: Tarifas', u:'https://www.dpec.com.ar/comercial/tarifas/', j:'prov', ver:true},
+  dpecCuadro: {t:'DPEC: Cuadro Tarifario (listado de actos y descargas)', u:'https://www.dpec.com.ar/1500', j:'prov', ver:true},
+  dpecRegimen:{t:'DPEC: Régimen Tarifario', u:'https://dpec.com.ar/2972', j:'prov', ver:true},
+  dpecGD:     {t:'DPEC: Reglamentación provincial de generación distribuida', u:'https://www.dpec.com.ar/3422', j:'prov', ver:true},
+  senergia:   {t:'Secretaría de Energía de Corrientes: nota sobre la Res. 240/2020', u:'https://senergia.corrientes.gob.ar/noticia/nueva-reglamentacion-provincial-para-generacion-distribuida-con-energias-renovables', j:'prov', ver:true},
   epreCtes:   {t:'Ente Provincial Regulador Eléctrico (portal del Gobierno de Corrientes)', u:'https://www.corrientes.gob.ar/ente-provincial-regulador-electrico', j:'prov', ver:true},
   boCtes:     {t:'Boletín Oficial de la Provincia de Corrientes', u:'https://boletinoficial.corrientes.gob.ar/', j:'prov', ver:true},
-  cuadrosNac: {t:'Secretaría de Energía de la Nación ( Cuadros Tarifarios DPEC', u:'https://www.argentina.gob.ar/economia/energia/energia-electrica/estadisticas/cuadros-tarifarios-dpec', j:'nac', ver:true},
-  entesNac:   {t:'Argentina.gob.ar ) Entes reguladores provinciales', u:'https://www.argentina.gob.ar/energia/entes-reguladores-provinciales-de-energia-electrica-y-gas-natural', j:'nac', ver:true},
-  res146:     {t:'Boletín Oficial ( Resolución SE 146/2026 (01/07/2026)', u:'https://www.boletinoficial.gob.ar/detalleAviso/primera/343833/20260701', j:'nac', ver:true},
-  res187:     {t:'Boletín Oficial ) Resolución SE 187/2026 (31/07/2026)', u:'https://www.boletinoficial.gob.ar/detalleAviso/primera/345281/20260731', j:'nac', ver:true},
-  res187n:    {t:'Argentina.gob.ar ( Resolución 187/2026 (texto normativo)', u:'https://www.argentina.gob.ar/normativa/nacional/norma-428453', j:'nac', ver:true},
-  res187news: {t:'Argentina.gob.ar ) Prórroga y refuerzo de bonificaciones SEF para agosto', u:'https://www.argentina.gob.ar/noticias/el-gobierno-nacional-prorroga-y-refuerza-las-bonificaciones-del-regimen-de-subsidios', j:'nac', ver:true},
-  res287:     {t:'Boletín Oficial ( Resolución SE 287/2025 (04/07/2025)', u:'https://www.boletinoficial.gob.ar/detalleAviso/primera/327866/20250704', j:'nac', ver:true},
-  cammesa:    {t:'CAMMESA ) sitio institucional', u:'https://cammesaweb.cammesa.com/', j:'nac', ver:true},
+  cuadrosNac: {t:'Secretaría de Energía de la Nación: Cuadros Tarifarios DPEC', u:'https://www.argentina.gob.ar/economia/energia/energia-electrica/estadisticas/cuadros-tarifarios-dpec', j:'nac', ver:true},
+  entesNac:   {t:'Argentina.gob.ar: Entes reguladores provinciales', u:'https://www.argentina.gob.ar/energia/entes-reguladores-provinciales-de-energia-electrica-y-gas-natural', j:'nac', ver:true},
+  res121:     {t:'Argentina.gob.ar: Resolución SE 121/2026, texto normativo (28/05/2026)', u:'https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-121-2026-426173/texto', j:'nac', ver:true},
+  res13:      {t:'Argentina.gob.ar: Resolución SE 13/2026, texto normativo (16/01/2026)', u:'https://www.argentina.gob.ar/normativa/nacional/norma-422429/texto', j:'nac', ver:true},
+  dec450:     {t:'Argentina.gob.ar: Decreto 450/2025, texto normativo (07/07/2025)', u:'https://www.argentina.gob.ar/normativa/nacional/decreto-450-2025-414802/texto', j:'nac', ver:true},
+  res287t:    {t:'Argentina.gob.ar: Resolución SE 287/2025, texto normativo', u:'https://www.argentina.gob.ar/normativa/nacional/---414760/texto', j:'nac', ver:true},
+  ley6073:    {t:'Ley provincial 6.073, texto en compilación de terceros (Ecofield). No sustituye a la publicación oficial', u:'https://www.ecofield.net/Legales/Corrientes/ley6073_CTES.htm', j:'prov', ver:true},
+  res146:     {t:'Boletín Oficial: Resolución SE 146/2026 (01/07/2026)', u:'https://www.boletinoficial.gob.ar/detalleAviso/primera/343833/20260701', j:'nac', ver:true},
+  res187:     {t:'Boletín Oficial: Resolución SE 187/2026 (31/07/2026)', u:'https://www.boletinoficial.gob.ar/detalleAviso/primera/345281/20260731', j:'nac', ver:true},
+  res187n:    {t:'Argentina.gob.ar: Resolución 187/2026 (texto normativo)', u:'https://www.argentina.gob.ar/normativa/nacional/norma-428453', j:'nac', ver:true},
+  res187news: {t:'Argentina.gob.ar: Prórroga y refuerzo de bonificaciones SEF para agosto', u:'https://www.argentina.gob.ar/noticias/el-gobierno-nacional-prorroga-y-refuerza-las-bonificaciones-del-regimen-de-subsidios', j:'nac', ver:true},
+  res287:     {t:'Boletín Oficial: Resolución SE 287/2025 (04/07/2025)', u:'https://www.boletinoficial.gob.ar/detalleAviso/primera/327866/20250704', j:'nac', ver:true},
+  cammesa:    {t:'CAMMESA: sitio institucional', u:'https://cammesaweb.cammesa.com/', j:'nac', ver:true},
   datosCam:   {t:'Datos Energía: publicaciones de CAMMESA', u:'http://datos.energia.gob.ar/dataset/publicaciones-cammesa', j:'nac', ver:true},
   boNac:      {t:'Boletín Oficial de la República Argentina', u:'https://www.boletinoficial.gob.ar/', j:'nac', ver:true},
   cuadro108E: {t:'Cuadro Tarifario 108-E (documento suministrado para este análisis)', u:null, j:'prov', ver:false},
@@ -1097,23 +1381,26 @@ const NORMAS = [
    estado:'par', modifica:'Reglamenta Ley 27.424', modificadaPor:'Res. 287/2025 y modificatorias', vigencia:'2018; texto actualizado',
    art:'Categorías de usuario-generador: individual, comunitario y comunitario virtual', fuente:'res287', nota:'La versión actualizada reconoce las tres categorías de usuario-generador.'},
   {tipo:'Resolución SE', num:'287/2025', anio:2025, jur:'nac', materia:'Reorganización de la generación distribuida',
-   estado:'vig', modifica:'Res. 314/2018', modificadaPor:'No registra', vigencia:'Publicada el 04/07/2025',
-   art:'Límite de 12 MW de potencia de acople en un mismo punto de suministro', fuente:'res287', nota:'Para usuarios comunitarios la potencia máxima puede vincularse a la suma de las potencias contratadas de los participantes.'},
+   estado:'vig', modifica:'Sustituye el Capítulo 2 (“El Usuario-Generador”) de la Res. 314/2018 y abroga la Res. 235/2024', modificadaPor:'No registra', vigencia:'Dictada el 03/07/2025, publicada el 04/07/2025',
+   art:'Categorías UGpe (hasta 3 kW), UGme (más de 3 kW y hasta 300 kW) y UGma (más de 300 kW y hasta 12 MW). La Potencia de Acople a la Red no puede exceder 12 MW en un mismo punto de suministro', fuente:'res287t',
+   nota:'Verificada en el texto normativo oficial. La conexión se admite hasta una potencia equivalente a la contratada, salvo autorización especial de la distribuidora obtenida antes de iniciar el procedimiento de conexión. Cuando el equipo comunitario no se vincula a ningún punto de suministro de los participantes, la distribuidora determina la factibilidad de conexión y los cargos adicionales que implique su inclusión en la red.'},
   {tipo:'Decreto nacional', num:'450/2025', anio:2025, jur:'nac', materia:'Reforma de las Leyes 15.336 y 24.065',
    estado:'vig', modifica:'Leyes 15.336 y 24.065', modificadaPor:'No registra', vigencia:'2025',
-   art:'Incorpora el art. 12 bis a la Ley 15.336', fuente:'boNac', nota:'Considera interferente todo acto local que impida el traslado a tarifa de costos mayoristas trasladables, el pago de deudas en el MEM o la autosuficiencia económico-financiera del mercado.'},
+   art:'Incorpora los arts. 12 bis y 31 bis a la Ley 15.336', fuente:'dec450', nota:'Dictado el 04/07/2025, publicado el 07/07/2025. El art. 12 bis considera interferente todo acto local que impida el traslado a tarifa de costos mayoristas trasladables, el pago de deudas en el MEM o la autosuficiencia económico-financiera del mercado. El art. 31 bis condiciona el acceso de las jurisdicciones a los recursos del Fondo Subsidiario para Compensaciones Regionales de Tarifas a Usuarios Finales y del Fondo Especial de Desarrollo Eléctrico del Interior a que acrediten ante la Secretaría de Energía el cumplimiento de las normas tarifarias conforme a los criterios de la Ley 24.065 y de los pagos de la energía en el MEM.'},
   {tipo:'Decreto nacional', num:'943/2025', anio:2025, jur:'nac', materia:'Régimen de Subsidios Energéticos Focalizados (SEF)',
    estado:'vig', modifica:'Deja atrás la segmentación N1/N2/N3', modificadaPor:'Res. 13/2026, 109/2026, 121/2026, 146/2026 y 187/2026', vigencia:'Vigencia desde 2026',
    art:'Art. 7°: bonificación general sobre el PEST del bloque base', fuente:'res187n', nota:'Bloques base de 300 kWh/mes (enero, febrero, mayo, junio, julio, agosto y diciembre) y 150 kWh/mes (marzo, abril, septiembre, octubre y noviembre).'},
   {tipo:'Resolución SE', num:'13/2026', anio:2026, jur:'nac', materia:'Consumos base diferenciales por zona bioambiental',
-   estado:'vig', modifica:'Complementa el Decreto 943/2025', modificadaPor:'No registra', vigencia:'2026',
-   art:'Bloques diferenciales para zonas cálida y muy cálida', fuente:'docAporte', nota:'En verano: 550 kWh/mes para zona muy cálida y 370 kWh/mes para cálida. Referencia tomada de la documentación suministrada; enlace oficial pendiente de incorporación.', pend:true},
+   estado:'vig', modifica:'Complementa el Decreto 943/2025', modificadaPor:'No registra', vigencia:'Dictada el 15/01/2026, publicada el 16/01/2026',
+   art:'Consumos base diferenciados para enero, febrero y diciembre: 550 kWh/mes en zona “Muy cálido” (zonas bioambientales Ia y Ib) y 370 kWh/mes en zona “Cálido” (zonas IIa y IIb), según la norma IRAM 11603:2012', fuente:'res13',
+   nota:'Verificada en el texto normativo oficial. Los valores reemplazan el consumo base general de 300 kWh/mes en esos meses y para esas zonas, con fundamento en el principio de equidad horizontal.'},
   {tipo:'Resolución SE', num:'109/2026', anio:2026, jur:'nac', materia:'Bonificación extraordinaria y recargo FNEE',
-   estado:'sus', modifica:'Complementa el Decreto 943/2025', modificadaPor:'Res. 121/2026 (junio), 146/2026 (julio) y 187/2026 (agosto)', vigencia:'Dictada el 30/04/2026',
+   estado:'sus', modifica:'Complementa el Decreto 943/2025', modificadaPor:'Res. 121/2026 (junio), 146/2026 (julio) y 187/2026 (agosto)', vigencia:'Dictada el 30/04/2026, sustituida sucesivamente para junio, julio y agosto',
    art:'Bonificación extraordinaria de 10,67% para mayo, junio y julio; recargo FNEE', fuente:'res187n', nota:'Su fecha (30 de abril de 2026) y su sustitución parcial constan expresamente en las Resoluciones 146/2026 y 187/2026. El valor del recargo del FNEE proviene de la documentación suministrada y su enlace oficial está pendiente de incorporación.'},
   {tipo:'Resolución SE', num:'121/2026', anio:2026, jur:'nac', materia:'Bonificación extraordinaria de junio',
-   estado:'sus', modifica:'Res. 109/2026 (junio)', modificadaPor:'No registra', vigencia:'2026',
-   art:'Eleva la bonificación extraordinaria de junio a 11,97%', fuente:'docAporte', nota:'Dato tomado de la documentación suministrada; no fue posible localizar el acto en las fuentes oficiales consultadas. Validación documental pendiente.', pend:true},
+   estado:'vig', modifica:'Res. 109/2026 (junio)', modificadaPor:'No registra', vigencia:'Dictada el 27/05/2026, publicada el 28/05/2026',
+   art:'Art. 2°: bonificación adicional del 11,97% para junio de 2026, sobre un consumo de hasta 300 kWh mensuales, en reemplazo de la prevista para el mismo mes por la Res. 109/2026', fuente:'res121',
+   nota:'Verificada en el texto normativo oficial. Gas natural y propano: prórroga de la bonificación adicional del 25% para junio.'},
   {tipo:'Resolución SE', num:'146/2026', anio:2026, jur:'nac', materia:'Bonificación extraordinaria de julio',
    estado:'vig', modifica:'Res. 109/2026 (julio)', modificadaPor:'No registra', vigencia:'Publicada el 01/07/2026',
    art:'Art. 2°: bonificación adicional extraordinaria del 16,59% para julio de 2026', fuente:'res146', nota:'Verificada en el Boletín Oficial. Sustituye lo establecido por la Res. 109 del 30 de abril de 2026 en materia de electricidad. Gas: 25%.'},
@@ -1128,7 +1415,7 @@ const NORMAS = [
    art:'Titularidad, conexión, medición, facturación, reclamos, daños y suspensión', fuente:'dpec', nota:'Continúa publicado por DPEC. La Ley 6.073 (art. 17) encomienda al EPRE dictar un Reglamento Técnico de Suministro; en la documentación relevada no se localizó un texto integral que lo sustituya.'},
   {tipo:'Ley provincial', num:'6.073', anio:2011, jur:'prov', materia:'Marco regulatorio electroenergético',
    estado:'vig', modifica:'No registra', modificadaPor:'Reglamentada parcialmente por el Decreto 625/2012', vigencia:'2011',
-   art:'Art. 17 (Reglamento Técnico de Suministro), art. 18 (peaje), art. 25 (costos de adquisición), art. 59 (discriminación de tributos)', fuente:'docAporte', nota:'Pieza central: jurisdicción provincial, principios tarifarios, creación de la Secretaría de Energía y del EPRE, derechos de usuarios, audiencias públicas, control y sanciones.'},
+   art:'Art. 17 (Reglamento Técnico de Suministro), art. 18 (principio superior de justicia y razonabilidad, directrices tarifarias e inciso i sobre tarifa de peaje), art. 25 (costos de adquisición), art. 59 (discriminación de tributos)', fuente:'ley6073', nota:'Pieza central: jurisdicción provincial, principios tarifarios, creación de la Secretaría de Energía y del EPRE, derechos de usuarios, audiencias públicas, control y sanciones.'},
   {tipo:'Decreto provincial', num:'625/2012', anio:2012, jur:'prov', materia:'Reglamentación parcial de la Ley 6.073',
    estado:'vig', modifica:'Reglamenta la Ley 6.073', modificadaPor:'No registra', vigencia:'2012',
    art:'Art. 10: intervención obligatoria del Órgano Consultivo antes de modificar cuadros tarifarios', fuente:'docAporte', nota:'Regula la designación del Directorio del EPRE por concurso, incompatibilidades y el Órgano Consultivo.'},
@@ -1155,8 +1442,8 @@ const NORMAS = [
    estado:'vig', modifica:'No registra', modificadaPor:'Homologado por Res. EPRE 5/2021 y Decreto 1155/2021', vigencia:'2018, homologado en 2021',
    art:'Ecuación general de traslado de variaciones de costos mayoristas', fuente:'docAporte', nota:'Aplicación documentada en el Decreto 3518/2022 y referida nuevamente en la Res. DPEC 629/2026.'},
   {tipo:'Cuadro tarifario', num:'108-E', anio:2026, jur:'prov', materia:'Cuadro Tarifario vigente analizado',
-   estado:'vig', modifica:'Sustituye cuadros anteriores de la serie', modificadaPor:'Eventuales actos posteriores no identificados',
-   vigencia:'2026. Fecha exacta de inicio y fin no consignada en el documento',
+   estado:'ide', modifica:'Cuadro posterior dentro de la serie publicada', modificadaPor:'Eventuales actos posteriores no identificados',
+   vigencia:'Cuadro tarifario 2026. La documentación relevada no permite determinar de forma autónoma la fecha exacta de inicio y finalización de su vigencia',
    art:'Aprobado por Decretos 1438/2026 y 1454/2026, Res. EPRE 10/2026 y 12/2026, Res. DPEC 629/2026 y 679/2026', fuente:'dpecCuadro',
    nota:'Los seis actos de aprobación figuran en el listado publicado por DPEC. El texto descriptivo de esa misma página enumera la serie hasta 108-C, de modo que la publicación no permite establecer de forma inmediata qué cuadro rige en cada período.'}
 ];
@@ -1222,19 +1509,19 @@ const CRONOLOGIA = [
   body:'Incorpora el art. 12 bis: se considera interferente con los objetivos federales todo acto o norma local que impida el traslado a tarifa de costos mayoristas trasladables, el pago de deudas de los distribuidores en el MEM o la autosuficiencia económico-financiera del mercado.'},
  {o:2025.4, fecha:'4 de julio de 2025', cat:'nac', tema:'Generación distribuida', estado:'vig', norma:'Res. SE 287/2025', fuente:'res287',
   titulo:'Reorganización de la generación distribuida',
-  body:'Reordena las categorías de usuario-generador (individual, comunitario y comunitario virtual) y permite instalaciones de hasta 12 MW de potencia de acople en un mismo punto de suministro.'},
+  body:'Sustituye el Capítulo 2 de la Res. 314/2018 y abroga la Res. 235/2024. Reordena las categorías de usuario-generador (individual, comunitario y comunitario virtual), incorpora la clasificación por potencia UGpe, UGme y UGma, y fija que la Potencia de Acople a la Red no puede exceder 12 MW en un mismo punto de suministro.'},
  {o:2025.6, fecha:'2025', cat:'nac', tema:'Subsidios', estado:'vig', ms:true, norma:'Decreto nacional 943/2025', fuente:'res187n',
   titulo:'Creación del régimen SEF',
   body:'Con vigencia desde 2026 crea el régimen único de Subsidios Energéticos Focalizados y deja atrás la segmentación N1/N2/N3. Bloques base de 300 y 150 kWh mensuales según el mes; bonificación general sobre el PEST del bloque base (art. 7°).'},
- {o:2026.05, fecha:'2026', cat:'nac', tema:'Subsidios', estado:'val', norma:'Res. SE 13/2026', fuente:'docAporte',
+ {o:2026.05, fecha:'16 de enero de 2026', cat:'nac', tema:'Subsidios', estado:'vig', norma:'Res. SE 13/2026', fuente:'res13',
   titulo:'Consumos base por zona bioambiental',
-  body:'Habilita bloques base diferenciales por zona bioambiental: en verano, 550 kWh/mes para zona muy cálida y 370 kWh/mes para cálida. Referencia tomada de la documentación suministrada; enlace oficial pendiente.'},
+  body:'Verificada en el texto normativo oficial. Para enero, febrero y diciembre establece consumos base de 550 kWh/mes en zona “Muy cálido” (zonas bioambientales Ia y Ib) y 370 kWh/mes en zona “Cálido” (zonas IIa y IIb), según la norma IRAM 11603:2012, en reemplazo del bloque general de 300 kWh/mes para esos meses y zonas.'},
  {o:2026.4, fecha:'30 de abril de 2026', cat:'nac', tema:'Subsidios', estado:'sus', norma:'Res. SE 109/2026', fuente:'res187n',
   titulo:'Bonificación extraordinaria de mayo a julio',
-  body:'Fija una bonificación extraordinaria eléctrica de 10,67% para mayo, junio y julio. Su fecha y su posterior sustitución parcial constan en las Resoluciones 146/2026 y 187/2026. También actualiza el recargo del FNEE (valor pendiente de verificación oficial).'},
- {o:2026.5, fecha:'Junio 2026', cat:'nac', tema:'Subsidios', estado:'val', norma:'Res. SE 121/2026', fuente:'docAporte',
+  body:'Fija una bonificación extraordinaria eléctrica de 10,67% para mayo, junio y julio. Fue sustituida sucesivamente por las Resoluciones 121/2026 (junio), 146/2026 (julio) y 187/2026 (agosto). También actualiza el recargo del FNEE, cuyo valor proviene de la documentación aportada y permanece pendiente de verificación oficial.'},
+ {o:2026.5, fecha:'28 de mayo de 2026', cat:'nac', tema:'Subsidios', estado:'vig', norma:'Res. SE 121/2026', fuente:'res121',
   titulo:'Junio elevado a 11,97%',
-  body:'Según la documentación suministrada, eleva la bonificación extraordinaria de junio de 10,67% a 11,97%. No fue posible localizar el acto en las fuentes oficiales consultadas: validación documental pendiente.'},
+  body:'Verificada en el texto normativo oficial. Dictada el 27 de mayo de 2026, establece para junio una bonificación adicional del 11,97% sobre hasta 300 kWh mensuales, en reemplazo de la prevista para el mismo mes por la Res. 109/2026. Gas: prórroga del 25%.'},
  {o:2026.52, fecha:'10 de junio de 2026', cat:'reg', tema:'Generación distribuida', estado:'val', norma:'Res. SE provincial 217/2026', fuente:'docAporte',
   titulo:'Generación Distribuida Comunitaria (validación pendiente)',
   body:'La documentación suministrada describe la incorporación de la GDC y su modalidad virtual, con cesión de créditos, reserva de potencia, límite de 12 MW y bonificación del 100% de los cargos de potencia del generador comunitario. No fue posible verificar el acto publicado en fuentes oficiales.'},
@@ -1365,9 +1652,9 @@ const SEF = {
   ],
   meses:[
     {m:'Mayo 2026',   pct:10.67, norma:'Res. SE 109/2026', fecha:'30/04/2026', estado:'sus', fuente:'res187n', ver:'parcial',
-     nota:'Fijó 10,67% para mayo, junio y julio. Su fecha y su sustitución parcial constan en las Res. 146/2026 y 187/2026.'},
-    {m:'Junio 2026',  pct:11.97, norma:'Res. SE 121/2026', fecha:'2026', estado:'sus', fuente:'docAporte', ver:false,
-     nota:'Elevación a 11,97% según la documentación suministrada. No fue posible localizar el acto en las fuentes oficiales consultadas.'},
+     nota:'Fijó 10,67% para mayo, junio y julio. Su fecha y su sustitución para junio, julio y agosto constan en las Res. 121/2026, 146/2026 y 187/2026.'},
+    {m:'Junio 2026',  pct:11.97, norma:'Res. SE 121/2026', fecha:'28/05/2026', estado:'vig', fuente:'res121', ver:true,
+     nota:'Verificada en el texto normativo oficial. Bonificación adicional del 11,97% sobre hasta 300 kWh mensuales, en reemplazo de la prevista por la Res. 109/2026 para ese mes.'},
     {m:'Julio 2026',  pct:16.59, norma:'Res. SE 146/2026', fecha:'01/07/2026', estado:'vig', fuente:'res146', ver:true,
      nota:'Verificada en el Boletín Oficial. Sustituye lo previsto por la Res. 109/2026 para julio.'},
     {m:'Agosto 2026', pct:16.59, norma:'Res. SE 187/2026', fecha:'31/07/2026', estado:'vig', fuente:'res187', ver:true,
@@ -1409,31 +1696,7 @@ const INSTITUCIONES = [
 
 
 
-const COMPONENTES_COSTO = [
- ['PEST: precio estacional de la energía','Nacional','Secretaría de Energía de la Nación','Programación estacional','Estacional, con ajustes'],
- ['Potencia mayorista','Nacional','Secretaría de Energía / CAMMESA','Programación estacional','Estacional'],
- ['Transporte','Nacional','Secretaría de Energía / transportistas','Cuadros de transporte','Periódica'],
- ['FNEE: Fondo Nacional de Energía Eléctrica','Nacional','Secretaría de Energía de la Nación','Resolución (recargo $/MWh)','Periódica'],
- ['Bonificación SEF','Nacional','Secretaría de Energía de la Nación','Decreto 943/2025 y resoluciones mensuales','Mensual'],
- ['Contratos de abastecimiento de DPEC','Mixto','DPEC, con control del EPRE','Contratos y metodología del cuadro','Según contrato'],
- ['Ajuste por diferencia entre precio estacional y contractual','Mixto','DPEC / EPRE','Columna de ajuste del cuadro tarifario','Mensual'],
- ['Pass-through de costos mayoristas','Mixto','DPEC → EPRE → Poder Ejecutivo','Res. 70/2018, Dec. 340/2018, Res. EPRE 5/2021, Dec. 1155/2021','Ante cada variación'],
- ['VAD: Valor Agregado de Distribución','Provincial','EPRE, aprueba el Poder Ejecutivo','Revisión tarifaria con audiencia pública','Período regulatorio (última audiencia: 08/02/2024)'],
- ['Estructura de categorías y cargos','Provincial','EPRE / Poder Ejecutivo','Cuadro tarifario','Con cada cuadro'],
- ['Impuestos, tasas y contribuciones','Nacional, provincial y municipal','Autoridades tributarias respectivas','Legislación tributaria aplicable','Según norma tributaria']
-];
 
-const CALIDAD_IND = [
- ['SAIDI','Duración promedio de las interrupciones por usuario','No identificado como serie pública en las fuentes relevadas'],
- ['SAIFI','Frecuencia promedio de interrupciones por usuario','No identificado como serie pública en las fuentes relevadas'],
- ['CAIDI','Duración media por interrupción','No identificado como serie pública en las fuentes relevadas'],
- ['Calidad de tensión','Desviaciones respecto del rango admitido','Competencia del EPRE conforme a la Ley 6.073; datos no identificados'],
- ['Interrupciones programadas y forzadas','Cantidad, duración y usuarios afectados','No identificado como serie pública en las fuentes relevadas'],
- ['Reclamos','Recibidos, resueltos y tiempos de resolución','Canales de reclamo publicados por DPEC; estadísticas no identificadas'],
- ['Plazos de conexión y reconexión','Cumplimiento de plazos máximos','Materia atribuida al EPRE; indicadores no identificados'],
- ['Calidad comercial','Lectura, facturación, cambio de titularidad, contraste de medidores','Regulada por el Reglamento de Suministro; indicadores no publicados'],
- ['Energía no suministrada','Volumen no entregado por interrupciones','No identificado en las fuentes relevadas']
-];
 </script>
 
 <script>
@@ -1453,7 +1716,8 @@ const EV_LABEL = {of:'Oficial', cp:'Cálculo propio', an:'Análisis', pr:'Propue
 const ev = k => `<span class="ev ev-${k}">${EV_LABEL[k]}</span>`;
 
 const ESTADOS = {vig:['st-vig','Vigente'], par:['st-par','Parcialmente vigente'], der:['st-der','Derogada'],
-                 sus:['st-sus','Sustituida'], val:['st-val','Validación pendiente']};
+                 sus:['st-sus','Sustituida'], val:['st-val','Validación pendiente'],
+                 ide:['st-par','Vigencia temporal por precisar']};
 const estado = k => { const e=ESTADOS[k]||ESTADOS.val; return `<span class="st ${e[0]}">${e[1]}</span>`; };
 
 function fuenteLink(key){
@@ -1472,8 +1736,21 @@ function fuenteNota(keys){
    ============================================================================ */
 const tabsBox = $('tabs');
 let drawn = new Set();
+const ICONOS = {
+ panorama:'<path d="M3 12h4l3 8 4-16 3 8h4"/>',
+ instituciones:'<path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/>',
+ normativo:'<path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 12h7M9 16h5"/>',
+ tarifas:'<path d="M3 20V10M9 20V4M15 20v-7M21 20V8"/>',
+ factura:'<path d="M6 2h12v20l-3-2-3 2-3-2-3 2z"/><path d="M9 7h6M9 11h6M9 15h4"/>',
+ subsidios:'<circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5h5M9.5 14.5h5"/>',
+ gd:'<path d="M12 2v6M12 16v6M2 12h6M16 12h6"/><circle cx="12" cy="12" r="4"/>',
+ usuarios:'<circle cx="9" cy="8" r="3"/><path d="M2 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/><path d="M17 11h5M19.5 8.5v5"/>',
+ cronologia:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+ fuentes:'<path d="M4 5a2 2 0 0 1 2-2h5v18H6a2 2 0 0 1-2-2z"/><path d="M20 5a2 2 0 0 0-2-2h-5v18h5a2 2 0 0 0 2-2z"/>'
+};
+const icon = id => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${ICONOS[id]||''}</svg>`;
 SECCIONES.forEach(([id,label])=>{
-  const b = el('button','tab',label);
+  const b = el('button','tab',icon(id)+label);
   b.type='button'; b.setAttribute('role','tab'); b.dataset.target=id;
   b.addEventListener('click',()=>go(id));
   tabsBox.appendChild(b);
@@ -1481,12 +1758,13 @@ SECCIONES.forEach(([id,label])=>{
 function go(id, push=true){
   const target = SECCIONES.some(s=>s[0]===id) ? id : SECCIONES[0][0];
   document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active', v.id===target));
-  [...tabsBox.children].forEach(b=>b.setAttribute('aria-selected', b.dataset.target===target));
+  tabsBox.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-selected', b.dataset.target===target));
   if(push) history.replaceState(null,'','#'+target);
   window.scrollTo({top:0,behavior:'instant'});
-  const active = [...tabsBox.children].find(b=>b.dataset.target===target);
-  if(active) active.scrollIntoView({block:'nearest',inline:'nearest'});
+  const active = tabsBox.querySelector(`.tab[data-target="${target}"]`);
+  if(active) active.scrollIntoView({block:'nearest',inline:'center'});
   if(!drawn.has(target)){ drawn.add(target); drawCharts(target); }
+  if(window.__afterGo) window.__afterGo(target);
 }
 window.addEventListener('hashchange',()=>go(location.hash.slice(1),false));
 $('themeBtn').addEventListener('click',()=>{
@@ -1554,7 +1832,7 @@ SECCIONES.slice(1).forEach(([id,label,desc])=>{
       <option value="todas">Todas</option><option value="nac">Nacional</option><option value="prov">Provincial</option></select></div>
     <div class="fld"><label for="nEst">Estado</label><select id="nEst">
       <option value="todos">Todos</option><option value="vig">Vigente</option><option value="par">Parcialmente vigente</option>
-      <option value="sus">Sustituida</option><option value="der">Derogada</option><option value="val">Validación pendiente</option></select></div>
+      <option value="sus">Sustituida</option><option value="der">Derogada</option><option value="ide">Vigencia temporal por precisar</option><option value="val">Validación pendiente</option></select></div>
     <div class="fld" style="flex:1 1 200px"><label for="nQ">Buscar</label><input id="nQ" type="search" placeholder="Número, materia o palabra clave" style="width:100%"></div>`;
   const tb = document.querySelector('#normTabla tbody');
   const render=()=>{
@@ -1580,12 +1858,22 @@ SECCIONES.slice(1).forEach(([id,label,desc])=>{
     tb.querySelectorAll('tr[data-i]').forEach(tr=>tr.addEventListener('click',()=>detalle(+tr.dataset.i)));
   };
   const detalle=(i)=>{
-    const n=NORMAS[i];
-    $('normDetalle').innerHTML = `<div class="note ${n.pend?'pending':'explain'}">
-      <div class="nt">${n.tipo} ${n.num}: ${n.materia} ${ev(n.pend?'vp':'of')}</div>
-      <p><strong>Artículo o contenido relevante:</strong> ${n.art}</p>
-      <p style="margin-bottom:0">${n.nota} <br><span style="font-size:.8rem">Fuente: ${fuenteNota(n.fuente)}</span></p></div>`;
-    $('normDetalle').scrollIntoView({block:'nearest',behavior:'smooth'});
+    const n=NORMAS[i], f=FUENTES[n.fuente];
+    window.abrirDrawer(`${n.tipo} ${n.num}`, `
+      <div class="dr-meta">
+        <span class="pill ${n.jur}">${n.jur==='nac'?'Nacional':'Provincial'}</span>
+        ${estado(n.estado)} ${n.pend?'<span class="ev ev-vp">Fuente pendiente</span>':ev('of')}
+      </div>
+      <h4>Materia</h4><p>${n.materia}</p>
+      <h4>Año</h4><p>${n.anio ?? 'Sin dato'}</p>
+      <h4>Artículo o contenido relevante</h4><p>${n.art}</p>
+      <h4>Modifica</h4><p>${n.modifica}</p>
+      <h4>Modificada por</h4><p>${n.modificadaPor}</p>
+      <h4>Vigencia</h4><p>${n.vigencia}</p>
+      <h4>Observaciones</h4><p>${n.nota}</p>
+      <h4>Fuente</h4><p>${f? f.t : 'Sin fuente registrada'}</p>
+      ${f&&f.u?`<a class="dr-link" href="${f.u}" target="_blank" rel="noopener">Abrir fuente oficial ↗</a>`:''}
+    `);
   };
   $('nJur').addEventListener('change',e=>{st.jur=e.target.value;render();});
   $('nEst').addEventListener('change',e=>{st.estado=e.target.value;render();});
@@ -1596,9 +1884,10 @@ SECCIONES.slice(1).forEach(([id,label,desc])=>{
 /* ============================================================================
    05 · Explorador tarifario
    ============================================================================ */
-function calcularBloques(t, kwh){
+function calcularBloques(t, kwh, base){
   let rest = kwh, det = [], total = 0, prev = 0;
-  for(const b of t.bloques){
+  for(const [bi,b0] of t.bloques.entries()){
+    const b = (t.base!=null && bi===0 && base) ? {h:base, p:b0.p} : b0;
     const cap = b.h==null ? Infinity : b.h - prev;
     const q = Math.max(0, Math.min(rest, cap));
     if(q>0 || t.bloques.length===1){
@@ -1610,20 +1899,22 @@ function calcularBloques(t, kwh){
   }
   return {det,total};
 }
-function calcularTarifa(t, kwh, kw){
+function calcularTarifa(t, kwh, kw, base){
   const filas=[]; let total=0, calculable=true;
+  const B = (t.base!=null) ? (base||t.base) : null;
   if(t.pend) return {filas:[], total:0, calculable:false, motivo:'Valores no cargados hasta su validación documental.'};
   if(t.bloques){
     let fijo = t.fijo;
-    if(t.base!=null) fijo = (kwh<=t.base) ? t.fijo : t.fijoPleno;
+    if(B!=null) fijo = (kwh<=B) ? t.fijo : t.fijoPleno;
     if(fijo!=null){
-      filas.push({k:'Cargo fijo'+(t.base!=null ? (kwh<=t.base?' (bonificado, consumo ≤ base)':' (pleno, consumo > base)') : ''), v:fijo, u:'$/'+t.per});
+      filas.push({k:'Cargo fijo'+(B!=null ? (kwh<=B?` (bonificado, consumo ≤ ${F0.format(B)} kWh)`:` (pleno, consumo > ${F0.format(B)} kWh)`) : ''), v:fijo, u:'$/'+t.per});
       total += fijo;
     } else {
       filas.push({k:'Cargo fijo', v:null, nota:t.fijoNota});
     }
-    const r = calcularBloques(t,kwh);
+    const r = calcularBloques(t,kwh,B);
     r.det.forEach(d=>{ filas.push({k:`Energía · ${d.lbl}`, v:d.sub, u:`${F0.format(d.q)} kWh × ${money(d.p)}`}); });
+    if(B!=null) filas.push({k:'Bloque base aplicado', v:null, nota:`${F0.format(B)} kWh bimestrales bonificados. La energía por encima de ese límite se factura al valor pleno.`});
     total += r.total;
   }
   if(t.potc!=null){
@@ -1642,45 +1933,70 @@ function calcularTarifa(t, kwh, kw){
   return {filas,total,calculable};
 }
 (function(){
-  const st={tipo:'todos', zona:'todas', pot:'todas', kwh:600, kw:0};
+  const GRUPOS = [...new Set(TARIFAS.map(t=>t.g))];
+  const BASES = [
+    [300,'300 kWh (bimestre de dos meses con base de 150 kWh)'],
+    [600,'600 kWh (bimestre de dos meses con base de 300 kWh)'],
+    [740,'740 kWh (zona cálida, meses de verano)'],
+    [1100,'1.100 kWh (zona muy cálida, meses de verano)']
+  ];
+  const st = {g:GRUPOS[0], id:null, kwh:600, kw:0, base:600};
+
   $('tarFiltros').innerHTML = `
-    <div class="fld"><label for="tTipo">Tipo de usuario</label><select id="tTipo">${FILTROS_TIPO.map(([k,l])=>`<option value="${k}">${l}</option>`).join('')}</select></div>
-    <div class="fld"><label for="tZona">Zona</label><select id="tZona"><option value="todas">Todas</option><option value="urbana">Urbana</option><option value="rural">Rural</option><option value="na">Sin distinción</option></select></div>
-    <div class="fld"><label for="tPot">Potencia</label><select id="tPot"><option value="todas">Todas</option><option value="&lt;10">Menos de 10 kW</option><option value="10-50">10 a 50 kW</option><option value="&gt;50">Más de 50 kW</option><option value="na">Sin distinción</option></select></div>
-    <div class="fld"><label for="tKwh">Consumo (kWh)</label><input id="tKwh" type="number" min="0" step="10" value="600"></div>
-    <div class="fld"><label for="tKw">Potencia (kW)</label><input id="tKw" type="number" min="0" step="1" value="0" placeholder="opcional"></div>`;
-  const render=()=>{
-    const list = TARIFAS.filter(t =>
-      (st.tipo==='todos'||t.tipo===st.tipo) &&
-      (st.zona==='todas'||t.zona===st.zona) &&
-      (st.pot==='todas'||t.pot===st.pot));
-    $('tarCount').textContent = `${list.length} de ${TARIFAS.length} categorías del cuadro. Los importes son subtotales tarifarios, sin impuestos ni otros conceptos.`;
-    if(!list.length){ $('tarResultados').innerHTML='<div class="empty">Ninguna categoría coincide con los filtros seleccionados.</div>'; return; }
-    const grupos={};
-    list.forEach(t=>{ (grupos[t.g]=grupos[t.g]||[]).push(t); });
-    $('tarResultados').innerHTML = Object.entries(grupos).map(([g,items])=>`
-      <h4>${g}</h4>` + items.map(t=>{
-        const c = calcularTarifa(t, st.kwh, st.kw);
-        const filas = c.filas.map(f=>`<tr><td>${f.k}</td><td class="num">${f.v!=null?money2(f.v):'s/d'}</td><td style="color:var(--text-muted);font-size:.8rem">${f.u||f.nota||''}</td></tr>`).join('');
-        const tot = (c.calculable && c.filas.some(f=>f.v!=null))
-          ? `<tr style="background:var(--brand-soft)"><td><strong>Subtotal tarifario</strong></td><td class="num"><strong>${money2(c.total)}</strong></td><td style="font-size:.8rem">${ev('cp')} sin impuestos ni otros conceptos</td></tr>`
-          : `<tr><td colspan="3" style="font-size:.8rem;color:var(--text-muted)">${c.motivo || 'Subtotal no calculable con los datos ingresados: esta categoría requiere el reparto horario del consumo y/o la potencia demandada. Los importes por banda se muestran como escenarios independientes.'}</td></tr>`;
-        return `<div class="tablewrap"><table>
-          <caption><strong>${t.n}</strong> · página ${t.pag} del Cuadro 108-E ${t.pend?ev('vp'):ev('of')}${t.sef?` · <span class="pill tar">SEF ${t.sef==='jun'?'junio':'julio'}</span>`:''}</caption>
-          <thead><tr><th>Concepto</th><th class="num">Importe</th><th>Detalle</th></tr></thead>
-          <tbody>${filas||'<tr><td colspan="3" style="color:var(--text-muted)">Sin valores cargados.</td></tr>'}${tot}</tbody></table>
-          ${t.nota?`<div class="src">${t.pend?'⚠ ':''}${t.nota}</div>`:''}
-          ${t.iny!=null||t.inyP!=null?`<div class="src">Tarifa de reinyección: ${t.iny!=null?money(t.iny)+' /kWh':`punta ${money(t.inyP)} · resto ${money(t.inyR)} · valle ${money(t.inyV)} por kWh`} (página 11).</div>`:''}
-          ${t.aviso==='tecnica'?`<div class="src">⚠ Valor técnico: no equivale al importe final que abona el beneficiario. Ver la sección Usuarios.</div>`:''}
-        </div>`;
-      }).join('')).join('');
-  };
-  ['tTipo','tZona','tPot'].forEach((id,i)=>$(id).addEventListener('change',e=>{
-    st[['tipo','zona','pot'][i]] = e.target.value; render();
-  }));
+    <div class="fld"><label for="tKwh">Consumo del período (kWh)</label><input id="tKwh" type="number" min="0" step="10" value="600"></div>
+    <div class="fld"><label for="tKw">Potencia demandada (kW)</label><input id="tKw" type="number" min="0" step="1" value="0" placeholder="solo si aplica"></div>
+    <div class="fld" style="flex:1 1 300px"><label for="tBase">Bloque base bonificado (categorías SEF)</label>
+      <select id="tBase" style="width:100%">${BASES.map(([v,l])=>`<option value="${v}"${v===600?' selected':''}>${l}</option>`).join('')}</select></div>`;
+
+  const subsDe = g => TARIFAS.filter(t=>t.g===g);
+
+  function pintarGrupos(){
+    const box=$('tarGrupos');
+    box.querySelectorAll('.chip').forEach(c=>c.remove());
+    GRUPOS.forEach(g=>{
+      const b=el('button','chip',`${g} <span style="opacity:.6">${subsDe(g).length}</span>`);
+      b.type='button'; b.setAttribute('aria-pressed', g===st.g);
+      b.addEventListener('click',()=>{ st.g=g; st.id=null; pintarGrupos(); pintarSubs(); render(); });
+      box.appendChild(b);
+    });
+  }
+  function pintarSubs(){
+    const box=$('tarSubs');
+    box.querySelectorAll('.chip').forEach(c=>c.remove());
+    const items=subsDe(st.g);
+    if(!st.id || !items.some(t=>t.id===st.id)) st.id = items[0].id;
+    items.forEach(t=>{
+      const b=el('button','chip', t.n.replace(st.g+' · ','') + (t.sef?` <span style="opacity:.6">SEF ${t.sef==='jun'?'jun':'jul'}</span>`:''));
+      b.type='button'; b.setAttribute('aria-pressed', t.id===st.id);
+      b.addEventListener('click',()=>{ st.id=t.id; pintarSubs(); render(); });
+      box.appendChild(b);
+    });
+  }
+  function render(){
+    const t = TARIFAS.find(x=>x.id===st.id);
+    if(!t){ $('tarResultados').innerHTML='<div class="empty">Elegí una subcategoría.</div>'; return; }
+    const c = calcularTarifa(t, st.kwh, st.kw, st.base);
+    const filas = c.filas.map(f=>`<tr><td>${f.k}</td><td class="num">${f.v!=null?money2(f.v):(f.nota?'':'s/d')}</td><td style="color:var(--text-muted);font-size:.8rem">${f.u||f.nota||''}</td></tr>`).join('');
+    const tot = (c.calculable && c.filas.some(f=>f.v!=null))
+      ? `<tr style="background:var(--brand-soft)"><td><strong>Subtotal tarifario</strong></td><td class="num"><strong>${money2(c.total)}</strong></td><td style="font-size:.8rem">${ev('cp')} sin impuestos ni otros conceptos</td></tr>`
+      : `<tr><td colspan="3" style="font-size:.8rem;color:var(--text-muted)">${c.motivo || 'Subtotal no calculable con los datos ingresados: esta categoría requiere el reparto horario del consumo y la potencia demandada. Los importes por banda se muestran como escenarios independientes.'}</td></tr>`;
+    $('tarResultados').innerHTML = `<div class="tablewrap"><table>
+        <caption><strong>${t.n}</strong> · página ${t.pag} del Cuadro 108-E ${t.pend?ev('vp'):ev('of')}${t.sef?` · <span class="pill tar">SEF ${t.sef==='jun'?'junio':'julio'}</span>`:''}</caption>
+        <thead><tr><th>Concepto</th><th class="num">Importe</th><th>Detalle</th></tr></thead>
+        <tbody>${filas||'<tr><td colspan="3" style="color:var(--text-muted)">Sin valores cargados.</td></tr>'}${tot}</tbody></table>
+        ${t.nota?`<div class="src">${t.pend?'⚠ ':''}${t.nota}</div>`:''}
+        ${t.iny!=null||t.inyP!=null?`<div class="src">Tarifa de reinyección: ${t.iny!=null?money(t.iny)+' /kWh':`punta ${money(t.inyP)} · resto ${money(t.inyR)} · valle ${money(t.inyV)} por kWh`} (página 11).</div>`:''}
+        ${t.aviso==='tecnica'?`<div class="src">⚠ Valor técnico: no equivale al importe final que abona el beneficiario. Ver la sección Usuarios.</div>`:''}
+      </div>`;
+  }
   $('tKwh').addEventListener('input',e=>{ st.kwh=Math.max(0,+e.target.value||0); render(); });
   $('tKw').addEventListener('input',e=>{ st.kw=Math.max(0,+e.target.value||0); render(); });
-  render();
+  $('tBase').addEventListener('change',e=>{ st.base=+e.target.value; render(); });
+  window.__irATarifa = (id)=>{
+    const t=TARIFAS.find(x=>x.id===id); if(!t) return;
+    st.g=t.g; st.id=t.id; pintarGrupos(); pintarSubs(); render();
+  };
+  pintarGrupos(); pintarSubs(); render();
 
   document.querySelector('#zonasTabla tbody').innerHTML = SEF.zonas.map(z=>
     `<tr><td>${z.zona}</td><td class="num">${F0.format(z.verano)} kWh</td><td class="num">${F0.format(z.veranoBim)} kWh</td><td class="num">${F0.format(z.invBim)} kWh</td><td class="num">${F0.format(z.restoBim)} kWh</td></tr>`).join('');
@@ -1691,29 +2007,35 @@ function calcularTarifa(t, kwh, kw){
    ============================================================================ */
 (function(){
   const opciones = TARIFAS.filter(t=>t.bloques && (t.fijo!=null));
-  const st={id:'res-u', kwh:600};
+  const st={id:'res-u', kwh:600, iny:0, base:600};
   $('facFiltros').innerHTML = `
-    <div class="fld" style="flex:1 1 320px"><label for="fCat">Categoría</label><select id="fCat" style="width:100%">
+    <div class="fld" style="flex:1 1 300px"><label for="fCat">Categoría</label><select id="fCat" style="width:100%">
       ${opciones.map(t=>`<option value="${t.id}">${t.n}</option>`).join('')}</select></div>
-    <div class="fld"><label for="fKwh">Consumo bimestral (kWh)</label><input id="fKwh" type="number" min="0" step="10" value="600"></div>`;
+    <div class="fld"><label for="fKwh">Consumo (kWh)</label><input id="fKwh" type="number" min="0" step="10" value="600"></div>
+    <div class="fld"><label for="fIny">Energía inyectada (kWh)</label><input id="fIny" type="number" min="0" step="10" value="0"></div>
+    <div class="fld"><label for="fBase">Bloque base (SEF)</label><select id="fBase">
+      <option value="300">300 kWh</option><option value="600" selected>600 kWh</option>
+      <option value="740">740 kWh</option><option value="1100">1.100 kWh</option></select></div>`;
   const EXPL = {
-    mem:['Costo mayorista sin subsidio','Precio de la energía y la potencia adquiridas en el Mercado Eléctrico Mayorista, más transporte. Lo determina la Nación mediante la programación estacional; la provincia no lo fija.'],
-    sub:['Subsidio nacional SEF','Bonificación general del 50% sobre el PEST del bloque base (art. 7° del Decreto 943/2025) más la bonificación extraordinaria del mes. Se aplica sobre el componente mayorista, no sobre la factura completa.'],
-    rec:['Costo mayorista reconocido','Resultado de los dos pasos anteriores: lo que efectivamente se traslada al usuario por el abastecimiento.'],
-    vad:['Valor Agregado de Distribución','Remunera redes, personal, operación, mantenimiento, comercialización, medición, inversiones, pérdidas reconocidas y capital. Es el componente estrictamente provincial: surge de la revisión tarifaria con audiencia pública (la última informada por DPEC es del 8 de febrero de 2024).'],
+    mem:['Costo de abastecimiento mayorista','Comprende componentes distintos que no conviene agrupar: el PEST (precio estacional de la energía), la potencia, el transporte, el recargo del FNEE y otros costos mayoristas reconocidos. Los determina la Nación mediante la programación estacional y actos específicos; la provincia no los fija.'],
+    sub:['Subsidio nacional SEF','Bonificación general del 50% sobre el PEST del bloque base (art. 7° del Decreto 943/2025), más la bonificación extraordinaria que la Secretaría de Energía fija mes a mes. Se aplica sobre el PEST del bloque base, no sobre todos los componentes mayoristas ni sobre la factura completa.'],
+    rec:['Costo de abastecimiento reconocido','Resultado de los dos pasos anteriores: lo que efectivamente se traslada al usuario por energía, potencia y transporte, una vez aplicada la bonificación sobre el PEST alcanzado.'],
+    vad:['Valor Agregado de Distribución','Remunera redes, personal, operación, mantenimiento, comercialización, medición, inversiones, pérdidas reconocidas y capital. Es el componente de distribución de jurisdicción provincial: surge de la revisión tarifaria con audiencia pública (la última informada por DPEC es del 8 de febrero de 2024).'],
     aju:['Ajuste por contratos de abastecimiento','El cuadro calcula primero la tarifa a precio estacional y luego ajusta por la diferencia con el precio contractual. Cuando el contrato resulta más barato, el ajuste opera a favor del usuario.'],
-    car:['Cargo fijo y cargos de potencia','El cargo fijo cubre costos comerciales, medición y parte de la infraestructura. En categorías medianas y grandes aparece además un cargo por la capacidad de red que debe estar disponible.'],
-    ene:['Energía','Consumo medido valorizado según los bloques o bandas horarias de la categoría.'],
-    gd:['Créditos por generación distribuida','Si el usuario es usuario-generador, el valor de la energía inyectada se acredita según la tarifa de inyección de su categoría (página 11 del cuadro).'],
-    sub2:['Subtotal eléctrico regulado','Suma de los conceptos tarifarios. Es lo máximo que puede calcularse con el cuadro tarifario.'],
+    car:['Cargo fijo','Cubre costos comerciales, medición y parte de la infraestructura. En categorías SEF su valor depende de si el consumo supera el bloque base.'],
+    ene:['Energía consumida','Consumo medido valorizado según los bloques de la categoría: el bloque base al valor bonificado y el excedente al valor pleno.'],
+    gd:['Créditos por generación distribuida','El valor de la energía inyectada se acredita según la tarifa de inyección de la categoría (página 11 del cuadro). Es net billing monetario: se valoriza el kWh inyectado a su propio precio, no al precio minorista.'],
+    sub2:['Subtotal eléctrico regulado','Suma de los conceptos tarifarios menos los créditos por inyección. Es lo máximo que puede calcularse con el cuadro tarifario.'],
     imp:['Impuestos, tasas y contribuciones','Tributos nacionales, provinciales y municipales cobrados a través de la factura. La Ley 6.073 exige que se transfieran a sus beneficiarios y aparezcan expresamente discriminados.'],
     fin:['Factura final','Resultado de todos los pasos anteriores. No es deducible del cuadro tarifario por sí solo.']
   };
   const render=()=>{
     const t = TARIFAS.find(x=>x.id===st.id) || opciones[0];
-    const c = calcularTarifa(t, st.kwh, 0);
+    const c = calcularTarifa(t, st.kwh, 0, st.base);
     const fijo = c.filas.find(f=>f.k.startsWith('Cargo fijo'));
-    const energia = c.filas.filter(f=>f.k.startsWith('Energía')).reduce((a,f)=>a+(f.v||0),0);
+    const energia = c.filas.filter(f=>f.k.startsWith('Energía ·')).reduce((a,f)=>a+(f.v||0),0);
+    const credito = (t.iny!=null && st.iny>0) ? t.iny*st.iny : 0;
+    const subtotal = c.total - credito;
     const nd = '<span style="color:var(--text-muted);font-weight:500">no publicado</span>';
     const rows = [
       ['mem','','var(--series-7)', nd, 'Componente nacional'],
@@ -1722,9 +2044,10 @@ function calcularTarifa(t, kwh, kw){
       ['vad','+','var(--series-1)', nd, 'Componente provincial'],
       ['aju','±','var(--series-4)', nd, 'Componente mixto'],
       ['car','+','var(--series-1)', fijo && fijo.v!=null ? money2(fijo.v) : nd, 'Del cuadro tarifario'],
-      ['ene','+','var(--series-1)', money2(energia), 'Del cuadro tarifario'],
-      ['gd','−','var(--series-3)', t.iny!=null? `${money(t.iny)} por kWh inyectado` : nd, 'Según inyección del período'],
-      ['sub2','=','var(--brand)', money2(c.total), 'Calculado', 'total'],
+      ['ene','+','var(--series-1)', money2(energia), `${F0.format(st.kwh)} kWh`],
+      ['gd','−','var(--series-3)', credito>0 ? money2(credito) : (t.iny!=null? `${money(t.iny)} por kWh` : nd),
+        credito>0 ? `${F0.format(st.iny)} kWh × ${money(t.iny)}` : 'Ingresá los kWh inyectados'],
+      ['sub2','=','var(--brand)', money2(subtotal), 'Calculado', 'total'],
       ['imp','+','var(--series-2)', nd, 'Depende de la jurisdicción del suministro'],
       ['fin','=','var(--series-8)', nd, 'No determinable con el cuadro tarifario', 'sub']
     ];
@@ -1734,16 +2057,17 @@ function calcularTarifa(t, kwh, kw){
         <span class="lb">${EXPL[k][0]}<small>${hint}</small></span>
         <span class="vl">${val}</span>
       </button><div class="wf-exp" hidden data-exp="${k}"></div>`).join('') +
-      `<p style="font-size:.8rem;color:var(--text-muted);margin-top:.7rem">Los conceptos con importe corresponden al Cuadro 108-E para <strong>${t.n}</strong> con ${F0.format(st.kwh)} kWh ${ev('cp')}. Los marcados como “no publicado” no pueden calcularse porque su desglose por categoría no consta en el material relevado ${ev('vp')}.</p>`;
+      `<p style="font-size:.8rem;color:var(--text-muted);margin-top:.7rem">Importes calculados con el Cuadro 108-E para <strong>${t.n}</strong> ${ev('cp')}. Las filas “no publicado” no pueden calcularse con el material relevado ${ev('vp')}.</p>`;
     $('facCascada').querySelectorAll('.wf-row').forEach(b=>b.addEventListener('click',()=>{
       const exp = $('facCascada').querySelector(`[data-exp="${b.dataset.k}"]`);
-      const open = !exp.hasAttribute('hidden');
-      if(open){ exp.setAttribute('hidden',''); b.setAttribute('aria-expanded','false'); }
+      if(!exp.hasAttribute('hidden')){ exp.setAttribute('hidden',''); b.setAttribute('aria-expanded','false'); }
       else { exp.innerHTML = `<p style="margin-bottom:0">${EXPL[b.dataset.k][1]}</p>`; exp.removeAttribute('hidden'); b.setAttribute('aria-expanded','true'); }
     }));
   };
   $('fCat').addEventListener('change',e=>{st.id=e.target.value;render();});
   $('fKwh').addEventListener('input',e=>{st.kwh=Math.max(0,+e.target.value||0);render();});
+  $('fIny').addEventListener('input',e=>{st.iny=Math.max(0,+e.target.value||0);render();});
+  $('fBase').addEventListener('change',e=>{st.base=+e.target.value;render();});
   render();
 })();
 
@@ -1760,19 +2084,7 @@ function calcularTarifa(t, kwh, kw){
     <td>${m.ver===true?'<span class="st st-vig">Verificada en el Boletín Oficial</span>':m.ver==='parcial'?'<span class="st st-par">Verificada indirectamente</span>':'<span class="st st-val">Validación pendiente</span>'} ${fuenteLink(m.fuente)}</td></tr>`).join('');
 })();
 
-/* ============================================================================
-   08 · Componentes del costo
-   ============================================================================ */
-document.querySelector('#compTabla tbody').innerHTML = COMPONENTES_COSTO.map(([c,a,au,i,f])=>{
-  const cls = a==='Nacional'?'nac':a==='Provincial'?'prov':'tar';
-  return `<tr><td><strong>${c}</strong></td><td><span class="pill ${cls}">${a}</span></td><td>${au}</td><td>${i}</td><td>${f}</td></tr>`;
-}).join('');
 
-/* ============================================================================
-   11 · Calidad
-   ============================================================================ */
-document.querySelector('#calTabla tbody').innerHTML = CALIDAD_IND.map(([i,q,e])=>
-  `<tr><td><strong>${i}</strong></td><td>${q}</td><td>${e} ${ev('vp')}</td></tr>`).join('');
 
 
 /* ============================================================================
@@ -1793,10 +2105,14 @@ document.querySelector('#calTabla tbody').innerHTML = CALIDAD_IND.map(([i,q,e])=
     const list = CRONOLOGIA.slice().sort((a,b)=>a.o-b.o).filter(c =>
       (st.cat==='todas'||c.cat===st.cat) && (st.estado==='todos'||c.estado===st.estado) && (st.tema==='todos'||c.tema===st.tema));
     $('tlCount').textContent = `${list.length} de ${CRONOLOGIA.length} hitos.`;
-    $('timeline').innerHTML = list.length ? list.map(c=>`
+    let anio=null;
+    $('timeline').innerHTML = list.length ? list.map(c=>{
+      const a = Math.floor(c.o);
+      const sep = (a!==anio) ? (anio=a, `<div class="tl-year">${a}</div>`) : '';
+      return sep + `
       <div class="tl-item ${c.ms?'milestone':''}" style="--c:${TL_CATS[c.cat].color}">
         <div class="tl-card">
-          <div class="tl-head"><span class="tl-date">${c.fecha}</span><span class="tl-title">${c.titulo}</span>
+          <div class="tl-head">${c.fecha===String(a)?'':`<span class="tl-date">${c.fecha}</span>`}<span class="tl-title">${c.titulo}</span>
             <span class="pill ${c.cat}">${TL_CATS[c.cat].label}</span></div>
           <p class="tl-body">${c.body}</p>
           <div class="tl-foot">
@@ -1805,7 +2121,7 @@ document.querySelector('#calTabla tbody').innerHTML = CALIDAD_IND.map(([i,q,e])=
             ${estado(c.estado)}
             <span>${fuenteLink(c.fuente)}</span>
           </div>
-        </div></div>`).join('') : '<div class="empty">No hay hitos para esta combinación de filtros.</div>';
+        </div></div>`;}).join('') : '<div class="empty">No hay hitos para esta combinación de filtros.</div>';
   };
   $('cJur').addEventListener('change',e=>{st.cat=e.target.value;render();});
   $('cEst').addEventListener('change',e=>{st.estado=e.target.value;render();});
@@ -1848,7 +2164,17 @@ const hideTip=()=>tip.classList.remove('on');
 const C = k => getComputedStyle(document.documentElement).getPropertyValue('--series-'+k).trim();
 
 const legendHTML = S => S.length<2 ? '' :
-  '<div class="legend">'+S.map(s=>`<span><i style="background:${s.color}"></i>${s.name}</span>`).join('')+'</div>';
+  '<div class="legend">'+S.map((s,i)=>`<button type="button" data-si="${i}" aria-pressed="true"><i style="background:${s.color}"></i>${s.name}</button>`).join('')+'</div>';
+function bindLegend(root){
+  root.querySelectorAll('.legend button').forEach(b=>b.addEventListener('click',()=>{
+    const on = b.getAttribute('aria-pressed')==='true';
+    b.setAttribute('aria-pressed', String(!on));
+    root.querySelectorAll(`[data-si="${b.dataset.si}"].mk, [data-si="${b.dataset.si}"]`).forEach(el=>{
+      if(el.tagName==='BUTTON') return;
+      el.style.display = on ? 'none' : '';
+    });
+  }));
+}
 const tableHTML = (cats,S,unit,fmt) =>
   `<div class="tablewrap" hidden><table><thead><tr><th>Categoría</th>${S.map(s=>`<th class="num">${s.name}</th>`).join('')}</tr></thead><tbody>`+
   cats.map((c,i)=>`<tr><td>${c}</td>${S.map(s=>`<td class="num">${fmt(s.values[i])}</td>`).join('')}</tr>`).join('')+
@@ -1856,8 +2182,8 @@ const tableHTML = (cats,S,unit,fmt) =>
 function attachToggle(root){
   const btn=root.querySelector('.tbl-toggle'), tw=root.querySelector('.tablewrap');
   btn.addEventListener('click',()=>{
-    if(tw.hasAttribute('hidden')){ tw.removeAttribute('hidden'); btn.textContent='◱ Ocultar tabla de datos'; }
-    else { tw.setAttribute('hidden',''); btn.textContent='◱ Ver tabla de datos'; }
+    if(tw.hasAttribute('hidden')){ tw.removeAttribute('hidden'); btn.textContent='Ocultar tabla de datos'; }
+    else { tw.setAttribute('hidden',''); btn.textContent='Ver tabla de datos'; }
   });
 }
 function bindMarks(root){
@@ -1879,15 +2205,16 @@ function hBars(root,o){
     g+=`<text class="tick" x="${LBL-10}" y="${y0+rowH/2+4}" text-anchor="end">${c}</text>`;
     S.forEach((s,j)=>{
       const v=s.values[i], w=Math.max(2,v/max*plotW), y=y0+j*(barH+gap);
-      g+=`<rect x="${LBL}" y="${y}" width="${w}" height="${barH}" rx="4" fill="${s.color}" class="mk" data-t="${c}" data-s="${s.name}" data-v="${fmt(v)}"></rect>`;
-      g+=`<text class="tick val" x="${LBL+w+7}" y="${y+barH-3}">${fmt(v)}</text>`;
+      const dl = (i*S.length+j)*38;
+      g+=`<rect x="${LBL}" y="${y}" width="${w}" height="${barH}" rx="4" fill="${s.color}" class="mk" data-si="${j}" data-t="${c}" data-s="${s.name}" data-v="${fmt(v)}" style="animation-delay:${dl}ms"></rect>`;
+      g+=`<text class="tick val" data-si="${j}" x="${LBL+w+7}" y="${y+barH-3}">${fmt(v)}</text>`;
     });
   });
   root.innerHTML=`<div class="fig-title">${o.title}</div><div class="fig-sub">${o.sub}</div>`+legendHTML(S)+
     `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${o.title}"><line class="axline" x1="${LBL}" y1="0" x2="${LBL}" y2="${H-6}"/>${g}</svg>`+
     (o.note?`<div class="fig-note">${o.note}</div>`:'')+
-    `<button class="tbl-toggle" type="button">◱ Ver tabla de datos</button>`+tableHTML(cats,S,o.unit||'',fmt);
-  bindMarks(root); attachToggle(root);
+    `<button class="tbl-toggle" type="button">Ver tabla de datos</button>`+tableHTML(cats,S,o.unit||'',fmt);
+  root.classList.add('anim'); bindMarks(root); attachToggle(root); bindLegend(root);
 }
 function stepPath(vals,X,Y){
   let d='M'+X(0)+' '+Y(vals[0]);
@@ -1913,20 +2240,21 @@ function lineChart(root,o){
   if(o.ticks) o.ticks.forEach(t=>{ g+=`<text class="tick" x="${Xn(t.v)}" y="${H-M.b+20}" text-anchor="middle">${t.label}</text>`; });
   else xs.forEach((x,i)=>{ g+=`<text class="tick" x="${X(i)}" y="${H-M.b+20}" text-anchor="middle">${x}</text>`; });
   g+=`<line class="axline" x1="${M.l}" y1="${M.t+ph}" x2="${W-M.r}" y2="${M.t+ph}"/>`;
-  S.forEach(s=>{
+  S.forEach((s,si)=>{
     const d=s.values.map((v,i)=>(i?'L':'M')+X(i)+' '+Y(v)).join(' ');
-    g+=`<path d="${o.step?stepPath(s.values,X,Y):d}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+    g+=`<path class="ln" data-si="${si}" pathLength="1" d="${o.step?stepPath(s.values,X,Y):d}" fill="none" stroke="${s.color}" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>`;
     s.values.forEach((v,i)=>{
-      g+=`<circle cx="${X(i)}" cy="${Y(v)}" r="4.5" fill="${s.color}" stroke="var(--panel)" stroke-width="2"/>`;
-      g+=`<circle cx="${X(i)}" cy="${Y(v)}" r="13" fill="transparent" class="mk" data-t="${xs[i]}" data-s="${s.name}" data-v="${fmt(v)}"/>`;
-      if(o.pointLabels) g+=`<text class="tick val" x="${X(i)}" y="${Y(v)-13}" text-anchor="middle">${fmt(v)}</text>`;
+      const last = i===s.values.length-1;
+      g+=`<circle class="pt" data-si="${si}" cx="${X(i)}" cy="${Y(v)}" r="${last?5.5:4.5}" fill="${s.color}" stroke="var(--panel)" stroke-width="2" style="animation-delay:${480+i*55}ms"/>`;
+      g+=`<circle cx="${X(i)}" cy="${Y(v)}" r="14" fill="transparent" class="mk" data-si="${si}" data-t="${xs[i]}" data-s="${s.name}" data-v="${fmt(v)}"/>`;
+      if(o.pointLabels) g+=`<text class="tick val" data-si="${si}" x="${X(i)}" y="${Y(v)-14}" text-anchor="middle">${fmt(v)}</text>`;
     });
   });
   root.innerHTML=`<div class="fig-title">${o.title}</div><div class="fig-sub">${o.sub}</div>`+legendHTML(S)+
     `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${o.title}">${g}</svg>`+
     (o.note?`<div class="fig-note">${o.note}</div>`:'')+
-    `<button class="tbl-toggle" type="button">◱ Ver tabla de datos</button>`+tableHTML(xs,S,o.unit||'',fmt);
-  bindMarks(root); attachToggle(root);
+    `<button class="tbl-toggle" type="button">Ver tabla de datos</button>`+tableHTML(xs,S,o.unit||'',fmt);
+  root.classList.add('anim'); bindMarks(root); attachToggle(root); bindLegend(root);
 }
 
 /* -- Definiciones de cada figura ------------------------------------------- */
@@ -1940,7 +2268,7 @@ function figBoni(root){
     x:SEF.meses.map(m=>m.m.replace(' 2026','')),
     series:[{name:'Bonificación extraordinaria', color:C(2), values:SEF.meses.map(m=>m.pct)}],
     fmt:pct, step:true, min:0, max:20, leftPad:58, pointLabels:true, unit:'% adicional',
-    note:'Res. SE 109/2026 (30/04/2026) fijó 10,67% para mayo, junio y julio; junio habría pasado a 11,97% según la Res. 121/2026 (validación pendiente); la Res. 146/2026 llevó julio a 16,59% y la Res. 187/2026 mantuvo ese nivel en agosto. Las dos últimas fueron verificadas en el Boletín Oficial.'
+    note:'Res. SE 109/2026 (30/04/2026) fijó 10,67% para mayo, junio y julio. Luego fue sustituida sucesivamente: la Res. 121/2026 llevó junio a 11,97%, la Res. 146/2026 llevó julio a 16,59% y la Res. 187/2026 mantuvo ese nivel en agosto. Las tres fueron verificadas en sus textos normativos oficiales.'
   });
 }
 function drawCharts(view){
@@ -1974,16 +2302,16 @@ function drawCharts(view){
     const xs=[560,580,600,601,620,640];
     lineChart($('fig-notch'),{
       title:'Discontinuidad potencial entre 600 y 601 kWh',
-      sub:'Importe tarifario bimestral bajo interpretación literal del cuadro. Junio de 2026, residencial urbano.',
+      sub:'Residencial urbano con SEF, en un bimestre cuyo bloque base bonificado es de 600 kWh. Interpretación literal del cuadro.',
       x:xs.map(v=>v+' kWh'), xVals:xs,
       ticks:[{v:560,label:'560 kWh'},{v:580,label:'580 kWh'},{v:600.5,label:'600 → 601'},{v:620,label:'620 kWh'},{v:640,label:'640 kWh'}],
       series:[{name:'Con SEF (junio)', color:C(3), values:xs.map(billSEF)},
               {name:'Sin bonificación', color:C(2), values:xs.map(billFull)}],
-      note:'Cálculo propio sobre la lectura literal de la tabla. El salto se produce porque la cuota fija pasa de $ 18.730 a $ 31.700. Debe verificarse contra el algoritmo real de facturación antes de concluir que el efecto se produce en la factura.'
+      note:'Cálculo propio sobre la lectura literal de la tabla. El salto se produce porque la cuota fija pasa de $ 18.730 a $ 31.700. El umbral no es fijo: se ubica donde termine el bloque base del bimestre (300, 600, 740 o 1.100 kWh según el mes y la zona). Debe verificarse contra el algoritmo real de facturación antes de concluir que el efecto se produce en la factura.'
     });
     hBars($('fig-facturas'),{
       title:'Facturas modelo residenciales urbanas',
-      sub:'Subtotal tarifario bimestral, sin impuestos ni otros conceptos. Base subsidiada de 600 kWh en junio.',
+      sub:'Subtotal tarifario bimestral, sin impuestos ni otros conceptos. Bimestre con bloque base bonificado de 600 kWh.',
       categories:['300 kWh','600 kWh','601 kWh','800 kWh','1.100 kWh'],
       series:[{name:'Sin SEF', color:C(2), values:[89091.80,146483.60,146713.02,192367.00,261192.10]},
               {name:'Con SEF (junio)', color:C(3), values:[54188.80,89647.60,102847.02,148501.00,217326.10]}],
@@ -2008,17 +2336,182 @@ function drawCharts(view){
     figBoni($('fig-boni2'));
     lineChart($('fig-sefahorro'),{
       title:'El ahorro efectivo decrece con el consumo',
-      sub:'Diferencia porcentual entre el subtotal tarifario sin bonificación y con SEF. Junio de 2026, residencial urbano.',
+      sub:'Diferencia porcentual entre el subtotal tarifario sin bonificación y con SEF, en un bimestre con bloque base de 600 kWh.',
       x:['300 kWh','600 kWh','601 kWh','800 kWh','1.100 kWh'],
       series:[{name:'Ahorro sobre el subtotal tarifario', color:C(3), values:[39.18,38.80,29.90,22.80,16.79]}],
       fmt:pct, min:0, max:44, leftPad:58, pointLabels:true, unit:'% de ahorro',
-      note:'Cálculo propio, sin impuestos ni otros conceptos. Ilustra la diferencia entre el porcentaje nacional aplicado al PEST y la reducción efectiva del importe tarifario.'
+      note:'Cálculo propio, sin impuestos ni otros conceptos. Ilustra la diferencia entre el porcentaje nacional aplicado al PEST y la reducción efectiva del importe tarifario. En un bimestre con base de 300 kWh la curva cae mucho antes, porque el tramo bonificado es la mitad.'
     });
   }
 }
 
 /* arranque */
 go(location.hash.slice(1)||'panorama', false);
+</script>
+
+<script>
+/* ============================================================================
+   INTERACCIÓN · Navegación, buscador, drawer y microinteracciones
+   ============================================================================ */
+(function(){
+  const root=document.documentElement, body=document.body;
+  const tabsBox=$('tabs'), wrap=$('tabsWrap'), ink=$('tabInk'), sel=$('navSelect');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* -- rótulo de sección sobre cada h2 -- */
+  SECCIONES.forEach(([id,label])=>{
+    const v=document.getElementById(id); if(!v) return;
+    const h=v.querySelector('.sec-head'); if(!h || h.previousElementSibling?.classList?.contains('eyebrow')) return;
+    const e=el('div','eyebrow',label); h.parentNode.insertBefore(e,h);
+  });
+
+  /* -- selector móvil -- */
+  sel.innerHTML = SECCIONES.map(([id,l])=>`<option value="${id}">${l}</option>`).join('');
+  sel.addEventListener('change',e=>go(e.target.value));
+
+  /* -- indicador deslizante -- */
+  function moveInk(id){
+    const b = tabsBox.querySelector(`.tab[data-target="${id}"]`);
+    if(!b){ ink.style.width='0'; return; }
+    ink.style.width = b.offsetWidth+'px';
+    ink.style.transform = `translateX(${b.offsetLeft}px)`;
+  }
+  function edges(){
+    const i=tabsBox;
+    wrap.dataset.l = i.scrollLeft > 6 ? '1':'0';
+    wrap.dataset.r = (i.scrollWidth - i.clientWidth - i.scrollLeft) > 6 ? '1':'0';
+  }
+  tabsBox.addEventListener('scroll',edges,{passive:true});
+  addEventListener('resize',()=>{ moveInk(actual()); edges(); });
+
+  const actual = () => (document.querySelector('.view.active')||{}).id || SECCIONES[0][0];
+  window.__afterGo = (id)=>{ moveInk(id); sel.value=id; edges(); progreso(); };
+
+  /* -- scroll: cabecera compacta, progreso y volver arriba -- */
+  const bar=$('progressBar'), fab=$('topBtn');
+  function progreso(){
+    const h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.width = (h>60 ? Math.min(100, scrollY/h*100) : 0) + '%';
+  }
+  let ticking=false;
+  addEventListener('scroll',()=>{
+    if(ticking) return; ticking=true;
+    requestAnimationFrame(()=>{
+      body.classList.toggle('scrolled', scrollY>18);
+      fab.classList.toggle('on', scrollY>600);
+      progreso(); ticking=false;
+    });
+  },{passive:true});
+  fab.addEventListener('click',()=>scrollTo({top:0,behavior:reduce?'auto':'smooth'}));
+
+  /* -- aviso flotante -- */
+  const toast=$('toast'); let tt;
+  window.avisar = m => { toast.textContent=m; toast.classList.add('on'); clearTimeout(tt); tt=setTimeout(()=>toast.classList.remove('on'),2200); };
+
+  /* -- copiar enlace de sección -- */
+  $('shareBtn').addEventListener('click',async()=>{
+    const url = location.href.split('#')[0]+'#'+actual();
+    try{ await navigator.clipboard.writeText(url); avisar('Enlace copiado'); }
+    catch{ avisar(url); }
+  });
+
+  /* -- drawer -- */
+  const dr=$('drawer'), drBack=$('drBackdrop');
+  let ultimoFoco=null;
+  window.abrirDrawer=(titulo,html)=>{
+    ultimoFoco=document.activeElement;
+    $('drTitle').textContent=titulo; $('drBody').innerHTML=html;
+    dr.hidden=false; requestAnimationFrame(()=>{ dr.classList.add('on'); drBack.classList.add('on'); });
+    $('drClose').focus();
+  };
+  function cerrarDrawer(){
+    dr.classList.remove('on'); drBack.classList.remove('on');
+    setTimeout(()=>{ dr.hidden=true; },320);
+    if(ultimoFoco) ultimoFoco.focus();
+  }
+  $('drClose').addEventListener('click',cerrarDrawer);
+  drBack.addEventListener('click',cerrarDrawer);
+
+  /* -- buscador / paleta -- */
+  const back=$('palBackdrop'), inp=$('palInput'), list=$('palList');
+  const IC={sec:'<path d="M4 6h16M4 12h16M4 18h10"/>',norma:'<path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/>',
+            tarifa:'<path d="M3 20V10M9 20V4M15 20v-7M21 20V8"/>',hito:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+            inst:'<path d="M3 21h18M5 21V9l7-5 7 5v12"/>',fuente:'<path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/>'};
+  const svg = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${IC[k]}</svg>`;
+
+  const INDICE = [
+    ...SECCIONES.map(([id,l,d])=>({g:'Secciones',k:'sec',t:l,s:d,sec:id})),
+    ...NORMAS.map((n,i)=>({g:'Normativa',k:'norma',t:`${n.tipo} ${n.num}`,s:n.materia,sec:'normativo',norma:i})),
+    ...INSTITUCIONES.map(x=>({g:'Instituciones',k:'inst',t:x.nombre,s:x.rol,sec:'instituciones'})),
+    ...TARIFAS.map(t=>({g:'Tarifas',k:'tarifa',t:t.n,s:`${t.g} · página ${t.pag} del Cuadro 108-E`,sec:'tarifas',tar:t.id})),
+    ...CRONOLOGIA.map(c=>({g:'Cronología',k:'hito',t:c.titulo,s:`${c.fecha} · ${c.norma}`,sec:'cronologia'})),
+    ...Object.values(FUENTES).filter(f=>f.u).map(f=>({g:'Fuentes',k:'fuente',t:f.t,s:f.u,sec:'fuentes',url:f.u}))
+  ];
+  const norm = x => x.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  let res=[], idx=0;
+
+  function pintar(q){
+    const nq=norm(q.trim());
+    const toks = nq.split(/\s+/).filter(Boolean);
+    res = (!toks.length ? INDICE.filter(r=>r.g==='Secciones')
+                        : INDICE.filter(r=>{ const h=norm(r.t+' '+r.s+' '+r.g); return toks.every(t=>h.includes(t)); }).slice(0,40));
+    idx=0;
+    if(!res.length){ list.innerHTML='<div class="empty" style="margin:.6rem">Sin resultados para esa búsqueda.</div>'; return; }
+    let html='', grupo=null;
+    res.forEach((r,i)=>{
+      if(r.g!==grupo){ grupo=r.g; html+=`<div class="pal-group">${grupo}</div>`; }
+      html+=`<div class="pal-item" role="option" data-i="${i}" aria-selected="${i===0}">
+        <span class="ic">${svg(r.k)}</span>
+        <span class="tx"><b>${r.t}</b><span>${r.s||''}</span></span></div>`;
+    });
+    list.innerHTML=html;
+    list.querySelectorAll('.pal-item').forEach(n=>{
+      n.addEventListener('mouseenter',()=>marcar(+n.dataset.i));
+      n.addEventListener('click',()=>elegir(+n.dataset.i));
+    });
+  }
+  function marcar(i){
+    idx=i;
+    list.querySelectorAll('.pal-item').forEach(n=>n.setAttribute('aria-selected', +n.dataset.i===i));
+    const n=list.querySelector(`.pal-item[data-i="${i}"]`);
+    if(n) n.scrollIntoView({block:'nearest'});
+  }
+  function elegir(i){
+    const r=res[i]; if(!r) return;
+    cerrarPal();
+    if(r.url){ window.open(r.url,'_blank','noopener'); return; }
+    go(r.sec);
+    setTimeout(()=>{
+      if(r.norma!=null){
+        const tr=document.querySelector(`#normTabla tbody tr[data-i="${r.norma}"]`);
+        if(tr){ tr.scrollIntoView({block:'center',behavior:reduce?'auto':'smooth'}); tr.classList.add('flash'); setTimeout(()=>tr.classList.remove('flash'),1600); tr.click(); }
+      } else if(r.tar!=null && window.__irATarifa){
+        window.__irATarifa(r.tar);
+        const rs=$('tarResultados');
+        if(rs){ rs.scrollIntoView({block:'center',behavior:reduce?'auto':'smooth'});
+          rs.classList.add('flash'); setTimeout(()=>rs.classList.remove('flash'),1600); }
+      }
+    },80);
+  }
+  function abrirPal(){ back.classList.add('on'); inp.value=''; pintar(''); inp.focus(); }
+  function cerrarPal(){ back.classList.remove('on'); }
+  $('searchBtn').addEventListener('click',abrirPal);
+  back.addEventListener('click',e=>{ if(e.target===back) cerrarPal(); });
+  inp.addEventListener('input',e=>pintar(e.target.value));
+  inp.addEventListener('keydown',e=>{
+    if(e.key==='ArrowDown'){ e.preventDefault(); marcar(Math.min(idx+1,res.length-1)); }
+    else if(e.key==='ArrowUp'){ e.preventDefault(); marcar(Math.max(idx-1,0)); }
+    else if(e.key==='Enter'){ e.preventDefault(); elegir(idx); }
+  });
+  addEventListener('keydown',e=>{
+    if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k'){ e.preventDefault(); back.classList.contains('on')?cerrarPal():abrirPal(); }
+    else if(e.key==='Escape'){ if(back.classList.contains('on')) cerrarPal(); else if(dr.classList.contains('on')) cerrarDrawer(); }
+  });
+
+  /* -- arranque -- */
+  moveInk(actual()); sel.value=actual(); edges(); progreso();
+  addEventListener('load',()=>{ moveInk(actual()); edges(); });
+})();
 </script>
 </body>
 </html>
